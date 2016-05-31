@@ -266,11 +266,7 @@ WriteLiteral("\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n        <hr />\r\n        <p");
-
-WriteLiteral(" class=\"text-center\"");
-
-WriteLiteral(">\r\n            &copy; ");
+WriteLiteral(">\r\n        <hr />\r\n        <p>\r\n            &copy; ");
 
             
             #line 51 "..\..\Views\Shared\_Layout.cshtml"
@@ -286,6 +282,16 @@ WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.m
 WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min." +
+"js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js" +
+"\"");
 
 WriteLiteral("></script>\r\n</body>\r\n</html>\r\n");
 

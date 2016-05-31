@@ -27,6 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static Plum.Controllers.AccountController Account = new Plum.Controllers.T4MVC_AccountController();
     public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }

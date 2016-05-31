@@ -1,0 +1,31 @@
+﻿@model Plum.ViewModels.Account.SignUpViewModel
+@{
+    ViewBag.Title = "Sign Up";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Sign Up</h2>
+            @Html.ValidationSummary()
+            <form action="@Url.Action(MVC.Account.SignUp())" method="post">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.BusinessName, "Business Name (your customers will see this)")
+                    @Html.TextBoxFor(x => x.BusinessName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.EmailAddress, "Email Address (in case you forget your password)")
+                    @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control", type = "email" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Password)
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary" />
+                @Html.AntiForgeryToken()
+            </form>
+        </div>
+    </div>
+</div>
+
+
