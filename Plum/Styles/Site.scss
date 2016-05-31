@@ -1,0 +1,20 @@
+﻿$plum: #5d4865;
+$brand-primary: $plum;
+$brand-info: #2196F3;
+
+@import "PaperVariables.scss";
+@import "bootstrapsource/_bootstrap.scss";
+@import "Paper.scss";
+
+.brand-font {
+  font-family: 'Great Vibes', cursive;
+}
+
+.list-group-item-active {
+  background-color: $brand-primary;
+  color: white;
+}
+
+.home {
+    @import "Home/Index.scss";
+}

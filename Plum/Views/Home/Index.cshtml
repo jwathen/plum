@@ -1,7 +1,68 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container-fluid">
+    <div class="row jumbo">
+        <div class="col-md-12">
+            <h1 class="big hidden-xs hidden-sm">
+                @Html.ApplicationName()
+            </h1>
+            <h1 class="hidden-md hidden-lg">
+                @Html.ApplicationName()
+            </h1>
+            <p class="lead">
+                Seat diners faster with this FREE service by taking advantage of the technology they're already using.
+            </p>
+            <p>
+                <a href="#" class="btn btn-primary btn-lg">
+                    Sign Up
+                </a>
+                or
+                <a href="#">
+                    Learn How It Works
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            todo
+        </div>
+    </div>
+    <div class="hr">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    <img src="@Html.FileVersionUrl(Links.Images.testimonial1_jpg)" alt="Two young people holding hands." class="img-responsive img-circle" />
+                </div>
+                <div class="col-md-8">
+                    <strong class="tagline">
+                        John in Phoenix is pretty sure these two would say,
+                    </strong>
+                    <p>
+                        We've been holding hands since we were 13 years old. It's made life difficult sometimes. Bathing . Dressing. All of these are struggles. Having only one free hand each,
+                        being told to hold a bulky coaster cut our hand effectiveness by 50%. Thanks, @AppSettings.ApplicationName for enabling our decisions!
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    <img src="@Html.FileVersionUrl(Links.Images.testimonial2_jpg)" alt="Woman wearing a poncho in the park." class="img-responsive img-circle" />
+                </div>
+                <div class="col-md-8">
+                    <strong class="tagline">
+                        Christian in Los Angeles feels like this lady would say,
+                    </strong>
+                    <p>
+                        When I'm not out taking poignant walks with my Friendship Poncho, I like patiently waiting for tables at trendy new restaurants. My thirst for a forgotten era is gone when I
+                        experience true modern convenience and efficiency. Thanks, @AppSettings.ApplicationName!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

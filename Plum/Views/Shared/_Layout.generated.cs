@@ -26,18 +26,89 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Humanizer;
     using Plum;
+    using Plum.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/_Layout.cshtml")]
     public partial class _Views_Shared__Layout_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
+
+#line 1 "..\..\Views\Shared\_Layout.cshtml"
+public System.Web.WebPages.HelperResult controller()
+{
+#line default
+#line hidden
+return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
+
+#line 2 "..\..\Views\Shared\_Layout.cshtml"
+ 
+    
+
+#line default
+#line hidden
+
+#line 3 "..\..\Views\Shared\_Layout.cshtml"
+WriteTo(__razor_helper_writer, ViewContext.RouteData.GetRequiredString("controller").Underscore().Dasherize());
+
+
+#line default
+#line hidden
+
+#line 3 "..\..\Views\Shared\_Layout.cshtml"
+                                                                                   ;
+
+
+#line default
+#line hidden
+});
+
+#line 4 "..\..\Views\Shared\_Layout.cshtml"
+}
+#line default
+#line hidden
+
+#line 5 "..\..\Views\Shared\_Layout.cshtml"
+public System.Web.WebPages.HelperResult action()
+{
+#line default
+#line hidden
+return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
+
+#line 6 "..\..\Views\Shared\_Layout.cshtml"
+ 
+    
+
+#line default
+#line hidden
+
+#line 7 "..\..\Views\Shared\_Layout.cshtml"
+WriteTo(__razor_helper_writer, (ViewContext.RouteData.GetRequiredString("controller") + ViewContext.RouteData.GetRequiredString("action")).Underscore().Dasherize());
+
+
+#line default
+#line hidden
+
+#line 7 "..\..\Views\Shared\_Layout.cshtml"
+                                                                                                                                           ;
+
+
+#line default
+#line hidden
+});
+
+#line 8 "..\..\Views\Shared\_Layout.cshtml"
+}
+#line default
+#line hidden
+
         public _Views_Shared__Layout_cshtml()
         {
         }
         public override void Execute()
         {
-WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <meta");
+WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <meta");
 
 WriteLiteral(" name=\"viewport\"");
 
@@ -56,27 +127,167 @@ WriteLiteral(" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/fon
 
 WriteLiteral(" rel=\"stylesheet\"");
 
+WriteLiteral(" />\r\n    <link");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 604), Tuple.Create("\"", 658)
+            
+            #line 16 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 611), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Styles.Site_min_css)
+            
+            #line default
+            #line hidden
+, 611), false)
+);
+
+WriteLiteral(" rel=\"stylesheet\"");
+
 WriteLiteral(" />\r\n    <title>");
 
             
-            #line 7 "..\..\Views\Shared\_Layout.cshtml"
+            #line 17 "..\..\Views\Shared\_Layout.cshtml"
       Write(ViewBag.Title);
 
             
             #line default
             #line hidden
-WriteLiteral("</title>\r\n</head>\r\n<body>\r\n    <div>\r\n");
+WriteLiteral("</title>\r\n</head>\r\n<body");
 
-WriteLiteral("        ");
+WriteAttribute("class", Tuple.Create(" class=\"", 730), Tuple.Create("\"", 761)
+            
+            #line 19 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 738), Tuple.Create<System.Object, System.Int32>(controller()
+            
+            #line default
+            #line hidden
+, 738), false)
+            
+            #line 19 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create(" ", 751), Tuple.Create<System.Object, System.Int32>(action()
+            
+            #line default
+            #line hidden
+, 752), false)
+);
+
+WriteLiteral(">\r\n    <nav");
+
+WriteLiteral(" class=\"navbar navbar-default\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"navbar-header\"");
+
+WriteLiteral(">\r\n                <button");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" data-target=\"#main-navigation\"");
+
+WriteLiteral(" class=\"navbar-toggle collapsed\"");
+
+WriteLiteral(">\r\n                    <span");
+
+WriteLiteral(" class=\"sr-only\"");
+
+WriteLiteral(">Toggle Navigation</span>\r\n                    <span");
+
+WriteLiteral(" class=\"icon-bar\"");
+
+WriteLiteral("></span>\r\n                    <span");
+
+WriteLiteral(" class=\"icon-bar\"");
+
+WriteLiteral("></span>\r\n                    <span");
+
+WriteLiteral(" class=\"icon-bar\"");
+
+WriteLiteral("></span>\r\n                </button>\r\n                <a");
+
+WriteLiteral(" href=\"/\"");
+
+WriteLiteral(" class=\"navbar-brand text-info\"");
+
+WriteLiteral(">");
 
             
-            #line 11 "..\..\Views\Shared\_Layout.cshtml"
-   Write(RenderBody());
+            #line 29 "..\..\Views\Shared\_Layout.cshtml"
+                                                      Write(Html.ApplicationName());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </div>\r\n</body>\r\n</html>\r\n");
+WriteLiteral("</a>\r\n            </div>\r\n            <div");
+
+WriteLiteral(" id=\"main-navigation\"");
+
+WriteLiteral(" class=\"collapse navbar-collapse\"");
+
+WriteLiteral(">\r\n                <ul");
+
+WriteLiteral(" class=\"nav navbar-nav\"");
+
+WriteLiteral(">\r\n                    <li>\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">How It Works</a>\r\n                    </li>\r\n                    <li>\r\n         " +
+"               <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">About</a>\r\n                    </li>\r\n                    <li>\r\n                " +
+"        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Contact Us</a>\r\n                    </li>\r\n                </ul>\r\n              " +
+"  <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"btn btn-default navbar-btn navbar-right\"");
+
+WriteLiteral(">Sign In</a>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 47 "..\..\Views\Shared\_Layout.cshtml"
+Write(RenderBody());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    <div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n        <hr />\r\n        <p");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">\r\n            &copy; ");
+
+            
+            #line 51 "..\..\Views\Shared\_Layout.cshtml"
+              Write(DateTime.Now.Year);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" cd312f2e, LLC\r\n        </p>\r\n    </div>\r\n    <script");
+
+WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"");
+
+WriteLiteral("></script>\r\n</body>\r\n</html>\r\n");
 
         }
     }

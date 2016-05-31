@@ -26,7 +26,9 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Humanizer;
     using Plum;
+    using Plum.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/Index.cshtml")]
@@ -37,17 +39,189 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\r\n");
-
             
-            #line 2 "..\..\Views\Home\Index.cshtml"
+            #line 1 "..\..\Views\Home\Index.cshtml"
   
     ViewBag.Title = "Index";
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>Index</h2>\r\n\r\n");
+WriteLiteral("\r\n\r\n<div");
+
+WriteLiteral(" class=\"container-fluid\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"row jumbo\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"col-md-12\"");
+
+WriteLiteral(">\r\n            <h1");
+
+WriteLiteral(" class=\"big hidden-xs hidden-sm\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 9 "..\..\Views\Home\Index.cshtml"
+           Write(Html.ApplicationName());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </h1>\r\n            <h1");
+
+WriteLiteral(" class=\"hidden-md hidden-lg\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 12 "..\..\Views\Home\Index.cshtml"
+           Write(Html.ApplicationName());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </h1>\r\n            <p");
+
+WriteLiteral(" class=\"lead\"");
+
+WriteLiteral(">\r\n                Seat diners faster with this FREE service by taking advantage " +
+"of the technology they\'re already using.\r\n            </p>\r\n            <p>\r\n   " +
+"             <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"btn btn-primary btn-lg\"");
+
+WriteLiteral(">\r\n                    Sign Up\r\n                </a>\r\n                or\r\n       " +
+"         <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">\r\n                    Learn How It Works\r\n                </a>\r\n            </p>" +
+"\r\n        </div>\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"col-md-12\"");
+
+WriteLiteral(">\r\n            todo\r\n        </div>\r\n    </div>\r\n    <div");
+
+WriteLiteral(" class=\"hr\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"col-md-6\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"col-md-4\"");
+
+WriteLiteral(">\r\n                    <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 1087), Tuple.Create("\"", 1144)
+            
+            #line 39 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1093), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Images.testimonial1_jpg)
+            
+            #line default
+            #line hidden
+, 1093), false)
+);
+
+WriteLiteral(" alt=\"Two young people holding hands.\"");
+
+WriteLiteral(" class=\"img-responsive img-circle\"");
+
+WriteLiteral(" />\r\n                </div>\r\n                <div");
+
+WriteLiteral(" class=\"col-md-8\"");
+
+WriteLiteral(">\r\n                    <strong");
+
+WriteLiteral(" class=\"tagline\"");
+
+WriteLiteral(@">
+                        John in Phoenix is pretty sure these two would say,
+                    </strong>
+                    <p>
+                        We've been holding hands since we were 13 years old. It's made life difficult sometimes. Bathing . Dressing. All of these are struggles. Having only one free hand each,
+                        being told to hold a bulky coaster cut our hand effectiveness by 50%. Thanks, ");
+
+            
+            #line 47 "..\..\Views\Home\Index.cshtml"
+                                                                                                 Write(AppSettings.ApplicationName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" for enabling our decisions!\r\n                    </p>\r\n                </div>\r\n " +
+"           </div>\r\n            <div");
+
+WriteLiteral(" class=\"col-md-6\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"col-md-4\"");
+
+WriteLiteral(">\r\n                    <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 1989), Tuple.Create("\"", 2046)
+            
+            #line 53 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1995), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Images.testimonial2_jpg)
+            
+            #line default
+            #line hidden
+, 1995), false)
+);
+
+WriteLiteral(" alt=\"Woman wearing a poncho in the park.\"");
+
+WriteLiteral(" class=\"img-responsive img-circle\"");
+
+WriteLiteral(" />\r\n                </div>\r\n                <div");
+
+WriteLiteral(" class=\"col-md-8\"");
+
+WriteLiteral(">\r\n                    <strong");
+
+WriteLiteral(" class=\"tagline\"");
+
+WriteLiteral(@">
+                        Christian in Los Angeles feels like this lady would say,
+                    </strong>
+                    <p>
+                        When I'm not out taking poignant walks with my Friendship Poncho, I like patiently waiting for tables at trendy new restaurants. My thirst for a forgotten era is gone when I
+                        experience true modern convenience and efficiency. Thanks, ");
+
+            
+            #line 61 "..\..\Views\Home\Index.cshtml"
+                                                                              Write(AppSettings.ApplicationName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("!\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        " +
+"</div>\r\n    </div>\r\n</div>\r\n\r\n");
 
         }
     }

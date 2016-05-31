@@ -27,6 +27,8 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
+    public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
 namespace T4MVC
@@ -43,15 +45,196 @@ namespace T4MVC
     }
 }
 
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+     
+    public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
 
 
 
 namespace Links
 {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public static class Styles {
+        private const string URLPATH = "~/Styles";
+        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class bootstrapsource {
+            private const string URLPATH = "~/Styles/bootstrapsource";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string _bootstrap_compass_scss = Url("_bootstrap-compass.scss");
+            public static readonly string _bootstrap_mincer_scss = Url("_bootstrap-mincer.scss");
+            public static readonly string _bootstrap_sprockets_scss = Url("_bootstrap-sprockets.scss");
+            public static readonly string _bootstrap_scss = Url("_bootstrap.scss");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class bootstrap {
+                private const string URLPATH = "~/Styles/bootstrapsource/bootstrap";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _alerts_scss = Url("_alerts.scss");
+                public static readonly string _badges_scss = Url("_badges.scss");
+                public static readonly string _breadcrumbs_scss = Url("_breadcrumbs.scss");
+                public static readonly string _button_groups_scss = Url("_button-groups.scss");
+                public static readonly string _buttons_scss = Url("_buttons.scss");
+                public static readonly string _carousel_scss = Url("_carousel.scss");
+                public static readonly string _close_scss = Url("_close.scss");
+                public static readonly string _code_scss = Url("_code.scss");
+                public static readonly string _component_animations_scss = Url("_component-animations.scss");
+                public static readonly string _dropdowns_scss = Url("_dropdowns.scss");
+                public static readonly string _forms_scss = Url("_forms.scss");
+                public static readonly string _glyphicons_scss = Url("_glyphicons.scss");
+                public static readonly string _grid_scss = Url("_grid.scss");
+                public static readonly string _input_groups_scss = Url("_input-groups.scss");
+                public static readonly string _jumbotron_scss = Url("_jumbotron.scss");
+                public static readonly string _labels_scss = Url("_labels.scss");
+                public static readonly string _list_group_scss = Url("_list-group.scss");
+                public static readonly string _media_scss = Url("_media.scss");
+                public static readonly string _mixins_scss = Url("_mixins.scss");
+                public static readonly string _modals_scss = Url("_modals.scss");
+                public static readonly string _navbar_scss = Url("_navbar.scss");
+                public static readonly string _navs_scss = Url("_navs.scss");
+                public static readonly string _normalize_scss = Url("_normalize.scss");
+                public static readonly string _pager_scss = Url("_pager.scss");
+                public static readonly string _pagination_scss = Url("_pagination.scss");
+                public static readonly string _panels_scss = Url("_panels.scss");
+                public static readonly string _popovers_scss = Url("_popovers.scss");
+                public static readonly string _print_scss = Url("_print.scss");
+                public static readonly string _progress_bars_scss = Url("_progress-bars.scss");
+                public static readonly string _responsive_embed_scss = Url("_responsive-embed.scss");
+                public static readonly string _responsive_utilities_scss = Url("_responsive-utilities.scss");
+                public static readonly string _scaffolding_scss = Url("_scaffolding.scss");
+                public static readonly string _tables_scss = Url("_tables.scss");
+                public static readonly string _theme_scss = Url("_theme.scss");
+                public static readonly string _thumbnails_scss = Url("_thumbnails.scss");
+                public static readonly string _tooltip_scss = Url("_tooltip.scss");
+                public static readonly string _type_scss = Url("_type.scss");
+                public static readonly string _utilities_scss = Url("_utilities.scss");
+                public static readonly string _variables_scss = Url("_variables.scss");
+                public static readonly string _wells_scss = Url("_wells.scss");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class mixins {
+                    private const string URLPATH = "~/Styles/bootstrapsource/bootstrap/mixins";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string _alerts_scss = Url("_alerts.scss");
+                    public static readonly string _background_variant_scss = Url("_background-variant.scss");
+                    public static readonly string _border_radius_scss = Url("_border-radius.scss");
+                    public static readonly string _buttons_scss = Url("_buttons.scss");
+                    public static readonly string _center_block_scss = Url("_center-block.scss");
+                    public static readonly string _clearfix_scss = Url("_clearfix.scss");
+                    public static readonly string _forms_scss = Url("_forms.scss");
+                    public static readonly string _gradients_scss = Url("_gradients.scss");
+                    public static readonly string _grid_framework_scss = Url("_grid-framework.scss");
+                    public static readonly string _grid_scss = Url("_grid.scss");
+                    public static readonly string _hide_text_scss = Url("_hide-text.scss");
+                    public static readonly string _image_scss = Url("_image.scss");
+                    public static readonly string _labels_scss = Url("_labels.scss");
+                    public static readonly string _list_group_scss = Url("_list-group.scss");
+                    public static readonly string _nav_divider_scss = Url("_nav-divider.scss");
+                    public static readonly string _nav_vertical_align_scss = Url("_nav-vertical-align.scss");
+                    public static readonly string _opacity_scss = Url("_opacity.scss");
+                    public static readonly string _pagination_scss = Url("_pagination.scss");
+                    public static readonly string _panels_scss = Url("_panels.scss");
+                    public static readonly string _progress_bar_scss = Url("_progress-bar.scss");
+                    public static readonly string _reset_filter_scss = Url("_reset-filter.scss");
+                    public static readonly string _reset_text_scss = Url("_reset-text.scss");
+                    public static readonly string _resize_scss = Url("_resize.scss");
+                    public static readonly string _responsive_visibility_scss = Url("_responsive-visibility.scss");
+                    public static readonly string _size_scss = Url("_size.scss");
+                    public static readonly string _tab_focus_scss = Url("_tab-focus.scss");
+                    public static readonly string _table_row_scss = Url("_table-row.scss");
+                    public static readonly string _text_emphasis_scss = Url("_text-emphasis.scss");
+                    public static readonly string _text_overflow_scss = Url("_text-overflow.scss");
+                    public static readonly string _vendor_prefixes_scss = Url("_vendor-prefixes.scss");
+                }
+            
+            }
+        
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Home {
+            private const string URLPATH = "~/Styles/Home";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string Index_scss = Url("Index.scss");
+        }
+    
+        public static readonly string Paper_scss = Url("Paper.scss");
+        public static readonly string PaperVariables_scss = Url("PaperVariables.scss");
+        public static readonly string Site_scss = Url("Site.scss");
+        public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
+        public static readonly string Site_min_css = Url("Site.min.css");
+    }
+
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public static class Images {
+        private const string URLPATH = "~/Images";
+        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string table_jpg = Url("table.jpg");
+        public static readonly string testimonial1_jpg = Url("testimonial1.jpg");
+        public static readonly string testimonial2_jpg = Url("testimonial2.jpg");
+        public static readonly string testimonial3_jpg = Url("testimonial3.jpg");
+        public static readonly string testimonial4_jpg = Url("testimonial4.jpg");
+        public static readonly string testimonial5_jpg = Url("testimonial5.jpg");
+        public static readonly string testimonial6_jpg = Url("testimonial6.jpg");
+        public static readonly string testimonial7_jpg = Url("testimonial7.jpg");
+    }
+
     
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static partial class Bundles
     {
+        public static partial class Styles 
+        {
+            public static partial class bootstrapsource 
+            {
+                public static partial class bootstrap 
+                {
+                    public static partial class mixins 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static class Assets
+                    {
+                    }
+                }
+                public static class Assets
+                {
+                }
+            }
+            public static partial class Home 
+            {
+                public static class Assets
+                {
+                }
+            }
+            public static class Assets
+            {
+            }
+        }
+        public static partial class Images 
+        {
+            public static class Assets
+            {
+            }
+        }
     }
 }
 
