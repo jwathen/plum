@@ -7,8 +7,10 @@ namespace Plum.Models
 {
     public class Business
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public Account Account { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual Account Account { get; set; }
+
+        public virtual ICollection<Queue> Queues { get; set; } = new List<Queue>();
     }
 }

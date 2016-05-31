@@ -356,7 +356,62 @@ WriteLiteral(">\r\n        <hr />\r\n        <p>\r\n            &copy; ");
             
             #line default
             #line hidden
-WriteLiteral(" cd312f2e, LLC\r\n        </p>\r\n    </div>\r\n    <script");
+WriteLiteral(" cd312f2e, LLC\r\n        </p>\r\n    </div>\r\n    <div");
+
+WriteLiteral(" id=\"ConfirmModal\"");
+
+WriteLiteral(" class=\"modal\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"modal-dialog\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"modal-content\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"modal-header\"");
+
+WriteLiteral(">\r\n                    <button");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" class=\"close\"");
+
+WriteLiteral(" data-dismiss=\"modal\"");
+
+WriteLiteral(" aria-label=\"Close\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" aria-hidden=\"true\"");
+
+WriteLiteral(">&times;</span></button>\r\n                    <h4");
+
+WriteLiteral(" class=\"modal-title\"");
+
+WriteLiteral("></h4>\r\n                </div>\r\n                <div");
+
+WriteLiteral(" class=\"modal-footer\"");
+
+WriteLiteral(">\r\n                    <button");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" class=\"btn btn-default pull-left\"");
+
+WriteLiteral(" data-dismiss=\"modal\"");
+
+WriteLiteral(">No</button>\r\n                    <button");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" class=\"btn btn-primary\"");
+
+WriteLiteral(">Yes</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </" +
+"div>\r\n    <script");
 
 WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"");
 
@@ -373,6 +428,18 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js" +
 "\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 3897), Tuple.Create("\"", 3954)
+            
+            #line 88 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 3903), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Scripts.Site_es5_min_js)
+            
+            #line default
+            #line hidden
+, 3903), false)
+);
 
 WriteLiteral("></script>\r\n</body>\r\n</html>\r\n");
 

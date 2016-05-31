@@ -32,7 +32,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/Index.cshtml")]
-    public partial class _Views_Home_Index_cshtml : System.Web.Mvc.WebViewPage<dynamic>
+    public partial class _Views_Home_Index_cshtml : Plum.Web.ApplicationViewBase<dynamic>
     {
         public _Views_Home_Index_cshtml()
         {

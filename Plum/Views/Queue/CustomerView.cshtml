@@ -1,0 +1,44 @@
+﻿@model Plum.Models.Customer
+
+@{
+    ViewBag.Title = "CustomerView";
+    int numberOfPartiesAheadOfCustomer = Model.Queue.NumberOfPartiesAheadOf(Model);
+}
+
+<div class="container">
+    <div class="h3">@Model.Queue.Business.Name</div>
+    <form action="@MVC.Queue.CancelPlaceInLine()" method="post">
+        <button data-confirm="Are you sure?" class="btn btn-block btn-default">
+            <i class="fa fa-times"></i>
+            Cancel Place In Line
+        </button>
+        @Html.AntiForgeryToken()
+        @Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken)
+    </form>
+    <br />
+    @if (numberOfPartiesAheadOfCustomer == 0)
+    {
+        <p>You are next in line.</p>
+    }
+    else if (numberOfPartiesAheadOfCustomer == 1)
+    {
+        <p>There is one party ahead of you.</p>
+    }
+    else if (numberOfPartiesAheadOfCustomer <= 6)
+    {
+        <p>There are @numberOfPartiesAheadOfCustomer.ToWords() parties ahead of you.</p>
+    }
+    else
+    {
+        <p>There are @numberOfPartiesAheadOfCustomer parties ahead of you.</p>
+    }
+    <ul class="list-group text-center">
+        @foreach (var customer in Model.Queue.OrderedCustomers())
+        {
+            <li class="list-group-item @(customer == Model ? "list-group-item-active" : null)">
+                @customer.ObfuscateName(Model) (@customer.NumberInParty) Waited @customer.TimeWaited().Humanize()
+            </li>
+        }
+    </ul>
+</div>
+

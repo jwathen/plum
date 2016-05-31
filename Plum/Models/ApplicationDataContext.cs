@@ -22,8 +22,15 @@ namespace Plum.Models
             modelBuilder.ComplexType<Account>().Property(x => x.PasswordSalt).IsRequired();
 
             modelBuilder.Entity<Business>().Property(x => x.Name).HasMaxLength(256).IsRequired();
+            modelBuilder.Entity<Queue>().Property(x => x.Name).HasMaxLength(256);
+
+            modelBuilder.Entity<Customer>().Property(x => x.Name).HasMaxLength(256).IsRequired();
+            modelBuilder.Entity<Customer>().Property(x => x.PhoneNumber).HasMaxLength(10);
+            modelBuilder.Entity<Customer>().Property(x => x.UrlToken).HasMaxLength(12).IsRequired();
         }
 
         public DbSet<Business> Businesses { get; set; }
+        public DbSet<Queue> Queues { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

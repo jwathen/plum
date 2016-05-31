@@ -29,6 +29,7 @@ public static partial class MVC
 {
     public static Plum.Controllers.AccountController Account = new Plum.Controllers.T4MVC_AccountController();
     public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
+    public static Plum.Controllers.QueueController Queue = new Plum.Controllers.T4MVC_QueueController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -66,6 +67,16 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
 
 namespace Links
 {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public static class Scripts {
+        private const string URLPATH = "~/Scripts";
+        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string Site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.js") ? Url("Site.min.js") : Url("Site.js");
+        public static readonly string Site_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.es5.min.js") ? Url("Site.es5.min.js") : Url("Site.es5.js");
+        public static readonly string Site_es5_min_js = Url("Site.es5.min.js");
+    }
+
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static class Styles {
         private const string URLPATH = "~/Styles";
@@ -200,6 +211,13 @@ namespace Links
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static partial class Bundles
     {
+        public static partial class Scripts 
+        {
+            public static class Assets
+            {
+                public const string Site_js = "~/Scripts/Site.js"; 
+            }
+        }
         public static partial class Styles 
         {
             public static partial class bootstrapsource 
