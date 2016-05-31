@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +14,7 @@ namespace Plum
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<Models.PlumDataContext>(null);
             RegisterRoutes(RouteTable.Routes);
         }
 
