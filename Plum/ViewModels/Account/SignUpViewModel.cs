@@ -21,7 +21,7 @@ namespace Plum.ViewModels.Account
         public SignUpViewModelValidator()
         {
             RuleFor(x => x.BusinessName)
-                .NotEmpty().WithMessage("Business name is require.")
+                .NotEmpty().WithMessage("Business name is required.")
                 .Length(0, 250).WithMessage("Business name must be fewer than 250 characters.");
             RuleFor(x => x.EmailAddress)
                 .NotEmpty().WithMessage("Email address is required")
@@ -33,7 +33,7 @@ namespace Plum.ViewModels.Account
 
         public bool BeUnique(string emailAddress)
         {
-            var db = new PlumDataContext();
+            var db = new ApplicationDataContext();
             return !db.Businesses.Any(x => x.Account.EmailAddress == emailAddress);
         }
     }

@@ -32,7 +32,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/_Layout.cshtml")]
-    public partial class _Views_Shared__Layout_cshtml : System.Web.Mvc.WebViewPage<dynamic>
+    public partial class _Views_Shared__Layout_cshtml : Plum.Web.ApplicationViewBase<dynamic>
     {
 
 #line 1 "..\..\Views\Shared\_Layout.cshtml"
@@ -152,21 +152,22 @@ WriteLiteral(" />\r\n    <title>");
             #line hidden
 WriteLiteral("</title>\r\n</head>\r\n<body");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 730), Tuple.Create("\"", 761)
+WriteAttribute("class", Tuple.Create(" class=\"", 730), Tuple.Create("\"", 765)
+, Tuple.Create(Tuple.Create("", 738), Tuple.Create("app", 738), true)
             
             #line 19 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 738), Tuple.Create<System.Object, System.Int32>(controller()
+, Tuple.Create(Tuple.Create(" ", 741), Tuple.Create<System.Object, System.Int32>(controller()
             
             #line default
             #line hidden
-, 738), false)
+, 742), false)
             
             #line 19 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 751), Tuple.Create<System.Object, System.Int32>(action()
+, Tuple.Create(Tuple.Create(" ", 755), Tuple.Create<System.Object, System.Int32>(action()
             
             #line default
             #line hidden
-, 752), false)
+, 756), false)
 );
 
 WriteLiteral(">\r\n    <nav");
@@ -244,19 +245,99 @@ WriteLiteral(">About</a>\r\n                    </li>\r\n                    <li
 
 WriteLiteral(" href=\"#\"");
 
-WriteLiteral(">Contact Us</a>\r\n                    </li>\r\n                </ul>\r\n              " +
-"  <a");
+WriteLiteral(">Contact Us</a>\r\n                    </li>\r\n                </ul>\r\n");
 
-WriteLiteral(" href=\"#\"");
+            
+            #line 43 "..\..\Views\Shared\_Layout.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 43 "..\..\Views\Shared\_Layout.cshtml"
+                 if (Request.IsAuthenticated)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <ul");
+
+WriteLiteral(" class=\"nav navbar-nav navbar-right\"");
+
+WriteLiteral(">\r\n                        <li>\r\n                            <span");
+
+WriteLiteral(" class=\"navbar-text\"");
+
+WriteLiteral(">");
+
+            
+            #line 47 "..\..\Views\Shared\_Layout.cshtml"
+                                                 Write(AppSession.BusinessName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n                        </li>\r\n                        <li>\r\n           " +
+"                 <form");
+
+WriteAttribute("action", Tuple.Create(" action=\"", 2138), Tuple.Create("\"", 2181)
+            
+            #line 50 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 2147), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
+            
+            #line default
+            #line hidden
+, 2147), false)
+);
+
+WriteLiteral(">\r\n                                <button");
+
+WriteLiteral(" type=\"submit\"");
+
+WriteLiteral(" class=\"btn btn-default navbar-btn\"");
+
+WriteLiteral(">Sign Out</button>\r\n                            </form>\r\n                        " +
+"</li>\r\n                    </ul>\r\n");
+
+            
+            #line 55 "..\..\Views\Shared\_Layout.cshtml"
+                }
+                else
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2470), Tuple.Create("\"", 2506)
+            
+            #line 58 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 2477), Tuple.Create<System.Object, System.Int32>(FormsAuthentication.LoginUrl
+            
+            #line default
+            #line hidden
+, 2477), false)
+);
 
 WriteLiteral(" class=\"btn btn-default navbar-btn navbar-right\"");
 
-WriteLiteral(">Sign In</a>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n");
+WriteLiteral(">Sign In</a>\r\n");
+
+            
+            #line 59 "..\..\Views\Shared\_Layout.cshtml"
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            </div>\r\n        </div>\r\n    </nav>\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 47 "..\..\Views\Shared\_Layout.cshtml"
+            #line 63 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderBody());
 
             
@@ -269,7 +350,7 @@ WriteLiteral(" class=\"container\"");
 WriteLiteral(">\r\n        <hr />\r\n        <p>\r\n            &copy; ");
 
             
-            #line 51 "..\..\Views\Shared\_Layout.cshtml"
+            #line 67 "..\..\Views\Shared\_Layout.cshtml"
               Write(DateTime.Now.Year);
 
             

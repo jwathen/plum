@@ -16,7 +16,7 @@
     <link href="@Html.FileVersionUrl(Links.Styles.Site_min_css)" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
-<body class="@controller() @action()">
+<body class="app @controller() @action()">
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -40,7 +40,23 @@
                         <a href="#">Contact Us</a>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-default navbar-btn navbar-right">Sign In</a>
+                @if (Request.IsAuthenticated)
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <span class="navbar-text">@AppSession.BusinessName</span>
+                        </li>
+                        <li>
+                            <form action="@Url.Action(MVC.Account.SignOut())">
+                                <button type="submit" class="btn btn-default navbar-btn">Sign Out</button>
+                            </form>
+                        </li>
+                    </ul>
+                }
+                else
+                {
+                    <a href="@FormsAuthentication.LoginUrl" class="btn btn-default navbar-btn navbar-right">Sign In</a>
+                }
             </div>
         </div>
     </nav>

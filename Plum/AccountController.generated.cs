@@ -76,12 +76,16 @@ namespace Plum.Controllers
         public class ActionNamesClass
         {
             public readonly string SignUp = "SignUp";
+            public readonly string SignIn = "SignIn";
+            public readonly string SignOut = "SignOut";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string SignUp = "SignUp";
+            public const string SignIn = "SignIn";
+            public const string SignOut = "SignOut";
         }
 
 
@@ -90,6 +94,14 @@ namespace Plum.Controllers
         public ActionParamsClass_SignUp SignUpParams { get { return s_params_SignUp; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_SignUp
+        {
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_SignIn s_params_SignIn = new ActionParamsClass_SignIn();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SignIn SignInParams { get { return s_params_SignIn; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SignIn
         {
             public readonly string model = "model";
         }
@@ -103,8 +115,10 @@ namespace Plum.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string SignIn = "SignIn";
                 public readonly string SignUp = "SignUp";
             }
+            public readonly string SignIn = "~/Views/Account/SignIn.cshtml";
             public readonly string SignUp = "~/Views/Account/SignUp.cshtml";
         }
     }
@@ -135,6 +149,40 @@ namespace Plum.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             SignUpOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SignIn()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignIn, "https");
+            SignInOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SignInOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Plum.ViewModels.Account.SignInViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SignIn(Plum.ViewModels.Account.SignInViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignIn, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            SignInOverride(callInfo, model);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SignOutOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SignOut()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SignOut, "https");
+            SignOutOverride(callInfo);
+            return callInfo;
         }
 
     }

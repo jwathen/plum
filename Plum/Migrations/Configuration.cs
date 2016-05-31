@@ -5,7 +5,7 @@ namespace Plum.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Plum.Models.PlumDataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Plum.Models.ApplicationDataContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Plum.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Plum.Models.PlumDataContext context)
+        protected override void Seed(Plum.Models.ApplicationDataContext context)
         {
             //  This method will be called after migrating to the latest version.
 
