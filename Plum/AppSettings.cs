@@ -16,9 +16,32 @@ namespace Plum
             get { return ConfigurationManager.AppSettings["ClientValidationEnabled"]; }
         }
 
+        public static string ReleaseProfile
+        {
+            get { return ConfigurationManager.AppSettings["ReleaseProfile"]; }
+        }
+
         public static string UnobtrusiveJavaScriptEnabled
         {
             get { return ConfigurationManager.AppSettings["UnobtrusiveJavaScriptEnabled"]; }
+        }
+
+        public static string UsePhysicalViewsIfNewer
+        {
+            get { return ConfigurationManager.AppSettings["UsePhysicalViewsIfNewer"]; }
+        }
+
+        public static string Version
+        {
+            get { return ConfigurationManager.AppSettings["Version"]; }
+        }
+
+        public static class Vs
+        {
+            public static string EnableBrowserLink
+            {
+                get { return ConfigurationManager.AppSettings["vs:EnableBrowserLink"]; }
+            }
         }
 
         public static class Webpages

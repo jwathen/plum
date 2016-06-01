@@ -15,6 +15,7 @@
     <link href="@Html.FileVersionUrl(Links.Content.Styles.Site_min_css)" rel="stylesheet" />
     <title>@ViewBag.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-version" content="@AppSettings.Version (@AppSettings.ReleaseProfile)" />
 </head>
 <body class="app @controller() @action()">
     <nav class="navbar navbar-default">

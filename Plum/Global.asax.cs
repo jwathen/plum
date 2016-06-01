@@ -5,8 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.WebPages;
 using AttributeRouting.Web.Mvc;
 using Plum.Controllers;
+using RazorGenerator.Mvc;
 
 namespace Plum
 {
@@ -18,7 +20,9 @@ namespace Plum
         {
             Database.SetInitializer<Models.ApplicationDataContext>(null);
             FluentValidation.Mvc.FluentValidationModelValidatorProvider.Configure();
+
             RegisterRoutes(RouteTable.Routes);
+            RegisterViewEngines(ViewEngines.Engines);
         }
 
         protected void RegisterRoutes(RouteCollection routes)
@@ -30,6 +34,21 @@ namespace Plum
                 x.AppendTrailingSlash = true;
                 x.UseLowercaseRoutes = true;
             });
+        }
+
+        protected void RegisterViewEngines(ViewEngineCollection engines)
+        {
+            var engine = new PrecompiledMvcEngine(typeof(MvcApplication).Assembly)
+            {
+                UsePhysicalViewsIfNewer = bool.Parse(AppSettings.UsePhysicalViewsIfNewer),
+                FileExtensions = new[] { "cshtml" }
+            };
+
+            engines.Clear();
+            engines.Insert(0, engine);
+
+            // StartPage lookups are done by WebPages. 
+            VirtualPathFactoryManager.RegisterVirtualPathFactory(engine);
         }
     }
 }
