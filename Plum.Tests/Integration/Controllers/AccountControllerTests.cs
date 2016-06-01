@@ -8,11 +8,18 @@ using Plum.Tests.TestHelpers;
 using Plum.ViewModels.Account;
 using TestStack.FluentMVCTesting;
 using Should;
+using Plum.Tests.TestHelpers.Mvc;
 
 namespace Plum.Tests.Integration.Controllers
 {
     public class AccountControllerTests : WebTestBase<AccountController>
     {
+        public void SignUp_Renders()
+        {
+            _controller.WithCallTo(x => x.SignUp())
+                .ShouldRenderDefaultViewHtml();
+        }
+
         public void SignUp_CreatesABusiness()
         {
             Database.Businesses.RemoveRange(Database.Businesses.Where(x => x.Account.EmailAddress == "new_business@site.com"));
@@ -29,6 +36,12 @@ namespace Plum.Tests.Integration.Controllers
             business.Name.ShouldEqual("New Business");
         }
 
+        public void SignIn_Renders()
+        {
+            _controller.WithCallTo(x => x.SignIn())
+                .ShouldRenderDefaultViewHtml();
+        }
+
         public void SignIn_GivenCorrectPassword_SignsIn()
         {
             var model = new SignInViewModel();
@@ -39,6 +52,12 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRedirectTo<HomeController>(x => x.Index());
 
             AppSession.BusinessName.ShouldEqual("Test Business");
+        }
+
+        public void SignOut_RedirectsToHome()
+        {
+            _controller.WithCallTo(x => x.SignOut())
+                .ShouldRedirectTo<HomeController>(x => x.Index());
         }
     }
 }

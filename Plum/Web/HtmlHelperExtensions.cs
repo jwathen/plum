@@ -47,5 +47,17 @@ namespace Plum.Web
 
             return HttpRuntime.Cache[rootRelativePath] as string;
         }
+
+        public static HtmlString AntiForgeryToken2(this HtmlHelper html)
+        {
+            if (HttpContext.Current == null)
+            {
+                return new HtmlString(string.Empty);
+            }
+            else
+            {
+                return html.AntiForgeryToken();
+            }
+        }
     }
 }

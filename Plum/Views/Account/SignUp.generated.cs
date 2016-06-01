@@ -176,7 +176,7 @@ WriteLiteral("                ");
 
             
             #line 25 "..\..\Views\Account\SignUp.cshtml"
-           Write(Html.AntiForgeryToken());
+           Write(Html.AntiForgeryToken2());
 
             
             #line default

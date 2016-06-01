@@ -132,7 +132,7 @@ namespace Plum.Tests.TestHelpers.Mvc
             }
             catch (ArgumentException ex) when (ExceptionLooksLikeACallToHtmlAntiForgeryToken(ex))
             {
-                throw new InvalidOperationException("Html.AntiForgeryToken can't be used in integration tests.  Use Html.AntiForgeryToken2 instead. (in SharedComponentsMvc.Helpers)");
+                throw new InvalidOperationException("Html.AntiForgeryToken can't be used in integration tests.  Use Html.AntiForgeryToken2 instead. (in Plum.Web.HtmlHelperExtensions)");
             }
             catch (InvalidOperationException ex) when (ExceptionLooksLikeAChildAction(ex))
             {
@@ -158,7 +158,7 @@ namespace Plum.Tests.TestHelpers.Mvc
             }
             catch (ArgumentException ex) when (ExceptionLooksLikeACallToHtmlAntiForgeryToken(ex))
             {
-                throw new InvalidOperationException("Html.AntiForgeryToken can't be used in integration tests.  Use Html.AntiForgeryToken2 instead. (in SharedComponentsMvc.Helpers)");
+                throw new InvalidOperationException("Html.AntiForgeryToken can't be used in integration tests.  Use Html.AntiForgeryToken2 instead. (in Plum.Web.HtmlHelperExtensions)");
             }
             catch (InvalidOperationException ex) when (ExceptionLooksLikeAChildAction(ex))
             {

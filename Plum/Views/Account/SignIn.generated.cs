@@ -176,26 +176,12 @@ WriteLiteral("                ");
 
             
             #line 24 "..\..\Views\Account\SignIn.cshtml"
-           Write(Html.AntiForgeryToken());
+           Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div");
-
-WriteLiteral(" id=\"CustomerDetails\"");
-
-WriteLiteral(" class=\"modal\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"modal-dialog\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"modal-content\"");
-
-WriteLiteral(">\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
+WriteLiteral("\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>");
 
         }
     }
