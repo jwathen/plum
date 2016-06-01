@@ -25,7 +25,7 @@ using System.Web.Routing;
 using T4MVC;
 namespace T4MVC
 {
-    public class SharedController
+    public class CustomerController
     {
 
         static readonly ViewsClass s_views = new ViewsClass();
@@ -38,17 +38,6 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string _Layout = "_Layout";
-                public readonly string _VIewStart = "_VIewStart";
-            }
-            public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
-            public readonly string _VIewStart = "~/Views/Shared/_VIewStart.cshtml";
-            static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
-            public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public partial class _EditorTemplatesClass
-            {
-                public readonly string Customer = "Customer";
             }
         }
     }

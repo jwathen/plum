@@ -441,7 +441,18 @@ WriteAttribute("src", Tuple.Create(" src=\"", 3897), Tuple.Create("\"", 3954)
 , 3903), false)
 );
 
-WriteLiteral("></script>\r\n</body>\r\n</html>\r\n");
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 89 "..\..\Views\Shared\_Layout.cshtml"
+Write(RenderSection("scripts", required: false));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n</body>\r\n</html>\r\n");
 
         }
     }

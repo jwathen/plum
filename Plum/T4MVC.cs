@@ -30,6 +30,7 @@ public static partial class MVC
     public static Plum.Controllers.AccountController Account = new Plum.Controllers.T4MVC_AccountController();
     public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
     public static Plum.Controllers.QueueController Queue = new Plum.Controllers.T4MVC_QueueController();
+    public static T4MVC.CustomerController Customer = new T4MVC.CustomerController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -72,9 +73,20 @@ namespace Links
         private const string URLPATH = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Queue {
+            private const string URLPATH = "~/Scripts/Queue";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string Manage_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Manage.min.js") ? Url("Manage.min.js") : Url("Manage.js");
+            public static readonly string Manage_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Manage.es5.min.js") ? Url("Manage.es5.min.js") : Url("Manage.es5.js");
+            public static readonly string Manage_es5_min_js = Url("Manage.es5.min.js");
+        }
+    
         public static readonly string Site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.js") ? Url("Site.min.js") : Url("Site.js");
         public static readonly string Site_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.es5.min.js") ? Url("Site.es5.min.js") : Url("Site.es5.js");
         public static readonly string Site_es5_min_js = Url("Site.es5.min.js");
+        public static readonly string Site_min_js = Url("Site.min.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -213,6 +225,13 @@ namespace Links
     {
         public static partial class Scripts 
         {
+            public static partial class Queue 
+            {
+                public static class Assets
+                {
+                    public const string Manage_js = "~/Scripts/Queue/Manage.js"; 
+                }
+            }
             public static class Assets
             {
                 public const string Site_js = "~/Scripts/Site.js"; 

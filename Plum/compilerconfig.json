@@ -6,5 +6,9 @@
   {
     "outputFile": "Scripts/Site.es5.js",
     "inputFile": "Scripts/Site.js"
+  },
+  {
+    "outputFile": "Scripts/Queue/Manage.es5.js",
+    "inputFile": "Scripts/Queue/Manage.js"
   }
 ]

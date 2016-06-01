@@ -167,6 +167,13 @@
     <Content Include="Images\testimonial5.jpg" />
     <Content Include="Images\testimonial6.jpg" />
     <Content Include="Images\testimonial7.jpg" />
+    <Content Include="Scripts\Queue\Manage.es5.js">
+      <DependentUpon>Manage.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Queue\Manage.es5.min.js">
+      <DependentUpon>Manage.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Queue\Manage.js" />
     <Content Include="Scripts\Site.es5.js">
       <DependentUpon>Site.js</DependentUpon>
     </Content>
@@ -174,6 +181,9 @@
       <DependentUpon>Site.es5.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\Site.min.js">
+      <DependentUpon>Site.js</DependentUpon>
+    </Content>
     <Content Include="Styles\Site.css">
       <DependentUpon>Site.scss</DependentUpon>
     </Content>
@@ -259,6 +269,7 @@
     <Content Include="Styles\bootstrapsource\bootstrap\mixins\_background-variant.scss" />
     <Content Include="Styles\bootstrapsource\bootstrap\mixins\_alerts.scss" />
     <Content Include="Styles\Home\Index.scss" />
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -286,6 +297,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AppControllerBase.cs" />
     <Compile Include="Controllers\QueueController.cs" />
+    <Compile Include="CustomerController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -338,15 +352,46 @@
     </Compile>
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
     <Compile Include="ViewModels\Account\SignUpViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
+    <Compile Include="Views\Account\SignIn.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignIn.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\SignUp.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignUp.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\Index.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\_Layout.generated.cs">
+    <Compile Include="Views\Queue\AddCustomerModal.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>_Layout.cshtml</DependentUpon>
+      <DependentUpon>AddCustomerModal.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Queue\CustomerView.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Queue\Manage.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Manage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Queue\ManageCustomerModal.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageCustomerModal.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditorTemplates\CustomerViewModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerViewModel.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\_Layout1.generated.cs">
       <AutoGen>True</AutoGen>
@@ -387,9 +432,34 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Account\SignUp.cshtml" />
-    <Content Include="Views\Account\SignIn.cshtml" />
-    <Content Include="Views\Queue\CustomerView.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SignUp.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\SignIn.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SignIn.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Queue\CustomerView.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CustomerView.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Queue\Manage.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Manage.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\EditorTemplates\CustomerViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CustomerViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Queue\ManageCustomerModal.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ManageCustomerModal.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Queue\AddCustomerModal.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AddCustomerModal.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

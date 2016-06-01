@@ -1,0 +1,42 @@
+﻿@model Plum.Models.Queue
+@using Plum.ViewModels.Customer
+@{
+    ViewBag.Title = "Manage";
+}
+<div class="container">
+    <h3>@Model.Business.Name</h3>
+    <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#AddCustomerModal">
+        <i class="fa fa-plus"></i>
+        Add Party
+    </button>
+    <br />
+    @if (Model.Customers.Count > 1)
+    {
+        <p class="text-muted">
+            You can rearrange this list by dragging parties.
+        </p>
+    }
+    <ul class="list-group text-center">
+        @foreach (var customer in Model.OrderedCustomers())
+        {
+            <li class="list-group-item" data-manage-customer-id="@customer.Id">
+                @customer.Name (@customer.NumberInParty) Waited @customer.TimeWaited().Humanize()
+            </li>
+        }
+    </ul>
+</div>
+<div id="ManageCustomerModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<div id="AddCustomerModal" class="modal">
+    @Html.Partial(MVC.Queue.Views.AddCustomerModal, new CustomerViewModel { QueueId = Model.Id })
+</div>
+@section Scripts {
+    <script>
+        window.viewData = {};
+        window.viewData.manageCustomerModalUrl = '@Url.Action(MVC.Queue.ManageCustomerModal())';
+    </script>
+    <script src="@Html.FileVersionUrl(Links.Scripts.Queue.Manage_es5_min_js)"></script>
+}

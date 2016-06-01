@@ -73,6 +73,34 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CancelPlaceInLine, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Manage()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Manage, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ManageCustomerModal()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ManageCustomerModal, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> RemoveCustomer()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveCustomer, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddCustomer()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomer, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QueueController Actions { get { return MVC.Queue; } }
@@ -91,6 +119,10 @@ namespace Plum.Controllers
         {
             public readonly string CustomerView = "CustomerView";
             public readonly string CancelPlaceInLine = "CancelPlaceInLine";
+            public readonly string Manage = "Manage";
+            public readonly string ManageCustomerModal = "ManageCustomerModal";
+            public readonly string RemoveCustomer = "RemoveCustomer";
+            public readonly string AddCustomer = "AddCustomer";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -98,6 +130,10 @@ namespace Plum.Controllers
         {
             public const string CustomerView = "CustomerView";
             public const string CancelPlaceInLine = "CancelPlaceInLine";
+            public const string Manage = "Manage";
+            public const string ManageCustomerModal = "ManageCustomerModal";
+            public const string RemoveCustomer = "RemoveCustomer";
+            public const string AddCustomer = "AddCustomer";
         }
 
 
@@ -117,6 +153,38 @@ namespace Plum.Controllers
         {
             public readonly string urlToken = "urlToken";
         }
+        static readonly ActionParamsClass_Manage s_params_Manage = new ActionParamsClass_Manage();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Manage ManageParams { get { return s_params_Manage; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Manage
+        {
+            public readonly string queueId = "queueId";
+        }
+        static readonly ActionParamsClass_ManageCustomerModal s_params_ManageCustomerModal = new ActionParamsClass_ManageCustomerModal();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ManageCustomerModal ManageCustomerModalParams { get { return s_params_ManageCustomerModal; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ManageCustomerModal
+        {
+            public readonly string customerId = "customerId";
+        }
+        static readonly ActionParamsClass_RemoveCustomer s_params_RemoveCustomer = new ActionParamsClass_RemoveCustomer();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_RemoveCustomer RemoveCustomerParams { get { return s_params_RemoveCustomer; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_RemoveCustomer
+        {
+            public readonly string customerId = "customerId";
+        }
+        static readonly ActionParamsClass_AddCustomer s_params_AddCustomer = new ActionParamsClass_AddCustomer();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddCustomer AddCustomerParams { get { return s_params_AddCustomer; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddCustomer
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -127,9 +195,15 @@ namespace Plum.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string AddCustomerModal = "AddCustomerModal";
                 public readonly string CustomerView = "CustomerView";
+                public readonly string Manage = "Manage";
+                public readonly string ManageCustomerModal = "ManageCustomerModal";
             }
+            public readonly string AddCustomerModal = "~/Views/Queue/AddCustomerModal.cshtml";
             public readonly string CustomerView = "~/Views/Queue/CustomerView.cshtml";
+            public readonly string Manage = "~/Views/Queue/Manage.cshtml";
+            public readonly string ManageCustomerModal = "~/Views/Queue/ManageCustomerModal.cshtml";
         }
     }
 
@@ -159,6 +233,54 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CancelPlaceInLine, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "urlToken", urlToken);
             CancelPlaceInLineOverride(callInfo, urlToken);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ManageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? queueId);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Manage(int? queueId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Manage, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "queueId", queueId);
+            ManageOverride(callInfo, queueId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ManageCustomerModalOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int customerId);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ManageCustomerModal(int customerId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ManageCustomerModal, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customerId", customerId);
+            ManageCustomerModalOverride(callInfo, customerId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void RemoveCustomerOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int customerId);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> RemoveCustomer(int customerId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveCustomer, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customerId", customerId);
+            RemoveCustomerOverride(callInfo, customerId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void AddCustomerOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Plum.ViewModels.Customer.CustomerViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> AddCustomer(Plum.ViewModels.Customer.CustomerViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomer, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            AddCustomerOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

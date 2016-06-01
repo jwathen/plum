@@ -1,0 +1,25 @@
+﻿@model Plum.ViewModels.Customer.CustomerViewModel
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form action="@Url.Action(MVC.Queue.AddCustomer())" method="post">
+            @Html.ValidationSummary()
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    Add Party to List
+                </h4>
+            </div>
+            <div class="modal-body">
+                @Html.EditorForModel()
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-block btn-primary" value="Add Party" />
+            </div>
+            @Html.HiddenFor(x => x.QueueId)
+            @Html.AntiForgeryToken()
+        </form>
+    </div>
+</div>

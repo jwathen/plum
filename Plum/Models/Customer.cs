@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace Plum.Models
@@ -44,6 +45,25 @@ namespace Plum.Models
                 Message = message,
                 Type = type
             });
+        }
+
+        public void GenerateUrlToken(ApplicationDataContext db)
+        {
+            string token = string.Empty;
+            char[] characters = "abcdefghijklmnopqrstuvwxyz".ToArray();
+            var random = new Random();
+
+            do
+            {
+                token = string.Empty;
+                while (token.Length < 8)
+                {
+                    token += characters[random.Next(0, characters.Length - 1)];
+                }
+            }
+            while (db.Customers.Any(x => x.UrlToken == token));
+
+            UrlToken = token.ToString();
         }
     }
 }

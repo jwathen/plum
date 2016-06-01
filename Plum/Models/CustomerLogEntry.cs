@@ -12,5 +12,33 @@ namespace Plum.Models
         public DateTime DateInserted { get; set; }
         public string Message { get; set; }
         public CustomerLogEntryType Type { get; set; }
+
+        public TimeSpan Age()
+        {
+            return DateTime.UtcNow.Subtract(DateInserted);
+        }
+
+        public string Icon()
+        {
+            return "fa-clock-o";
+
+            switch (Type)
+            {
+                case CustomerLogEntryType.AddedToList:
+                    return "fa-plus";
+                case CustomerLogEntryType.ReadyTextMessageSent:
+                    return "fa-comment";
+                case CustomerLogEntryType.MovedToEndOfList:
+                    return "fa-arrow-down";
+                case CustomerLogEntryType.NameChanged:
+                    return "fa-person";
+                case CustomerLogEntryType.NumberInPartyChanged:
+                    return "fa-person";
+                case CustomerLogEntryType.PhoneNumberChanged:
+                    return "fa-person";
+                default:
+                    return "fa-clock-o";
+            }
+        }
     }
 }
