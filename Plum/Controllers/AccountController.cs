@@ -57,13 +57,15 @@ namespace Plum.Controllers
                 return View(model);
             }
 
-            var business = await Database.Businesses.FirstOrDefaultAsync(x => x.Account.EmailAddress == model.EmailAddress);
+            var business = await Database.Businesses
+                .FirstOrDefaultAsync(x => x.Account.EmailAddress == model.EmailAddress);
             bool success = business != null && business.Account.VerifyPassword(model.Password);
 
             if (success)
             {
                 AppSession.SignIn(business, model.RememberMe);
-                return RedirectToAction(MVC.Home.Index());
+                int queueId = business.Queues.First().Id;
+                return RedirectToAction(MVC.Queue.Manage(queueId));
             }
             else
             {

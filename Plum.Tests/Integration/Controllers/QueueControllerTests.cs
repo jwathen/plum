@@ -76,7 +76,32 @@ namespace Plum.Tests.Integration.Controllers
         public void Manage_GivenInvalidQueueId_Return404()
         {
             _controller.WithCallTo(x => x.Manage(-1))
-                .ShouldRedirectTo<HomeController>(x => x.NotFound());
+                .ShouldGiveHttpStatus(404);
+        }
+
+        public void ManageCustomerModal_CusomterId_ReturnsView()
+        {
+            SignIn();
+            int customerId = TestBusiness.Queues.First().Customers.First().Id;
+
+            _controller.WithCallTo(x => x.ManageCustomerModal(customerId))
+                .ShouldRenderDefaultViewHtml()
+                .ShouldContainText("John");
+        }
+
+        public void ManageCustomerModal_GivenCustomerIdForOtherBusiness_ReturnNotAuthorized()
+        {
+            SignIn();
+            int otherBusinessCustomerId = OtherBusiness.Queues.First().Customers.First().Id;
+
+            _controller.WithCallTo(x => x.ManageCustomerModal(otherBusinessCustomerId))
+                .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
+        }
+
+        public void ManageCustomerModal_GivenInvalidCustomerId_Return404()
+        {
+            _controller.WithCallTo(x => x.ManageCustomerModal(-1))
+                .ShouldGiveHttpStatus(404);
         }
     }
 }

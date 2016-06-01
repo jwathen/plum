@@ -175,22 +175,21 @@ WriteAttribute("content", Tuple.Create(" content=\"", 760), Tuple.Create("\"", 8
 
 WriteLiteral(" />\r\n</head>\r\n<body");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 840), Tuple.Create("\"", 875)
-, Tuple.Create(Tuple.Create("", 848), Tuple.Create("app", 848), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 840), Tuple.Create("\"", 871)
             
             #line 20 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 851), Tuple.Create<System.Object, System.Int32>(controller()
+, Tuple.Create(Tuple.Create("", 848), Tuple.Create<System.Object, System.Int32>(controller()
             
             #line default
             #line hidden
-, 852), false)
+, 848), false)
             
             #line 20 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 865), Tuple.Create<System.Object, System.Int32>(action()
+, Tuple.Create(Tuple.Create(" ", 861), Tuple.Create<System.Object, System.Int32>(action()
             
             #line default
             #line hidden
-, 866), false)
+, 862), false)
 );
 
 WriteLiteral(">\r\n    <nav");
@@ -208,6 +207,8 @@ WriteLiteral(" class=\"navbar-header\"");
 WriteLiteral(">\r\n                <button");
 
 WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" data-toggle=\"collapse\"");
 
 WriteLiteral(" data-target=\"#main-navigation\"");
 
@@ -304,14 +305,14 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n                        </li>\r\n                        <li>\r\n           " +
 "                 <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2248), Tuple.Create("\"", 2291)
+WriteAttribute("action", Tuple.Create(" action=\"", 2267), Tuple.Create("\"", 2310)
             
             #line 51 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2257), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
+, Tuple.Create(Tuple.Create("", 2276), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
             
             #line default
             #line hidden
-, 2257), false)
+, 2276), false)
 );
 
 WriteLiteral(">\r\n                                <button");
@@ -334,14 +335,14 @@ WriteLiteral(">Sign Out</button>\r\n                            </form>\r\n     
             #line hidden
 WriteLiteral("                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2580), Tuple.Create("\"", 2616)
+WriteAttribute("href", Tuple.Create(" href=\"", 2599), Tuple.Create("\"", 2635)
             
             #line 59 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2587), Tuple.Create<System.Object, System.Int32>(FormsAuthentication.LoginUrl
+, Tuple.Create(Tuple.Create("", 2606), Tuple.Create<System.Object, System.Int32>(FormsAuthentication.LoginUrl
             
             #line default
             #line hidden
-, 2587), false)
+, 2606), false)
 );
 
 WriteLiteral(" class=\"btn btn-default navbar-btn navbar-right\"");
@@ -454,14 +455,14 @@ WriteLiteral(" src=\"http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.un
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4007), Tuple.Create("\"", 4072)
+WriteAttribute("src", Tuple.Create(" src=\"", 4026), Tuple.Create("\"", 4091)
             
             #line 89 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4013), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+, Tuple.Create(Tuple.Create("", 4032), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 4013), false)
+, 4032), false)
 );
 
 WriteLiteral("></script>\r\n");

@@ -181,7 +181,17 @@ WriteLiteral("                ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n");
+WriteLiteral("\r\n            </form>\r\n            <p>\r\n                <br />\r\n                A" +
+"lready have an account? ");
+
+            
+            #line 29 "..\..\Views\Account\SignUp.cshtml"
+                                    Write(Html.ActionLink("Sign In", MVC.Account.SignIn()));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n");
 
         }
     }

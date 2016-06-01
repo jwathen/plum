@@ -46,11 +46,12 @@ namespace Plum.Tests.Integration.Controllers
         public void SignIn_GivenCorrectPassword_SignsIn()
         {
             var model = new SignInViewModel();
-            model.EmailAddress = "test_business@site.com";
+            model.EmailAddress = TestBusiness.Account.EmailAddress;
             model.Password = "passw0rd";
+            int queueId = TestBusiness.Queues.First().Id;
 
             _controller.WithCallTo(x => x.SignIn(model))
-                .ShouldRedirectTo<HomeController>(x => x.Index());
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage, new { queueId = queueId });
 
             AppSession.BusinessName.ShouldEqual("Test Business");
         }

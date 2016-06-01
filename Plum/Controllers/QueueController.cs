@@ -84,10 +84,16 @@ namespace Plum.Controllers
         {
             var customer = await Database.Customers
                 .Include(x => x.LogEntries)
+                .Include(x => x.Queue)
+                .Include(x => x.Queue.Business)
                 .FirstOrDefaultAsync(x => x.Id == customerId);
             if (customer == null)
             {
                 return HttpNotFound();
+            }
+            else if (!Security.UserOwns(customer))
+            {
+                return RedirectToAction(MVC.Home.NotAuthorized());
             }
 
             return View(customer);
@@ -100,25 +106,17 @@ namespace Plum.Controllers
         {
             var customer = await Database.Customers
                 .Include(x => x.Queue)
+                .Include(x => x.Queue.Business)
                 .FirstOrDefaultAsync(x => x.Id == customerId);
 
-            if (customer == null)
-            {
-                if (AppSession.BusinessId.HasValue)
-                {
-                    return RedirectToAction(MVC.Queue.Manage(AppSession.BusinessId.Value));
-                }
-                else
-                {
-                    return RedirectToAction(MVC.Home.Index());
-                }
-            }
-            else
+            if (customer == null && Security.UserOwns(customer))
             {
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
-                return RedirectToAction(MVC.Queue.Manage(customer.Queue.BusinessId));
+                return RedirectToAction(MVC.Queue.Manage(customer.Queue.Id));
             }
+
+            return RedirectToAction(MVC.Queue.Manage());
         }
 
         [Authorize]
@@ -131,6 +129,11 @@ namespace Plum.Controllers
                 return View(model);
             }
             var queue = await Database.Queues.FindAsync(model.QueueId);
+            
+            if (!Security.UserOwns(queue))
+            {
+                return RedirectToAction(MVC.Home.NotAuthorized());
+            }
 
             var customer = new Plum.Models.Customer();
             customer.Name = model.Name;
