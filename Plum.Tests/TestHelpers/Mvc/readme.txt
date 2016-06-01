@@ -1,0 +1,1 @@
+﻿The entire Mvc folder is just a bunch of ugly gymnastics to be able to render views to html without an http context.

@@ -9,6 +9,7 @@ using System.Web.Routing;
 using Plum.Controllers;
 using Plum.Models;
 using Plum.Tests.TestHelpers.Mocks;
+using Plum.Tests.TestHelpers.Mvc;
 using Plum.Web;
 
 namespace Plum.Tests.TestHelpers
@@ -26,6 +27,7 @@ namespace Plum.Tests.TestHelpers
             _controller = new TController();
             _controller.ControllerContext = new ControllerContext(HttpContext, RouteData, _controller);
             _controller.Url = new UrlHelper(new RequestContext(HttpContext, RouteData));
+            WebApplicationTestEnvironment.Setup<TController>();
 
             // Seed
             Database.Businesses.RemoveRange(Database.Businesses.Where(x => x.Account.EmailAddress == "test_business@site.com"));

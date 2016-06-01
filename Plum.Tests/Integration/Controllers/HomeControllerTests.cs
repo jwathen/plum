@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Plum.Controllers;
 using Plum.Tests.TestHelpers;
 using TestStack.FluentMVCTesting;
+using Plum.Tests.TestHelpers.Mvc;
 
 namespace Plum.Tests.Integration.Controllers
 {
@@ -14,7 +15,8 @@ namespace Plum.Tests.Integration.Controllers
         public void Index_Renders()
         {
             _controller.WithCallTo(x => x.Index())
-                .ShouldRenderDefaultView();
+                .ShouldRenderDefaultViewHtml()
+                .ShouldMatchCss("div.jumbo");
         }
     }
 }

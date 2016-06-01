@@ -70,7 +70,6 @@ namespace Plum.Controllers
             }
         }
 
-
         [GET("account/sign_out")]
         public virtual ActionResult SignOut()
         {

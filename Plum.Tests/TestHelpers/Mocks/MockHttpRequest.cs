@@ -26,6 +26,7 @@ namespace Plum.Tests.TestHelpers.Mocks
         private NameValueCollection _queryString = new NameValueCollection();
         private string _httpMethod = "GET";
         private string _userHostAddress;
+        private bool _isAuthenticated;
 
         public override Uri Url
         {
@@ -195,6 +196,14 @@ namespace Plum.Tests.TestHelpers.Mocks
             get
             {
                 return _httpMethod;
+            }
+        }
+
+        public override bool IsAuthenticated
+        {
+            get
+            {
+                return _isAuthenticated;
             }
         }
 

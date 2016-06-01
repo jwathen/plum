@@ -127,6 +127,7 @@
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="Integration\Controllers\AccountControllerTests.cs" />
     <Compile Include="Integration\Controllers\HomeControllerTests.cs" />
+    <Compile Include="Integration\Controllers\QueueControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers\Mocks\MockHttpContext.cs" />
     <Compile Include="TestHelpers\Mocks\MockHttpItemsCollection.cs" />
@@ -135,6 +136,12 @@
     <Compile Include="TestHelpers\Mocks\MockHttpResponse.cs" />
     <Compile Include="TestHelpers\Mocks\MockHttpServerUtility.cs" />
     <Compile Include="TestHelpers\Mocks\MockHttpSessionState.cs" />
+    <Compile Include="TestHelpers\Mvc\FluentMvcTestingExtensions.cs" />
+    <Compile Include="TestHelpers\Mvc\RenderedHtmlTestResult.cs" />
+    <Compile Include="TestHelpers\Mvc\TestViewEngine\DefaultViewPageActivator.cs" />
+    <Compile Include="TestHelpers\Mvc\TestViewEngine\TestCompositeProcompiledViewEngine.cs" />
+    <Compile Include="TestHelpers\Mvc\TestViewEngine\TestPrecompiledMvcView.cs" />
+    <Compile Include="TestHelpers\Mvc\WebApplicationTestEnvironment.cs" />
     <Compile Include="TestHelpers\WebTestBase.cs" />
     <Compile Include="Unit\Models\AccountTests.cs" />
   </ItemGroup>
@@ -148,7 +155,9 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="TestHelpers\Mvc\readme.txt" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
