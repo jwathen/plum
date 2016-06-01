@@ -50,13 +50,19 @@ namespace Plum.Web
 
         public void SignIn(Business business, bool rememberMe)
         {
-            FormsAuthentication.SetAuthCookie(business.Id.ToString(), rememberMe);
+            if (!MvcApplication.IS_TEST)
+            {
+                FormsAuthentication.SetAuthCookie(business.Id.ToString(), rememberMe);
+            }
             RegenerateSession(business);
         }
 
         public void SignOut()
         {
-            FormsAuthentication.SignOut();
+            if (!MvcApplication.IS_TEST)
+            {
+                FormsAuthentication.SignOut();
+            }
             _httpContext.Session.Clear();
         }
 

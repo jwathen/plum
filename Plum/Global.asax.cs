@@ -12,6 +12,8 @@ namespace Plum
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static bool IS_TEST = false;
+
         protected void Application_Start()
         {
             Database.SetInitializer<Models.ApplicationDataContext>(null);

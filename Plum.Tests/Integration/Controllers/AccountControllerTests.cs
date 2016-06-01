@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Plum.Controllers;
+using Plum.Tests.TestHelpers;
+using Plum.ViewModels.Account;
+using TestStack.FluentMVCTesting;
+using Should;
+
+namespace Plum.Tests.Integration.Controllers
+{
+    public class AccountControllerTests : WebTestBase<AccountController>
+    {
+        public void SignUp_CreatesABusiness()
+        {
+            Database.Businesses.RemoveRange(Database.Businesses.Where(x => x.Account.EmailAddress == "new_business@site.com"));
+            Database.SaveChanges();
+
+            var model = new SignUpViewModel();
+            model.BusinessName = "New Business";
+            model.EmailAddress = "new_business@site.com";
+            model.Password = "password";
+            _controller.WithCallTo(x => x.SignUp(model))
+                .ShouldRedirectTo<HomeController>(x => x.Index());
+
+            var business = Database.Businesses.First(x => x.Account.EmailAddress == "new_business@site.com");
+            business.Name.ShouldEqual("New Business");
+        }
+
+        public void SignIn_GivenCorrectPassword_SignsIn()
+        {
+            var model = new SignInViewModel();
+            model.EmailAddress = "test_business@site.com";
+            model.Password = "passw0rd";
+
+            _controller.WithCallTo(x => x.SignIn(model))
+                .ShouldRedirectTo<HomeController>(x => x.Index());
+
+            AppSession.BusinessName.ShouldEqual("Test Business");
+        }
+    }
+}

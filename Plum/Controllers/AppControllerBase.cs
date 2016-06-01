@@ -26,7 +26,7 @@ namespace Plum.Controllers
             }
         }
 
-        protected ApplicationDataContext Database
+        public ApplicationDataContext Database
         {
             get
             {

@@ -7,7 +7,7 @@ using AttributeRouting.Web.Mvc;
 
 namespace Plum.Controllers
 {
-    public partial class HomeController : Controller
+    public partial class HomeController : AppControllerBase
     {
         [GET("")]
         public virtual ActionResult Index()

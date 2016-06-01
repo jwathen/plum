@@ -37,7 +37,7 @@ namespace Plum.Controllers
 
             AppSession.SignIn(business, false);
 
-            return Redirect(FormsAuthentication.GetRedirectUrl(business.Id.ToString(), false));
+            return RedirectToAction(MVC.Home.Index());
         }
 
         [GET("account/sign_in")]
@@ -61,7 +61,7 @@ namespace Plum.Controllers
             if (success)
             {
                 AppSession.SignIn(business, model.RememberMe);
-                return Redirect(FormsAuthentication.GetRedirectUrl(business.Id.ToString(), false));
+                return RedirectToAction(MVC.Home.Index());
             }
             else
             {
