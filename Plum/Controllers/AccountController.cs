@@ -32,7 +32,9 @@ namespace Plum.Controllers
             var business = new Business();
             business.Name = model.BusinessName;
             business.Account = Account.Create(model.EmailAddress, model.Password);
+            business.Queues.Add(new Queue { Name = "Default" });
             Database.Businesses.Add(business);
+
             await Database.SaveChangesAsync();
 
             AppSession.SignIn(business, false);

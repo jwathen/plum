@@ -12,7 +12,7 @@
             <i class="fa fa-times"></i>
             Cancel Place In Line
         </button>
-        @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken2()
         @Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken)
     </form>
     <br />

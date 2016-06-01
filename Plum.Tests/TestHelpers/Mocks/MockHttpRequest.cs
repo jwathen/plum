@@ -207,6 +207,11 @@ namespace Plum.Tests.TestHelpers.Mocks
             }
         }
 
+        public void SetIsAuthenticated(bool isAuthenticated)
+        {
+            _isAuthenticated = isAuthenticated;
+        }
+
         public override string UserHostAddress
         {
             get

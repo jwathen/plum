@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,6 +17,7 @@ namespace Plum.Tests.TestHelpers.Mocks
         private MockHttpRequest _request = new MockHttpRequest();
         private MockHttpResponse _response = new MockHttpResponse();
         private MockHttpSessionState _session = new MockHttpSessionState();
+        private IPrincipal _user = null;
 
         public override HttpRequestBase Request
         {
@@ -88,6 +90,19 @@ namespace Plum.Tests.TestHelpers.Mocks
             get
             {
                 return new MockHttpServerUtility();
+            }
+        }
+
+        public override IPrincipal User
+        {
+            get
+            {
+                return _user;
+            }
+
+            set
+            {
+                _user = value;
             }
         }
     }

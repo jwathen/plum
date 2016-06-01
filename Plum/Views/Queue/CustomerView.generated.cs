@@ -95,7 +95,7 @@ WriteLiteral("        ");
 
             
             #line 15 "..\..\Views\Queue\CustomerView.cshtml"
-   Write(Html.AntiForgeryToken());
+   Write(Html.AntiForgeryToken2());
 
             
             #line default
@@ -209,15 +209,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1229), Tuple.Create("\"", 1307)
-, Tuple.Create(Tuple.Create("", 1237), Tuple.Create("list-group-item", 1237), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1230), Tuple.Create("\"", 1308)
+, Tuple.Create(Tuple.Create("", 1238), Tuple.Create("list-group-item", 1238), true)
             
             #line 38 "..\..\Views\Queue\CustomerView.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1252), Tuple.Create<System.Object, System.Int32>(customer == Model ? "list-group-item-active" : null
+, Tuple.Create(Tuple.Create(" ", 1253), Tuple.Create<System.Object, System.Int32>(customer == Model ? "list-group-item-active" : null
             
             #line default
             #line hidden
-, 1253), false)
+, 1254), false)
 );
 
 WriteLiteral(">\r\n");

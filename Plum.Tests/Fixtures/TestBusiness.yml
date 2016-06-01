@@ -1,0 +1,21 @@
+﻿Name: Test Business
+Account:
+  EmailAddress: test_business@site.com
+  PasswordHash: SCyV24xHI2JYIMD0MOj1D35H6YaRfj573jVWVELVbx+aRsholaiExNQrvSRFOAWZ15/ZSrxZ8DgEJBiQkMJkEQ== # passw0rd
+  PasswordSalt: 20000.1I2Z+il+fNwXMj1dgA956Te+bRuWy3uoBFa1rIjjWgcDRw==
+Queues:
+  - Name: Default
+    Business: 
+    Customers:
+      - Name: John
+        NumberInParty: 2
+        PhoneNumber: 1234567890
+        UrlToken: john-token
+        DateAdded: 6/1/2016 15:00:00
+        SortOrder: 1
+      - Name: Bill
+        NumberInParty: 6
+        PhoneNumber: 1234445555
+        UrlToken: bill-token
+        DateAdded: 6/1/2016 15:02:00
+        SortOrder: 2

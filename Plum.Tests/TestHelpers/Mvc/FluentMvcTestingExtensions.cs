@@ -13,6 +13,7 @@ using Fizzler.Systems.HtmlAgilityPack;
 using System.Web;
 using Plum.Controllers;
 using Plum.Tests.TestHelpers.Mocks;
+using System.Web.Routing;
 
 namespace Plum.Tests.TestHelpers.Mvc
 {
@@ -116,6 +117,30 @@ namespace Plum.Tests.TestHelpers.Mvc
         {
             testResult.Html.ShouldContain(html);
             return testResult;
+        }
+
+        public static ControllerResultTest<TController> ShouldRedirectTo<TController>(this ControllerResultTest<TController> testResult, string controller, string action, object routeValues = null)
+            where TController : AppControllerBase
+        {
+            var actionResult = testResult.ActionResult as RedirectToRouteResult;
+            actionResult.RouteValues["controller"].ShouldEqual(controller);
+            actionResult.RouteValues["action"].ShouldEqual(action);
+            if (routeValues != null)
+            {
+                var dictionary = new RouteValueDictionary(routeValues);
+                foreach (string key in dictionary.Keys)
+                {
+                    dictionary[key].ShouldEqual(actionResult.RouteValues[key]);
+                }
+            }
+            return testResult;
+        }
+
+        public static ControllerResultTest<TController> ShouldRedirectTo<TController>(this ControllerResultTest<TController> testResult, string action, object routeValues = null)
+            where TController : AppControllerBase
+        {
+            string controller = typeof(TController).Name.Replace("Controller", string.Empty);
+            return testResult.ShouldRedirectTo(controller, action, routeValues);
         }
 
         private static RenderedHtmlResultTest<TController> RenderView<TController>(ControllerResultTest<TController> controllerResultTest, ViewResultTest viewResultTest)

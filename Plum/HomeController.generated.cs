@@ -76,12 +76,18 @@ namespace Plum.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string NotFound = "NotFound";
+            public readonly string Error = "Error";
+            public readonly string NotAuthorized = "NotAuthorized";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string NotFound = "NotFound";
+            public const string Error = "Error";
+            public const string NotAuthorized = "NotAuthorized";
         }
 
 
@@ -95,9 +101,15 @@ namespace Plum.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Error = "Error";
                 public readonly string Index = "Index";
+                public readonly string NotAuthorized = "NotAuthorized";
+                public readonly string NotFound = "NotFound";
             }
+            public readonly string Error = "~/Views/Home/Error.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string NotAuthorized = "~/Views/Home/NotAuthorized.cshtml";
+            public readonly string NotFound = "~/Views/Home/NotFound.cshtml";
         }
     }
 
@@ -114,6 +126,39 @@ namespace Plum.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index, "https");
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void NotFoundOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult NotFound()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotFound, "https");
+            NotFoundOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ErrorOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Error()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Error, "https");
+            ErrorOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void NotAuthorizedOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult NotAuthorized()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotAuthorized, "https");
+            NotAuthorizedOverride(callInfo);
             return callInfo;
         }
 

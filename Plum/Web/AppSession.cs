@@ -70,7 +70,7 @@ namespace Plum.Web
         {
             if (business == null)
             {
-                using (var db = new ApplicationDataContext())
+                using (var db = new AppDataContext())
                 {
                     business = db.Businesses.Find(BusinessId.Value);
                 }

@@ -47,7 +47,7 @@ namespace Plum.Models
             });
         }
 
-        public void GenerateUrlToken(ApplicationDataContext db)
+        public void GenerateUrlToken(AppDataContext db)
         {
             string token = string.Empty;
             char[] characters = "abcdefghijklmnopqrstuvwxyz".ToArray();

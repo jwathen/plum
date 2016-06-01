@@ -34,6 +34,7 @@ namespace Plum.Tests.Integration.Controllers
 
             var business = Database.Businesses.First(x => x.Account.EmailAddress == "new_business@site.com");
             business.Name.ShouldEqual("New Business");
+            business.Queues.First().Name.ShouldEqual("Default");
         }
 
         public void SignIn_Renders()

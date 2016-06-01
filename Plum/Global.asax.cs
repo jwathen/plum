@@ -18,7 +18,7 @@ namespace Plum
 
         protected void Application_Start()
         {
-            Database.SetInitializer<Models.ApplicationDataContext>(null);
+            Database.SetInitializer<Models.AppDataContext>(null);
             FluentValidation.Mvc.FluentValidationModelValidatorProvider.Configure();
 
             RegisterRoutes(RouteTable.Routes);

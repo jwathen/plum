@@ -329,7 +329,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Business.cs" />
-    <Compile Include="Models\ApplicationDataContext.cs" />
+    <Compile Include="Models\AppDataContext.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerLogEntry.cs" />
     <Compile Include="Models\CustomerLogEntryType.cs" />
@@ -405,6 +405,7 @@
       <DependentUpon>_ViewStart.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Web\ApplicationViewBase.cs" />
+    <Compile Include="Web\AppSecurity.cs" />
     <Compile Include="Web\HtmlHelperExtensions.cs" />
     <Compile Include="Web\AppSession.cs" />
   </ItemGroup>
@@ -456,6 +457,9 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>AddCustomerModal.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Home\NotFound.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Home\NotAuthorized.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -133,7 +133,7 @@ WriteLiteral("            ");
 
             
             #line 22 "..\..\Views\Queue\AddCustomerModal.cshtml"
-       Write(Html.AntiForgeryToken());
+       Write(Html.AntiForgeryToken2());
 
             
             #line default

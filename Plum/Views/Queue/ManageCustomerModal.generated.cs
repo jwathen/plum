@@ -143,7 +143,7 @@ WriteLiteral("        ");
 
             
             #line 22 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-   Write(Html.AntiForgeryToken());
+   Write(Html.AntiForgeryToken2());
 
             
             #line default
@@ -196,15 +196,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                <p>\r\n                    <i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1188), Tuple.Create("\"", 1212)
-, Tuple.Create(Tuple.Create("", 1196), Tuple.Create("fa", 1196), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1189), Tuple.Create("\"", 1213)
+, Tuple.Create(Tuple.Create("", 1197), Tuple.Create("fa", 1197), true)
             
             #line 35 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1198), Tuple.Create<System.Object, System.Int32>(entry.Icon()
+, Tuple.Create(Tuple.Create(" ", 1199), Tuple.Create<System.Object, System.Int32>(entry.Icon()
             
             #line default
             #line hidden
-, 1199), false)
+, 1200), false)
 );
 
 WriteLiteral("></i>\r\n");

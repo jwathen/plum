@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using Plum.Models;
 using Plum.Web;
 
@@ -11,22 +12,42 @@ namespace Plum.Controllers
     [RequireHttps]
     public abstract class AppControllerBase : Controller
     {
-        private readonly ApplicationDataContext _db;
+        private AppDataContext _db;
+        private AppSession _appSession;
+        private AppSecurity _appSecurity;
 
-        public AppControllerBase()
+        public void InitializePublic(RequestContext requestContext)
         {
-            _db = new ApplicationDataContext();            
+            // Expose to tests.
+            Initialize(requestContext);
+        }
+
+        protected override void Initialize(RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+
+            _db = new AppDataContext();
+            _appSession = new AppSession(requestContext.HttpContext);
+            _appSecurity = new AppSecurity(_appSession);
         }
 
         protected AppSession AppSession
         {
             get
             {
-                return new AppSession(HttpContext);
+                return _appSession;
             }
         }
 
-        public ApplicationDataContext Database
+        protected AppSecurity Security
+        {
+            get
+            {
+                return _appSecurity;
+            }
+        }
+
+        public AppDataContext Database
         {
             get
             {

@@ -6,9 +6,9 @@ using System.Web;
 
 namespace Plum.Models
 {
-    public class ApplicationDataContext : DbContext
+    public class AppDataContext : DbContext
     {
-        public ApplicationDataContext() : base("Plum")
+        public AppDataContext() : base("Plum")
         {
 
         }

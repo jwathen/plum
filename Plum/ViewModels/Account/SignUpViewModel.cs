@@ -33,7 +33,7 @@ namespace Plum.ViewModels.Account
 
         public bool BeUnique(string emailAddress)
         {
-            var db = new ApplicationDataContext();
+            var db = new AppDataContext();
             return !db.Businesses.Any(x => x.Account.EmailAddress == emailAddress);
         }
     }

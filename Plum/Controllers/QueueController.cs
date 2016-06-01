@@ -44,6 +44,7 @@ namespace Plum.Controllers
             return RedirectToAction(MVC.Home.Index());
         }
 
+        [Authorize]
         [GET("/queue/{queueId:int?}")]
         public virtual async Task<ActionResult> Manage(int? queueId)
         {
@@ -55,19 +56,29 @@ namespace Plum.Controllers
                     .Include(x => x.Customers)
                     .FirstOrDefaultAsync(x => x.Id == queueId.Value);
             }
+            else
+            {
+                int businessId = AppSession.BusinessId.Value;
+                queueId = await Database.Queues
+                    .Where(x => x.BusinessId == businessId)
+                    .Select(x => x.Id)
+                    .FirstAsync();
+                return RedirectToAction(MVC.Queue.Manage(queueId));
+            }
 
             if (model == null)
             {
-                model = new Models.Queue();
-                model.BusinessId = AppSession.BusinessId.Value;
-                Database.Queues.Add(model);
-                await Database.SaveChangesAsync();
-                return RedirectToAction(MVC.Queue.Manage(model.Id));
+                return HttpNotFound();
+            }
+            else if (!Security.UserOwns(model))
+            {
+                return RedirectToAction(MVC.Home.NotAuthorized());
             }
 
             return View(model);
         }
 
+        [Authorize]
         [GET("/queue/manage_customer_modal")]
         public virtual async Task<ActionResult> ManageCustomerModal(int customerId)
         {
@@ -82,6 +93,7 @@ namespace Plum.Controllers
             return View(customer);
         }
 
+        [Authorize]
         [ValidateAntiForgeryToken]
         [POST("/queue/remove_customer")]
         public virtual async Task<ActionResult> RemoveCustomer(int customerId)
@@ -109,6 +121,7 @@ namespace Plum.Controllers
             }
         }
 
+        [Authorize]
         [ValidateAntiForgeryToken]
         [POST("/queue/add_customer")]
         public virtual async Task<ActionResult> AddCustomer(CustomerViewModel model)

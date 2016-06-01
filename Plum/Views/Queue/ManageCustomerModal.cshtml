@@ -19,7 +19,7 @@
     <form action="@Url.Action(MVC.Queue.RemoveCustomer())" method="post">
         <button class="btn btn-block btn-default" type="submit">Remove From List</button>
         @Html.Hidden(MVC.Queue.RemoveCustomerParams.customerId, Model.Id)
-        @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken2()
     </form>
     <button class="btn btn-block btn-default" type="button">Move to End of List</button>
     @*<a href="#" class="btn btn-block btn-default">Edit Party</a>*@
