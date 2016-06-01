@@ -1,14 +1,14 @@
 ﻿[
   {
-    "outputFile": "Styles/Site.css",
-    "inputFile": "Styles/Site.scss"
+    "outputFile": "Content/Scripts/Site.es5.js",
+    "inputFile": "Content/Scripts/Site.js"
   },
   {
-    "outputFile": "Scripts/Site.es5.js",
-    "inputFile": "Scripts/Site.js"
+    "outputFile": "Content/Styles/Site.css",
+    "inputFile": "Content/Styles/Site.scss"
   },
   {
-    "outputFile": "Scripts/Queue/Manage.es5.js",
-    "inputFile": "Scripts/Queue/Manage.js"
+    "outputFile": "Content/Scripts/Queue/Manage.es5.js",
+    "inputFile": "Content/Scripts/Queue/Manage.js"
   }
 ]

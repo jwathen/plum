@@ -137,10 +137,10 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1087), Tuple.Create("\"", 1144)
+WriteAttribute("src", Tuple.Create(" src=\"", 1087), Tuple.Create("\"", 1152)
             
             #line 39 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1093), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Images.testimonial1_jpg)
+, Tuple.Create(Tuple.Create("", 1093), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
             
             #line default
             #line hidden
@@ -184,14 +184,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1989), Tuple.Create("\"", 2046)
+WriteAttribute("src", Tuple.Create(" src=\"", 1997), Tuple.Create("\"", 2062)
             
             #line 53 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1995), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Images.testimonial2_jpg)
+, Tuple.Create(Tuple.Create("", 2003), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
             
             #line default
             #line hidden
-, 1995), false)
+, 2003), false)
 );
 
 WriteLiteral(" alt=\"Woman wearing a poncho in the park.\"");

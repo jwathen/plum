@@ -227,10 +227,10 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
             #line hidden
 WriteLiteral("\';\r\n    </script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1320), Tuple.Create("\"", 1385)
+WriteAttribute("src", Tuple.Create(" src=\"", 1320), Tuple.Create("\"", 1393)
             
             #line 41 "..\..\Views\Queue\Manage.cshtml"
-, Tuple.Create(Tuple.Create("", 1326), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Scripts.Queue.Manage_es5_min_js)
+, Tuple.Create(Tuple.Create("", 1326), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
             
             #line default
             #line hidden

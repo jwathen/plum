@@ -123,10 +123,10 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 528), Tuple.Create("\"", 582)
+WriteAttribute("href", Tuple.Create(" href=\"", 528), Tuple.Create("\"", 590)
             
             #line 15 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 535), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Styles.Site_min_css)
+, Tuple.Create(Tuple.Create("", 535), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Styles.Site_min_css)
             
             #line default
             #line hidden
@@ -152,22 +152,22 @@ WriteLiteral(" content=\"width=device-width, initial-scale=1\"");
 
 WriteLiteral(" />\r\n</head>\r\n<body");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 730), Tuple.Create("\"", 765)
-, Tuple.Create(Tuple.Create("", 738), Tuple.Create("app", 738), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 738), Tuple.Create("\"", 773)
+, Tuple.Create(Tuple.Create("", 746), Tuple.Create("app", 746), true)
             
             #line 19 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 741), Tuple.Create<System.Object, System.Int32>(controller()
+, Tuple.Create(Tuple.Create(" ", 749), Tuple.Create<System.Object, System.Int32>(controller()
             
             #line default
             #line hidden
-, 742), false)
+, 750), false)
             
             #line 19 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 755), Tuple.Create<System.Object, System.Int32>(action()
+, Tuple.Create(Tuple.Create(" ", 763), Tuple.Create<System.Object, System.Int32>(action()
             
             #line default
             #line hidden
-, 756), false)
+, 764), false)
 );
 
 WriteLiteral(">\r\n    <nav");
@@ -281,14 +281,14 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n                        </li>\r\n                        <li>\r\n           " +
 "                 <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2138), Tuple.Create("\"", 2181)
+WriteAttribute("action", Tuple.Create(" action=\"", 2146), Tuple.Create("\"", 2189)
             
             #line 50 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2147), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
+, Tuple.Create(Tuple.Create("", 2155), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
             
             #line default
             #line hidden
-, 2147), false)
+, 2155), false)
 );
 
 WriteLiteral(">\r\n                                <button");
@@ -311,14 +311,14 @@ WriteLiteral(">Sign Out</button>\r\n                            </form>\r\n     
             #line hidden
 WriteLiteral("                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2470), Tuple.Create("\"", 2506)
+WriteAttribute("href", Tuple.Create(" href=\"", 2478), Tuple.Create("\"", 2514)
             
             #line 58 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2477), Tuple.Create<System.Object, System.Int32>(FormsAuthentication.LoginUrl
+, Tuple.Create(Tuple.Create("", 2485), Tuple.Create<System.Object, System.Int32>(FormsAuthentication.LoginUrl
             
             #line default
             #line hidden
-, 2477), false)
+, 2485), false)
 );
 
 WriteLiteral(" class=\"btn btn-default navbar-btn navbar-right\"");
@@ -431,14 +431,14 @@ WriteLiteral(" src=\"http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.un
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3897), Tuple.Create("\"", 3954)
+WriteAttribute("src", Tuple.Create(" src=\"", 3905), Tuple.Create("\"", 3970)
             
             #line 88 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 3903), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Scripts.Site_es5_min_js)
+, Tuple.Create(Tuple.Create("", 3911), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 3903), false)
+, 3911), false)
 );
 
 WriteLiteral("></script>\r\n");

@@ -159,123 +159,122 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppSettings.cs</LastGenOutput>
     </Content>
-    <Content Include="Images\table.jpg" />
-    <Content Include="Images\testimonial1.jpg" />
-    <Content Include="Images\testimonial2.jpg" />
-    <Content Include="Images\testimonial3.jpg" />
-    <Content Include="Images\testimonial4.jpg" />
-    <Content Include="Images\testimonial5.jpg" />
-    <Content Include="Images\testimonial6.jpg" />
-    <Content Include="Images\testimonial7.jpg" />
-    <Content Include="Scripts\Queue\Manage.es5.js">
+    <Content Include="Content\Images\table.jpg" />
+    <Content Include="Content\Images\testimonial1.jpg" />
+    <Content Include="Content\Images\testimonial2.jpg" />
+    <Content Include="Content\Images\testimonial3.jpg" />
+    <Content Include="Content\Images\testimonial4.jpg" />
+    <Content Include="Content\Images\testimonial5.jpg" />
+    <Content Include="Content\Images\testimonial6.jpg" />
+    <Content Include="Content\Images\testimonial7.jpg" />
+    <Content Include="Content\Scripts\Queue\Manage.es5.js">
       <DependentUpon>Manage.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Queue\Manage.es5.min.js">
+    <Content Include="Content\Scripts\Queue\Manage.es5.min.js">
       <DependentUpon>Manage.es5.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Queue\Manage.js" />
-    <Content Include="Scripts\Site.es5.js">
+    <Content Include="Content\Scripts\Queue\Manage.js" />
+    <Content Include="Content\Scripts\Site.es5.js">
       <DependentUpon>Site.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Site.es5.min.js">
+    <Content Include="Content\Scripts\Site.es5.min.js">
       <DependentUpon>Site.es5.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Site.js" />
-    <Content Include="Scripts\Site.min.js">
+    <Content Include="Content\Scripts\Site.js" />
+    <Content Include="Content\Scripts\Site.min.js">
       <DependentUpon>Site.js</DependentUpon>
     </Content>
-    <Content Include="Styles\Site.css">
+    <Content Include="Content\Styles\Site.css">
       <DependentUpon>Site.scss</DependentUpon>
     </Content>
-    <Content Include="Styles\Site.min.css">
+    <Content Include="Content\Styles\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Styles\PaperVariables.scss" />
-    <Content Include="Styles\Paper.scss" />
-    <Content Include="Styles\Site.scss" />
-    <Content Include="Styles\bootstrapsource\_bootstrap.scss" />
-    <Content Include="Styles\bootstrapsource\_bootstrap-sprockets.scss" />
-    <Content Include="Styles\bootstrapsource\_bootstrap-mincer.scss" />
-    <Content Include="Styles\bootstrapsource\_bootstrap-compass.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_wells.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_variables.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_utilities.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_type.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_tooltip.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_thumbnails.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_theme.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_tables.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_scaffolding.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_responsive-utilities.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_responsive-embed.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_progress-bars.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_print.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_popovers.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_panels.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_pagination.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_pager.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_normalize.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_navs.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_navbar.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_modals.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_mixins.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_media.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_list-group.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_labels.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_jumbotron.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_input-groups.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_grid.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_glyphicons.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_forms.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_dropdowns.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_component-animations.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_code.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_close.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_carousel.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_buttons.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_button-groups.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_breadcrumbs.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_badges.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\_alerts.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_vendor-prefixes.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_text-overflow.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_text-emphasis.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_table-row.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_tab-focus.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_size.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_responsive-visibility.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_resize.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_reset-text.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_reset-filter.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_progress-bar.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_panels.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_pagination.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_opacity.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_nav-vertical-align.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_nav-divider.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_list-group.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_labels.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_image.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_hide-text.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_grid.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_grid-framework.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_gradients.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_forms.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_clearfix.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_center-block.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_buttons.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_border-radius.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_background-variant.scss" />
-    <Content Include="Styles\bootstrapsource\bootstrap\mixins\_alerts.scss" />
-    <Content Include="Styles\Home\Index.scss" />
-    <None Include="bundleconfig.json" />
+    <Content Include="Content\Styles\PaperVariables.scss" />
+    <Content Include="Content\Styles\Paper.scss" />
+    <Content Include="Content\Styles\Site.scss" />
+    <Content Include="Content\Styles\bootstrapsource\_bootstrap.scss" />
+    <Content Include="Content\Styles\bootstrapsource\_bootstrap-sprockets.scss" />
+    <Content Include="Content\Styles\bootstrapsource\_bootstrap-mincer.scss" />
+    <Content Include="Content\Styles\bootstrapsource\_bootstrap-compass.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_wells.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_variables.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_utilities.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_type.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_tooltip.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_thumbnails.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_theme.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_tables.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_scaffolding.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_responsive-embed.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_progress-bars.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_print.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_popovers.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_panels.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_pagination.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_pager.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_normalize.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_navs.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_navbar.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_modals.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_mixins.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_media.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_list-group.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_labels.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_input-groups.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_grid.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_glyphicons.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_forms.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_dropdowns.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_component-animations.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_code.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_close.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_carousel.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_buttons.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_button-groups.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_badges.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\_alerts.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_panels.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_labels.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\Styles\bootstrapsource\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Content\Styles\Home\Index.scss" />
+    <None Include="App_Data\NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
-    </None>
-    <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
-      <SubType>Designer</SubType>
     </None>
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -297,9 +296,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AppControllerBase.cs" />
     <Compile Include="Controllers\QueueController.cs" />
-    <Compile Include="CustomerController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

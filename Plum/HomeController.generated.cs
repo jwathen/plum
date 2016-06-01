@@ -112,7 +112,7 @@ namespace Plum.Controllers
         [NonAction]
         public override System.Web.Mvc.ActionResult Index()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index, "https");
             IndexOverride(callInfo);
             return callInfo;
         }
