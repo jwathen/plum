@@ -32,6 +32,7 @@ namespace Plum.Models
         public void AddCustomer(Customer customer, UrlHelper url, AppSecrets secrets)
         {
             this.Customers.Add(customer);
+            customer.Queue = this;
             customer.SendWelcomeTextMessage(url, secrets);
         }
     }

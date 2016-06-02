@@ -120,20 +120,28 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 18 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-                 if (string.IsNullOrWhiteSpace(Model.PhoneNumber))
+                 if (Model.HasPhoneNumber())
                 {
 
             
             #line default
             #line hidden
-WriteLiteral("                    <p>\r\n                        <em>No phone number.</em>\r\n     " +
-"               </p>\r\n");
+WriteLiteral("                    <p>\r\n                        <em>");
+
+            
+            #line 21 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                       Write(Html.PhoneNumber(Model.PhoneNumber));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</em>\r\n                    </p>\r\n");
 
 WriteLiteral("                    <button");
 
-WriteLiteral(" class=\"btn btn-block btn-primary\"");
+WriteLiteral(" id=\"SendReadyMessageButton\"");
 
-WriteLiteral("  disabled=\"disabled\"");
+WriteLiteral(" class=\"btn btn-block btn-primary\"");
 
 WriteLiteral(" type=\"button\"");
 
@@ -153,20 +161,14 @@ WriteLiteral("></i>\r\n                        Send &quot;Table Ready&quot; Mess
             
             #line default
             #line hidden
-WriteLiteral("                    <p>\r\n                        <em>");
-
-            
-            #line 31 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-                       Write(Html.PhoneNumber(Model.PhoneNumber));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</em>\r\n                    </p>\r\n");
+WriteLiteral("                    <p>\r\n                        <em>No phone number.</em>\r\n     " +
+"               </p>\r\n");
 
 WriteLiteral("                    <button");
 
 WriteLiteral(" class=\"btn btn-block btn-primary\"");
+
+WriteLiteral(" disabled=\"disabled\"");
 
 WriteLiteral(" type=\"button\"");
 
@@ -186,14 +188,14 @@ WriteLiteral("></i>\r\n                        Send &quot;Table Ready&quot; Mess
             #line hidden
 WriteLiteral("                <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 1493), Tuple.Create("\"", 1541)
+WriteAttribute("action", Tuple.Create(" action=\"", 1498), Tuple.Create("\"", 1546)
             
             #line 38 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-, Tuple.Create(Tuple.Create("", 1502), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.RemoveCustomer())
+, Tuple.Create(Tuple.Create("", 1507), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.RemoveCustomer())
             
             #line default
             #line hidden
-, 1502), false)
+, 1507), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -288,15 +290,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <p>\r\n                                <i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2531), Tuple.Create("\"", 2555)
-, Tuple.Create(Tuple.Create("", 2539), Tuple.Create("fa", 2539), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2536), Tuple.Create("\"", 2560)
+, Tuple.Create(Tuple.Create("", 2544), Tuple.Create("fa", 2544), true)
             
             #line 54 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-, Tuple.Create(Tuple.Create(" ", 2541), Tuple.Create<System.Object, System.Int32>(entry.Icon()
+, Tuple.Create(Tuple.Create(" ", 2546), Tuple.Create<System.Object, System.Int32>(entry.Icon()
             
             #line default
             #line hidden
-, 2542), false)
+, 2547), false)
 );
 
 WriteLiteral("></i>\r\n");
@@ -341,8 +343,36 @@ WriteLiteral("                    </div>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<script>\r\n    initConfirm" +
-"ationModals(\'#ManageCustomerModal\');\r\n</script>\r\n");
+WriteLiteral(@"            </div>
+        </div>
+    </div>
+</div>
+<script>
+    initConfirmationModals('#ManageCustomerModal');
+    var ajaxAntiForgeryToken = $('input[name=""__RequestVerificationToken""]').val();
+    $('#ManageCustomerModal #SendReadyMessageButton ').click(function () {
+        $.ajax({
+            url: '");
+
+            
+            #line 70 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+             Write(Url.Action(MVC.Queue.SendReadyTextMessage()));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\',\r\n            method: \'POST\',\r\n            data: { \r\n                customerId" +
+": ");
+
+            
+            #line 73 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                       Write(Model.Id);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(",\r\n                __RequestVerificationToken: ajaxAntiForgeryToken\r\n            " +
+"}\r\n        });\r\n    });\r\n</script>\r\n");
 
         }
     }

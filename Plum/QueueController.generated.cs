@@ -101,6 +101,13 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomer, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendReadyTextMessage()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendReadyTextMessage, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QueueController Actions { get { return MVC.Queue; } }
@@ -123,6 +130,7 @@ namespace Plum.Controllers
             public readonly string ManageCustomerModal = "ManageCustomerModal";
             public readonly string RemoveCustomer = "RemoveCustomer";
             public readonly string AddCustomer = "AddCustomer";
+            public readonly string SendReadyTextMessage = "SendReadyTextMessage";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -134,6 +142,7 @@ namespace Plum.Controllers
             public const string ManageCustomerModal = "ManageCustomerModal";
             public const string RemoveCustomer = "RemoveCustomer";
             public const string AddCustomer = "AddCustomer";
+            public const string SendReadyTextMessage = "SendReadyTextMessage";
         }
 
 
@@ -184,6 +193,14 @@ namespace Plum.Controllers
         public class ActionParamsClass_AddCustomer
         {
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_SendReadyTextMessage s_params_SendReadyTextMessage = new ActionParamsClass_SendReadyTextMessage();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SendReadyTextMessage SendReadyTextMessageParams { get { return s_params_SendReadyTextMessage; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SendReadyTextMessage
+        {
+            public readonly string customerId = "customerId";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -281,6 +298,18 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomer, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             AddCustomerOverride(callInfo, model);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SendReadyTextMessageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int customerId);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendReadyTextMessage(int customerId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendReadyTextMessage, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customerId", customerId);
+            SendReadyTextMessageOverride(callInfo, customerId);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

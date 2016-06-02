@@ -446,7 +446,38 @@ WriteLiteral(" type=\"button\"");
 WriteLiteral(" class=\"btn btn-primary\"");
 
 WriteLiteral(">Yes</button>\r\n                    </div>\r\n                </div>\r\n            </" +
-"div>\r\n        </div>\r\n    </div>\r\n    <script");
+"div>\r\n        </div>\r\n    </div>\r\n");
+
+            
+            #line 90 "..\..\Views\Shared\_Layout.cshtml"
+    
+            
+            #line default
+            #line hidden
+            
+            #line 90 "..\..\Views\Shared\_Layout.cshtml"
+     using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+    {
+        
+            
+            #line default
+            #line hidden
+            
+            #line 92 "..\..\Views\Shared\_Layout.cshtml"
+   Write(Html.AntiForgeryToken2());
+
+            
+            #line default
+            #line hidden
+            
+            #line 92 "..\..\Views\Shared\_Layout.cshtml"
+                                 
+    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <script");
 
 WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"");
 
@@ -471,14 +502,14 @@ WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/j
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4401), Tuple.Create("\"", 4466)
+WriteAttribute("src", Tuple.Create(" src=\"", 4546), Tuple.Create("\"", 4611)
             
-            #line 95 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4407), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+            #line 99 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4552), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 4407), false)
+, 4552), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -486,7 +517,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 96 "..\..\Views\Shared\_Layout.cshtml"
+            #line 100 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

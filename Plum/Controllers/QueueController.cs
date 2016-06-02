@@ -157,5 +157,26 @@ namespace Plum.Controllers
 
             return RedirectToAction(MVC.Queue.Manage(queue.Id));
         }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [POST("/queue/send_ready_message")]
+        public virtual async Task<ActionResult> SendReadyTextMessage(int customerId)
+        {
+            var customer = await Database.Customers
+                .Include(x => x.Queue)
+                .Include(x => x.Queue.Business)
+                .FirstOrDefaultAsync(x => x.Id == customerId);
+
+            if (customer != null && Security.UserOwns(customer))
+            {
+                int queueId = customer.Queue.Id;
+                customer.SendReadyTextMessage(Url, Secrets);
+                await Database.SaveChangesAsync();
+                return RedirectToAction(MVC.Queue.Manage(queueId));
+            }
+
+            return RedirectToAction(MVC.Queue.Manage());
+        }
     }
 }

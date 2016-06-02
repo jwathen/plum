@@ -82,9 +82,19 @@ namespace Plum.Models
             if (this.HasPhoneNumber())
             {
                 string customerViewUrl = urlHelper.ActionAbsolute(MVC.Queue.CustomerView(this.UrlToken));
-                string message = $"You've been added to our wait list.  See your place in line at: {customerViewUrl}";
+                string message = $"{Queue.Business.Name}: You've been added to our wait list.  See your place in line at: {customerViewUrl}";
                 SendTextMessage(secrets, message);
-                Log(CustomerLogEntryType.WelcomeTextMessageSent, $"Text message: {message}");
+                Log(CustomerLogEntryType.WelcomeTextMessageSent, $"\"{message}\"");
+            }
+        }
+
+        public void SendReadyTextMessage(UrlHelper urlHelper, AppSecrets secrets)
+        {
+            if (this.HasPhoneNumber())
+            {
+                string message = $"{Queue.Business.Name}: Your table is ready. Reply 1, 2, or 3. 1 = I'm on my way. 2 = I need a few minutes but I'm still coming.  3 = I'd like to cancel.";
+                SendTextMessage(secrets, message);
+                Log(CustomerLogEntryType.ReadyTextMessageSent, $"\"{message}\"");
             }
         }
 

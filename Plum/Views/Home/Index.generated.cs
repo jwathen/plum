@@ -97,7 +97,15 @@ WriteLiteral(">\r\n                Seat diners faster with this FREE service by 
 "of the technology they\'re already using.\r\n            </p>\r\n            <p>\r\n   " +
 "             <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 551), Tuple.Create("\"", 591)
+            
+            #line 18 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 558), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
+            
+            #line default
+            #line hidden
+, 558), false)
+);
 
 WriteLiteral(" class=\"btn btn-primary btn-lg\"");
 
@@ -137,14 +145,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1087), Tuple.Create("\"", 1152)
+WriteAttribute("src", Tuple.Create(" src=\"", 1119), Tuple.Create("\"", 1184)
             
             #line 39 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1093), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
+, Tuple.Create(Tuple.Create("", 1125), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
             
             #line default
             #line hidden
-, 1093), false)
+, 1125), false)
 );
 
 WriteLiteral(" alt=\"Two young people holding hands.\"");
@@ -184,14 +192,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1997), Tuple.Create("\"", 2062)
+WriteAttribute("src", Tuple.Create(" src=\"", 2029), Tuple.Create("\"", 2094)
             
             #line 53 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 2003), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
+, Tuple.Create(Tuple.Create("", 2035), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
             
             #line default
             #line hidden
-, 2003), false)
+, 2035), false)
 );
 
 WriteLiteral(" alt=\"Woman wearing a poncho in the park.\"");

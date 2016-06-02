@@ -20,22 +20,12 @@ namespace Plum.Models
 
         public string Icon()
         {
-            return "fa-clock-o";
-
             switch (Type)
             {
-                case CustomerLogEntryType.AddedToList:
-                    return "fa-plus";
                 case CustomerLogEntryType.ReadyTextMessageSent:
                     return "fa-comment";
-                case CustomerLogEntryType.MovedToEndOfList:
-                    return "fa-arrow-down";
-                case CustomerLogEntryType.NameChanged:
-                    return "fa-person";
-                case CustomerLogEntryType.NumberInPartyChanged:
-                    return "fa-person";
-                case CustomerLogEntryType.PhoneNumberChanged:
-                    return "fa-person";
+                case CustomerLogEntryType.WelcomeTextMessageSent:
+                    return "fa-comment";
                 default:
                     return "fa-clock-o";
             }

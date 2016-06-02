@@ -16,7 +16,7 @@ namespace Plum.Tests.Unit.Services
 
         public ProfanityFilterTests()
         {
-            string dataFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fixtures/Profanity.txt");
+            string dataFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data/Profanity.txt");
             _profanityService = new ProfanityFilter(dataFilePath);
         }
 

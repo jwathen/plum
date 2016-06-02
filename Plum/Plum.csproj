@@ -75,8 +75,8 @@
       <HintPath>..\packages\FluentValidation.MVC5.6.2.1.0\lib\Net45\FluentValidation.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Humanizer, Version=2.0.1.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Humanizer.Core.2.0.1\lib\dotnet\Humanizer.dll</HintPath>
+    <Reference Include="Humanizer, Version=1.37.7.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.1.37.7\lib\portable-win+net40+sl50+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Humanizer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -304,6 +304,10 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Views\Queue\ManageCustomerModal.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ManageCustomerModal1.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -410,7 +414,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Manage.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Queue\ManageCustomerModal.generated.cs">
+    <Compile Include="Views\Queue\ManageCustomerModal1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ManageCustomerModal.cshtml</DependentUpon>
@@ -484,10 +488,6 @@
     <Content Include="Views\Shared\EditorTemplates\CustomerViewModel.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>CustomerViewModel.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Queue\ManageCustomerModal.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ManageCustomerModal.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Queue\AddCustomerModal.cshtml">
       <Generator>RazorGenerator</Generator>

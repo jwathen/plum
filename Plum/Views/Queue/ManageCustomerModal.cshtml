@@ -15,12 +15,12 @@
                 </h4>
             </div>
             <div class="modal-body button-stack">
-                @if (string.IsNullOrWhiteSpace(Model.PhoneNumber))
+                @if (Model.HasPhoneNumber())
                 {
                     <p>
-                        <em>No phone number.</em>
+                        <em>@Html.PhoneNumber(Model.PhoneNumber)</em>
                     </p>
-                    <button class="btn btn-block btn-primary"  disabled="disabled" type="button">
+                    <button id="SendReadyMessageButton" class="btn btn-block btn-primary" type="button">
                         <i class="fa fa-comment"></i>
                         Send &quot;Table Ready&quot; Message
                     </button>
@@ -28,9 +28,9 @@
                 else
                 {
                     <p>
-                        <em>@Html.PhoneNumber(Model.PhoneNumber)</em>
+                        <em>No phone number.</em>
                     </p>
-                    <button class="btn btn-block btn-primary" type="button">
+                    <button class="btn btn-block btn-primary" disabled="disabled" type="button">
                         <i class="fa fa-comment"></i>
                         Send &quot;Table Ready&quot; Message
                     </button>
@@ -64,4 +64,15 @@
 </div>
 <script>
     initConfirmationModals('#ManageCustomerModal');
+    var ajaxAntiForgeryToken = $('input[name="__RequestVerificationToken"]').val();
+    $('#ManageCustomerModal #SendReadyMessageButton ').click(function () {
+        $.ajax({
+            url: '@Url.Action(MVC.Queue.SendReadyTextMessage())',
+            method: 'POST',
+            data: { 
+                customerId: @Model.Id,
+                __RequestVerificationToken: ajaxAntiForgeryToken
+            }
+        });
+    });
 </script>
