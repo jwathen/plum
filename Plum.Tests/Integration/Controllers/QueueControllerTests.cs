@@ -14,10 +14,10 @@ namespace Plum.Tests.Integration.Controllers
 {
     public class QueueControllerTests : WebTestBase<QueueController>
     {
-        public void CustomerView_GivenInvalidToken_Returns404()
+        public void CustomerView_GivenInvalidToken_ReturnsCustomerNotFound()
         {
             _controller.WithCallTo(x => x.CustomerView("invalid token"))
-                .ShouldGiveHttpStatus(404);
+                .ShouldRenderViewHtml(MVC.Queue.Views.CustomerNotFound);
         }
 
         public void CustomerView_GivenValidToken_ReturnsView()

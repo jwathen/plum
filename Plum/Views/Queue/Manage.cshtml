@@ -26,7 +26,7 @@
         @foreach (var customer in Model.OrderedCustomers())
         {
             <li class="list-group-item" data-manage-customer-id="@customer.Id">
-                @customer.Name (@customer.NumberInParty) Waited @customer.TimeWaited().Humanize()
+                @customer.Name (@customer.NumberInParty) - Waited @customer.TimeWaitedWords()
             </li>
         }
     </ul>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Plum.Services;
+using Humanizer;
 
 namespace Plum.Models
 {
@@ -41,6 +42,19 @@ namespace Plum.Models
                 timeWaited = TimeSpan.FromSeconds(1);
             }
             return timeWaited;
+        }
+
+        public string TimeWaitedWords()
+        {
+            var timeWaited = TimeWaited();
+            if (timeWaited < TimeSpan.FromMinutes(1))
+            {
+                return "less than a minute";
+            }
+            else
+            {
+                return timeWaited.Humanize();
+            }
         }
 
         public bool HasPhoneNumber()

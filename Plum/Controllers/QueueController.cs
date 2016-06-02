@@ -24,7 +24,7 @@ namespace Plum.Controllers
 
             if (customer == null)
             {
-                return HttpNotFound();
+                return View(MVC.Queue.Views.CustomerNotFound);
             }
 
             return View(customer);

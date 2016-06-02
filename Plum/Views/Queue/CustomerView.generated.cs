@@ -246,7 +246,7 @@ WriteLiteral(") Waited ");
 
             
             #line 39 "..\..\Views\Queue\CustomerView.cshtml"
-                                                                           Write(customer.TimeWaited().Humanize());
+                                                                           Write(customer.TimeWaitedWords());
 
             
             #line default

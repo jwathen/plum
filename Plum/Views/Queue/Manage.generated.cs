@@ -28,13 +28,13 @@ namespace ASP
     using System.Web.WebPages;
     using Humanizer;
     using Plum;
-    using Plum.Web;
     
     #line 2 "..\..\Views\Queue\Manage.cshtml"
     using Plum.ViewModels.Customer;
     
     #line default
     #line hidden
+    using Plum.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Queue/Manage.cshtml")]
@@ -173,11 +173,11 @@ WriteLiteral(" (");
             
             #line default
             #line hidden
-WriteLiteral(") Waited ");
+WriteLiteral(") - Waited ");
 
             
             #line 29 "..\..\Views\Queue\Manage.cshtml"
-                                                           Write(customer.TimeWaited().Humanize());
+                                                             Write(customer.TimeWaitedWords());
 
             
             #line default
@@ -230,14 +230,14 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
             #line hidden
 WriteLiteral("\';\r\n    </script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1361), Tuple.Create("\"", 1434)
+WriteAttribute("src", Tuple.Create(" src=\"", 1357), Tuple.Create("\"", 1430)
             
             #line 44 "..\..\Views\Queue\Manage.cshtml"
-, Tuple.Create(Tuple.Create("", 1367), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
+, Tuple.Create(Tuple.Create("", 1363), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
             
             #line default
             #line hidden
-, 1367), false)
+, 1363), false)
 );
 
 WriteLiteral("></script>\r\n");

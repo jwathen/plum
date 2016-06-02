@@ -55,6 +55,9 @@
       <HintPath>..\packages\AttributeRouting.3.5.6\lib\net40\AttributeRouting.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
       <Private>True</Private>
@@ -404,6 +407,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddCustomerModal.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Queue\CustomerNotFound.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerNotFound.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Queue\CustomerView.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -499,6 +507,10 @@
       <LastGenOutput>Error.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Home\NotAuthorized.cshtml" />
+    <Content Include="Views\Queue\CustomerNotFound.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CustomerNotFound.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

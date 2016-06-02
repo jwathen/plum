@@ -213,11 +213,13 @@ namespace Plum.Controllers
             public class _ViewNamesClass
             {
                 public readonly string AddCustomerModal = "AddCustomerModal";
+                public readonly string CustomerNotFound = "CustomerNotFound";
                 public readonly string CustomerView = "CustomerView";
                 public readonly string Manage = "Manage";
                 public readonly string ManageCustomerModal = "ManageCustomerModal";
             }
             public readonly string AddCustomerModal = "~/Views/Queue/AddCustomerModal.cshtml";
+            public readonly string CustomerNotFound = "~/Views/Queue/CustomerNotFound.cshtml";
             public readonly string CustomerView = "~/Views/Queue/CustomerView.cshtml";
             public readonly string Manage = "~/Views/Queue/Manage.cshtml";
             public readonly string ManageCustomerModal = "~/Views/Queue/ManageCustomerModal.cshtml";
