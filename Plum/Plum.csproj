@@ -406,6 +406,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerViewModel.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Error.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Error.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\_Layout1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -475,7 +480,10 @@
       <LastGenOutput>AddCustomerModal.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Home\NotFound.cshtml" />
-    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Error.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Home\NotAuthorized.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
