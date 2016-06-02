@@ -8,6 +8,7 @@ using Plum.Tests.TestHelpers;
 using TestStack.FluentMVCTesting;
 using Plum.Tests.TestHelpers.Mvc;
 using Should;
+using Plum.ViewModels.Customer;
 
 namespace Plum.Tests.Integration.Controllers
 {
@@ -128,6 +129,42 @@ namespace Plum.Tests.Integration.Controllers
 
             _controller.WithCallTo(x => x.RemoveCustomer(customerId))
                 .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
+        }
+
+        public void AddCustomer_GivenValidCustomer_CreatesCustomer()
+        {
+            SignIn();
+            int queueId = TestBusiness.Queues.First().Id;
+
+            var model = new CustomerViewModel();
+            model.Name = "Jack";
+            model.NumberInParty = 4;
+            model.PhoneNumber = "9723743329";
+            model.QueueId = queueId;
+            
+            _controller.WithCallTo(x => x.AddCustomer(model))
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage, new { queueId = queueId });
+
+            var customer = TestBusiness.Queues.First().Customers.OrderByDescending(x => x.Id).First();
+            customer.Name.ShouldEqual("Jack");
+            customer.NumberInParty.ShouldEqual(4);
+            customer.PhoneNumber.ShouldEqual("9723743329");
+            customer.UrlToken.ShouldNotBeNull();
+        }
+
+        public void AddCustomer_GivenQueueIdForOtherBusiness_ReturnsNotAuthorized()
+        {
+            SignIn();
+            int otherBusinessQueueId = OtherBusiness.Queues.First().Id;
+
+            var model = new CustomerViewModel();
+            model.Name = "Jack";
+            model.NumberInParty = 4;
+            model.PhoneNumber = "9723743329";
+            model.QueueId = otherBusinessQueueId;
+
+            _controller.WithCallTo(x => x.AddCustomer(model))
+                .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using AttributeRouting.Web.Mvc;
 using System.Data.Entity;
 using Plum.ViewModels.Customer;
+using Plum.Services;
 
 namespace Plum.Controllers
 {
@@ -147,7 +148,9 @@ namespace Plum.Controllers
             customer.Log(Models.CustomerLogEntryType.AddedToList, "Party added to wait list.");
             customer.SortOrder = queue.Customers.OrderBy(x => x.SortOrder).Select(x => x.SortOrder).LastOrDefault();
             customer.SortOrder++;
-            customer.GenerateUrlToken(Database);
+
+            var profanityFilter = new ProfanityFilter(Server.MapPath("~/App_Data/Profanity.txt"));
+            customer.GenerateUrlToken(Database, profanityFilter);
             queue.Customers.Add(customer);
             await Database.SaveChangesAsync();
 

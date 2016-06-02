@@ -12,9 +12,9 @@ namespace Plum.Services
     {
         private string _dataFilePath;
 
-        public ProfanityFilter(string dataFilePath = null)
+        public ProfanityFilter(string dataFilePath)
         {
-            _dataFilePath = dataFilePath ?? HostingEnvironment.MapPath("~/App_Data/Profanity.txt");
+            _dataFilePath = dataFilePath;
         }
 
         public bool ContainsProfanity(string input)

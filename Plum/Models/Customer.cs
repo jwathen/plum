@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using Plum.Services;
 
 namespace Plum.Models
@@ -51,12 +52,11 @@ namespace Plum.Models
             });
         }
 
-        public void GenerateUrlToken(AppDataContext db)
+        public void GenerateUrlToken(AppDataContext db, ProfanityFilter profanityFilter)
         {
             string token = string.Empty;
             char[] characters = "abcdefghijklmnopqrstuvwxyz1234567890".ToArray();
             var random = new Random();
-            var profanityService = new ProfanityFilter();
 
             do
             {
@@ -66,7 +66,7 @@ namespace Plum.Models
                     token += characters[random.Next(0, characters.Length - 1)];
                 }
             }
-            while (profanityService.ContainsProfanity(token) || db.Customers.Any(x => x.UrlToken == token));
+            while (profanityFilter.ContainsProfanity(token) || db.Customers.Any(x => x.UrlToken == token));
 
             UrlToken = token.ToString();
         }
