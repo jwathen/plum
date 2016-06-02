@@ -8,11 +8,11 @@ using System.Web.Hosting;
 
 namespace Plum.Services
 {
-    public class ProfanityService
+    public class ProfanityFilter
     {
         private string _dataFilePath;
 
-        public ProfanityService(string dataFilePath = null)
+        public ProfanityFilter(string dataFilePath = null)
         {
             _dataFilePath = dataFilePath ?? HostingEnvironment.MapPath("~/App_Data/Profanity.txt");
         }

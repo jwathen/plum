@@ -56,7 +56,7 @@ namespace Plum.Models
             string token = string.Empty;
             char[] characters = "abcdefghijklmnopqrstuvwxyz1234567890".ToArray();
             var random = new Random();
-            var profanityService = new ProfanityService();
+            var profanityService = new ProfanityFilter();
 
             do
             {

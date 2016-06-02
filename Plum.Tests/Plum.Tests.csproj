@@ -147,7 +147,7 @@
     <Compile Include="TestHelpers\Mvc\WebApplicationTestEnvironment.cs" />
     <Compile Include="TestHelpers\WebTestBase.cs" />
     <Compile Include="Unit\Models\AccountTests.cs" />
-    <Compile Include="Unit\Services\CustomerTests.cs" />
+    <Compile Include="Unit\Services\ProfanityFilterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plum\Plum.csproj">

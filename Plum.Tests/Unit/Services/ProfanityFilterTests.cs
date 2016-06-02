@@ -10,14 +10,14 @@ using Should;
 
 namespace Plum.Tests.Unit.Services
 {
-    public class ProfanityServiceTests
+    public class ProfanityFilterTests
     {
-        private ProfanityService _profanityService;
+        private ProfanityFilter _profanityService;
 
-        public ProfanityServiceTests()
+        public ProfanityFilterTests()
         {
             string dataFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fixtures/Profanity.txt");
-            _profanityService = new ProfanityService(dataFilePath);
+            _profanityService = new ProfanityFilter(dataFilePath);
         }
 
         public void ContainsProfanity_GivenCleanWord_ReturnsFalse()

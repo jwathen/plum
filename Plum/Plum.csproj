@@ -307,7 +307,7 @@
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Lib\Services\ProfanityService.cs" />
+    <Compile Include="Lib\Services\ProfanityFilter.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.Designer.cs">
       <DependentUpon>201605311819225_CreateBusinesses.cs</DependentUpon>
