@@ -130,7 +130,9 @@ namespace Plum.Tests.TestHelpers.Mvc
                 var dictionary = new RouteValueDictionary(routeValues);
                 foreach (string key in dictionary.Keys)
                 {
-                    dictionary[key].ShouldEqual(actionResult.RouteValues[key]);
+                    object expected = dictionary[key];
+                    object actual = actionResult.RouteValues[key];
+                    dictionary[key].ShouldEqual(actionResult.RouteValues[key], $"Expected route value for \"{key}\" to equal {ToStringOrNull(expected)} but it was {ToStringOrNull(actual)}.");
                 }
             }
             return testResult;
@@ -204,6 +206,18 @@ namespace Plum.Tests.TestHelpers.Mvc
         {
             return ex.Message.StartsWith("An HttpContext is required to perform this operation.")
                 && ex.StackTrace.Contains("System.Web.Helpers.AntiForgery.GetHtml()");
+        }
+
+        private static string ToStringOrNull(object value)
+        {
+            if (value == null)
+            {
+                return "(null)";
+            }
+            else
+            {
+                return value.ToString();
+            }
         }
     }
 }

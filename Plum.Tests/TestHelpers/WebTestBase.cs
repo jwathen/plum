@@ -41,9 +41,14 @@ namespace Plum.Tests.TestHelpers
             var testBusiness = ReadFixture<Business>("TestBusiness");
             var otherBusiness = ReadFixture<Business>("OtherBusiness");
 
-            Database.Businesses.RemoveRange(Database.Businesses.Where(x => x.Account.EmailAddress == testBusiness.Account.EmailAddress));
-            Database.Businesses.RemoveRange(Database.Businesses.Where(x => x.Account.EmailAddress == otherBusiness.Account.EmailAddress));
+            string[] testEmailAddresses = new string[] { "new_business@site.com", "test_business@site.com", "other_business@site.com" };
+            Database.Businesses.RemoveRange(Database.Businesses.Where(x => testEmailAddresses.Contains(x.Account.EmailAddress)));
             Database.SaveChanges();
+
+            ResetIdentity("Businesses");
+            ResetIdentity("Queues");
+            ResetIdentity("Customers");
+            ResetIdentity("CustomerLogEntries");
 
             Database.Businesses.Add(testBusiness);
             Database.Businesses.Add(otherBusiness);
@@ -57,6 +62,14 @@ namespace Plum.Tests.TestHelpers
                 var deserializer = new YamlDotNet.Serialization.Deserializer();
                 return deserializer.Deserialize<T>(reader);
             }
+        }
+
+        private void ResetIdentity(string table)
+        {
+            string stmt = $@"declare @maxId int;
+                            select @maxId = coalesce(max(Id), 0) + 1 from {table}
+                            DBCC CHECKIDENT ('{table}', RESEED, @maxId);";
+            Database.Database.ExecuteSqlCommand(stmt);
         }
 
         protected void SignInAs(Business business)

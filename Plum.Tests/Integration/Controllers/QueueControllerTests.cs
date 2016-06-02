@@ -98,10 +98,36 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
         }
 
-        public void ManageCustomerModal_GivenInvalidCustomerId_Return404()
+        public void RemoveCustomer_CusomterId_RemovesTheCustomer()
         {
-            _controller.WithCallTo(x => x.ManageCustomerModal(-1))
-                .ShouldGiveHttpStatus(404);
+            SignIn();
+            int queueId = TestBusiness.Queues.First().Id;
+            int customerId = TestBusiness.Queues.First().Customers.First().Id;
+
+            _controller.WithCallTo(x => x.RemoveCustomer(customerId))
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage, new { queueId = queueId });
+
+            Database.Customers.Find(customerId).ShouldBeNull();
+        }
+
+        public void RemoveCustomer_GivenCustomerIdForOtherBusiness_DoesNotRemoveTheCustomer()
+        {
+            SignIn();
+            int customerId = OtherBusiness.Queues.First().Customers.First().Id;
+
+            _controller.WithCallTo(x => x.RemoveCustomer(customerId))
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
+
+            Database.Customers.Find(customerId).ShouldNotBeNull();
+        }
+
+        public void RemoveCustomer_GivenInvalidCustomerId_NoException()
+        {
+            SignIn();
+            int customerId = -1;
+
+            _controller.WithCallTo(x => x.RemoveCustomer(customerId))
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
         }
     }
 }
