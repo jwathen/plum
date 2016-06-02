@@ -12,6 +12,7 @@ namespace Plum.Models
         MovedToEndOfList = 3,
         NameChanged = 4,
         NumberInPartyChanged = 5,
-        PhoneNumberChanged = 6
+        PhoneNumberChanged = 6,
+        WelcomeTextMessageSent = 7
     }
 }

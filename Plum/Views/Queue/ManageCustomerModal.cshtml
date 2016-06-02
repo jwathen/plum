@@ -15,10 +15,26 @@
                 </h4>
             </div>
             <div class="modal-body button-stack">
-                <button class="btn btn-block btn-primary" type="button">
-                    <i class="fa fa-comment"></i>
-                    Send &quot;Table Ready&quot; Message
-                </button>
+                @if (string.IsNullOrWhiteSpace(Model.PhoneNumber))
+                {
+                    <p>
+                        <em>No phone number.</em>
+                    </p>
+                    <button class="btn btn-block btn-primary"  disabled="disabled" type="button">
+                        <i class="fa fa-comment"></i>
+                        Send &quot;Table Ready&quot; Message
+                    </button>
+                }
+                else
+                {
+                    <p>
+                        <em>@Html.PhoneNumber(Model.PhoneNumber)</em>
+                    </p>
+                    <button class="btn btn-block btn-primary" type="button">
+                        <i class="fa fa-comment"></i>
+                        Send &quot;Table Ready&quot; Message
+                    </button>
+                }
                 <form action="@Url.Action(MVC.Queue.RemoveCustomer())" method="post">
                     <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to remove @HttpUtility.HtmlAttributeEncode(Model.Name) from the list?" class="btn btn-block btn-default" type="submit">Remove From List</button>
                     @Html.Hidden(MVC.Queue.RemoveCustomerParams.customerId, Model.Id)
@@ -32,7 +48,7 @@
                         History
                     </h5>
                     <div class="history">
-                        @foreach (var entry in Model.LogEntries)
+                        @foreach (var entry in Model.LogEntries.OrderByDescending(x => x.Id))
                         {
                             <p>
                                 <i class="fa @entry.Icon()"></i>

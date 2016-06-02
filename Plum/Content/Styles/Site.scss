@@ -106,6 +106,10 @@ input[type=checkbox]:checked + input[type=hidden] + label:before {
     pointer-events: all;
 }
 
+.modal-header {
+    padding: 15px 15px 0 15px;
+}
+
 .home {
     @import "Home/Index.scss";
 }

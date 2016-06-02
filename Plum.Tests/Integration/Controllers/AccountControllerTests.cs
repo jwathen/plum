@@ -56,6 +56,21 @@ namespace Plum.Tests.Integration.Controllers
             AppSession.BusinessName.ShouldEqual("Test Business");
         }
 
+        public void SignIn_GivenReturnUrl_RedirectsToReturnUrl()
+        {
+            var model = new SignInViewModel();
+            model.EmailAddress = TestBusiness.Account.EmailAddress;
+            model.Password = "passw0rd";
+            int queueId = TestBusiness.Queues.First().Id;
+
+            Request.QueryString.Add("ReturnUrl", "/somepage");
+
+            _controller.WithCallTo(x => x.SignIn(model))
+                .ShouldRedirectTo("/somepage");
+
+            AppSession.BusinessName.ShouldEqual("Test Business");
+        }
+
         public void SignOut_RedirectsToHome()
         {
             _controller.WithCallTo(x => x.SignOut())

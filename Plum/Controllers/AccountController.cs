@@ -65,7 +65,15 @@ namespace Plum.Controllers
             {
                 AppSession.SignIn(business, model.RememberMe);
                 int queueId = business.Queues.First().Id;
-                return RedirectToAction(MVC.Queue.Manage(queueId));
+
+                if (!string.IsNullOrWhiteSpace(Request.QueryString["ReturnUrl"]))
+                {
+                    return Redirect(Request.QueryString["ReturnUrl"]);
+                }
+                else
+                {
+                    return RedirectToAction(MVC.Queue.Manage(queueId));
+                }
             }
             else
             {

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Plum.Models;
+using Plum.Services;
 using Plum.Web;
 
 namespace Plum.Controllers
@@ -15,6 +16,7 @@ namespace Plum.Controllers
         private AppDataContext _db;
         private AppSession _appSession;
         private AppSecurity _appSecurity;
+        private AppSecrets _appSecrets;
 
         public void InitializePublic(RequestContext requestContext)
         {
@@ -28,6 +30,9 @@ namespace Plum.Controllers
 
             _db = new AppDataContext();
             _appSession = new AppSession(requestContext.HttpContext);
+
+            string secretsFilePath = Server.MapPath("~/App_Data/Secrets.json");
+            _appSecrets = new AppSecrets(secretsFilePath);
             _appSecurity = new AppSecurity(_appSession);
         }
 
@@ -52,6 +57,14 @@ namespace Plum.Controllers
             get
             {
                 return _db;
+            }
+        }
+
+        public AppSecrets Secrets
+        {
+            get
+            {
+                return _appSecrets;
             }
         }
 

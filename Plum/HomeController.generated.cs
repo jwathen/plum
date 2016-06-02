@@ -101,12 +101,10 @@ namespace Plum.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Error = "Error";
                 public readonly string Index = "Index";
                 public readonly string NotAuthorized = "NotAuthorized";
                 public readonly string NotFound = "NotFound";
             }
-            public readonly string Error = "~/Views/Home/Error.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
             public readonly string NotAuthorized = "~/Views/Home/NotAuthorized.cshtml";
             public readonly string NotFound = "~/Views/Home/NotFound.cshtml";

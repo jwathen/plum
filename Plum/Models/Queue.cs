@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+using Plum.Services;
 
 namespace Plum.Models
 {
@@ -25,6 +27,12 @@ namespace Plum.Models
             return OrderedCustomers()
                 .TakeWhile(x => x != customer)
                 .Count();
+        }
+
+        public void AddCustomer(Customer customer, UrlHelper url, AppSecrets secrets)
+        {
+            this.Customers.Add(customer);
+            customer.SendWelcomeTextMessage(url, secrets);
         }
     }
 }

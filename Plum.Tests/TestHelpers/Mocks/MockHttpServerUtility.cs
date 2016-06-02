@@ -13,6 +13,10 @@ namespace Plum.Tests.TestHelpers.Mocks
         public override string MapPath(string path)
         {
             path = path.Replace("~", string.Empty).Replace("/", @"\");
+            if (path.StartsWith(@"\"))
+            {
+                path = path.Substring(1);
+            }
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
         }
 

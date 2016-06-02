@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using Plum.Services;
 
 namespace Plum.Models
@@ -42,6 +43,11 @@ namespace Plum.Models
             return timeWaited;
         }
 
+        public bool HasPhoneNumber()
+        {
+            return !string.IsNullOrWhiteSpace(PhoneNumber);
+        }
+
         public void Log(CustomerLogEntryType type, string message)
         {
             LogEntries.Add(new CustomerLogEntry
@@ -69,6 +75,23 @@ namespace Plum.Models
             while (profanityFilter.ContainsProfanity(token) || db.Customers.Any(x => x.UrlToken == token));
 
             UrlToken = token.ToString();
+        }
+
+        public void SendWelcomeTextMessage(UrlHelper urlHelper, AppSecrets secrets)
+        {
+            if (this.HasPhoneNumber())
+            {
+                string customerViewUrl = urlHelper.ActionAbsolute(MVC.Queue.CustomerView(this.UrlToken));
+                string message = $"You've been added to our wait list.  See your place in line at: {customerViewUrl}";
+                SendTextMessage(secrets, message);
+                Log(CustomerLogEntryType.WelcomeTextMessageSent, $"Text message: {message}");
+            }
+        }
+
+        private void SendTextMessage(AppSecrets secrets, string message)
+        {
+            var twilio = new Twilio.TwilioRestClient(secrets.TwilioAccountSid, secrets.TwilioAuthToken);
+            twilio.SendMessage(AppSettings.TwilioPhoneNumber, PhoneNumber, message);
         }
     }
 }

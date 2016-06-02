@@ -16,9 +16,35 @@ namespace Plum
             get { return ConfigurationManager.AppSettings["ClientValidationEnabled"]; }
         }
 
+        public static class Elmah
+        {
+            public static class Mvc
+            {
+                public static string AllowedUsers
+                {
+                    get { return ConfigurationManager.AppSettings["elmah.mvc.allowedUsers"]; }
+                }
+
+                public static string RequiresAuthentication
+                {
+                    get { return ConfigurationManager.AppSettings["elmah.mvc.requiresAuthentication"]; }
+                }
+
+                public static string Route
+                {
+                    get { return ConfigurationManager.AppSettings["elmah.mvc.route"]; }
+                }
+            }
+        }
+
         public static string ReleaseProfile
         {
             get { return ConfigurationManager.AppSettings["ReleaseProfile"]; }
+        }
+
+        public static string TwilioPhoneNumber
+        {
+            get { return ConfigurationManager.AppSettings["TwilioPhoneNumber"]; }
         }
 
         public static string UnobtrusiveJavaScriptEnabled

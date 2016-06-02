@@ -110,27 +110,90 @@ WriteLiteral("\r\n                </h4>\r\n            </div>\r\n            <di
 
 WriteLiteral(" class=\"modal-body button-stack\"");
 
-WriteLiteral(">\r\n                <button");
+WriteLiteral(">\r\n");
+
+            
+            #line 18 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 18 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                 if (string.IsNullOrWhiteSpace(Model.PhoneNumber))
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <p>\r\n                        <em>No phone number.</em>\r\n     " +
+"               </p>\r\n");
+
+WriteLiteral("                    <button");
+
+WriteLiteral(" class=\"btn btn-block btn-primary\"");
+
+WriteLiteral("  disabled=\"disabled\"");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(">\r\n                        <i");
+
+WriteLiteral(" class=\"fa fa-comment\"");
+
+WriteLiteral("></i>\r\n                        Send &quot;Table Ready&quot; Message\r\n            " +
+"        </button>\r\n");
+
+            
+            #line 27 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                }
+                else
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <p>\r\n                        <em>");
+
+            
+            #line 31 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                       Write(Html.PhoneNumber(Model.PhoneNumber));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</em>\r\n                    </p>\r\n");
+
+WriteLiteral("                    <button");
 
 WriteLiteral(" class=\"btn btn-block btn-primary\"");
 
 WriteLiteral(" type=\"button\"");
 
-WriteLiteral(">\r\n                    <i");
+WriteLiteral(">\r\n                        <i");
 
 WriteLiteral(" class=\"fa fa-comment\"");
 
-WriteLiteral("></i>\r\n                    Send &quot;Table Ready&quot; Message\r\n                " +
-"</button>\r\n                <form");
+WriteLiteral("></i>\r\n                        Send &quot;Table Ready&quot; Message\r\n            " +
+"        </button>\r\n");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 840), Tuple.Create("\"", 888)
             
-            #line 22 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-, Tuple.Create(Tuple.Create("", 849), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.RemoveCustomer())
+            #line 37 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                }
+
             
             #line default
             #line hidden
-, 849), false)
+WriteLiteral("                <form");
+
+WriteAttribute("action", Tuple.Create(" action=\"", 1493), Tuple.Create("\"", 1541)
+            
+            #line 38 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+, Tuple.Create(Tuple.Create("", 1502), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.RemoveCustomer())
+            
+            #line default
+            #line hidden
+, 1502), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -142,7 +205,7 @@ WriteLiteral(" data-confirm=\"Are you sure?\"");
 WriteLiteral(" data-confirm-prompt=\"Are you sure you want to remove ");
 
             
-            #line 23 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 39 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                                                                                                          Write(HttpUtility.HtmlAttributeEncode(Model.Name));
 
             
@@ -159,7 +222,7 @@ WriteLiteral(">Remove From List</button>\r\n");
 WriteLiteral("                    ");
 
             
-            #line 24 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 40 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                Write(Html.Hidden(MVC.Queue.RemoveCustomerParams.customerId, Model.Id));
 
             
@@ -170,7 +233,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 25 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 41 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                Write(Html.AntiForgeryToken2());
 
             
@@ -187,13 +250,13 @@ WriteLiteral(">Move to End of List</button>\r\n                ");
 WriteLiteral("\r\n");
 
             
-            #line 29 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 45 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 29 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 45 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                  if (Model.LogEntries.Any())
                 {
 
@@ -210,14 +273,14 @@ WriteLiteral(" class=\"history\"");
 WriteLiteral(">\r\n");
 
             
-            #line 35 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 51 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 35 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-                         foreach (var entry in Model.LogEntries)
+            #line 51 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+                         foreach (var entry in Model.LogEntries.OrderByDescending(x => x.Id))
                         {
 
             
@@ -225,15 +288,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <p>\r\n                                <i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1849), Tuple.Create("\"", 1873)
-, Tuple.Create(Tuple.Create("", 1857), Tuple.Create("fa", 1857), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2531), Tuple.Create("\"", 2555)
+, Tuple.Create(Tuple.Create("", 2539), Tuple.Create("fa", 2539), true)
             
-            #line 38 "..\..\Views\Queue\ManageCustomerModal.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1859), Tuple.Create<System.Object, System.Int32>(entry.Icon()
+            #line 54 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+, Tuple.Create(Tuple.Create(" ", 2541), Tuple.Create<System.Object, System.Int32>(entry.Icon()
             
             #line default
             #line hidden
-, 1860), false)
+, 2542), false)
 );
 
 WriteLiteral("></i>\r\n");
@@ -241,7 +304,7 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 39 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 55 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                            Write(entry.Message);
 
             
@@ -254,7 +317,7 @@ WriteLiteral(" class=\"text-muted\"");
 WriteLiteral(">");
 
             
-            #line 40 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 56 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                                                     Write(entry.Age().Humanize());
 
             
@@ -263,7 +326,7 @@ WriteLiteral(">");
 WriteLiteral(" ago</span>\r\n                            </p>\r\n");
 
             
-            #line 42 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 58 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                         }
 
             
@@ -272,7 +335,7 @@ WriteLiteral(" ago</span>\r\n                            </p>\r\n");
 WriteLiteral("                    </div>\r\n");
 
             
-            #line 44 "..\..\Views\Queue\ManageCustomerModal.cshtml"
+            #line 60 "..\..\Views\Queue\ManageCustomerModal.cshtml"
                 }
 
             

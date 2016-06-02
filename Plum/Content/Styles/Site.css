@@ -6716,6 +6716,9 @@ input[type=checkbox]:checked + input[type=hidden] + label:before {
   margin: 0 auto;
   pointer-events: all; }
 
+.modal-header {
+  padding: 15px 15px 0 15px; }
+
 .home .jumbo {
   color: #eee !important;
   text-align: center;

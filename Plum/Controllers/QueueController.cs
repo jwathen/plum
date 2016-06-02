@@ -151,7 +151,8 @@ namespace Plum.Controllers
 
             var profanityFilter = new ProfanityFilter(Server.MapPath("~/App_Data/Profanity.txt"));
             customer.GenerateUrlToken(Database, profanityFilter);
-            queue.Customers.Add(customer);
+
+            queue.AddCustomer(customer, Url, Secrets);
             await Database.SaveChangesAsync();
 
             return RedirectToAction(MVC.Queue.Manage(queue.Id));
