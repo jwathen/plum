@@ -18,12 +18,12 @@
 - loading overlays
 - auto focus on dialog open
 - business settings for name/image, text message content, "cancel"
-button visbility
+button visbility, website url
+- check url tokens against profanity filter
 
 ## support
 - flash messages
 - error logging
-- deploy to azure
 - password reset
 - contact us
 - domain name
@@ -33,6 +33,9 @@ button visbility
 - sign in with google
 - version on about page
 - 404 and 500 pages
+
+# issues
+- error for phone number < 10 characters
 
 ## future
 - android wrapper

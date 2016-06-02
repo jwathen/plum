@@ -388,17 +388,21 @@ WriteLiteral(" class=\"modal\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"modal-dialog\"");
+WriteLiteral(" class=\"vertical-alignment-helper\"");
 
 WriteLiteral(">\r\n            <div");
 
-WriteLiteral(" class=\"modal-content\"");
+WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
 
 WriteLiteral(">\r\n                <div");
 
+WriteLiteral(" class=\"modal-content\"");
+
+WriteLiteral(">\r\n                    <div");
+
 WriteLiteral(" class=\"modal-header\"");
 
-WriteLiteral(">\r\n                    <button");
+WriteLiteral(">\r\n                        <button");
 
 WriteLiteral(" type=\"button\"");
 
@@ -412,15 +416,20 @@ WriteLiteral("><span");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral(">&times;</span></button>\r\n                    <h4");
+WriteLiteral(">&times;</span></button>\r\n                        <h4");
 
 WriteLiteral(" class=\"modal-title\"");
 
-WriteLiteral("></h4>\r\n                </div>\r\n                <div");
+WriteLiteral("></h4>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"modal-body\"");
+
+WriteLiteral(">\r\n                        <p></p>\r\n                    </div>\r\n                 " +
+"   <div");
 
 WriteLiteral(" class=\"modal-footer\"");
 
-WriteLiteral(">\r\n                    <button");
+WriteLiteral(">\r\n                        <button");
 
 WriteLiteral(" type=\"button\"");
 
@@ -428,14 +437,16 @@ WriteLiteral(" class=\"btn btn-default pull-left\"");
 
 WriteLiteral(" data-dismiss=\"modal\"");
 
-WriteLiteral(">No</button>\r\n                    <button");
+WriteLiteral(">No</button>\r\n                        <button");
+
+WriteLiteral(" id=\"ConfirmModal-Yes\"");
 
 WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" class=\"btn btn-primary\"");
 
-WriteLiteral(">Yes</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </" +
-"div>\r\n    <script");
+WriteLiteral(">Yes</button>\r\n                    </div>\r\n                </div>\r\n            </" +
+"div>\r\n        </div>\r\n    </div>\r\n    <script");
 
 WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"");
 
@@ -455,14 +466,19 @@ WriteLiteral(" src=\"http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.un
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4026), Tuple.Create("\"", 4091)
+WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/jquery.formatter." +
+"min.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4401), Tuple.Create("\"", 4466)
             
-            #line 89 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4032), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+            #line 95 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4407), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 4032), false)
+, 4407), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -470,7 +486,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 90 "..\..\Views\Shared\_Layout.cshtml"
+            #line 96 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

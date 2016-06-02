@@ -41,42 +41,35 @@ namespace ASP
         {
 WriteLiteral("<div");
 
-WriteLiteral(" class=\"modal-dialog\"");
+WriteLiteral(" class=\"vertical-alignment-helper\"");
 
 WriteLiteral(">\r\n    <div");
 
+WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
+
+WriteLiteral(">\r\n        <div");
+
 WriteLiteral(" class=\"modal-content\"");
 
-WriteLiteral(">\r\n        <form");
+WriteLiteral(">\r\n            <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 127), Tuple.Create("\"", 172)
+WriteAttribute("action", Tuple.Create(" action=\"", 202), Tuple.Create("\"", 247)
             
-            #line 5 "..\..\Views\Queue\AddCustomerModal.cshtml"
-, Tuple.Create(Tuple.Create("", 136), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.AddCustomer())
+            #line 6 "..\..\Views\Queue\AddCustomerModal.cshtml"
+, Tuple.Create(Tuple.Create("", 211), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.AddCustomer())
             
             #line default
             #line hidden
-, 136), false)
+, 211), false)
 );
 
 WriteLiteral(" method=\"post\"");
 
-WriteLiteral(">\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 6 "..\..\Views\Queue\AddCustomerModal.cshtml"
-       Write(Html.ValidationSummary());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"modal-header\"");
 
-WriteLiteral(">\r\n                <button");
+WriteLiteral(">\r\n                    <button");
 
 WriteLiteral(" class=\"close\"");
 
@@ -84,31 +77,43 @@ WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" data-dismiss=\"modal\"");
 
-WriteLiteral(">\r\n                    &times;\r\n                </button>\r\n                <h4");
+WriteLiteral(">\r\n                        &times;\r\n                    </button>\r\n              " +
+"      <h4");
 
 WriteLiteral(" class=\"modal-title\"");
 
-WriteLiteral(">\r\n                    Add Party to List\r\n                </h4>\r\n            </di" +
-"v>\r\n            <div");
+WriteLiteral(">\r\n                        Add Party to List\r\n                    </h4>\r\n        " +
+"        </div>\r\n                <fieldset>\r\n                    <div");
 
 WriteLiteral(" class=\"modal-body\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                        ");
 
             
-            #line 16 "..\..\Views\Queue\AddCustomerModal.cshtml"
-           Write(Html.EditorForModel());
+            #line 17 "..\..\Views\Queue\AddCustomerModal.cshtml"
+                   Write(Html.ValidationSummary());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n            <div");
+WriteLiteral("\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 18 "..\..\Views\Queue\AddCustomerModal.cshtml"
+                   Write(Html.EditorForModel());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </fieldset>\r\n                <div");
 
 WriteLiteral(" class=\"modal-footer\"");
 
-WriteLiteral(">\r\n                <input");
+WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
@@ -116,29 +121,29 @@ WriteLiteral(" class=\"btn btn-block btn-primary\"");
 
 WriteLiteral(" value=\"Add Party\"");
 
-WriteLiteral(" />\r\n            </div>\r\n");
+WriteLiteral(" />\r\n                </div>\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("                ");
 
             
-            #line 21 "..\..\Views\Queue\AddCustomerModal.cshtml"
-       Write(Html.HiddenFor(x => x.QueueId));
+            #line 24 "..\..\Views\Queue\AddCustomerModal.cshtml"
+           Write(Html.HiddenFor(x => x.QueueId));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("                ");
 
             
-            #line 22 "..\..\Views\Queue\AddCustomerModal.cshtml"
-       Write(Html.AntiForgeryToken2());
+            #line 25 "..\..\Views\Queue\AddCustomerModal.cshtml"
+           Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </form>\r\n    </div>\r\n</div>\r\n");
+WriteLiteral("\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>");
 
         }
     }

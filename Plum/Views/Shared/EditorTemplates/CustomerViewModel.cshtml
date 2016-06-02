@@ -2,13 +2,13 @@
 
 <div class="form-group">
     @Html.LabelFor(x => x.Name)
-    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" })
 </div>
 <div class="form-group">
     @Html.LabelFor(x => x.NumberInParty, "Number in Party")
-    @Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control input-lg" })
 </div>
 <div class="form-group">
     @Html.LabelFor(x => x.PhoneNumber, "Phone Number (optional)")
-    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", type = "tel" })
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-lg", type = "tel", data_formatter = "phone" })
 </div>

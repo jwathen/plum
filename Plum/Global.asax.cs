@@ -31,24 +31,28 @@ namespace Plum
             routes.MapAttributeRoutes(x =>
             {
                 x.AddRoutesFromAssemblyOf<HomeController>();
-                x.AppendTrailingSlash = true;
+                x.AppendTrailingSlash = false;
                 x.UseLowercaseRoutes = true;
             });
         }
 
         protected void RegisterViewEngines(ViewEngineCollection engines)
         {
-            var engine = new PrecompiledMvcEngine(typeof(MvcApplication).Assembly)
+            var razorViewEngine = new RazorViewEngine();
+            razorViewEngine.FileExtensions = new[] { "cshtml" };
+
+            var precompiledViewEngine = new PrecompiledMvcEngine(typeof(MvcApplication).Assembly)
             {
                 UsePhysicalViewsIfNewer = bool.Parse(AppSettings.UsePhysicalViewsIfNewer),
                 FileExtensions = new[] { "cshtml" }
             };
 
             engines.Clear();
-            engines.Insert(0, engine);
+            engines.Add(precompiledViewEngine);
+            engines.Add(razorViewEngine);
 
             // StartPage lookups are done by WebPages. 
-            VirtualPathFactoryManager.RegisterVirtualPathFactory(engine);
+            VirtualPathFactoryManager.RegisterVirtualPathFactory(precompiledViewEngine);
         }
     }
 }

@@ -88,7 +88,18 @@ WriteLiteral("></i>\r\n        Add Party\r\n    </button>\r\n    <br />\r\n");
             #line hidden
             
             #line 13 "..\..\Views\Queue\Manage.cshtml"
-     if (Model.Customers.Count > 1)
+     if (Model.Customers.Count == 0)
+    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        <p>\r\n            There are no customers waiting.\r\n        </p>\r\n");
+
+            
+            #line 18 "..\..\Views\Queue\Manage.cshtml"
+    }
+    else if (Model.Customers.Count > 1)
     {
 
             
@@ -101,7 +112,7 @@ WriteLiteral(" class=\"text-muted\"");
 WriteLiteral(">\r\n            You can rearrange this list by dragging parties.\r\n        </p>\r\n");
 
             
-            #line 18 "..\..\Views\Queue\Manage.cshtml"
+            #line 24 "..\..\Views\Queue\Manage.cshtml"
     }
 
             
@@ -114,13 +125,13 @@ WriteLiteral(" class=\"list-group text-center\"");
 WriteLiteral(">\r\n");
 
             
-            #line 20 "..\..\Views\Queue\Manage.cshtml"
+            #line 26 "..\..\Views\Queue\Manage.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Queue\Manage.cshtml"
+            #line 26 "..\..\Views\Queue\Manage.cshtml"
          foreach (var customer in Model.OrderedCustomers())
         {
 
@@ -134,7 +145,7 @@ WriteLiteral(" class=\"list-group-item\"");
 WriteLiteral(" data-manage-customer-id=\"");
 
             
-            #line 22 "..\..\Views\Queue\Manage.cshtml"
+            #line 28 "..\..\Views\Queue\Manage.cshtml"
                                                             Write(customer.Id);
 
             
@@ -147,7 +158,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 23 "..\..\Views\Queue\Manage.cshtml"
+            #line 29 "..\..\Views\Queue\Manage.cshtml"
            Write(customer.Name);
 
             
@@ -156,7 +167,7 @@ WriteLiteral("                ");
 WriteLiteral(" (");
 
             
-            #line 23 "..\..\Views\Queue\Manage.cshtml"
+            #line 29 "..\..\Views\Queue\Manage.cshtml"
                            Write(customer.NumberInParty);
 
             
@@ -165,7 +176,7 @@ WriteLiteral(" (");
 WriteLiteral(") Waited ");
 
             
-            #line 23 "..\..\Views\Queue\Manage.cshtml"
+            #line 29 "..\..\Views\Queue\Manage.cshtml"
                                                            Write(customer.TimeWaited().Humanize());
 
             
@@ -174,7 +185,7 @@ WriteLiteral(") Waited ");
 WriteLiteral("\r\n            </li>\r\n");
 
             
-            #line 25 "..\..\Views\Queue\Manage.cshtml"
+            #line 31 "..\..\Views\Queue\Manage.cshtml"
         }
 
             
@@ -186,15 +197,7 @@ WriteLiteral(" id=\"ManageCustomerModal\"");
 
 WriteLiteral(" class=\"modal\"");
 
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"modal-dialog\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"modal-content\"");
-
-WriteLiteral("></div>\r\n    </div>\r\n</div>\r\n<div");
+WriteLiteral(">\r\n</div>\r\n<div");
 
 WriteLiteral(" id=\"AddCustomerModal\"");
 
@@ -205,7 +208,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("    ");
 
             
-            #line 34 "..\..\Views\Queue\Manage.cshtml"
+            #line 37 "..\..\Views\Queue\Manage.cshtml"
 Write(Html.Partial(MVC.Queue.Views.AddCustomerModal, new CustomerViewModel { QueueId = Model.Id }));
 
             
@@ -219,7 +222,7 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
 "omerModalUrl = \'");
 
             
-            #line 39 "..\..\Views\Queue\Manage.cshtml"
+            #line 42 "..\..\Views\Queue\Manage.cshtml"
                                              Write(Url.Action(MVC.Queue.ManageCustomerModal()));
 
             
@@ -227,14 +230,14 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
             #line hidden
 WriteLiteral("\';\r\n    </script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1320), Tuple.Create("\"", 1393)
+WriteAttribute("src", Tuple.Create(" src=\"", 1361), Tuple.Create("\"", 1434)
             
-            #line 41 "..\..\Views\Queue\Manage.cshtml"
-, Tuple.Create(Tuple.Create("", 1326), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
+            #line 44 "..\..\Views\Queue\Manage.cshtml"
+, Tuple.Create(Tuple.Create("", 1367), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
             
             #line default
             #line hidden
-, 1326), false)
+, 1367), false)
 );
 
 WriteLiteral("></script>\r\n");

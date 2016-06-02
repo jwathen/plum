@@ -73,6 +73,11 @@ namespace Plum.Web
                 using (var db = new AppDataContext())
                 {
                     business = db.Businesses.Find(BusinessId.Value);
+                    if (business == null)
+                    {
+                        SignOut();
+                        _httpContext.Response.Redirect("/");
+                    }
                 }
             }
 

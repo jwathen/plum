@@ -16,7 +16,8 @@ namespace Plum.Models
 
         public IEnumerable<Customer> OrderedCustomers()
         {
-            return Customers.OrderBy(x => x.SortOrder);
+            return Customers.OrderBy(x => x.SortOrder)
+                .ThenBy(x => x.DateAdded);
         }
 
         public int NumberOfPartiesAheadOf(Customer customer)

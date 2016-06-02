@@ -60,7 +60,7 @@ WriteLiteral("    ");
 
             
             #line 5 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-Write(Html.TextBoxFor(x => x.Name, new { @class = "form-control" }));
+Write(Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" }));
 
             
             #line default
@@ -86,7 +86,7 @@ WriteLiteral("    ");
 
             
             #line 9 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-Write(Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control" }));
+Write(Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control input-lg" }));
 
             
             #line default
@@ -112,7 +112,7 @@ WriteLiteral("    ");
 
             
             #line 13 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-Write(Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", type = "tel" }));
+Write(Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-lg", type = "tel", data_formatter = "phone" }));
 
             
             #line default

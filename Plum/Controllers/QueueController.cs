@@ -109,11 +109,12 @@ namespace Plum.Controllers
                 .Include(x => x.Queue.Business)
                 .FirstOrDefaultAsync(x => x.Id == customerId);
 
-            if (customer == null && Security.UserOwns(customer))
+            if (customer != null && Security.UserOwns(customer))
             {
+                int queueId = customer.Queue.Id;
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
-                return RedirectToAction(MVC.Queue.Manage(customer.Queue.Id));
+                return RedirectToAction(MVC.Queue.Manage(queueId));
             }
 
             return RedirectToAction(MVC.Queue.Manage());
@@ -138,10 +139,13 @@ namespace Plum.Controllers
             var customer = new Plum.Models.Customer();
             customer.Name = model.Name;
             customer.NumberInParty = model.NumberInParty;
-            customer.PhoneNumber = new string(model.PhoneNumber.Where(x => char.IsDigit(x)).ToArray());
+            if (!string.IsNullOrWhiteSpace(model.PhoneNumber))
+            {
+                customer.PhoneNumber = new string(model.PhoneNumber.Where(x => char.IsDigit(x)).ToArray());
+            }
             customer.DateAdded = DateTime.UtcNow;
             customer.Log(Models.CustomerLogEntryType.AddedToList, "Party added to wait list.");
-            customer.SortOrder = queue.Customers.OrderBy(x => x.SortOrder).Select(x => x.SortOrder).FirstOrDefault();
+            customer.SortOrder = queue.Customers.OrderBy(x => x.SortOrder).Select(x => x.SortOrder).LastOrDefault();
             customer.SortOrder++;
             customer.GenerateUrlToken(Database);
             queue.Customers.Add(customer);

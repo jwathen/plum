@@ -10,7 +10,13 @@
         Add Party
     </button>
     <br />
-    @if (Model.Customers.Count > 1)
+    @if (Model.Customers.Count == 0)
+    {
+        <p>
+            There are no customers waiting.
+        </p>
+    }
+    else if (Model.Customers.Count > 1)
     {
         <p class="text-muted">
             You can rearrange this list by dragging parties.
@@ -26,9 +32,6 @@
     </ul>
 </div>
 <div id="ManageCustomerModal" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content"></div>
-    </div>
 </div>
 <div id="AddCustomerModal" class="modal">
     @Html.Partial(MVC.Queue.Views.AddCustomerModal, new CustomerViewModel { QueueId = Model.Id })

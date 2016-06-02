@@ -34,7 +34,12 @@ namespace Plum.Models
 
         public TimeSpan TimeWaited()
         {
-            return DateTime.UtcNow.Subtract(DateAdded);
+            TimeSpan timeWaited = DateTime.UtcNow.Subtract(DateAdded);
+            if (timeWaited < TimeSpan.FromSeconds(1))
+            {
+                timeWaited = TimeSpan.FromSeconds(1);
+            }
+            return timeWaited;
         }
 
         public void Log(CustomerLogEntryType type, string message)
@@ -50,7 +55,7 @@ namespace Plum.Models
         public void GenerateUrlToken(AppDataContext db)
         {
             string token = string.Empty;
-            char[] characters = "abcdefghijklmnopqrstuvwxyz".ToArray();
+            char[] characters = "abcdefghijklmnopqrstuvwxyz1234567890".ToArray();
             var random = new Random();
 
             do

@@ -10,6 +10,11 @@ namespace Plum.ViewModels.Customer
     [Validator(typeof(CustomerViewModelValidator))]
     public class CustomerViewModel
     {
+        public CustomerViewModel()
+        {
+            NumberInParty = 2;
+        }
+
         public int QueueId { get; set; }
         public string Name { get; set; }
         public int NumberInParty { get; set; }

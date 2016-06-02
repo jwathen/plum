@@ -67,10 +67,10 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</div>\r\n    <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 250), Tuple.Create("\"", 289)
+WriteAttribute("action", Tuple.Create(" action=\"", 250), Tuple.Create("\"", 301)
             
             #line 10 "..\..\Views\Queue\CustomerView.cshtml"
-, Tuple.Create(Tuple.Create("", 259), Tuple.Create<System.Object, System.Int32>(MVC.Queue.CancelPlaceInLine()
+, Tuple.Create(Tuple.Create("", 259), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.CancelPlaceInLine())
             
             #line default
             #line hidden
@@ -82,6 +82,8 @@ WriteLiteral(" method=\"post\"");
 WriteLiteral(">\r\n        <button");
 
 WriteLiteral(" data-confirm=\"Are you sure?\"");
+
+WriteLiteral(" data-confirm-prompt=\"Are you sure you want to cancel your place in line?\"");
 
 WriteLiteral(" class=\"btn btn-block btn-default\"");
 
@@ -209,15 +211,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1230), Tuple.Create("\"", 1308)
-, Tuple.Create(Tuple.Create("", 1238), Tuple.Create("list-group-item", 1238), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1316), Tuple.Create("\"", 1394)
+, Tuple.Create(Tuple.Create("", 1324), Tuple.Create("list-group-item", 1324), true)
             
             #line 38 "..\..\Views\Queue\CustomerView.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1253), Tuple.Create<System.Object, System.Int32>(customer == Model ? "list-group-item-active" : null
+, Tuple.Create(Tuple.Create(" ", 1339), Tuple.Create<System.Object, System.Int32>(customer == Model ? "list-group-item-active" : null
             
             #line default
             #line hidden
-, 1254), false)
+, 1340), false)
 );
 
 WriteLiteral(">\r\n");

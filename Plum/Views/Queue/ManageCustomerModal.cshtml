@@ -3,40 +3,49 @@
     Layout = null;
 }
 
-<div class="modal-header">
-    <button class="close" type="button" data-dismiss="modal">
-        &times;
-    </button>
-    <h4 class="modal-title">
-        @Model.Name (@Model.NumberInParty) @Model.TimeWaited().Humanize()
-    </h4>
-</div>
-<div class="modal-body button-stack">
-    <button class="btn btn-block btn-primary" type="button">
-        <i class="fa fa-comment"></i>
-        Send &quot;Table Ready&quot; Message
-    </button>
-    <form action="@Url.Action(MVC.Queue.RemoveCustomer())" method="post">
-        <button class="btn btn-block btn-default" type="submit">Remove From List</button>
-        @Html.Hidden(MVC.Queue.RemoveCustomerParams.customerId, Model.Id)
-        @Html.AntiForgeryToken2()
-    </form>
-    <button class="btn btn-block btn-default" type="button">Move to End of List</button>
-    @*<a href="#" class="btn btn-block btn-default">Edit Party</a>*@
-    @if (Model.LogEntries.Any())
-    {
-        <h5>
-            History
-        </h5>
-        <div class="history">
-            @foreach (var entry in Model.LogEntries)
-            {
-                <p>
-                    <i class="fa @entry.Icon()"></i>
-                    @entry.Message
-                    <span class="text-muted">@entry.Age().Humanize() ago</span>
-                </p>
-            }
+<div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center">
+        <div class="modal-content">
+            <div id="ManageCustomerModal" class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    @Model.Name (@Model.NumberInParty) @Model.TimeWaited().Humanize()
+                </h4>
+            </div>
+            <div class="modal-body button-stack">
+                <button class="btn btn-block btn-primary" type="button">
+                    <i class="fa fa-comment"></i>
+                    Send &quot;Table Ready&quot; Message
+                </button>
+                <form action="@Url.Action(MVC.Queue.RemoveCustomer())" method="post">
+                    <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to remove @HttpUtility.HtmlAttributeEncode(Model.Name) from the list?" class="btn btn-block btn-default" type="submit">Remove From List</button>
+                    @Html.Hidden(MVC.Queue.RemoveCustomerParams.customerId, Model.Id)
+                    @Html.AntiForgeryToken2()
+                </form>
+                <button class="btn btn-block btn-default" type="button">Move to End of List</button>
+                @*<a href="#" class="btn btn-block btn-default">Edit Party</a>*@
+                @if (Model.LogEntries.Any())
+                {
+                    <h5>
+                        History
+                    </h5>
+                    <div class="history">
+                        @foreach (var entry in Model.LogEntries)
+                        {
+                            <p>
+                                <i class="fa @entry.Icon()"></i>
+                                @entry.Message
+                                <span class="text-muted">@entry.Age().Humanize() ago</span>
+                            </p>
+                        }
+                    </div>
+                }
+            </div>
         </div>
-    }
+    </div>
 </div>
+<script>
+    initConfirmationModals('#ManageCustomerModal');
+</script>
