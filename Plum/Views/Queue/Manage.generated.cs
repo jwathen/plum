@@ -28,13 +28,13 @@ namespace ASP
     using System.Web.WebPages;
     using Humanizer;
     using Plum;
+    using Plum.Web;
     
     #line 2 "..\..\Views\Queue\Manage.cshtml"
     using Plum.ViewModels.Customer;
     
     #line default
     #line hidden
-    using Plum.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Queue/Manage.cshtml")]

@@ -147,6 +147,7 @@
     <Compile Include="TestHelpers\Mvc\WebApplicationTestEnvironment.cs" />
     <Compile Include="TestHelpers\WebTestBase.cs" />
     <Compile Include="Unit\Models\AccountTests.cs" />
+    <Compile Include="Unit\Services\CustomerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plum\Plum.csproj">
@@ -168,6 +169,11 @@
     <None Include="Fixtures\TestBusiness.yml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fixtures\Profanity.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

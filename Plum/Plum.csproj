@@ -159,6 +159,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppSettings.cs</LastGenOutput>
     </Content>
+    <Content Include="App_Data\Profanity.txt" />
     <Content Include="Content\Images\table.jpg" />
     <Content Include="Content\Images\testimonial1.jpg" />
     <Content Include="Content\Images\testimonial2.jpg" />
@@ -306,6 +307,7 @@
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Lib\Services\ProfanityService.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.Designer.cs">
       <DependentUpon>201605311819225_CreateBusinesses.cs</DependentUpon>
@@ -408,10 +410,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_ViewStart.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Web\ApplicationViewBase.cs" />
-    <Compile Include="Web\AppSecurity.cs" />
-    <Compile Include="Web\HtmlHelperExtensions.cs" />
-    <Compile Include="Web\AppSession.cs" />
+    <Compile Include="Lib\Web\ApplicationViewBase.cs" />
+    <Compile Include="Lib\Web\AppSecurity.cs" />
+    <Compile Include="Lib\Web\HtmlHelperExtensions.cs" />
+    <Compile Include="Lib\Web\AppSession.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

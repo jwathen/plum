@@ -216,6 +216,7 @@ namespace Links
                 public static readonly string Index_scss = Url("Index.scss");
             }
         
+            public static readonly string LoadingOverlay_scss = Url("LoadingOverlay.scss");
             public static readonly string Paper_scss = Url("Paper.scss");
             public static readonly string PaperVariables_scss = Url("PaperVariables.scss");
             public static readonly string Site_scss = Url("Site.scss");

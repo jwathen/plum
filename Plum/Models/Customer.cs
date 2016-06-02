@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Web;
+using Plum.Services;
 
 namespace Plum.Models
 {
@@ -57,6 +56,7 @@ namespace Plum.Models
             string token = string.Empty;
             char[] characters = "abcdefghijklmnopqrstuvwxyz1234567890".ToArray();
             var random = new Random();
+            var profanityService = new ProfanityService();
 
             do
             {
@@ -66,7 +66,7 @@ namespace Plum.Models
                     token += characters[random.Next(0, characters.Length - 1)];
                 }
             }
-            while (db.Customers.Any(x => x.UrlToken == token));
+            while (profanityService.ContainsProfanity(token) || db.Customers.Any(x => x.UrlToken == token));
 
             UrlToken = token.ToString();
         }
