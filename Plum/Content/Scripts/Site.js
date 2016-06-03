@@ -15,25 +15,29 @@
           setModalsAndBackdropsOrder();
       });
 
-        function setModalsAndBackdropsOrder() {
-            var modalZIndex = 1040;
-            $('.modal.in').each(function (index) {
-                var $modal = $(this);
-                modalZIndex++;
-                $modal.css('zIndex', modalZIndex);
-                $modal.next('.modal-backdrop.in').addClass('hidden').css('zIndex', modalZIndex - 1);
-            });
-            $('.modal.in:visible:last').focus().next('.modal-backdrop.in').removeClass('hidden');
-        }
+    function setModalsAndBackdropsOrder() {
+        var modalZIndex = 1040;
+        $('.modal.in').each(function (index) {
+            var $modal = $(this);
+            modalZIndex++;
+            $modal.css('zIndex', modalZIndex);
+            $modal.next('.modal-backdrop.in').addClass('hidden').css('zIndex', modalZIndex - 1);
+        });
+        $('.modal.in:visible:last').focus().next('.modal-backdrop.in').removeClass('hidden');
+    }
+
+    $('form[data-loading-overlay]').submit(setLoading);
 });
 
 function setLoading() {
+    console.log('setLoading');
     if ($('.loading').length === 0) {
         $('body').append('<div class="loading" />');
     }
 }
 
 function clearLoading() {
+    console.log('clearLoading');
     $('.loading').remove();
 }
 
@@ -55,6 +59,7 @@ function initConfirmationModals(container) {
         }
         $('#ConfirmModal-Yes').click(function () {
             $this.data('ConfirmModalYes', true);
+            $('#ConfirmModal').modal('hide');
             $this.click();
         });
         $('#ConfirmModal').modal('show');

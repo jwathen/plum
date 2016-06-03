@@ -35,5 +35,19 @@ namespace Plum.Models
             customer.Queue = this;
             customer.SendWelcomeTextMessage(url, secrets);
         }
+
+        public void MoveCustomerToEndOfList(Customer customer)
+        {
+            var orderedCustomers = OrderedCustomers().ToList();
+            orderedCustomers.Remove(customer);
+            orderedCustomers.Add(customer);
+            
+            for(short i = 0; i < orderedCustomers.Count; i++)
+            {
+                orderedCustomers[i].SortOrder = (short)(i - 1);
+            }
+
+            customer.Log(CustomerLogEntryType.MovedToEndOfList, "Moved to end of list.");
+        }
     }
 }

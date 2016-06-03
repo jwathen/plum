@@ -492,8 +492,8 @@ WriteLiteral(" src=\"https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jque
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js" +
-"\"");
+WriteLiteral(" src=\"https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.j" +
+"s\"");
 
 WriteLiteral("></script>\r\n    <script");
 
@@ -502,14 +502,26 @@ WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/j
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4546), Tuple.Create("\"", 4611)
+WriteAttribute("src", Tuple.Create(" src=\"", 4547), Tuple.Create("\"", 4627)
             
             #line 99 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4552), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+, Tuple.Create(Tuple.Create("", 4553), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
             
             #line default
             #line hidden
-, 4552), false)
+, 4553), false)
+);
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4651), Tuple.Create("\"", 4716)
+            
+            #line 100 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4657), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+            
+            #line default
+            #line hidden
+, 4657), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -517,7 +529,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 100 "..\..\Views\Shared\_Layout.cshtml"
+            #line 101 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -24,6 +25,16 @@ namespace Plum.Services
             {
                 string dataFile = File.ReadAllText(_dataFilePath);
                 _secrets = JsonConvert.DeserializeObject<Dictionary<string, object>>(dataFile);
+
+                // Override with app settings if they exist.
+                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["TwilioAccountSid"]))
+                {
+                    _secrets["TwilioAccountSid"] = ConfigurationManager.AppSettings["TwilioAccountSid"];
+                }
+                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["TwilioAuthToken"]))
+                {
+                    _secrets["TwilioAuthToken"] = ConfigurationManager.AppSettings["TwilioAuthToken"];
+                }
             }
         }
 

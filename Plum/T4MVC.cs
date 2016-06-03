@@ -92,6 +92,7 @@ namespace Links
             private const string URLPATH = "~/Content/Scripts";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Queue {
                 private const string URLPATH = "~/Content/Scripts/Queue";
@@ -249,6 +250,7 @@ namespace Links
                 }
                 public static class Assets
                 {
+                    public const string jquery_unobtrusive_ajax_min_js = "~/Content/Scripts/jquery.unobtrusive-ajax.min.js"; 
                     public const string Site_js = "~/Content/Scripts/Site.js"; 
                 }
             }

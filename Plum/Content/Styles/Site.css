@@ -6532,7 +6532,7 @@ input[type="checkbox"],
 /* Absolute Center Spinner */
 .loading {
   position: fixed;
-  z-index: 999;
+  z-index: 1999;
   height: 2em;
   width: 2em;
   overflow: show;
@@ -6670,19 +6670,6 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
   display: none; }
-
-input[type=checkbox] {
-  display: none; }
-
-input[type=checkbox] + input[type=hidden] + label:before {
-  font-family: FontAwesome;
-  display: inline-block;
-  content: "\f096";
-  letter-spacing: 1em; }
-
-input[type=checkbox]:checked + input[type=hidden] + label:before {
-  content: "\f046";
-  letter-spacing: 0.85em; }
 
 .history {
   margin-top: 1em;

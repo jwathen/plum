@@ -10,5 +10,9 @@
   {
     "outputFile": "Content/Scripts/Queue/Manage.es5.js",
     "inputFile": "Content/Scripts/Queue/Manage.js"
+  },
+  {
+    "outputFile": "Content/Scripts/jquery.shadow-animation.es5.js",
+    "inputFile": "Content/Scripts/jquery.shadow-animation.js"
   }
 ]

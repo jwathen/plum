@@ -65,6 +65,8 @@ WriteAttribute("action", Tuple.Create(" action=\"", 202), Tuple.Create("\"", 247
 
 WriteLiteral(" method=\"post\"");
 
+WriteLiteral(" data-loading-overlay=\"true\"");
+
 WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"modal-header\"");

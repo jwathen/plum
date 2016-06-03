@@ -87,6 +87,7 @@ namespace Plum.Controllers
                 .Include(x => x.LogEntries)
                 .Include(x => x.Queue)
                 .Include(x => x.Queue.Business)
+                .Include(x => x.Queue.Customers)
                 .FirstOrDefaultAsync(x => x.Id == customerId);
             if (customer == null)
             {
@@ -115,7 +116,7 @@ namespace Plum.Controllers
                 int queueId = customer.Queue.Id;
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
-                return RedirectToAction(MVC.Queue.Manage(queueId));
+                return JavaScript($"window.location.href = '{Url.Action(MVC.Queue.Manage(queueId))}';");
             }
 
             return RedirectToAction(MVC.Queue.Manage());
@@ -166,6 +167,7 @@ namespace Plum.Controllers
             var customer = await Database.Customers
                 .Include(x => x.Queue)
                 .Include(x => x.Queue.Business)
+                .Include(x => x.Queue.Customers)
                 .FirstOrDefaultAsync(x => x.Id == customerId);
 
             if (customer != null && Security.UserOwns(customer))
@@ -173,7 +175,29 @@ namespace Plum.Controllers
                 int queueId = customer.Queue.Id;
                 customer.SendReadyTextMessage(Url, Secrets);
                 await Database.SaveChangesAsync();
-                return RedirectToAction(MVC.Queue.Manage(queueId));
+                return View(MVC.Queue.Views.ManageCustomerModal, customer);
+            }
+
+            return RedirectToAction(MVC.Queue.Manage());
+        }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [POST("/queue/move_to_end_of_list")]
+        public virtual async Task<ActionResult> MoveToEndOfList(int customerId)
+        {
+            var customer = await Database.Customers
+                .Include(x => x.Queue)
+                .Include(x => x.Queue.Business)
+                .Include(x => x.Queue.Customers)
+                .FirstOrDefaultAsync(x => x.Id == customerId);
+
+            if (customer != null && Security.UserOwns(customer))
+            {
+                int queueId = customer.Queue.Id;
+                customer.Queue.MoveCustomerToEndOfList(customer);
+                await Database.SaveChangesAsync();
+                return View(MVC.Queue.Views.ManageCustomerModal, customer);
             }
 
             return RedirectToAction(MVC.Queue.Manage());

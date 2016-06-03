@@ -24,15 +24,19 @@ $(function () {
         });
         $('.modal.in:visible:last').focus().next('.modal-backdrop.in').removeClass('hidden');
     }
+
+    $('form[data-loading-overlay]').submit(setLoading);
 });
 
 function setLoading() {
+    console.log('setLoading');
     if ($('.loading').length === 0) {
         $('body').append('<div class="loading" />');
     }
 }
 
 function clearLoading() {
+    console.log('clearLoading');
     $('.loading').remove();
 }
 
@@ -54,6 +58,7 @@ function initConfirmationModals(container) {
         }
         $('#ConfirmModal-Yes').click(function () {
             $this.data('ConfirmModalYes', true);
+            $('#ConfirmModal').modal('hide');
             $this.click();
         });
         $('#ConfirmModal').modal('show');

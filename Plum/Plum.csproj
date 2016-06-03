@@ -179,9 +179,6 @@
       <LastGenOutput>AppSettings.cs</LastGenOutput>
     </Content>
     <Content Include="App_Data\Profanity.txt" />
-    <Content Include="App_Readme\Elmah.SqlServer.sql" />
-    <Content Include="App_Readme\Elmah.SqlServer.txt" />
-    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\Images\table.jpg" />
     <Content Include="Content\Images\testimonial1.jpg" />
     <Content Include="Content\Images\testimonial2.jpg" />
@@ -307,6 +304,7 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Views\Queue\ManageCustomerModal.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ManageCustomerModal1.generated.cs</LastGenOutput>
@@ -387,6 +385,7 @@
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
     <Compile Include="ViewModels\Account\SignUpViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\Queue\ManageCustomerViewModel.cs" />
     <Compile Include="Views\Account\SignIn.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

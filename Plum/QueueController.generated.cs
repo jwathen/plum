@@ -108,6 +108,13 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendReadyTextMessage, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> MoveToEndOfList()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MoveToEndOfList, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QueueController Actions { get { return MVC.Queue; } }
@@ -131,6 +138,7 @@ namespace Plum.Controllers
             public readonly string RemoveCustomer = "RemoveCustomer";
             public readonly string AddCustomer = "AddCustomer";
             public readonly string SendReadyTextMessage = "SendReadyTextMessage";
+            public readonly string MoveToEndOfList = "MoveToEndOfList";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -143,6 +151,7 @@ namespace Plum.Controllers
             public const string RemoveCustomer = "RemoveCustomer";
             public const string AddCustomer = "AddCustomer";
             public const string SendReadyTextMessage = "SendReadyTextMessage";
+            public const string MoveToEndOfList = "MoveToEndOfList";
         }
 
 
@@ -199,6 +208,14 @@ namespace Plum.Controllers
         public ActionParamsClass_SendReadyTextMessage SendReadyTextMessageParams { get { return s_params_SendReadyTextMessage; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_SendReadyTextMessage
+        {
+            public readonly string customerId = "customerId";
+        }
+        static readonly ActionParamsClass_MoveToEndOfList s_params_MoveToEndOfList = new ActionParamsClass_MoveToEndOfList();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_MoveToEndOfList MoveToEndOfListParams { get { return s_params_MoveToEndOfList; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_MoveToEndOfList
         {
             public readonly string customerId = "customerId";
         }
@@ -312,6 +329,18 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendReadyTextMessage, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customerId", customerId);
             SendReadyTextMessageOverride(callInfo, customerId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void MoveToEndOfListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int customerId);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> MoveToEndOfList(int customerId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MoveToEndOfList, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customerId", customerId);
+            MoveToEndOfListOverride(callInfo, customerId);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

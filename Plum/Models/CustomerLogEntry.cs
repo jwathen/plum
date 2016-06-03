@@ -15,7 +15,13 @@ namespace Plum.Models
 
         public TimeSpan Age()
         {
-            return DateTime.UtcNow.Subtract(DateInserted);
+            var age = DateTime.UtcNow.Subtract(DateInserted);
+            if (age < TimeSpan.FromSeconds(1))
+            {
+                age = TimeSpan.FromSeconds(1);
+            }
+
+            return age;
         }
 
         public string Icon()

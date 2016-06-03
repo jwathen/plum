@@ -53,22 +53,6 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
-input[type=checkbox] {
-    display: none;
-}
-
-input[type=checkbox] + input[type=hidden] + label:before {
-    font-family: FontAwesome;
-    display: inline-block;
-    content: "\f096";
-    letter-spacing: 1em;
-}
-
-input[type=checkbox]:checked + input[type=hidden] + label:before {
-    content: "\f046";
-    letter-spacing: 0.85em;
-}
-
 .history {
   margin-top: 1em;
   border-right: 1px solid lightgray;
