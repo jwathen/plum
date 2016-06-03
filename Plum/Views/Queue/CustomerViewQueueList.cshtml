@@ -1,0 +1,31 @@
+﻿@model Plum.Models.Customer
+
+@{
+    Layout = null;
+    int numberOfPartiesAheadOfCustomer = Model.Queue.NumberOfPartiesAheadOf(Model);
+}
+
+@if (numberOfPartiesAheadOfCustomer == 0)
+{
+    <p>You are next in line.</p>
+}
+else if (numberOfPartiesAheadOfCustomer == 1)
+{
+    <p>There is one party ahead of you.</p>
+}
+else if (numberOfPartiesAheadOfCustomer <= 6)
+{
+    <p>There are @numberOfPartiesAheadOfCustomer.ToWords() parties ahead of you.</p>
+}
+else
+{
+    <p>There are @numberOfPartiesAheadOfCustomer parties ahead of you.</p>
+}
+<ul class="list-group text-center">
+    @foreach (var customer in Model.Queue.OrderedCustomers())
+            {
+        <li class="list-group-item @(customer == Model ? "list-group-item-active" : null)">
+            @customer.ObfuscateName(Model) (@customer.NumberInParty) Waited @customer.TimeWaitedWords()
+        </li>
+    }
+</ul>

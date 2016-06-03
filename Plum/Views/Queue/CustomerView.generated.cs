@@ -43,7 +43,6 @@ namespace ASP
             #line 3 "..\..\Views\Queue\CustomerView.cshtml"
   
     ViewBag.Title = "CustomerView";
-    int numberOfPartiesAheadOfCustomer = Model.Queue.NumberOfPartiesAheadOf(Model);
 
             
             #line default
@@ -59,7 +58,7 @@ WriteLiteral(" class=\"h3\"");
 WriteLiteral(">");
 
             
-            #line 9 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 8 "..\..\Views\Queue\CustomerView.cshtml"
                Write(Model.Queue.Business.Name);
 
             
@@ -67,14 +66,14 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</div>\r\n    <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 250), Tuple.Create("\"", 301)
+WriteAttribute("action", Tuple.Create(" action=\"", 165), Tuple.Create("\"", 216)
             
-            #line 10 "..\..\Views\Queue\CustomerView.cshtml"
-, Tuple.Create(Tuple.Create("", 259), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.CancelPlaceInLine())
+            #line 9 "..\..\Views\Queue\CustomerView.cshtml"
+, Tuple.Create(Tuple.Create("", 174), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.CancelPlaceInLine())
             
             #line default
             #line hidden
-, 259), false)
+, 174), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -96,7 +95,7 @@ WriteLiteral("></i>\r\n            Cancel Place In Line\r\n        </button>\r\n
 WriteLiteral("        ");
 
             
-            #line 15 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 14 "..\..\Views\Queue\CustomerView.cshtml"
    Write(Html.AntiForgeryToken2());
 
             
@@ -107,160 +106,65 @@ WriteLiteral("\r\n");
 WriteLiteral("        ");
 
             
-            #line 16 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 15 "..\..\Views\Queue\CustomerView.cshtml"
    Write(Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </form>\r\n    <br />\r\n");
+WriteLiteral("\r\n    </form>\r\n    <br />\r\n    <div");
+
+WriteLiteral(" id=\"customerViewQueueList\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
 
             
             #line 19 "..\..\Views\Queue\CustomerView.cshtml"
-    
-            
-            #line default
-            #line hidden
-            
-            #line 19 "..\..\Views\Queue\CustomerView.cshtml"
-     if (numberOfPartiesAheadOfCustomer == 0)
-    {
+   Write(Html.Partial(MVC.Queue.Views.CustomerViewQueueList, Model));
 
             
             #line default
             #line hidden
-WriteLiteral("        <p>You are next in line.</p>\r\n");
+WriteLiteral("\r\n    </div>\r\n</div>\r\n");
+
+DefineSection("scripts", () => {
+
+WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        window.viewData.urlToken =" +
+" \'");
 
             
-            #line 22 "..\..\Views\Queue\CustomerView.cshtml"
-    }
-    else if (numberOfPartiesAheadOfCustomer == 1)
-    {
+            #line 25 "..\..\Views\Queue\CustomerView.cshtml"
+                               Write(Model.UrlToken);
 
             
             #line default
             #line hidden
-WriteLiteral("        <p>There is one party ahead of you.</p>\r\n");
+WriteLiteral("\';\r\n        window.viewData.udpateCustomerViewQueueListUrl = \'");
 
             
             #line 26 "..\..\Views\Queue\CustomerView.cshtml"
-    }
-    else if (numberOfPartiesAheadOfCustomer <= 6)
-    {
+                                                     Write(Url.Action(MVC.Queue.CustomerViewQueueList(Model.UrlToken)));
 
             
             #line default
             #line hidden
-WriteLiteral("        <p>There are ");
+WriteLiteral("\';\r\n    </script>\r\n    <script");
 
+WriteAttribute("src", Tuple.Create(" src=\"", 1020), Tuple.Create("\"", 1099)
             
-            #line 29 "..\..\Views\Queue\CustomerView.cshtml"
-                Write(numberOfPartiesAheadOfCustomer.ToWords());
-
+            #line 28 "..\..\Views\Queue\CustomerView.cshtml"
+, Tuple.Create(Tuple.Create("", 1026), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.CustomerView_es5_min_js)
             
             #line default
             #line hidden
-WriteLiteral(" parties ahead of you.</p>\r\n");
-
-            
-            #line 30 "..\..\Views\Queue\CustomerView.cshtml"
-    }
-    else
-    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        <p>There are ");
-
-            
-            #line 33 "..\..\Views\Queue\CustomerView.cshtml"
-                Write(numberOfPartiesAheadOfCustomer);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" parties ahead of you.</p>\r\n");
-
-            
-            #line 34 "..\..\Views\Queue\CustomerView.cshtml"
-    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("    <ul");
-
-WriteLiteral(" class=\"list-group text-center\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 36 "..\..\Views\Queue\CustomerView.cshtml"
-        
-            
-            #line default
-            #line hidden
-            
-            #line 36 "..\..\Views\Queue\CustomerView.cshtml"
-         foreach (var customer in Model.Queue.OrderedCustomers())
-        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            <li");
-
-WriteAttribute("class", Tuple.Create(" class=\"", 1316), Tuple.Create("\"", 1394)
-, Tuple.Create(Tuple.Create("", 1324), Tuple.Create("list-group-item", 1324), true)
-            
-            #line 38 "..\..\Views\Queue\CustomerView.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1339), Tuple.Create<System.Object, System.Int32>(customer == Model ? "list-group-item-active" : null
-            
-            #line default
-            #line hidden
-, 1340), false)
+, 1026), false)
 );
 
-WriteLiteral(">\r\n");
+WriteLiteral("></script>\r\n");
 
-WriteLiteral("                ");
-
-            
-            #line 39 "..\..\Views\Queue\CustomerView.cshtml"
-           Write(customer.ObfuscateName(Model));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" (");
-
-            
-            #line 39 "..\..\Views\Queue\CustomerView.cshtml"
-                                           Write(customer.NumberInParty);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(") Waited ");
-
-            
-            #line 39 "..\..\Views\Queue\CustomerView.cshtml"
-                                                                           Write(customer.TimeWaitedWords());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            </li>\r\n");
-
-            
-            #line 41 "..\..\Views\Queue\CustomerView.cshtml"
-        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("    </ul>\r\n</div>\r\n\r\n");
+});
 
         }
     }

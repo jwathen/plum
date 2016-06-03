@@ -502,26 +502,37 @@ WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/j
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4547), Tuple.Create("\"", 4627)
-            
-            #line 99 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4553), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
-            
-            #line default
-            #line hidden
-, 4553), false)
+WriteLiteral(" src=\"http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4643), Tuple.Create("\"", 4663)
+, Tuple.Create(Tuple.Create("", 4649), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
+, 4649), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4651), Tuple.Create("\"", 4716)
+WriteAttribute("src", Tuple.Create(" src=\"", 4687), Tuple.Create("\"", 4767)
             
-            #line 100 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4657), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+            #line 101 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4693), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
             
             #line default
             #line hidden
-, 4657), false)
+, 4693), false)
+);
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4791), Tuple.Create("\"", 4856)
+            
+            #line 102 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4797), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+            
+            #line default
+            #line hidden
+, 4797), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -529,7 +540,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 101 "..\..\Views\Shared\_Layout.cshtml"
+            #line 103 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "CustomerView";
-    int numberOfPartiesAheadOfCustomer = Model.Queue.NumberOfPartiesAheadOf(Model);
 }
 
 <div class="container">
@@ -16,29 +15,15 @@
         @Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken)
     </form>
     <br />
-    @if (numberOfPartiesAheadOfCustomer == 0)
-    {
-        <p>You are next in line.</p>
-    }
-    else if (numberOfPartiesAheadOfCustomer == 1)
-    {
-        <p>There is one party ahead of you.</p>
-    }
-    else if (numberOfPartiesAheadOfCustomer <= 6)
-    {
-        <p>There are @numberOfPartiesAheadOfCustomer.ToWords() parties ahead of you.</p>
-    }
-    else
-    {
-        <p>There are @numberOfPartiesAheadOfCustomer parties ahead of you.</p>
-    }
-    <ul class="list-group text-center">
-        @foreach (var customer in Model.Queue.OrderedCustomers())
-        {
-            <li class="list-group-item @(customer == Model ? "list-group-item-active" : null)">
-                @customer.ObfuscateName(Model) (@customer.NumberInParty) Waited @customer.TimeWaitedWords()
-            </li>
-        }
-    </ul>
+    <div id="customerViewQueueList">
+        @Html.Partial(MVC.Queue.Views.CustomerViewQueueList, Model)
+    </div>
 </div>
-
+@section scripts {
+    <script>
+        window.viewData = {};
+        window.viewData.urlToken = '@Model.UrlToken';
+        window.viewData.udpateCustomerViewQueueListUrl = '@Url.Action(MVC.Queue.CustomerViewQueueList(Model.UrlToken))';
+    </script>
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Queue.CustomerView_es5_min_js)"></script>
+}

@@ -106,7 +106,7 @@ namespace Plum.Tests.Integration.Controllers
             int customerId = TestBusiness.Queues.First().Customers.First().Id;
 
             _controller.WithCallTo(x => x.RemoveCustomer(customerId))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage, new { queueId = queueId });
+                .ShouldReturnJavaScriptResult();
 
             Database.Customers.Find(customerId).ShouldBeNull();
         }

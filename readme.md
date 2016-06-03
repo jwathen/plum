@@ -2,7 +2,6 @@
 
 ## features
 - signalr to update customer and business queue views
-- send table ready text message
 - js time to update "time ago" on queue views
 - respond to customer texts
 - send arbitrary texts back to customer

@@ -98,6 +98,9 @@ namespace Links
                 private const string URLPATH = "~/Content/Scripts/Queue";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string CustomerView_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CustomerView.min.js") ? Url("CustomerView.min.js") : Url("CustomerView.js");
+                public static readonly string CustomerView_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CustomerView.es5.min.js") ? Url("CustomerView.es5.min.js") : Url("CustomerView.es5.js");
+                public static readonly string CustomerView_es5_min_js = Url("CustomerView.es5.min.js");
                 public static readonly string Manage_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Manage.min.js") ? Url("Manage.min.js") : Url("Manage.js");
                 public static readonly string Manage_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Manage.es5.min.js") ? Url("Manage.es5.min.js") : Url("Manage.es5.js");
                 public static readonly string Manage_es5_min_js = Url("Manage.es5.min.js");
@@ -245,6 +248,7 @@ namespace Links
                 {
                     public static class Assets
                     {
+                        public const string CustomerView_js = "~/Content/Scripts/Queue/CustomerView.js"; 
                         public const string Manage_js = "~/Content/Scripts/Queue/Manage.js"; 
                     }
                 }

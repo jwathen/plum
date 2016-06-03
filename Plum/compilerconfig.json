@@ -14,5 +14,9 @@
   {
     "outputFile": "Content/Scripts/jquery.shadow-animation.es5.js",
     "inputFile": "Content/Scripts/jquery.shadow-animation.js"
+  },
+  {
+    "outputFile": "Content/Scripts/Queue/CustomerView.es5.js",
+    "inputFile": "Content/Scripts/Queue/CustomerView.js"
   }
 ]

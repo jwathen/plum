@@ -68,6 +68,13 @@ namespace Plum.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CustomerViewQueueList()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CustomerViewQueueList, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CancelPlaceInLine()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CancelPlaceInLine, "https");
@@ -132,6 +139,7 @@ namespace Plum.Controllers
         public class ActionNamesClass
         {
             public readonly string CustomerView = "CustomerView";
+            public readonly string CustomerViewQueueList = "CustomerViewQueueList";
             public readonly string CancelPlaceInLine = "CancelPlaceInLine";
             public readonly string Manage = "Manage";
             public readonly string ManageCustomerModal = "ManageCustomerModal";
@@ -145,6 +153,7 @@ namespace Plum.Controllers
         public class ActionNameConstants
         {
             public const string CustomerView = "CustomerView";
+            public const string CustomerViewQueueList = "CustomerViewQueueList";
             public const string CancelPlaceInLine = "CancelPlaceInLine";
             public const string Manage = "Manage";
             public const string ManageCustomerModal = "ManageCustomerModal";
@@ -160,6 +169,14 @@ namespace Plum.Controllers
         public ActionParamsClass_CustomerView CustomerViewParams { get { return s_params_CustomerView; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_CustomerView
+        {
+            public readonly string urlToken = "urlToken";
+        }
+        static readonly ActionParamsClass_CustomerViewQueueList s_params_CustomerViewQueueList = new ActionParamsClass_CustomerViewQueueList();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_CustomerViewQueueList CustomerViewQueueListParams { get { return s_params_CustomerViewQueueList; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_CustomerViewQueueList
         {
             public readonly string urlToken = "urlToken";
         }
@@ -232,12 +249,14 @@ namespace Plum.Controllers
                 public readonly string AddCustomerModal = "AddCustomerModal";
                 public readonly string CustomerNotFound = "CustomerNotFound";
                 public readonly string CustomerView = "CustomerView";
+                public readonly string CustomerViewQueueList = "CustomerViewQueueList";
                 public readonly string Manage = "Manage";
                 public readonly string ManageCustomerModal = "ManageCustomerModal";
             }
             public readonly string AddCustomerModal = "~/Views/Queue/AddCustomerModal.cshtml";
             public readonly string CustomerNotFound = "~/Views/Queue/CustomerNotFound.cshtml";
             public readonly string CustomerView = "~/Views/Queue/CustomerView.cshtml";
+            public readonly string CustomerViewQueueList = "~/Views/Queue/CustomerViewQueueList.cshtml";
             public readonly string Manage = "~/Views/Queue/Manage.cshtml";
             public readonly string ManageCustomerModal = "~/Views/Queue/ManageCustomerModal.cshtml";
         }
@@ -257,6 +276,18 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CustomerView, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "urlToken", urlToken);
             CustomerViewOverride(callInfo, urlToken);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void CustomerViewQueueListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string urlToken);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CustomerViewQueueList(string urlToken)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CustomerViewQueueList, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "urlToken", urlToken);
+            CustomerViewQueueListOverride(callInfo, urlToken);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

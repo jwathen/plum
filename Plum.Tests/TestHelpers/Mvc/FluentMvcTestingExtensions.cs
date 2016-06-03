@@ -123,6 +123,10 @@ namespace Plum.Tests.TestHelpers.Mvc
             where TController : AppControllerBase
         {
             var actionResult = testResult.ActionResult as RedirectToRouteResult;
+            if (actionResult == null)
+            {
+                throw new InvalidCastException($"Expected action result of type RedirectToRouteResult but got type {testResult.ActionResult.GetType().Name}");
+            }
             actionResult.RouteValues["controller"].ShouldEqual(controller);
             actionResult.RouteValues["action"].ShouldEqual(action);
             if (routeValues != null)
@@ -143,6 +147,23 @@ namespace Plum.Tests.TestHelpers.Mvc
         {
             string controller = typeof(TController).Name.Replace("Controller", string.Empty);
             return testResult.ShouldRedirectTo(controller, action, routeValues);
+        }
+
+        public static ControllerResultTest<TController> ShouldReturnJavaScriptResult<TController>(this ControllerResultTest<TController> testResult, Action<string> scriptAssertion = null)
+            where TController : AppControllerBase
+        {
+            var actionResult = testResult.ActionResult as JavaScriptResult;
+            if (actionResult == null)
+            {
+                throw new InvalidCastException($"Expected action result of type JavaScriptResult but got type {testResult.ActionResult.GetType().Name}");
+            }
+
+            if (scriptAssertion != null)
+            {
+                scriptAssertion(actionResult.Script);
+            }
+
+            return testResult;
         }
 
         private static RenderedHtmlResultTest<TController> RenderView<TController>(ControllerResultTest<TController> controllerResultTest, ViewResultTest viewResultTest)

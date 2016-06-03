@@ -30,6 +30,23 @@ namespace Plum.Controllers
             return View(customer);
         }
 
+        [GET("/queue/customer_view_queue_list")]
+        public virtual async Task<ActionResult> CustomerViewQueueList(string urlToken)
+        {
+            var customer = await Database.Customers
+                .Include(x => x.Queue)
+                .Include(x => x.Queue.Business)
+                .Include(x => x.Queue.Customers)
+                .FirstOrDefaultAsync(x => x.UrlToken == urlToken);
+
+            if (customer == null)
+            {
+                return View(MVC.Queue.Views.CustomerNotFound);
+            }
+
+            return View(customer);
+        }
+
         [ValidateAntiForgeryToken]
         [POST("/queue/cancel")]
         public virtual async Task<ActionResult> CancelPlaceInLine(string urlToken)
@@ -38,8 +55,10 @@ namespace Plum.Controllers
 
             if (customer != null)
             {
+                int queueId = customer.QueueId;
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
+                await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
             }
 
             return RedirectToAction(MVC.Home.Index());
@@ -116,6 +135,7 @@ namespace Plum.Controllers
                 int queueId = customer.Queue.Id;
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
+                await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
                 return JavaScript($"window.location.href = '{Url.Action(MVC.Queue.Manage(queueId))}';");
             }
 
@@ -155,6 +175,7 @@ namespace Plum.Controllers
 
             queue.AddCustomer(customer, Url, Secrets);
             await Database.SaveChangesAsync();
+            await UpdateHub.BroadcastQueueUpdateToCustomers(queue.Id);
 
             return RedirectToAction(MVC.Queue.Manage(queue.Id));
         }
@@ -197,6 +218,7 @@ namespace Plum.Controllers
                 int queueId = customer.Queue.Id;
                 customer.Queue.MoveCustomerToEndOfList(customer);
                 await Database.SaveChangesAsync();
+                await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
                 return View(MVC.Queue.Views.ManageCustomerModal, customer);
             }
 
