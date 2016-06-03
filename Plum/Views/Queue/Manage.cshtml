@@ -10,26 +10,9 @@
         Add Party
     </button>
     <br />
-    @if (Model.Customers.Count == 0)
-    {
-        <p>
-            There are no customers waiting.
-        </p>
-    }
-    else if (Model.Customers.Count > 1)
-    {
-        <p class="text-muted">
-            You can rearrange this list by dragging parties.
-        </p>
-    }
-    <ul class="list-group text-center">
-        @foreach (var customer in Model.OrderedCustomers())
-        {
-            <li class="list-group-item" data-manage-customer-id="@customer.Id">
-                @customer.Name (@customer.NumberInParty) - Waited @customer.TimeWaitedWords()
-            </li>
-        }
-    </ul>
+    <div id="businessViewQueueList">
+        @Html.Partial(MVC.Queue.Views.BusinessViewQueueList, Model)
+    </div>
 </div>
 <div id="ManageCustomerModal" class="modal">
 </div>
@@ -39,6 +22,8 @@
 @section Scripts {
     <script>
         window.viewData = {};
+        window.viewData.queueId = @Model.Id;
+        window.viewData.udpateBusinessViewQueueListUrl = '@Url.Action(MVC.Queue.BusinessViewQueueList(Model.Id))';
         window.viewData.manageCustomerModalUrl = '@Url.Action(MVC.Queue.ManageCustomerModal())';
     </script>
     <script src="@Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)"></script>

@@ -3,7 +3,6 @@
 $(function () {
     var updateHub = $.connection.updateHub;
     updateHub.client.queueUpdated = function () {
-        console.log('updated!');
         $('#customerViewQueueList').load(window.viewData.udpateCustomerViewQueueListUrl);
     };
 

@@ -166,5 +166,10 @@ namespace Plum.Tests.Integration.Controllers
             _controller.WithCallTo(x => x.AddCustomer(model))
                 .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
         }
+
+        public void MoveToEndOfList_Test()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

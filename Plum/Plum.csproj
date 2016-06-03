@@ -366,6 +366,7 @@
     </Compile>
     <Compile Include="Lib\Services\ProfanityFilter.cs" />
     <Compile Include="Lib\Services\AppSecrets.cs" />
+    <Compile Include="Lib\Web\HttpContext2.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.Designer.cs">
       <DependentUpon>201605311819225_CreateBusinesses.cs</DependentUpon>
@@ -438,6 +439,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddCustomerModal.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Queue\BusinessViewQueueList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessViewQueueList.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Queue\CustomerNotFound.generated.cs">
       <AutoGen>True</AutoGen>
@@ -551,6 +557,10 @@
     <Content Include="Views\Queue\CustomerViewQueueList.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>CustomerViewQueueList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Queue\BusinessViewQueueList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BusinessViewQueueList.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

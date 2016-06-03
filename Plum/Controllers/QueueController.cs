@@ -59,6 +59,7 @@ namespace Plum.Controllers
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
                 await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
+                await UpdateHub.BroadcastQueueUpdateToBusiness(queueId);
             }
 
             return RedirectToAction(MVC.Home.Index());
@@ -67,6 +68,40 @@ namespace Plum.Controllers
         [Authorize]
         [GET("/queue/{queueId:int?}")]
         public virtual async Task<ActionResult> Manage(int? queueId)
+        {
+            Plum.Models.Queue model = null;
+            if (queueId.HasValue)
+            {
+                model = await Database.Queues
+                    .Include(x => x.Business)
+                    .Include(x => x.Customers)
+                    .FirstOrDefaultAsync(x => x.Id == queueId.Value);
+            }
+            else
+            {
+                int businessId = AppSession.BusinessId.Value;
+                queueId = await Database.Queues
+                    .Where(x => x.BusinessId == businessId)
+                    .Select(x => x.Id)
+                    .FirstAsync();
+                return RedirectToAction(MVC.Queue.Manage(queueId));
+            }
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+            else if (!Security.UserOwns(model))
+            {
+                return RedirectToAction(MVC.Home.NotAuthorized());
+            }
+
+            return View(model);
+        }
+
+        [Authorize]
+        [GET("/queue/business_view_queue_list/{queueId:int?}")]
+        public virtual async Task<ActionResult> BusinessViewQueueList(int? queueId)
         {
             Plum.Models.Queue model = null;
             if (queueId.HasValue)
@@ -219,6 +254,7 @@ namespace Plum.Controllers
                 customer.Queue.MoveCustomerToEndOfList(customer);
                 await Database.SaveChangesAsync();
                 await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
+                await UpdateHub.BroadcastQueueUpdateToBusiness(queueId);
                 return View(MVC.Queue.Views.ManageCustomerModal, customer);
             }
 
