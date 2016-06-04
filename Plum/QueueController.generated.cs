@@ -129,6 +129,13 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MoveToEndOfList, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SortQueue()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SortQueue, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QueueController Actions { get { return MVC.Queue; } }
@@ -155,6 +162,7 @@ namespace Plum.Controllers
             public readonly string AddCustomer = "AddCustomer";
             public readonly string SendReadyTextMessage = "SendReadyTextMessage";
             public readonly string MoveToEndOfList = "MoveToEndOfList";
+            public readonly string SortQueue = "SortQueue";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -170,6 +178,7 @@ namespace Plum.Controllers
             public const string AddCustomer = "AddCustomer";
             public const string SendReadyTextMessage = "SendReadyTextMessage";
             public const string MoveToEndOfList = "MoveToEndOfList";
+            public const string SortQueue = "SortQueue";
         }
 
 
@@ -252,6 +261,15 @@ namespace Plum.Controllers
         public class ActionParamsClass_MoveToEndOfList
         {
             public readonly string customerId = "customerId";
+        }
+        static readonly ActionParamsClass_SortQueue s_params_SortQueue = new ActionParamsClass_SortQueue();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SortQueue SortQueueParams { get { return s_params_SortQueue; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SortQueue
+        {
+            public readonly string queueId = "queueId";
+            public readonly string customerIds = "customerIds";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -403,6 +421,19 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MoveToEndOfList, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customerId", customerId);
             MoveToEndOfListOverride(callInfo, customerId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SortQueueOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int queueId, int[] customerIds);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SortQueue(int queueId, int[] customerIds)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SortQueue, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "queueId", queueId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customerIds", customerIds);
+            SortQueueOverride(callInfo, queueId, customerIds);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

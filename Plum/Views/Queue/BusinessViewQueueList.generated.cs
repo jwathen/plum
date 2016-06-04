@@ -72,7 +72,7 @@ WriteLiteral("    <p");
 
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n        You can rearrange this list by dragging parties.\r\n    </p>\r\n");
+WriteLiteral(">\r\n        You can rearrange this list by dragging and dropping.\r\n    </p>\r\n");
 
             
             #line 17 "..\..\Views\Queue\BusinessViewQueueList.cshtml"

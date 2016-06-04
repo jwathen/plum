@@ -23,6 +23,8 @@
     <script>
         window.viewData = {};
         window.viewData.queueId = @Model.Id;
+        window.viewData.sortingDebounce = 500;
+        window.viewData.sortQueueUrl = '@Url.Action(MVC.Queue.SortQueue())';
         window.viewData.udpateBusinessViewQueueListUrl = '@Url.Action(MVC.Queue.BusinessViewQueueList(Model.Id))';
         window.viewData.manageCustomerModalUrl = '@Url.Action(MVC.Queue.ManageCustomerModal())';
     </script>

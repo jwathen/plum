@@ -1,7 +1,6 @@
 #todo
 
 ## features
-- signalr to update customer and business queue views
 - js time to update "time ago" on queue views
 - respond to customer texts
 - send arbitrary texts back to customer
@@ -14,6 +13,8 @@
 - auto focus on dialog open
 - business settings for name/image, text message content, "cancel"
 button visbility, website url
+- notes for each party
+- switch to plivo
 
 ## support
 - flash messages

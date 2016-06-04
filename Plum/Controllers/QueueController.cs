@@ -41,7 +41,7 @@ namespace Plum.Controllers
 
             if (customer == null)
             {
-                return View(MVC.Queue.Views.CustomerNotFound);
+                return JavaScript($"<script>window.location.href = '{Url.Action(MVC.Queue.CustomerView(urlToken))}'</script>");
             }
 
             return View(customer);
@@ -259,6 +259,40 @@ namespace Plum.Controllers
             }
 
             return RedirectToAction(MVC.Queue.Manage());
+        }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [POST("/queue/sort/{queueId}")]
+        public virtual async Task<ActionResult> SortQueue(int queueId, int[] customerIds)
+        {
+            if (customerIds != null && customerIds.Any())
+            {
+                var customers = await Database.Customers
+                    .Include(x => x.Queue)
+                    .Include(x => x.Queue.Business)
+                    .Where(x => x.QueueId == queueId && customerIds.Contains(x.Id))
+                    .ToListAsync();
+
+                if (customers.All(x => Security.UserOwns(x)))
+                {
+                    short sortOrder = 1;
+                    foreach (int id in customerIds)
+                    {
+                        var customer = customers.FirstOrDefault(x => x.Id == id);
+                        if (customer != null)
+                        {
+                            customer.SortOrder = sortOrder;
+                            sortOrder++;
+                        }
+                    }
+
+                    await Database.SaveChangesAsync();
+                    await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
+                }
+            }
+
+            return Json(true);
         }
     }
 }

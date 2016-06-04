@@ -130,10 +130,20 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
             
             #line default
             #line hidden
-WriteLiteral(";\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'");
+WriteLiteral(";\r\n        window.viewData.sortingDebounce = 500;\r\n        window.viewData.sortQu" +
+"eueUrl = \'");
 
             
-            #line 26 "..\..\Views\Queue\Manage.cshtml"
+            #line 27 "..\..\Views\Queue\Manage.cshtml"
+                                   Write(Url.Action(MVC.Queue.SortQueue()));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\';\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'");
+
+            
+            #line 28 "..\..\Views\Queue\Manage.cshtml"
                                                      Write(Url.Action(MVC.Queue.BusinessViewQueueList(Model.Id)));
 
             
@@ -142,7 +152,7 @@ WriteLiteral(";\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'")
 WriteLiteral("\';\r\n        window.viewData.manageCustomerModalUrl = \'");
 
             
-            #line 27 "..\..\Views\Queue\Manage.cshtml"
+            #line 29 "..\..\Views\Queue\Manage.cshtml"
                                              Write(Url.Action(MVC.Queue.ManageCustomerModal()));
 
             
@@ -150,14 +160,14 @@ WriteLiteral("\';\r\n        window.viewData.manageCustomerModalUrl = \'");
             #line hidden
 WriteLiteral("\';\r\n    </script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1021), Tuple.Create("\"", 1094)
+WriteAttribute("src", Tuple.Create(" src=\"", 1147), Tuple.Create("\"", 1220)
             
-            #line 29 "..\..\Views\Queue\Manage.cshtml"
-, Tuple.Create(Tuple.Create("", 1027), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
+            #line 31 "..\..\Views\Queue\Manage.cshtml"
+, Tuple.Create(Tuple.Create("", 1153), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
             
             #line default
             #line hidden
-, 1027), false)
+, 1153), false)
 );
 
 WriteLiteral("></script>\r\n");
