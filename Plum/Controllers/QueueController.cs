@@ -201,6 +201,8 @@ namespace Plum.Controllers
                 customer.PhoneNumber = new string(model.PhoneNumber.Where(x => char.IsDigit(x)).ToArray());
             }
             customer.DateAdded = DateTime.UtcNow;
+            customer.QuotedTimeInMinutes = model.QuotedTimeInMinutes;
+            customer.Note = model.Note;
             customer.Log(Models.CustomerLogEntryType.AddedToList, "Party added to wait list.");
             customer.SortOrder = queue.Customers.OrderBy(x => x.SortOrder).Select(x => x.SortOrder).LastOrDefault();
             customer.SortOrder++;

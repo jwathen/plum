@@ -6,6 +6,27 @@ namespace Plum
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
     public static class AppSettings
     {
+        public static class App
+        {
+            public static class QuotedWaitTimeOptions
+            {
+                public static string End
+                {
+                    get { return ConfigurationManager.AppSettings["App:QuotedWaitTimeOptions:End"]; }
+                }
+
+                public static string Increment
+                {
+                    get { return ConfigurationManager.AppSettings["App:QuotedWaitTimeOptions:Increment"]; }
+                }
+
+                public static string Start
+                {
+                    get { return ConfigurationManager.AppSettings["App:QuotedWaitTimeOptions:Start"]; }
+                }
+            }
+        }
+
         public static string ApplicationName
         {
             get { return ConfigurationManager.AppSettings["ApplicationName"]; }

@@ -141,7 +141,9 @@ namespace Plum.Tests.Integration.Controllers
             model.NumberInParty = 4;
             model.PhoneNumber = "9723743329";
             model.QueueId = queueId;
-            
+            model.QuotedTimeInMinutes = 25;
+            model.Note = "his name is Jack";
+
             _controller.WithCallTo(x => x.AddCustomer(model))
                 .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage, new { queueId = queueId });
 
@@ -150,6 +152,8 @@ namespace Plum.Tests.Integration.Controllers
             customer.NumberInParty.ShouldEqual(4);
             customer.PhoneNumber.ShouldEqual("9723743329");
             customer.UrlToken.ShouldNotBeNull();
+            customer.QuotedTimeInMinutes.ShouldEqual(25);
+            customer.Note.ShouldEqual("his name is Jack");
         }
 
         public void AddCustomer_GivenQueueIdForOtherBusiness_ReturnsNotAuthorized()
@@ -201,9 +205,18 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
         }
 
-        public void SortQueue_Test()
+        public void SortQueue_GiventCustomerList_ReordersTheCustomers()
         {
-            throw new NotImplementedException();
+            SignIn();
+            int queueId = TestBusiness.Queues.First().Id;
+            var originalOrder = TestBusiness.Queues.First().OrderedCustomers().Select(x => x.Id).ToArray();
+            int[] expectedOrder = originalOrder.Reverse().ToArray();
+
+            _controller.WithCallTo(x => x.SortQueue(queueId, expectedOrder))
+                .ShouldReturnJson();
+
+            int[] actualOrder = TestBusiness.Queues.First().OrderedCustomers().Select(x => x.Id).ToArray(); ;
+            actualOrder.SequenceEqual(expectedOrder).ShouldBeTrue();
         }
     }
 }

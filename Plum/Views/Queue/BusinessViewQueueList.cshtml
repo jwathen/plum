@@ -20,6 +20,17 @@ else if (Model.Customers.Count > 1)
     {
         <li class="list-group-item" data-manage-customer-id="@customer.Id">
             @customer.Name (@customer.NumberInParty) - Waited @customer.TimeWaitedWords()
+            @if (customer.QuotedTimeInMinutes.HasValue)
+            {
+                if (customer.TimeWaited().TotalMinutes > customer.QuotedTimeInMinutes.Value)
+                {
+                    <span class="text-danger">(Quoted @customer.QuotedTimeWords())</span>
+                }
+                else
+                {
+                    <span class="text-muted">(Quoted @customer.QuotedTimeWords())</span>
+                }
+            }
         </li>
     }
 </ul>

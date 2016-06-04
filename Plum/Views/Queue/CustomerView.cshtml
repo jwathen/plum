@@ -5,15 +5,22 @@
 }
 
 <div class="container">
-    <div class="h3">@Model.Queue.Business.Name</div>
-    <form action="@Url.Action(MVC.Queue.CancelPlaceInLine())" method="post">
-        <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to cancel your place in line?" class="btn btn-block btn-default">
-            <i class="fa fa-times"></i>
-            Cancel Place In Line
+    <h3>@Model.Queue.Business.Name</h3>
+    <div class="button-stack">
+        <button class="btn btn-block btn-default">
+            <i class="fa fa-phone"></i>
+            Call The City Brewery
+            <span class="text-muted">(602-890-3306)</span>
         </button>
-        @Html.AntiForgeryToken2()
-        @Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken)
-    </form>
+        <form action="@Url.Action(MVC.Queue.CancelPlaceInLine())" method="post">
+            <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to cancel your place in line?" class="btn btn-block btn-default">
+                <i class="fa fa-times"></i>
+                Cancel Place In Line
+            </button>
+            @Html.AntiForgeryToken2()
+            @Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken)
+        </form>
+    </div>
     <br />
     <div id="customerViewQueueList">
         @Html.Partial(MVC.Queue.Views.CustomerViewQueueList, Model)

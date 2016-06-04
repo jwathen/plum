@@ -16,6 +16,12 @@
                 </h4>
             </div>
             <div class="modal-body button-stack">
+                @if (!string.IsNullOrWhiteSpace(Model.Note))
+                {
+                    <p>
+                        Note: <em>@Model.Note</em>
+                    </p>
+                }
                 @if (Model.HasPhoneNumber())
                 {
                     <p>
@@ -58,7 +64,7 @@
                         @Html.AntiForgeryToken2()
                     }
                 }
-                @*<a href="#" class="btn btn-block btn-default">Edit Party</a>*@
+                <a href="#" class="btn btn-block btn-default">Edit Party</a>
                 @if (Model.LogEntries.Any())
                 {
                     <h5>
@@ -70,7 +76,7 @@
                             <p>
                                 <i class="fa @entry.Icon()"></i>
                                 @entry.Message
-                                <span class="text-muted">@entry.Age().Humanize() ago</span>
+                                <span class="text-muted text-nowrap">@entry.Age().Humanize() ago</span>
                             </p>
                         }
                     </div>

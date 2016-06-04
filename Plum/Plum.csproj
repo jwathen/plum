@@ -396,6 +396,10 @@
     <Compile Include="Migrations\201606022003028_ElmahAzure.Designer.cs">
       <DependentUpon>201606022003028_ElmahAzure.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606042318157_AddQuotedTimeAndNoteToCustomers.cs" />
+    <Compile Include="Migrations\201606042318157_AddQuotedTimeAndNoteToCustomers.Designer.cs">
+      <DependentUpon>201606042318157_AddQuotedTimeAndNoteToCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Business.cs" />
@@ -441,7 +445,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddCustomerModal.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Queue\BusinessViewQueueList.generated.cs">
+    <Compile Include="Views\Queue\BusinessViewQueueList1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BusinessViewQueueList.cshtml</DependentUpon>
@@ -561,7 +565,7 @@
     </Content>
     <Content Include="Views\Queue\BusinessViewQueueList.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>BusinessViewQueueList.generated.cs</LastGenOutput>
+      <LastGenOutput>BusinessViewQueueList1.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -594,6 +598,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606022003028_ElmahAzure.resx">
       <DependentUpon>201606022003028_ElmahAzure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606042318157_AddQuotedTimeAndNoteToCustomers.resx">
+      <DependentUpon>201606042318157_AddQuotedTimeAndNoteToCustomers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -145,10 +145,75 @@ WriteLiteral(") - Waited ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </li>\r\n");
+WriteLiteral("\r\n");
 
             
-            #line 24 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 23 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            
+            
+            #line default
+            #line hidden
+            
+            #line 23 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+             if (customer.QuotedTimeInMinutes.HasValue)
+            {
+                if (customer.TimeWaited().TotalMinutes > customer.QuotedTimeInMinutes.Value)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <span");
+
+WriteLiteral(" class=\"text-danger\"");
+
+WriteLiteral(">(Quoted ");
+
+            
+            #line 27 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+                                                 Write(customer.QuotedTimeWords());
+
+            
+            #line default
+            #line hidden
+WriteLiteral(")</span>\r\n");
+
+            
+            #line 28 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+                }
+                else
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <span");
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">(Quoted ");
+
+            
+            #line 31 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+                                                Write(customer.QuotedTimeWords());
+
+            
+            #line default
+            #line hidden
+WriteLiteral(")</span>\r\n");
+
+            
+            #line 32 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+                }
+            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        </li>\r\n");
+
+            
+            #line 35 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
     }
 
             

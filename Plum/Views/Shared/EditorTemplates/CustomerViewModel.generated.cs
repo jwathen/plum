@@ -43,23 +43,28 @@ WriteLiteral("<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n    <label");
 
-WriteLiteral("    ");
-
+WriteAttribute("for", Tuple.Create(" for=\"", 89), Tuple.Create("\"", 119)
             
             #line 4 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-Write(Html.LabelFor(x => x.Name));
-
+, Tuple.Create(Tuple.Create("", 95), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.Name)
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+, 95), false)
+);
+
+WriteLiteral(">\r\n        Name\r\n        <span");
+
+WriteLiteral(" class=\"text-danger\"");
+
+WriteLiteral(">*</span>\r\n    </label>\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 5 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 8 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
 Write(Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" }));
 
             
@@ -69,23 +74,28 @@ WriteLiteral("\r\n</div>\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n    <label");
 
-WriteLiteral("    ");
-
+WriteAttribute("for", Tuple.Create(" for=\"", 316), Tuple.Create("\"", 355)
             
-            #line 8 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-Write(Html.LabelFor(x => x.NumberInParty, "Number in Party"));
-
+            #line 11 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+, Tuple.Create(Tuple.Create("", 322), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.NumberInParty)
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+, 322), false)
+);
+
+WriteLiteral(">\r\n        Number in Party\r\n        <span");
+
+WriteLiteral(" class=\"text-danger\"");
+
+WriteLiteral(">*</span>\r\n    </label>\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 9 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 15 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
 Write(Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control input-lg" }));
 
             
@@ -100,8 +110,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("    ");
 
             
-            #line 12 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-Write(Html.LabelFor(x => x.PhoneNumber, "Phone Number (optional)"));
+            #line 18 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+Write(Html.LabelFor(x => x.PhoneNumber, "Phone Number"));
 
             
             #line default
@@ -111,8 +121,60 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 13 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 19 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
 Write(Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-lg", type = "tel", data_formatter = "phone" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 22 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+Write(Html.LabelFor(x => x.QuotedTimeInMinutes, "Quoted Wait Time"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 23 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+Write(Html.DropDownListFor(x => x.QuotedTimeInMinutes, Model.GetQuotedWaitTimeOptions(), "None", new { @class = "form-control input-lg" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 26 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+Write(Html.LabelFor(x => x.Note));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 27 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+Write(Html.TextBoxFor(x => x.Note, new { @class = "form-control" }));
 
             
             #line default

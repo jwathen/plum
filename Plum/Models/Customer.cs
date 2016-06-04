@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Plum.Services;
 using Humanizer;
+using Humanizer.Localisation;
 
 namespace Plum.Models
 {
@@ -18,6 +19,8 @@ namespace Plum.Models
         public virtual string UrlToken { get; set; }
         public virtual DateTime DateAdded { get; set; }
         public virtual short SortOrder { get; set; }
+        public int? QuotedTimeInMinutes { get; set; }
+        public string Note { get; set; }
 
         public virtual Queue Queue { get; set; }
         public virtual ICollection<CustomerLogEntry> LogEntries { get; set; } = new List<CustomerLogEntry>();
@@ -54,6 +57,19 @@ namespace Plum.Models
             else
             {
                 return timeWaited.Humanize();
+            }
+        }
+
+        public string QuotedTimeWords()
+        {
+            if (QuotedTimeInMinutes.HasValue)
+            {
+                return TimeSpan.FromMinutes(QuotedTimeInMinutes.Value)
+                    .Humanize(precision: 2, countEmptyUnits: false, maxUnit: TimeUnit.Hour, minUnit: TimeUnit.Minute);
+            }
+            else
+            {
+                return string.Empty;
             }
         }
 
@@ -96,7 +112,7 @@ namespace Plum.Models
             if (this.HasPhoneNumber())
             {
                 string customerViewUrl = urlHelper.ActionAbsolute(MVC.Queue.CustomerView(this.UrlToken));
-                string message = $"{Queue.Business.Name}: You've been added to our wait list.  See your place in line at: {customerViewUrl}";
+                string message = $"Hey it's {Queue.Business.Name}! You've been added to our wait list. {customerViewUrl}";
                 SendTextMessage(secrets, message);
                 Log(CustomerLogEntryType.WelcomeTextMessageSent, $"\"{message}\"");
             }
@@ -106,7 +122,7 @@ namespace Plum.Models
         {
             if (this.HasPhoneNumber())
             {
-                string message = $"{Queue.Business.Name}: Your table is ready. Reply 1, 2, or 3. 1 = I'm on my way. 2 = I need a few minutes but I'm still coming.  3 = I'd like to cancel.";
+                string message = $"It's {Queue.Business.Name}. Your table is ready. Reply 1, 2, or 3. 1 = I'm on my way. 2 = I need a few minutes but I'm still coming.  3 = I'd like to cancel.";
                 SendTextMessage(secrets, message);
                 Log(CustomerLogEntryType.ReadyTextMessageSent, $"\"{message}\"");
             }
