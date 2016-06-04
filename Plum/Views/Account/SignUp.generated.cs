@@ -57,18 +57,18 @@ WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-4\"");
+WriteLiteral(" class=\"col-md-6 col-md-offset-3\"");
 
 WriteLiteral(">\r\n            <h2>Sign Up</h2>\r\n            <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 216), Tuple.Create("\"", 258)
+WriteAttribute("action", Tuple.Create(" action=\"", 232), Tuple.Create("\"", 274)
             
             #line 10 "..\..\Views\Account\SignUp.cshtml"
-, Tuple.Create(Tuple.Create("", 225), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
+, Tuple.Create(Tuple.Create("", 241), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
             
             #line default
             #line hidden
-, 225), false)
+, 241), false)
 );
 
 WriteLiteral(" method=\"post\"");

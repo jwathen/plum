@@ -14,6 +14,7 @@ using System.Web;
 using Plum.Controllers;
 using Plum.Tests.TestHelpers.Mocks;
 using System.Web.Routing;
+using System.Linq.Expressions;
 
 namespace Plum.Tests.TestHelpers.Mvc
 {

@@ -167,7 +167,41 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
         }
 
-        public void MoveToEndOfList_Test()
+        public void MoveToEndOfList_GivenValidCustomer_MovesTheCustomer()
+        {
+            SignIn();
+            int queueId = TestBusiness.Queues.First().Id;
+            int customerId = TestBusiness.Queues.First().Customers.First().Id;
+
+            _controller.WithCallTo(x => x.MoveToEndOfList(customerId))
+                .ShouldRenderViewHtml(MVC.Queue.Views.ManageCustomerModal);
+
+            Database.Queues.Find(queueId).OrderedCustomers().Last().Id.ShouldEqual(customerId);
+        }
+
+        public void MoveToEndOfList_GivenCustomerIdForOtherBusiness_DoesNotMoveTheCustomer()
+        {
+            SignIn();
+            var customer = OtherBusiness.Queues.First().Customers.First();
+            short sortOrderBefore = customer.SortOrder;
+
+            _controller.WithCallTo(x => x.MoveToEndOfList(customer.Id))
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
+
+            short sortOrderAfter = Database.Customers.Find(customer.Id).SortOrder;
+            sortOrderAfter.ShouldEqual(sortOrderBefore);
+        }
+
+        public void MoveToEndOfList_GivenInvalidCustomerId_NoException()
+        {
+            SignIn();
+            int customerId = -1;
+
+            _controller.WithCallTo(x => x.MoveToEndOfList(customerId))
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
+        }
+
+        public void SortQueue_Test()
         {
             throw new NotImplementedException();
         }

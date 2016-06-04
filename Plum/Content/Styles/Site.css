@@ -6671,12 +6671,6 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
   display: none; }
 
-.history {
-  margin-top: 1em;
-  border-right: 1px solid lightgray;
-  overflow: scroll;
-  max-height: 10em; }
-
 .button-stack .btn {
   margin-bottom: 1em; }
 
@@ -6703,6 +6697,9 @@ input[type="checkbox"].input-validation-error {
   margin: 0 auto;
   pointer-events: all; }
 
+.text-center {
+  text-align: center !important; }
+
 .modal-header {
   padding: 15px 15px 0 15px; }
 
@@ -6726,4 +6723,13 @@ input[type="checkbox"].input-validation-error {
       margin-bottom: 2em; }
     .home .jumbo p a {
       color: #eee; }
+
+.queue.queue-manage .history {
+  margin-top: 1em;
+  border-right: 1px solid lightgray;
+  overflow: scroll;
+  max-height: 10em; }
+
+.queue.queue-manage #businessViewQueueList li.list-group-item {
+  cursor: pointer; }
 

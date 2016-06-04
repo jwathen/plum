@@ -93,7 +93,7 @@ namespace Plum.Controllers
             }
             else if (!Security.UserOwns(model))
             {
-                return RedirectToAction(MVC.Home.NotAuthorized());
+                return NotAuthorized();
             }
 
             return View(model);
@@ -127,7 +127,7 @@ namespace Plum.Controllers
             }
             else if (!Security.UserOwns(model))
             {
-                return RedirectToAction(MVC.Home.NotAuthorized());
+                return NotAuthorized();
             }
 
             return View(model);
@@ -149,7 +149,7 @@ namespace Plum.Controllers
             }
             else if (!Security.UserOwns(customer))
             {
-                return RedirectToAction(MVC.Home.NotAuthorized());
+                return NotAuthorized();
             }
 
             return View(customer);
@@ -187,10 +187,10 @@ namespace Plum.Controllers
                 return View(model);
             }
             var queue = await Database.Queues.FindAsync(model.QueueId);
-            
+
             if (!Security.UserOwns(queue))
             {
-                return RedirectToAction(MVC.Home.NotAuthorized());
+                return NotAuthorized();
             }
 
             var customer = new Plum.Models.Customer();

@@ -68,6 +68,11 @@ namespace Plum.Controllers
             }
         }
 
+        protected RedirectToRouteResult NotAuthorized()
+        {
+            return RedirectToAction(MVC.Home.ActionNames.NotAuthorized, MVC.Home.Name);
+        }
+
         protected override void Dispose(bool disposing)
         {
             _db?.Dispose();

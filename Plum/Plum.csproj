@@ -324,11 +324,12 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Data\secrets.json" />
+    <Content Include="Content\Styles\LoadingOverlay.scss" />
+    <Content Include="Content\Styles\Queue\Manage.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\Styles\LoadingOverlay.scss" />
     <None Include="Properties\PublishProfiles\plumlist - Web Deploy.pubxml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

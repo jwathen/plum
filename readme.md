@@ -15,6 +15,9 @@
 button visbility, website url
 - notes for each party
 - switch to plivo
+- mobile icon
+- fav icon
+- add notes to parties
 
 ## support
 - flash messages
@@ -26,6 +29,9 @@ button visbility, website url
 - text message limits
 - sign in with google
 - azure deployment slots
+
+## issues
+- end sort event with jquery touch punch
 
 ## future
 - android wrapper

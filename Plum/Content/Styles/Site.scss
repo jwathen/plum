@@ -53,13 +53,6 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
-.history {
-  margin-top: 1em;
-  border-right: 1px solid lightgray;
-  overflow: scroll;
-  max-height: 10em;
-}
-
 .button-stack {
   .btn {
     margin-bottom: 1em;
@@ -90,10 +83,18 @@ input[type="checkbox"].input-validation-error {
     pointer-events: all;
 }
 
+.text-center {
+    text-align: center !important;
+}
+
 .modal-header {
     padding: 15px 15px 0 15px;
 }
 
 .home {
     @import "Home/Index.scss";
+}
+
+.queue.queue-manage {
+    @import "Queue/Manage.scss";
 }
