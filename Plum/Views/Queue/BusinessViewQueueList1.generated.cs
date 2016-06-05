@@ -70,9 +70,14 @@ else if (Model.Customers.Count() > 1)
             #line hidden
 WriteLiteral("    <p");
 
+WriteLiteral(" id=\"RearrangeListInstructions\"");
+
 WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n        You can rearrange this list by dragging and dropping.\r\n    </p>\r\n");
+WriteLiteral(" style=\"display:none;\"");
+
+WriteLiteral(">\r\n        Drag and drop to reorder the list.  Click &quot;Save List Order&quot; " +
+"when you\'re done.\r\n    </p>\r\n");
 
             
             #line 17 "..\..\Views\Queue\BusinessViewQueueList.cshtml"

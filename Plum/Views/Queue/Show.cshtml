@@ -5,14 +5,24 @@
 }
 <div class="container">
     <h3>@Model.Business.Name</h3>
-    <p>
-        <button class="btn btn-block btn-primary hidden-md hidden-lg" data-toggle="modal" data-target="#CreateCustomerModal">
+    <p class="hidden-md hidden-lg">
+        <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#CreateCustomerModal">
             <i class="fa fa-plus"></i>
             Add Party
         </button>
-        <button class="btn btn-primary hidden-sm hidden-xs" data-toggle="modal" data-target="#CreateCustomerModal">
+        <button class="btn btn-block btn-default" data-command="rearrange">
+            <i class="fa fa-list"></i>
+            <span>Reorder List</span>
+        </button>
+    </p>
+    <p class="hidden-sm hidden-xs">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#CreateCustomerModal">
             <i class="fa fa-plus"></i>
             Add Party
+        </button>
+        <button class="btn btn-default" data-command="rearrange">
+            <i class="fa fa-list"></i>
+            <span>Reorder List</span>
         </button>
     </p>
     <div id="businessViewQueueList">
