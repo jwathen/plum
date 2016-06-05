@@ -74,14 +74,61 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
         }
 
-        public void Edit_Test()
+        public void Edit_GivenValidCustomerId_ReturnsView()
         {
-            throw new NotImplementedException("Tests for CustomerController.Edit have not been implemented yet.");
+            SignIn();            
+            int customerId = TestBusiness.Queues.First().Customers.First().Id;
+            SetRouteId(customerId);
+
+            _controller.WithCallTo(x => x.Edit(customerId))
+                .ShouldRenderDefaultViewHtml();
         }
 
-        public void Update_Test()
+        public void Edit_GivenCustomerIdForOtherBusiness_ReturnsNotAuthorized()
         {
-            throw new NotImplementedException("Tests for CustomerController.Update have not been implemented yet.");
+            SignIn();
+            int customerId = OtherBusiness.Queues.First().Customers.First().Id;
+            SetRouteId(customerId);
+
+            _controller.WithCallTo(x => x.Edit(customerId))
+                .ShouldRedirectTo(MVC.Home.Name, MVC.Home.ActionNames.NotAuthorized);
+        }
+
+        public void Edit_GivenInvalidCustomerId_Returns404()
+        {
+            SignIn();
+            int customerId = -1;
+            SetRouteId(customerId);
+
+            _controller.WithCallTo(x => x.Edit(customerId))
+                .ShouldGiveHttpStatus(404);
+        }
+
+        public void Update_GivenValidModel_UpdateTheCustomer()
+        {
+            SignIn();
+            var customer = TestBusiness.Queues.First().Customers.First();
+            int customerId = customer.Id;
+            SetRouteId(customerId);
+
+            var model = new CustomerViewModel();
+            model.MapFrom(customer);
+
+            model.Name = "New Name";
+            model.Note = "New Note";
+            model.NumberInParty = 45;
+            model.PhoneNumber = "4444444444";
+            model.QuotedTimeInMinutes = 150;
+
+            _controller.WithCallTo(x => x.Update(model))
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Customer.ActionNames.Show, new { id = customer.QueueId });
+
+            customer = TestBusiness.Queues.First().Customers.First();
+            customer.Name.ShouldEqual("New Name");
+            customer.Note.ShouldEqual("New Note");
+            customer.NumberInParty.ShouldEqual(45);
+            customer.PhoneNumber.ShouldEqual("4444444444");
+            customer.QuotedTimeInMinutes.ShouldEqual(150);
         }
 
         public void DestroyWithUrlToken_GivenInvalidToken_NoException()
@@ -136,9 +183,17 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRedirectTo(MVC.Businesses.Name, MVC.Queue.ActionNames.Show, new { id = TestBusiness.Id });
         }
 
-        public void SendReadyMessage_Test()
+        public void SendReadyMessage_GivenValidCustomerId_SendsTheReadyTextMessage()
         {
-            throw new NotImplementedException("Tests for CustomerController.SendReadyMessage have not been implemented yet.");
+            SignIn();
+            var customer = TestBusiness.Queues.First().Customers.First();
+            SetRouteId(customer.Id);
+
+            _controller.WithCallTo(x => x.SendReadyMessage(customer.Id))
+                .ShouldRenderViewHtml(MVC.Customer.Views.Show);
+
+            var sentMessageLogEntry = customer.LogEntries.Where(x => x.Type == Models.CustomerLogEntryType.ReadyTextMessageSent).ToList().Last();
+            sentMessageLogEntry.ShouldNotBeNull();
         }
 
         public void MoveToEndOfList_GivenValidCustomer_MovesTheCustomer()
