@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -7,19 +8,21 @@ using Plum.Services;
 
 namespace Plum.Models
 {
-    public class Queue
+    public class Queue : IDatedEntity
     {
         public virtual int Id { get; set; }
         public virtual int BusinessId { get; set; }
         public virtual string Name { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime DateUpdated { get; set; }
 
         public virtual Business Business { get; set; }
-        public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
+        public virtual HashSet<Customer> Customers { get; set; } = new HashSet<Customer>();
 
         public IEnumerable<Customer> OrderedCustomers()
         {
             return Customers.OrderBy(x => x.SortOrder)
-                .ThenBy(x => x.DateAdded);
+                .ThenBy(x => x.DateCreated);
         }
 
         public int NumberOfPartiesAheadOf(Customer customer)

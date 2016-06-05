@@ -31,41 +31,33 @@ namespace ASP
     using Plum.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Queue/AddCustomerModal.cshtml")]
-    public partial class _Views_Queue_AddCustomerModal_cshtml : Plum.Web.ApplicationViewBase<Plum.ViewModels.Customer.CustomerViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Customer/Create.cshtml")]
+    public partial class _Views_Customer_Create_cshtml : Plum.Web.ApplicationViewBase<Plum.ViewModels.Customer.CustomerViewModel>
     {
-        public _Views_Queue_AddCustomerModal_cshtml()
+        public _Views_Customer_Create_cshtml()
         {
         }
         public override void Execute()
         {
-WriteLiteral("<div");
-
-WriteLiteral(" class=\"vertical-alignment-helper\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"modal-content\"");
-
-WriteLiteral(">\r\n            <form");
-
-WriteAttribute("action", Tuple.Create(" action=\"", 202), Tuple.Create("\"", 247)
             
-            #line 6 "..\..\Views\Queue\AddCustomerModal.cshtml"
-, Tuple.Create(Tuple.Create("", 211), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.AddCustomer())
+            #line 3 "..\..\Views\Customer\Create.cshtml"
+ using (Ajax.BeginForm(MVC.Customer.Create(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "CreateCustomerModal" }))
+{
+
             
             #line default
             #line hidden
-, 211), false)
-);
+WriteLiteral("    <div");
 
-WriteLiteral(" method=\"post\"");
+WriteLiteral(" class=\"vertical-alignment-helper\"");
 
-WriteLiteral(" data-loading-overlay=\"true\"");
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"modal-content\"");
 
 WriteLiteral(">\r\n                <div");
 
@@ -94,7 +86,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 17 "..\..\Views\Queue\AddCustomerModal.cshtml"
+            #line 18 "..\..\Views\Customer\Create.cshtml"
                    Write(Html.ValidationSummary());
 
             
@@ -105,7 +97,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 18 "..\..\Views\Queue\AddCustomerModal.cshtml"
+            #line 19 "..\..\Views\Customer\Create.cshtml"
                    Write(Html.EditorForModel());
 
             
@@ -128,7 +120,7 @@ WriteLiteral(" />\r\n                </div>\r\n");
 WriteLiteral("                ");
 
             
-            #line 24 "..\..\Views\Queue\AddCustomerModal.cshtml"
+            #line 25 "..\..\Views\Customer\Create.cshtml"
            Write(Html.HiddenFor(x => x.QueueId));
 
             
@@ -139,14 +131,21 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 25 "..\..\Views\Queue\AddCustomerModal.cshtml"
+            #line 26 "..\..\Views\Customer\Create.cshtml"
            Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>");
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
+            
+            #line 30 "..\..\Views\Customer\Create.cshtml"
+}
+
+            
+            #line default
+            #line hidden
         }
     }
 }

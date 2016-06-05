@@ -29,7 +29,7 @@ namespace ASP
     using Humanizer;
     using Plum;
     
-    #line 2 "..\..\Views\Queue\Manage.cshtml"
+    #line 2 "..\..\Views\Queue\Show.cshtml"
     using Plum.ViewModels.Customer;
     
     #line default
@@ -37,18 +37,18 @@ namespace ASP
     using Plum.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Queue/Manage.cshtml")]
-    public partial class _Views_Queue_Manage_cshtml : Plum.Web.ApplicationViewBase<Plum.Models.Queue>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Queue/Show.cshtml")]
+    public partial class _Views_Queue_Show_cshtml : Plum.Web.ApplicationViewBase<Plum.Models.Queue>
     {
-        public _Views_Queue_Manage_cshtml()
+        public _Views_Queue_Show_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Queue\Manage.cshtml"
+            #line 3 "..\..\Views\Queue\Show.cshtml"
   
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Show";
 
             
             #line default
@@ -60,25 +60,37 @@ WriteLiteral(" class=\"container\"");
 WriteLiteral(">\r\n    <h3>");
 
             
-            #line 7 "..\..\Views\Queue\Manage.cshtml"
+            #line 7 "..\..\Views\Queue\Show.cshtml"
    Write(Model.Business.Name);
 
             
             #line default
             #line hidden
-WriteLiteral("</h3>\r\n    <button");
+WriteLiteral("</h3>\r\n    <p>\r\n        <button");
 
-WriteLiteral(" class=\"btn btn-block btn-primary\"");
+WriteLiteral(" class=\"btn btn-block btn-primary hidden-md hidden-lg\"");
 
 WriteLiteral(" data-toggle=\"modal\"");
 
-WriteLiteral(" data-target=\"#AddCustomerModal\"");
+WriteLiteral(" data-target=\"#CreateCustomerModal\"");
 
-WriteLiteral(">\r\n        <i");
+WriteLiteral(">\r\n            <i");
 
 WriteLiteral(" class=\"fa fa-plus\"");
 
-WriteLiteral("></i>\r\n        Add Party\r\n    </button>\r\n    <br />\r\n    <div");
+WriteLiteral("></i>\r\n            Add Party\r\n        </button>\r\n        <button");
+
+WriteLiteral(" class=\"btn btn-primary hidden-sm hidden-xs\"");
+
+WriteLiteral(" data-toggle=\"modal\"");
+
+WriteLiteral(" data-target=\"#CreateCustomerModal\"");
+
+WriteLiteral(">\r\n            <i");
+
+WriteLiteral(" class=\"fa fa-plus\"");
+
+WriteLiteral("></i>\r\n            Add Party\r\n        </button>\r\n    </p>\r\n    <div");
 
 WriteLiteral(" id=\"businessViewQueueList\"");
 
@@ -87,7 +99,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 14 "..\..\Views\Queue\Manage.cshtml"
+            #line 19 "..\..\Views\Queue\Show.cshtml"
    Write(Html.Partial(MVC.Queue.Views.BusinessViewQueueList, Model));
 
             
@@ -95,13 +107,13 @@ WriteLiteral("        ");
             #line hidden
 WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
 
-WriteLiteral(" id=\"ManageCustomerModal\"");
+WriteLiteral(" id=\"ShowCustomerModal\"");
 
 WriteLiteral(" class=\"modal\"");
 
 WriteLiteral(">\r\n</div>\r\n<div");
 
-WriteLiteral(" id=\"AddCustomerModal\"");
+WriteLiteral(" id=\"CreateCustomerModal\"");
 
 WriteLiteral(" class=\"modal\"");
 
@@ -110,13 +122,13 @@ WriteLiteral(">\r\n");
 WriteLiteral("    ");
 
             
-            #line 20 "..\..\Views\Queue\Manage.cshtml"
-Write(Html.Partial(MVC.Queue.Views.AddCustomerModal, new CustomerViewModel { QueueId = Model.Id }));
+            #line 25 "..\..\Views\Queue\Show.cshtml"
+Write(Html.Partial(MVC.Customer.Views.Create, new CustomerViewModel { QueueId = Model.Id }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n</div>\r\n");
+WriteLiteral("\r\n</div>\r\n\r\n");
 
 DefineSection("Scripts", () => {
 
@@ -124,7 +136,7 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
 "");
 
             
-            #line 25 "..\..\Views\Queue\Manage.cshtml"
+            #line 31 "..\..\Views\Queue\Show.cshtml"
                              Write(Model.Id);
 
             
@@ -134,8 +146,8 @@ WriteLiteral(";\r\n        window.viewData.sortingDebounce = 500;\r\n        win
 "eueUrl = \'");
 
             
-            #line 27 "..\..\Views\Queue\Manage.cshtml"
-                                   Write(Url.Action(MVC.Queue.SortQueue()));
+            #line 33 "..\..\Views\Queue\Show.cshtml"
+                                   Write(Url.Action(MVC.Queue.Sort()));
 
             
             #line default
@@ -143,31 +155,23 @@ WriteLiteral(";\r\n        window.viewData.sortingDebounce = 500;\r\n        win
 WriteLiteral("\';\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'");
 
             
-            #line 28 "..\..\Views\Queue\Manage.cshtml"
-                                                     Write(Url.Action(MVC.Queue.BusinessViewQueueList(Model.Id)));
+            #line 34 "..\..\Views\Queue\Show.cshtml"
+                                                     Write(Url.Action(MVC.Queue.BusinessViewQueueList()));
 
             
             #line default
             #line hidden
-WriteLiteral("\';\r\n        window.viewData.manageCustomerModalUrl = \'");
+WriteLiteral("\';\r\n        window.viewData.showCustomerUrl = \'/customer\';\r\n    </script>\r\n    <s" +
+"cript");
 
+WriteAttribute("src", Tuple.Create(" src=\"", 1331), Tuple.Create("\"", 1402)
             
-            #line 29 "..\..\Views\Queue\Manage.cshtml"
-                                             Write(Url.Action(MVC.Queue.ManageCustomerModal()));
-
+            #line 37 "..\..\Views\Queue\Show.cshtml"
+, Tuple.Create(Tuple.Create("", 1337), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
             
             #line default
             #line hidden
-WriteLiteral("\';\r\n    </script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 1147), Tuple.Create("\"", 1220)
-            
-            #line 31 "..\..\Views\Queue\Manage.cshtml"
-, Tuple.Create(Tuple.Create("", 1153), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Manage_es5_min_js)
-            
-            #line default
-            #line hidden
-, 1153), false)
+, 1337), false)
 );
 
 WriteLiteral("></script>\r\n");

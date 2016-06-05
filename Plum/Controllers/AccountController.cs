@@ -32,14 +32,15 @@ namespace Plum.Controllers
             var business = new Business();
             business.Name = model.BusinessName;
             business.Account = Account.Create(model.EmailAddress, model.Password);
-            business.Queues.Add(new Queue { Name = "Default" });
+            var queue = new Queue { Name = "Default" };
+            business.Queues.Add(queue);
             Database.Businesses.Add(business);
 
             await Database.SaveChangesAsync();
 
             AppSession.SignIn(business, false);
 
-            return RedirectToAction(MVC.Home.Index());
+            return RedirectToAction(MVC.Queue.Show(queue.Id));
         }
 
         [GET("account/sign_in")]
@@ -72,7 +73,7 @@ namespace Plum.Controllers
                 }
                 else
                 {
-                    return RedirectToAction(MVC.Queue.Manage(queueId));
+                    return RedirectToAction(MVC.Queue.Show(queueId));
                 }
             }
             else

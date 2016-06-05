@@ -27,13 +27,12 @@
                     <p>
                         <em>@Html.PhoneNumber(Model.PhoneNumber)</em>
                     </p>
-                    using (Ajax.BeginForm(MVC.Queue.SendReadyTextMessage(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ManageCustomerModal" }))
+                    using (Ajax.BeginForm(MVC.Customer.SendReadyMessage(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
                     {
                         <button class="btn btn-block btn-primary" type="submit">
                             <i class="fa fa-comment"></i>
                             Send &quot;Table Ready&quot; Message
                         </button>
-                        @Html.Hidden(MVC.Queue.SendReadyTextMessageParams.customerId, Model.Id)
                         @Html.AntiForgeryToken2()
                     }
                 }
@@ -47,24 +46,23 @@
                         Send &quot;Table Ready&quot; Message
                     </button>
                 }
-                @using (Ajax.BeginForm(MVC.Queue.RemoveCustomer(), new AjaxOptions { OnBegin = "setLoading" }))
+                @using (Ajax.BeginForm(MVC.Customer.Destroy(Model.Id), new AjaxOptions { OnBegin = "setLoading" }))
                 {
                     <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to remove @HttpUtility.HtmlAttributeEncode(Model.Name) from the list?" class="btn btn-block btn-default" type="submit">Remove From List</button>
-                    @Html.Hidden(MVC.Queue.RemoveCustomerParams.customerId, Model.Id)
+                    @Html.HttpMethodOverride(HttpVerbs.Delete)
                     @Html.AntiForgeryToken2()
                 }
                 @if (!customerIsLastInline)
                 {
-                    using (Ajax.BeginForm(MVC.Queue.MoveToEndOfList(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ManageCustomerModal" }))
+                    using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ManageCustomerModal" }))
                     {
                         <button class="btn btn-block btn-default" data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to move @HttpUtility.HtmlAttributeEncode(Model.Name) to the end of the list?" type="submit">
                             Move to End of List
-                        </button>
-                        @Html.Hidden(MVC.Queue.MoveToEndOfListParams.customerId, Model.Id)
+                        </button>                        
                         @Html.AntiForgeryToken2()
                     }
                 }
-                <a href="#" class="btn btn-block btn-default">Edit Party</a>
+                <a href="@Url.Action(MVC.Customer.Edit(Model.Id))" id="red" data-loading-overlay="true" class="btn btn-block btn-default">Edit Party</a>
                 @if (Model.LogEntries.Any())
                 {
                     <h5>
@@ -87,4 +85,5 @@
 </div>
 <script>
     initConfirmationModals('#ManageCustomerModal');
+    initLoadingOverlays('#ManageCustomerModal');
 </script>

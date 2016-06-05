@@ -133,22 +133,22 @@ WriteLiteral(">\r\n");
             
             #line 25 "..\..\Views\Queue\CustomerViewQueueList.cshtml"
      foreach (var customer in Model.Queue.OrderedCustomers())
-            {
+    {
 
             
             #line default
             #line hidden
 WriteLiteral("        <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 679), Tuple.Create("\"", 757)
-, Tuple.Create(Tuple.Create("", 687), Tuple.Create("list-group-item", 687), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 671), Tuple.Create("\"", 749)
+, Tuple.Create(Tuple.Create("", 679), Tuple.Create("list-group-item", 679), true)
             
             #line 27 "..\..\Views\Queue\CustomerViewQueueList.cshtml"
-, Tuple.Create(Tuple.Create(" ", 702), Tuple.Create<System.Object, System.Int32>(customer == Model ? "list-group-item-active" : null
+, Tuple.Create(Tuple.Create(" ", 694), Tuple.Create<System.Object, System.Int32>(customer == Model ? "list-group-item-active" : null
             
             #line default
             #line hidden
-, 703), false)
+, 695), false)
 );
 
 WriteLiteral(">\r\n");

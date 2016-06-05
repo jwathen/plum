@@ -1,0 +1,38 @@
+﻿@model Plum.Models.Queue
+@using Plum.ViewModels.Customer
+@{
+    ViewBag.Title = "Show";
+}
+<div class="container">
+    <h3>@Model.Business.Name</h3>
+    <p>
+        <button class="btn btn-block btn-primary hidden-md hidden-lg" data-toggle="modal" data-target="#CreateCustomerModal">
+            <i class="fa fa-plus"></i>
+            Add Party
+        </button>
+        <button class="btn btn-primary hidden-sm hidden-xs" data-toggle="modal" data-target="#CreateCustomerModal">
+            <i class="fa fa-plus"></i>
+            Add Party
+        </button>
+    </p>
+    <div id="businessViewQueueList">
+        @Html.Partial(MVC.Queue.Views.BusinessViewQueueList, Model)
+    </div>
+</div>
+<div id="ShowCustomerModal" class="modal">
+</div>
+<div id="CreateCustomerModal" class="modal">
+    @Html.Partial(MVC.Customer.Views.Create, new CustomerViewModel { QueueId = Model.Id })
+</div>
+
+@section Scripts {
+    <script>
+        window.viewData = {};
+        window.viewData.queueId = @Model.Id;
+        window.viewData.sortingDebounce = 500;
+        window.viewData.sortQueueUrl = '@Url.Action(MVC.Queue.Sort())';
+        window.viewData.udpateBusinessViewQueueListUrl = '@Url.Action(MVC.Queue.BusinessViewQueueList())';
+        window.viewData.showCustomerUrl = '/customer';
+    </script>
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)"></script>
+}

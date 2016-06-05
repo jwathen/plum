@@ -23,7 +23,7 @@ else
 }
 <ul class="list-group text-center">
     @foreach (var customer in Model.Queue.OrderedCustomers())
-            {
+    {
         <li class="list-group-item @(customer == Model ? "list-group-item-active" : null)">
             @customer.ObfuscateName(Model) (@customer.NumberInParty) Waited @customer.TimeWaitedWords()
         </li>

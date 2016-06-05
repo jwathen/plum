@@ -12,13 +12,13 @@
             Call The City Brewery
             <span class="text-muted">(602-890-3306)</span>
         </button>
-        <form action="@Url.Action(MVC.Queue.CancelPlaceInLine())" method="post">
+        <form action="@Url.Action(MVC.Customer.DestroyWithUrlToken(Model.UrlToken))" method="post">
             <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to cancel your place in line?" class="btn btn-block btn-default">
                 <i class="fa fa-times"></i>
                 Cancel Place In Line
             </button>
+            @Html.HttpMethodOverride(HttpVerbs.Delete)
             @Html.AntiForgeryToken2()
-            @Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken)
         </form>
     </div>
     <br />
@@ -32,5 +32,5 @@
         window.viewData.urlToken = '@Model.UrlToken';
         window.viewData.udpateCustomerViewQueueListUrl = '@Url.Action(MVC.Queue.CustomerViewQueueList(Model.UrlToken))';
     </script>
-    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Queue.CustomerView_es5_min_js)"></script>
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Queue.ShowCustomer_es5_min_js)"></script>
 }

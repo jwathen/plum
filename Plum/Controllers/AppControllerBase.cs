@@ -73,6 +73,11 @@ namespace Plum.Controllers
             return RedirectToAction(MVC.Home.ActionNames.NotAuthorized, MVC.Home.Name);
         }
 
+        protected JavaScriptResult JavaScriptRedirect(string url)
+        {
+            return JavaScript($"window.location.href = '{url}';");
+        }
+
         protected override void Dispose(bool disposing)
         {
             _db?.Dispose();

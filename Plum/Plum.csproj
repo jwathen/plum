@@ -107,6 +107,18 @@
       <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler.EntityFramework6, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.EF6.3.0.11\lib\net40\MiniProfiler.EntityFramework6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler.Mvc, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -211,20 +223,20 @@
     <Content Include="Content\Images\testimonial5.jpg" />
     <Content Include="Content\Images\testimonial6.jpg" />
     <Content Include="Content\Images\testimonial7.jpg" />
-    <Content Include="Content\Scripts\Queue\CustomerView.es5.js">
-      <DependentUpon>CustomerView.js</DependentUpon>
+    <Content Include="Content\Scripts\Queue\Show.es5.js">
+      <DependentUpon>Show.js</DependentUpon>
     </Content>
-    <Content Include="Content\Scripts\Queue\CustomerView.es5.min.js">
-      <DependentUpon>CustomerView.es5.js</DependentUpon>
+    <Content Include="Content\Scripts\Queue\Show.es5.min.js">
+      <DependentUpon>Show.es5.js</DependentUpon>
     </Content>
-    <Content Include="Content\Scripts\Queue\CustomerView.js" />
-    <Content Include="Content\Scripts\Queue\Manage.es5.js">
-      <DependentUpon>Manage.js</DependentUpon>
+    <Content Include="Content\Scripts\Queue\ShowCustomer.es5.js">
+      <DependentUpon>ShowCustomer.js</DependentUpon>
     </Content>
-    <Content Include="Content\Scripts\Queue\Manage.es5.min.js">
-      <DependentUpon>Manage.es5.js</DependentUpon>
+    <Content Include="Content\Scripts\Queue\ShowCustomer.es5.min.js">
+      <DependentUpon>ShowCustomer.es5.js</DependentUpon>
     </Content>
-    <Content Include="Content\Scripts\Queue\Manage.js" />
+    <Content Include="Content\Scripts\Queue\ShowCustomer.js" />
+    <Content Include="Content\Scripts\Queue\Show.js" />
     <Content Include="Content\Scripts\Site.es5.js">
       <DependentUpon>Site.js</DependentUpon>
     </Content>
@@ -325,7 +337,7 @@
     </None>
     <Content Include="App_Data\secrets.json" />
     <Content Include="Content\Styles\LoadingOverlay.scss" />
-    <Content Include="Content\Styles\Queue\Manage.scss" />
+    <Content Include="Content\Styles\Queue\Show.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -337,9 +349,9 @@
     </None>
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Views\Queue\ManageCustomerModal.cshtml">
+    <Content Include="Views\Customer\Show.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ManageCustomerModal1.generated.cs</LastGenOutput>
+      <LastGenOutput>Show.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -354,11 +366,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppSettings.tt</DependentUpon>
     </Compile>
+    <Compile Include="BusinessesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BusinessesController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AppControllerBase.cs" />
     <Compile Include="Controllers\QueueController.cs" />
     <Compile Include="Controllers\UpdateHub.cs" />
+    <Compile Include="CustomerController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -400,6 +420,10 @@
     <Compile Include="Migrations\201606042318157_AddQuotedTimeAndNoteToCustomers.Designer.cs">
       <DependentUpon>201606042318157_AddQuotedTimeAndNoteToCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606050012304_AddDateCreatedAndDateUpdated.cs" />
+    <Compile Include="Migrations\201606050012304_AddDateCreatedAndDateUpdated.Designer.cs">
+      <DependentUpon>201606050012304_AddDateCreatedAndDateUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Business.cs" />
@@ -407,6 +431,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerLogEntry.cs" />
     <Compile Include="Models\CustomerLogEntryType.cs" />
+    <Compile Include="Models\IDatedEntity.cs" />
     <Compile Include="Models\Queue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueController.generated.cs">
@@ -435,15 +460,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SignUp.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Customer\Edit.generated.cs">
+      <DependentUpon>Edit.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Home\Index.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Queue\AddCustomerModal.generated.cs">
+    <Compile Include="Views\Customer\Create.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AddCustomerModal.cshtml</DependentUpon>
+      <DependentUpon>Create.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Queue\BusinessViewQueueList1.generated.cs">
       <AutoGen>True</AutoGen>
@@ -455,25 +485,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerNotFound.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Queue\CustomerView.generated.cs">
+    <Compile Include="Views\Queue\ShowCustomer.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerView.cshtml</DependentUpon>
+      <DependentUpon>ShowCustomer.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Queue\CustomerViewQueueList.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerViewQueueList.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Queue\Manage.generated.cs">
+    <Compile Include="Views\Queue\Show.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Manage.cshtml</DependentUpon>
+      <DependentUpon>Show.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Queue\ManageCustomerModal1.generated.cs">
+    <Compile Include="Views\Customer\Show.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ManageCustomerModal.cshtml</DependentUpon>
+      <DependentUpon>Show.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\EditorTemplates\CustomerViewModel.generated.cs">
       <AutoGen>True</AutoGen>
@@ -533,21 +563,21 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SignIn.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Queue\CustomerView.cshtml">
+    <Content Include="Views\Queue\ShowCustomer.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>CustomerView.generated.cs</LastGenOutput>
+      <LastGenOutput>ShowCustomer.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Queue\Manage.cshtml">
+    <Content Include="Views\Queue\Show.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Manage.generated.cs</LastGenOutput>
+      <LastGenOutput>Show.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Shared\EditorTemplates\CustomerViewModel.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>CustomerViewModel.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Queue\AddCustomerModal.cshtml">
+    <Content Include="Views\Customer\Create.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>AddCustomerModal.generated.cs</LastGenOutput>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Home\NotFound.cshtml" />
     <Content Include="Views\Shared\Error.cshtml">
@@ -566,6 +596,10 @@
     <Content Include="Views\Queue\BusinessViewQueueList.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>BusinessViewQueueList1.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Customer\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -601,6 +635,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606042318157_AddQuotedTimeAndNoteToCustomers.resx">
       <DependentUpon>201606042318157_AddQuotedTimeAndNoteToCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606050012304_AddDateCreatedAndDateUpdated.resx">
+      <DependentUpon>201606050012304_AddDateCreatedAndDateUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

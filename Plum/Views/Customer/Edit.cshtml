@@ -1,0 +1,25 @@
+﻿@model Plum.ViewModels.Customer.CustomerViewModel
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p>
+                <strong>
+                    <a href="@Url.Action(MVC.Queue.Show(Model.QueueId))" data-loading-overlay="true">
+                        <i class="fa fa-chevron-left"></i>
+                        Back to List
+                    </a>
+                </strong>
+            </p>
+            <h2>Edit Party</h2>
+            <form action="@Url.Action(MVC.Customer.Update())" method="post" data-loading-overlay="true">
+                @Html.ValidationSummary()
+                @Html.EditorForModel()
+                <input type="submit" class="btn btn-block btn-primary" value="Save Changes" />
+                @Html.HttpMethodOverride(HttpVerbs.Put)
+                @Html.HiddenFor(x => x.QueueId)
+                @Html.AntiForgeryToken2()
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,6 @@
-﻿$(function () {
+﻿'use strict';
+
+$(function () {
     initQueueList();
 
     var updateHub = $.connection.updateHub;
@@ -14,13 +16,13 @@
 });
 
 function initQueueList() {
-    $('[data-manage-customer-id]').click(function (e) {
-        var customerId = $(this).attr('data-manage-customer-id');
+    $('[data-show-customer-id]').click(function (e) {
+        var customerId = $(this).attr('data-show-customer-id');
         if (!isNaN(customerId)) {
             setLoading();
-            $('#ManageCustomerModal').load(window.viewData.manageCustomerModalUrl + '?customerId=' + customerId, function () {
+            $('#ShowCustomerModal').load(window.viewData.showCustomerUrl + '/' + customerId, function () {
                 clearLoading();
-                $('#ManageCustomerModal').modal('show');
+                $('#ShowCustomerModal').modal('show');
             });
         }
     });
@@ -34,7 +36,7 @@ function initQueueList() {
                     customerIds.push(parseInt(customerId));
                 }
             });
-            var data =  {
+            var data = {
                 customerIds: customerIds,
                 '__RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
             };
@@ -42,3 +44,4 @@ function initQueueList() {
         }));
     }
 }
+

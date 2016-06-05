@@ -31,16 +31,16 @@ namespace ASP
     using Plum.Web;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Queue/CustomerView.cshtml")]
-    public partial class _Views_Queue_CustomerView_cshtml : Plum.Web.ApplicationViewBase<Plum.Models.Customer>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Queue/ShowCustomer.cshtml")]
+    public partial class _Views_Queue_ShowCustomer_cshtml : Plum.Web.ApplicationViewBase<Plum.Models.Customer>
     {
-        public _Views_Queue_CustomerView_cshtml()
+        public _Views_Queue_ShowCustomer_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 3 "..\..\Views\Queue\ShowCustomer.cshtml"
   
     ViewBag.Title = "CustomerView";
 
@@ -54,7 +54,7 @@ WriteLiteral(" class=\"container\"");
 WriteLiteral(">\r\n    <h3>");
 
             
-            #line 8 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 8 "..\..\Views\Queue\ShowCustomer.cshtml"
    Write(Model.Queue.Business.Name);
 
             
@@ -78,10 +78,10 @@ WriteLiteral(" class=\"text-muted\"");
 
 WriteLiteral(">(602-890-3306)</span>\r\n        </button>\r\n        <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 395), Tuple.Create("\"", 446)
+WriteAttribute("action", Tuple.Create(" action=\"", 395), Tuple.Create("\"", 465)
             
-            #line 15 "..\..\Views\Queue\CustomerView.cshtml"
-, Tuple.Create(Tuple.Create("", 404), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.CancelPlaceInLine())
+            #line 15 "..\..\Views\Queue\ShowCustomer.cshtml"
+, Tuple.Create(Tuple.Create("", 404), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.DestroyWithUrlToken(Model.UrlToken))
             
             #line default
             #line hidden
@@ -107,8 +107,8 @@ WriteLiteral("></i>\r\n                Cancel Place In Line\r\n            </but
 WriteLiteral("            ");
 
             
-            #line 20 "..\..\Views\Queue\CustomerView.cshtml"
-       Write(Html.AntiForgeryToken2());
+            #line 20 "..\..\Views\Queue\ShowCustomer.cshtml"
+       Write(Html.HttpMethodOverride(HttpVerbs.Delete));
 
             
             #line default
@@ -118,8 +118,8 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 21 "..\..\Views\Queue\CustomerView.cshtml"
-       Write(Html.Hidden(MVC.Queue.CancelPlaceInLineParams.urlToken, Model.UrlToken));
+            #line 21 "..\..\Views\Queue\ShowCustomer.cshtml"
+       Write(Html.AntiForgeryToken2());
 
             
             #line default
@@ -133,7 +133,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 26 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 26 "..\..\Views\Queue\ShowCustomer.cshtml"
    Write(Html.Partial(MVC.Queue.Views.CustomerViewQueueList, Model));
 
             
@@ -147,7 +147,7 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
 " \'");
 
             
-            #line 32 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 32 "..\..\Views\Queue\ShowCustomer.cshtml"
                                Write(Model.UrlToken);
 
             
@@ -156,7 +156,7 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
 WriteLiteral("\';\r\n        window.viewData.udpateCustomerViewQueueListUrl = \'");
 
             
-            #line 33 "..\..\Views\Queue\CustomerView.cshtml"
+            #line 33 "..\..\Views\Queue\ShowCustomer.cshtml"
                                                      Write(Url.Action(MVC.Queue.CustomerViewQueueList(Model.UrlToken)));
 
             
@@ -164,14 +164,14 @@ WriteLiteral("\';\r\n        window.viewData.udpateCustomerViewQueueListUrl = \'
             #line hidden
 WriteLiteral("\';\r\n    </script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1290), Tuple.Create("\"", 1369)
+WriteAttribute("src", Tuple.Create(" src=\"", 1279), Tuple.Create("\"", 1358)
             
-            #line 35 "..\..\Views\Queue\CustomerView.cshtml"
-, Tuple.Create(Tuple.Create("", 1296), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.CustomerView_es5_min_js)
+            #line 35 "..\..\Views\Queue\ShowCustomer.cshtml"
+, Tuple.Create(Tuple.Create("", 1285), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.ShowCustomer_es5_min_js)
             
             #line default
             #line hidden
-, 1296), false)
+, 1285), false)
 );
 
 WriteLiteral("></script>\r\n");

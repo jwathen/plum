@@ -51,7 +51,7 @@ WriteLiteral("\r\n\r\n");
 
             
             #line 6 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
- if (Model.Customers.Count == 0)
+ if (Model.Customers.Count() == 0)
 {
 
             
@@ -62,7 +62,7 @@ WriteLiteral("    <p>\r\n        There are no customers waiting.\r\n    </p>\r\n
             
             #line 11 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
 }
-else if (Model.Customers.Count > 1)
+else if (Model.Customers.Count() > 1)
 {
 
             
@@ -105,11 +105,11 @@ WriteLiteral("        <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(" data-manage-customer-id=\"");
+WriteLiteral(" data-show-customer-id=\"");
 
             
             #line 21 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
-                                                        Write(customer.Id);
+                                                      Write(customer.Id);
 
             
             #line default

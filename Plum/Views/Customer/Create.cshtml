@@ -1,9 +1,10 @@
 ﻿@model Plum.ViewModels.Customer.CustomerViewModel
 
-<div class="vertical-alignment-helper">
-    <div class="modal-dialog vertical-align-center">
-        <div class="modal-content">
-            <form action="@Url.Action(MVC.Queue.AddCustomer())" method="post" data-loading-overlay="true">
+@using (Ajax.BeginForm(MVC.Customer.Create(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "CreateCustomerModal" }))
+{
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
                 <div class="modal-header">
                     <button class="close" type="button" data-dismiss="modal">
                         &times;
@@ -23,7 +24,7 @@
                 </div>
                 @Html.HiddenFor(x => x.QueueId)
                 @Html.AntiForgeryToken2()
-            </form>
+            </div>
         </div>
     </div>
-</div>
+}

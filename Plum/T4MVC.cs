@@ -28,6 +28,8 @@ using T4MVC;
 public static partial class MVC
 {
     public static Plum.Controllers.AccountController Account = new Plum.Controllers.T4MVC_AccountController();
+    public static Plum.Controllers.BusinessesController Businesses = new Plum.Controllers.T4MVC_BusinessesController();
+    public static Plum.Controllers.CustomerController Customer = new Plum.Controllers.T4MVC_CustomerController();
     public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
     public static Plum.Controllers.QueueController Queue = new Plum.Controllers.T4MVC_QueueController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -98,12 +100,12 @@ namespace Links
                 private const string URLPATH = "~/Content/Scripts/Queue";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string CustomerView_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CustomerView.min.js") ? Url("CustomerView.min.js") : Url("CustomerView.js");
-                public static readonly string CustomerView_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CustomerView.es5.min.js") ? Url("CustomerView.es5.min.js") : Url("CustomerView.es5.js");
-                public static readonly string CustomerView_es5_min_js = Url("CustomerView.es5.min.js");
-                public static readonly string Manage_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Manage.min.js") ? Url("Manage.min.js") : Url("Manage.js");
-                public static readonly string Manage_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Manage.es5.min.js") ? Url("Manage.es5.min.js") : Url("Manage.es5.js");
-                public static readonly string Manage_es5_min_js = Url("Manage.es5.min.js");
+                public static readonly string Show_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Show.min.js") ? Url("Show.min.js") : Url("Show.js");
+                public static readonly string Show_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Show.es5.min.js") ? Url("Show.es5.min.js") : Url("Show.es5.js");
+                public static readonly string Show_es5_min_js = Url("Show.es5.min.js");
+                public static readonly string ShowCustomer_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ShowCustomer.min.js") ? Url("ShowCustomer.min.js") : Url("ShowCustomer.js");
+                public static readonly string ShowCustomer_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ShowCustomer.es5.min.js") ? Url("ShowCustomer.es5.min.js") : Url("ShowCustomer.es5.js");
+                public static readonly string ShowCustomer_es5_min_js = Url("ShowCustomer.es5.min.js");
             }
         
             public static readonly string Site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.js") ? Url("Site.min.js") : Url("Site.js");
@@ -223,6 +225,14 @@ namespace Links
             public static readonly string LoadingOverlay_scss = Url("LoadingOverlay.scss");
             public static readonly string Paper_scss = Url("Paper.scss");
             public static readonly string PaperVariables_scss = Url("PaperVariables.scss");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Queue {
+                private const string URLPATH = "~/Content/Styles/Queue";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string Manage_scss = Url("Manage.scss");
+            }
+        
             public static readonly string Site_scss = Url("Site.scss");
             public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
             public static readonly string Site_min_css = Url("Site.min.css");
@@ -248,8 +258,8 @@ namespace Links
                 {
                     public static class Assets
                     {
-                        public const string CustomerView_js = "~/Content/Scripts/Queue/CustomerView.js"; 
-                        public const string Manage_js = "~/Content/Scripts/Queue/Manage.js"; 
+                        public const string Show_js = "~/Content/Scripts/Queue/Show.js"; 
+                        public const string ShowCustomer_js = "~/Content/Scripts/Queue/ShowCustomer.js"; 
                     }
                 }
                 public static class Assets
@@ -279,6 +289,12 @@ namespace Links
                     }
                 }
                 public static partial class Home 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class Queue 
                 {
                     public static class Assets
                     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace Plum.Models
@@ -10,7 +11,7 @@ namespace Plum.Models
     {
         public AppDataContext() : base("Plum")
         {
-
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,8 +30,41 @@ namespace Plum.Models
             modelBuilder.Entity<Customer>().Property(x => x.UrlToken).HasMaxLength(12).IsRequired();
         }
 
+        public override Task<int> SaveChangesAsync()
+        {
+            SetDateFields();
+            return base.SaveChangesAsync();
+        }
+
+        public override int SaveChanges()
+        {
+            SetDateFields();
+            return base.SaveChanges();
+        }
+
+        protected void SetDateFields()
+        {
+            var now = DateTime.UtcNow;
+            foreach (var entry in ChangeTracker.Entries<IDatedEntity>())
+            {
+                var entity = entry.Entity;
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entity.DateCreated = now;
+                        entity.DateUpdated = now;
+                        break;
+                    case EntityState.Modified:
+                        entity.DateUpdated = now;
+                        break;
+                }
+            }
+            ChangeTracker.DetectChanges();
+        }
+
         public DbSet<Business> Businesses { get; set; }
         public DbSet<Queue> Queues { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CustomerLogEntry> CustomerLogEntries { get; set; }
     }
 }

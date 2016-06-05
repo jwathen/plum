@@ -6724,12 +6724,12 @@ input[type="checkbox"].input-validation-error {
     .home .jumbo p a {
       color: #eee; }
 
-.queue.queue-manage .history {
+.queue.queue-show .history {
   margin-top: 1em;
   border-right: 1px solid lightgray;
   overflow: scroll;
   max-height: 10em; }
 
-.queue.queue-manage #businessViewQueueList li.list-group-item {
+.queue.queue-show #businessViewQueueList li.list-group-item {
   cursor: pointer; }
 

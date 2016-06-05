@@ -59,6 +59,7 @@
 
 $(function () {
     initConfirmationModals('body');
+    initLoadingOverlays('body');
 
     $('[data-formatter=phone]').formatter({ pattern: '({{999}}) {{999}}-{{9999}}', persistent: false });
 
@@ -84,8 +85,6 @@ $(function () {
         });
         $('.modal.in:visible:last').focus().next('.modal-backdrop.in').removeClass('hidden');
     }
-
-    $('form[data-loading-overlay]').submit(setLoading);
 });
 
 function setLoading() {
@@ -121,4 +120,9 @@ function initConfirmationModals(container) {
         });
         $('#ConfirmModal').modal('show');
     });
+}
+
+function initLoadingOverlays(container) {
+    $(container).find('form[data-loading-overlay=true]').submit(setLoading);
+    $(container).find('a[data-loading-overlay=true]').click(setLoading);
 }

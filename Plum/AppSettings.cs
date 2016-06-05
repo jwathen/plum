@@ -58,6 +58,11 @@ namespace Plum
             }
         }
 
+        public static string EnableMiniProfiler
+        {
+            get { return ConfigurationManager.AppSettings["EnableMiniProfiler"]; }
+        }
+
         public static string ReleaseProfile
         {
             get { return ConfigurationManager.AppSettings["ReleaseProfile"]; }

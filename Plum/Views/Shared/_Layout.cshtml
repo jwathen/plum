@@ -104,5 +104,6 @@
     <script src="@Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)"></script>
     <script src="@Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)"></script>
     @RenderSection("scripts", required: false)
+    @StackExchange.Profiling.MiniProfiler.RenderIncludes()
 </body>
 </html>

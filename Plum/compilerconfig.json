@@ -2,5 +2,17 @@
   {
     "outputFile": "Content/Styles/Site.css",
     "inputFile": "Content/Styles/Site.scss"
+  },
+  {
+    "outputFile": "Content/Scripts/Site.es5.js",
+    "inputFile": "Content/Scripts/Site.js"
+  },
+  {
+    "outputFile": "Content/Scripts/Queue/Show.es5.js",
+    "inputFile": "Content/Scripts/Queue/Show.js"
+  },
+  {
+    "outputFile": "Content/Scripts/Queue/ShowCustomer.es5.js",
+    "inputFile": "Content/Scripts/Queue/ShowCustomer.js"
   }
 ]

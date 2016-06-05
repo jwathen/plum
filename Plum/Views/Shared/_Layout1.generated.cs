@@ -560,6 +560,17 @@ Write(RenderSection("scripts", required: false));
             
             #line default
             #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 107 "..\..\Views\Shared\_Layout.cshtml"
+Write(StackExchange.Profiling.MiniProfiler.RenderIncludes());
+
+            
+            #line default
+            #line hidden
 WriteLiteral("\r\n</body>\r\n</html>\r\n");
 
         }

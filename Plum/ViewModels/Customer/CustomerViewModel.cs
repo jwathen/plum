@@ -22,12 +22,41 @@ namespace Plum.ViewModels.Customer
             NumberInParty = 2;
         }
 
+        public int Id { get; set; }
         public int QueueId { get; set; }
         public string Name { get; set; }
         public int NumberInParty { get; set; }
         public string PhoneNumber { get; set; }
         public int? QuotedTimeInMinutes { get; set; }
         public string Note { get; set; }
+
+        public void MapFrom(Models.Customer customer)
+        {
+            Id = customer.Id;
+            QueueId = customer.QueueId;
+            Name = customer.Name;
+            NumberInParty = customer.NumberInParty;
+            PhoneNumber = customer.PhoneNumber;
+            QuotedTimeInMinutes = customer.QuotedTimeInMinutes;
+            Note = customer.Note;
+        }
+
+        public void MapTo(Models.Customer customer)
+        {
+            customer.QueueId = QueueId;
+            customer.Name = Name;
+            customer.NumberInParty = NumberInParty;
+            if (!string.IsNullOrWhiteSpace(PhoneNumber))
+            {
+                customer.PhoneNumber = new string(PhoneNumber.Where(x => char.IsDigit(x)).ToArray());
+            }
+            else
+            {
+                customer.PhoneNumber = null;
+            }
+            customer.QuotedTimeInMinutes = QuotedTimeInMinutes;
+            customer.Note = Note;
+        }
 
         public IEnumerable<SelectListItem> GetQuotedWaitTimeOptions()
         {

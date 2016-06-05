@@ -16,13 +16,13 @@ namespace Plum.Tests.Integration.Controllers
     {
         public void CustomerView_GivenInvalidToken_ReturnsCustomerNotFound()
         {
-            _controller.WithCallTo(x => x.CustomerView("invalid token"))
+            _controller.WithCallTo(x => x.ShowCustomer("invalid token"))
                 .ShouldRenderViewHtml(MVC.Queue.Views.CustomerNotFound);
         }
 
         public void CustomerView_GivenValidToken_ReturnsView()
         {
-            _controller.WithCallTo(x => x.CustomerView("john-token"))
+            _controller.WithCallTo(x => x.ShowCustomer("john-token"))
                 .ShouldRenderDefaultViewHtml()
                 .ShouldContainText("John (2)")
                 .ShouldContainText("B (6)");

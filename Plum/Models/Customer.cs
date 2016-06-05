@@ -6,10 +6,11 @@ using System.Web.Mvc;
 using Plum.Services;
 using Humanizer;
 using Humanizer.Localisation;
+using System.Data.Entity;
 
 namespace Plum.Models
 {
-    public class Customer
+    public class Customer : IDatedEntity
     {
         public virtual int Id { get; set; }
         public virtual int QueueId { get; set; }
@@ -17,13 +18,14 @@ namespace Plum.Models
         public virtual int NumberInParty { get; set; }
         public virtual string PhoneNumber { get; set; }
         public virtual string UrlToken { get; set; }
-        public virtual DateTime DateAdded { get; set; }
+        public virtual DateTime DateCreated { get; set; }
+        public virtual DateTime DateUpdated { get; set; }
         public virtual short SortOrder { get; set; }
         public int? QuotedTimeInMinutes { get; set; }
         public string Note { get; set; }
 
         public virtual Queue Queue { get; set; }
-        public virtual ICollection<CustomerLogEntry> LogEntries { get; set; } = new List<CustomerLogEntry>();
+        public virtual HashSet<CustomerLogEntry> LogEntries { get; set; } = new HashSet<CustomerLogEntry>();
 
         public string ObfuscateName(Customer currentCustomer)
         {
@@ -39,7 +41,7 @@ namespace Plum.Models
 
         public TimeSpan TimeWaited()
         {
-            TimeSpan timeWaited = DateTime.UtcNow.Subtract(DateAdded);
+            TimeSpan timeWaited = DateTime.UtcNow.Subtract(DateCreated);
             if (timeWaited < TimeSpan.FromSeconds(1))
             {
                 timeWaited = TimeSpan.FromSeconds(1);
@@ -82,7 +84,6 @@ namespace Plum.Models
         {
             LogEntries.Add(new CustomerLogEntry
             {
-                DateInserted = DateTime.UtcNow,
                 Message = message,
                 Type = type
             });
@@ -111,7 +112,7 @@ namespace Plum.Models
         {
             if (this.HasPhoneNumber())
             {
-                string customerViewUrl = urlHelper.ActionAbsolute(MVC.Queue.CustomerView(this.UrlToken));
+                string customerViewUrl = urlHelper.ActionAbsolute(MVC.Queue.ShowCustomer(this.UrlToken));
                 string message = $"Hey it's {Queue.Business.Name}! You've been added to our wait list. {customerViewUrl}";
                 SendTextMessage(secrets, message);
                 Log(CustomerLogEntryType.WelcomeTextMessageSent, $"\"{message}\"");
