@@ -27,11 +27,12 @@ function initQueueList() {
         }
     });
 
+    return;
     if ($('#businessViewQueueList .list-group-item').length > 1) {
         $('#businessViewQueueList .list-group').sortable({ delay: 100 }).on('sort', $.debounce(window.viewData.sortingDebounce, function (e, ui) {
             var customerIds = [];
-            $('#businessViewQueueList li[data-manage-customer-id]').each(function () {
-                var customerId = $(this).attr('data-manage-customer-id');
+            $('#businessViewQueueList li[data-show-customer-id]').each(function () {
+                var customerId = $(this).attr('data-show-customer-id');
                 if (!isNaN(customerId)) {
                     customerIds.push(parseInt(customerId));
                 }

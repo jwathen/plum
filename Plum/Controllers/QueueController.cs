@@ -56,7 +56,7 @@ namespace Plum.Controllers
 
             if (customer == null)
             {
-                return JavaScript($"<script>window.location.href = '{Url.Action(MVC.Queue.ShowCustomer(urlToken))}'</script>");
+                return JavaScriptRedirect(Url.Action(MVC.Queue.ShowCustomer(urlToken)));
             }
 
             return View(customer);
@@ -64,7 +64,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [GET("/queue/{id:int}")]
-        public virtual async Task<ActionResult> Show(int? id)
+        public virtual async Task<ActionResult> Show(int id)
         {
             var queue = await Queue();
 
@@ -82,7 +82,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [GET("/queue/{id:int}/business_view_queue_list")]
-        public virtual async Task<ActionResult> BusinessViewQueueList(int? queueId)
+        public virtual async Task<ActionResult> BusinessViewQueueList(int queueId)
         {
             var queue = await Queue();
 

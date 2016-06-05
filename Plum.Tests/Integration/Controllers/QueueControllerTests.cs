@@ -14,13 +14,13 @@ namespace Plum.Tests.Integration.Controllers
 {
     public class QueueControllerTests : WebTestBase<QueueController>
     {
-        public void CustomerView_GivenInvalidToken_ReturnsCustomerNotFound()
+        public void ShowCustomer_GivenInvalidToken_ReturnsCustomerNotFound()
         {
             _controller.WithCallTo(x => x.ShowCustomer("invalid token"))
                 .ShouldRenderViewHtml(MVC.Queue.Views.CustomerNotFound);
         }
 
-        public void CustomerView_GivenValidToken_ReturnsView()
+        public void ShowCustomer_GivenValidToken_ReturnsView()
         {
             _controller.WithCallTo(x => x.ShowCustomer("john-token"))
                 .ShouldRenderDefaultViewHtml()
@@ -28,191 +28,62 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldContainText("B (6)");
         }
 
-        public void CancelPlaceInLine_GivenInvalidToken_NoException()
+        public void CustomerViewQueueList_GivenValidToken_ReturnsView()
         {
-            _controller.WithCallTo(x => x.CancelPlaceInLine("invalid token"))
-                .ShouldRedirectTo<HomeController>(x => x.Index());
+            _controller.WithCallTo(x => x.CustomerViewQueueList("john-token"))
+               .ShouldRenderDefaultViewHtml()
+               .ShouldContainText("John (2)")
+               .ShouldContainText("B (6)");
         }
 
-        public void CancelPlaceInLine_GivenValidToken_RemovesCustomer()
-        {
-            int countBefore = TestBusiness.Queues.First().Customers.Count;
-
-            _controller.WithCallTo(x => x.CancelPlaceInLine("john-token"))
-                .ShouldRedirectTo<HomeController>(x => x.Index());
-
-            int countAfter = TestBusiness.Queues.First().Customers.Count;
-            countAfter.ShouldEqual(countBefore - 1);
-        }
-
-        public void Manage_GivenQueueId_ReturnsView()
+        public void Show_GivenQueueId_ReturnsView()
         {
             SignIn();
             int queueId = TestBusiness.Queues.First().Id;
+            SetRouteId(queueId);
 
-            _controller.WithCallTo(x => x.Manage(queueId))
+            _controller.WithCallTo(x => x.Show(queueId))
                 .ShouldRenderDefaultViewHtml()
                 .ShouldContainText("John (2)")
                 .ShouldContainText("Bill (6)");
         }
 
-        public void Manage_WithoutQueueId_ReturnsRedirectWithQueueId()
-        {
-            SignIn();
-            int queueId = TestBusiness.Queues.First().Id;
-
-            _controller.WithCallTo(x => x.Manage(null))
-                .ShouldRedirectTo(MVC.Queue.ActionNames.Manage, new { queueId = queueId });
-        }
-
-        public void Manage_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
+        public void Show_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
         {
             SignIn();
             int otherBusinessQueueId = OtherBusiness.Queues.First().Id;
+            SetRouteId(otherBusinessQueueId);
 
-            _controller.WithCallTo(x => x.Manage(otherBusinessQueueId))
+            _controller.WithCallTo(x => x.Show(otherBusinessQueueId))
                 .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
         }
 
-        public void Manage_GivenInvalidQueueId_Return404()
+        public void Show_GivenInvalidQueueId_Return404()
         {
-            _controller.WithCallTo(x => x.Manage(-1))
+            _controller.WithCallTo(x => x.Show(-1))
                 .ShouldGiveHttpStatus(404);
         }
 
-        public void ManageCustomerModal_CusomterId_ReturnsView()
+        public void BusinessViewQueueList_GivenQueueId_ReturnsView()
         {
             SignIn();
-            int customerId = TestBusiness.Queues.First().Customers.First().Id;
+            int queueId = TestBusiness.Queues.First().Id;
+            SetRouteId(queueId);
 
-            _controller.WithCallTo(x => x.ManageCustomerModal(customerId))
+            _controller.WithCallTo(x => x.BusinessViewQueueList(queueId))
                 .ShouldRenderDefaultViewHtml()
-                .ShouldContainText("John");
+                .ShouldContainText("John (2)")
+                .ShouldContainText("Bill (6)");
         }
 
-        public void ManageCustomerModal_GivenCustomerIdForOtherBusiness_ReturnNotAuthorized()
-        {
-            SignIn();
-            int otherBusinessCustomerId = OtherBusiness.Queues.First().Customers.First().Id;
-
-            _controller.WithCallTo(x => x.ManageCustomerModal(otherBusinessCustomerId))
-                .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
-        }
-
-        public void RemoveCustomer_CusomterId_RemovesTheCustomer()
-        {
-            SignIn();
-            int queueId = TestBusiness.Queues.First().Id;
-            int customerId = TestBusiness.Queues.First().Customers.First().Id;
-
-            _controller.WithCallTo(x => x.RemoveCustomer(customerId))
-                .ShouldReturnJavaScriptResult();
-
-            Database.Customers.Find(customerId).ShouldBeNull();
-        }
-
-        public void RemoveCustomer_GivenCustomerIdForOtherBusiness_DoesNotRemoveTheCustomer()
-        {
-            SignIn();
-            int customerId = OtherBusiness.Queues.First().Customers.First().Id;
-
-            _controller.WithCallTo(x => x.RemoveCustomer(customerId))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
-
-            Database.Customers.Find(customerId).ShouldNotBeNull();
-        }
-
-        public void RemoveCustomer_GivenInvalidCustomerId_NoException()
-        {
-            SignIn();
-            int customerId = -1;
-
-            _controller.WithCallTo(x => x.RemoveCustomer(customerId))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
-        }
-
-        public void AddCustomer_GivenValidCustomer_CreatesCustomer()
-        {
-            SignIn();
-            int queueId = TestBusiness.Queues.First().Id;
-
-            var model = new CustomerViewModel();
-            model.Name = "Jack";
-            model.NumberInParty = 4;
-            model.PhoneNumber = "9723743329";
-            model.QueueId = queueId;
-            model.QuotedTimeInMinutes = 25;
-            model.Note = "his name is Jack";
-
-            _controller.WithCallTo(x => x.AddCustomer(model))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage, new { queueId = queueId });
-
-            var customer = TestBusiness.Queues.First().Customers.OrderByDescending(x => x.Id).First();
-            customer.Name.ShouldEqual("Jack");
-            customer.NumberInParty.ShouldEqual(4);
-            customer.PhoneNumber.ShouldEqual("9723743329");
-            customer.UrlToken.ShouldNotBeNull();
-            customer.QuotedTimeInMinutes.ShouldEqual(25);
-            customer.Note.ShouldEqual("his name is Jack");
-        }
-
-        public void AddCustomer_GivenQueueIdForOtherBusiness_ReturnsNotAuthorized()
-        {
-            SignIn();
-            int otherBusinessQueueId = OtherBusiness.Queues.First().Id;
-
-            var model = new CustomerViewModel();
-            model.Name = "Jack";
-            model.NumberInParty = 4;
-            model.PhoneNumber = "9723743329";
-            model.QueueId = otherBusinessQueueId;
-
-            _controller.WithCallTo(x => x.AddCustomer(model))
-                .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
-        }
-
-        public void MoveToEndOfList_GivenValidCustomer_MovesTheCustomer()
-        {
-            SignIn();
-            int queueId = TestBusiness.Queues.First().Id;
-            int customerId = TestBusiness.Queues.First().Customers.First().Id;
-
-            _controller.WithCallTo(x => x.MoveToEndOfList(customerId))
-                .ShouldRenderViewHtml(MVC.Queue.Views.ManageCustomerModal);
-
-            Database.Queues.Find(queueId).OrderedCustomers().Last().Id.ShouldEqual(customerId);
-        }
-
-        public void MoveToEndOfList_GivenCustomerIdForOtherBusiness_DoesNotMoveTheCustomer()
-        {
-            SignIn();
-            var customer = OtherBusiness.Queues.First().Customers.First();
-            short sortOrderBefore = customer.SortOrder;
-
-            _controller.WithCallTo(x => x.MoveToEndOfList(customer.Id))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
-
-            short sortOrderAfter = Database.Customers.Find(customer.Id).SortOrder;
-            sortOrderAfter.ShouldEqual(sortOrderBefore);
-        }
-
-        public void MoveToEndOfList_GivenInvalidCustomerId_NoException()
-        {
-            SignIn();
-            int customerId = -1;
-
-            _controller.WithCallTo(x => x.MoveToEndOfList(customerId))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage);
-        }
-
-        public void SortQueue_GiventCustomerList_ReordersTheCustomers()
+        public void Sort_GiventCustomerList_ReordersTheCustomers()
         {
             SignIn();
             int queueId = TestBusiness.Queues.First().Id;
             var originalOrder = TestBusiness.Queues.First().OrderedCustomers().Select(x => x.Id).ToArray();
             int[] expectedOrder = originalOrder.Reverse().ToArray();
 
-            _controller.WithCallTo(x => x.SortQueue(queueId, expectedOrder))
+            _controller.WithCallTo(x => x.Sort(queueId, expectedOrder))
                 .ShouldReturnJson();
 
             int[] actualOrder = TestBusiness.Queues.First().OrderedCustomers().Select(x => x.Id).ToArray(); ;

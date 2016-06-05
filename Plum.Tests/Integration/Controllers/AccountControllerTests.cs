@@ -30,11 +30,10 @@ namespace Plum.Tests.Integration.Controllers
             model.EmailAddress = "new_business@site.com";
             model.Password = "password";
             _controller.WithCallTo(x => x.SignUp(model))
-                .ShouldRedirectTo<HomeController>(x => x.Index());
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Businesses.ActionNames.Show, new { id = NewBusiness.Queues.First().Id });
 
-            var business = Database.Businesses.First(x => x.Account.EmailAddress == "new_business@site.com");
-            business.Name.ShouldEqual("New Business");
-            business.Queues.First().Name.ShouldEqual("Default");
+            NewBusiness.Name.ShouldEqual("New Business");
+            NewBusiness.Queues.First().Name.ShouldEqual("Default");
         }
 
         public void SignIn_Renders()
@@ -51,7 +50,7 @@ namespace Plum.Tests.Integration.Controllers
             int queueId = TestBusiness.Queues.First().Id;
 
             _controller.WithCallTo(x => x.SignIn(model))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Manage, new { queueId = queueId });
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Show, new { id = queueId });
 
             AppSession.BusinessName.ShouldEqual("Test Business");
         }

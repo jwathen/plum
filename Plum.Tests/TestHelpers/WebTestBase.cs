@@ -83,6 +83,11 @@ namespace Plum.Tests.TestHelpers
             SignInAs(TestBusiness);
         }
 
+        protected void SetRouteId(int id)
+        {
+            RouteValues.Add("id", id);
+        }
+
         public Business TestBusiness
         {
             get
@@ -96,6 +101,14 @@ namespace Plum.Tests.TestHelpers
             get
             {
                 return Database.Businesses.First(x => x.Account.EmailAddress == "other_business@site.com");
+            }
+        }
+
+        public Business NewBusiness
+        {
+            get
+            {
+                return Database.Businesses.First(x => x.Account.EmailAddress == "new_business@site.com");
             }
         }
 

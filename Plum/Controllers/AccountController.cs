@@ -62,6 +62,13 @@ namespace Plum.Controllers
                 .FirstOrDefaultAsync(x => x.Account.EmailAddress == model.EmailAddress);
             bool success = business != null && business.Account.VerifyPassword(model.Password);
 
+#if !DEBUG
+            if (success && business.Id != 1)
+            {
+                success = false;
+            }
+#endif
+
             if (success)
             {
                 AppSession.SignIn(business, model.RememberMe);

@@ -166,6 +166,12 @@ namespace Plum.Tests.TestHelpers.Mvc
 
             return testResult;
         }
+        public static ControllerResultTest<TController> ShouldJavaScriptRedirectTo<TController>(this ControllerResultTest<TController> testResult, string url)
+            where TController : AppControllerBase
+        {
+            string expectedScript = $"window.location.href = '{url}';";
+            return ShouldReturnJavaScriptResult(testResult, x => x.ShouldEqual(expectedScript));
+        }
 
         private static RenderedHtmlResultTest<TController> RenderView<TController>(ControllerResultTest<TController> controllerResultTest, ViewResultTest viewResultTest)
              where TController : AppControllerBase

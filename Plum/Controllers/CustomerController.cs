@@ -79,7 +79,8 @@ namespace Plum.Controllers
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToCustomers(queue.Id);
 
-            return JavaScriptRedirect(Url.Action(MVC.Queue.Show(queue.Id)));
+            string url = Url.Action(MVC.Queue.Name, MVC.Queue.ActionNames.Show, new { id = queue.Id });
+            return JavaScriptRedirect(url);
         }
 
         [Authorize]

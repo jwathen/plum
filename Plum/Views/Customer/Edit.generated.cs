@@ -41,7 +41,7 @@ namespace ASP
         {
 WriteLiteral("<div");
 
-WriteLiteral(" class=\"content\"");
+WriteLiteral(" class=\"container\"");
 
 WriteLiteral(">\r\n    <div");
 
@@ -53,14 +53,14 @@ WriteLiteral(" class=\"col-md-6 col-md-offset-3\"");
 
 WriteLiteral(">\r\n            <p>\r\n                <strong>\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 212), Tuple.Create("\"", 261)
+WriteAttribute("href", Tuple.Create(" href=\"", 214), Tuple.Create("\"", 263)
             
             #line 8 "..\..\Views\Customer\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 219), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
+, Tuple.Create(Tuple.Create("", 221), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
             
             #line default
             #line hidden
-, 219), false)
+, 221), false)
 );
 
 WriteLiteral(" data-loading-overlay=\"true\"");
@@ -73,14 +73,14 @@ WriteLiteral("></i>\r\n                        Back to List\r\n                 
 "      </strong>\r\n            </p>\r\n            <h2>Edit Party</h2>\r\n            " +
 "<form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 512), Tuple.Create("\"", 555)
+WriteAttribute("action", Tuple.Create(" action=\"", 514), Tuple.Create("\"", 557)
             
             #line 15 "..\..\Views\Customer\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 521), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Update())
+, Tuple.Create(Tuple.Create("", 523), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Update())
             
             #line default
             #line hidden
-, 521), false)
+, 523), false)
 );
 
 WriteLiteral(" method=\"post\"");

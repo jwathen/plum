@@ -23,7 +23,7 @@ namespace Plum
         {
             MiniProfilerEF6.Initialize();
 
-            Database.SetInitializer<Models.AppDataContext>(null);
+            //Database.SetInitializer<Models.AppDataContext>(null);
             FluentValidation.Mvc.FluentValidationModelValidatorProvider.Configure();
 
             RegisterRoutes(RouteTable.Routes);

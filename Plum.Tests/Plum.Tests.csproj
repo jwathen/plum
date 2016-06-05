@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Integration\Controllers\AccountControllerTests.cs" />
+    <Compile Include="Integration\Controllers\CustomerControllerTests.cs" />
     <Compile Include="Integration\Controllers\HomeControllerTests.cs" />
     <Compile Include="Integration\Controllers\QueueControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

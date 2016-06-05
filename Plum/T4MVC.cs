@@ -230,7 +230,7 @@ namespace Links
                 private const string URLPATH = "~/Content/Styles/Queue";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string Manage_scss = Url("Manage.scss");
+                public static readonly string Show_scss = Url("Show.scss");
             }
         
             public static readonly string Site_scss = Url("Site.scss");
