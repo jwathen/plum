@@ -1,4 +1,4 @@
-﻿
+﻿@model Plum.Models.Business
 @{
     ViewBag.Title = "Show";
 }
@@ -19,10 +19,18 @@
                 <div class="panel-body">
                     <dl class="dl-horizontal">
                         <dt>Business Name</dt>
-                        <dd>The City Brewery</dd>
+                        <dd>@Model.Name</dd>
                         <dt>Phone Number</dt>
-                        <dd>(602) 890-3306</dd>
+                        @if (Model.HasPhoneNumber())
+                        {
+                            <dd>@Html.PhoneNumber(Model.PhoneNumber)</dd>
+                        }
+                        else
+                        {
+                            <dd>None</dd>
+                        }
                     </dl>
+
                     <a href="#" class="btn btn-default btn-block">
                         <i class="fa fa-edit"></i>
                         Edit Business Information
@@ -38,7 +46,7 @@
                 <div class="panel-body">
                     <dl class="dl-horizontal">
                         <dt>Email Address</dt>
-                        <dd>citybrewery@gmail.com</dd>
+                        <dd>@Model.Account.EmailAddress</dd>
                         <dt>Password</dt>
                         <dd>
                             &#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;
@@ -61,9 +69,9 @@
                 <div class="panel-body">
                     <dl class="dl-horizontal">
                         <dt>Welcome Text Message</dt>
-                        <dd><em>Hey it's The City Brewery! You've been added to our wait list. You can see your place in line at <a href="#">https://plumlist.com/q/4l3oj6ny</a></em></dd>
+                        <dd><em>@Model.SampleWelcomeTextMessage()</em></dd>
                         <dt>Ready Text Message</dt>
-                        <dd><em>It's The City Brewery. We're ready for you.</em></dd>
+                        <dd><em>@Model.SampleReadyTextMessage()</em></dd>
                     </dl>
                     <a href="#" class="btn btn-default btn-block">
                         <i class="fa fa-edit"></i>

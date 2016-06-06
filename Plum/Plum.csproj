@@ -472,6 +472,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SignUp.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Business\Show.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Show.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Customer\Edit.generated.cs">
       <DependentUpon>Edit.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -613,7 +618,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Edit.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Business\Show.cshtml" />
+    <Content Include="Views\Business\Show.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Show.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

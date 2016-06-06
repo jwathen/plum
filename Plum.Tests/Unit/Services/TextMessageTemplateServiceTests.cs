@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Plum.Lib.Services;
+using Plum.Services;
 using Plum.Tests.TestHelpers;
 using Should;
 

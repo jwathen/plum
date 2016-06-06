@@ -112,8 +112,9 @@ namespace Plum.Models
         {
             if (this.HasPhoneNumber())
             {
-                string customerViewUrl = urlHelper.ActionAbsolute(MVC.Queue.ShowCustomer(this.UrlToken));
-                string message = $"Hey it's {Queue.Business.Name}! You've been added to our wait list. {customerViewUrl}";
+                var textMessageTemplates = new TextMessageTemplateService();
+                string placeInLineUrl = urlHelper.ActionAbsolute(MVC.Queue.ShowCustomer(this.UrlToken));
+                string message = textMessageTemplates.BuildWelcomeMessage(Queue.Business, placeInLineUrl);
                 SendTextMessage(secrets, message);
                 Log(CustomerLogEntryType.WelcomeTextMessageSent, $"\"{message}\"");
             }
@@ -123,7 +124,8 @@ namespace Plum.Models
         {
             if (this.HasPhoneNumber())
             {
-                string message = $"It's {Queue.Business.Name}. We're ready for you.";
+                var textMessageTemplates = new TextMessageTemplateService();
+                string message = textMessageTemplates.BuildReadyMessage(Queue.Business);
                 SendTextMessage(secrets, message);
                 Log(CustomerLogEntryType.ReadyTextMessageSent, $"\"{message}\"");
             }

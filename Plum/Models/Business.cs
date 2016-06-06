@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Plum.Services;
 
 namespace Plum.Models
 {
@@ -17,5 +18,22 @@ namespace Plum.Models
         public virtual Account Account { get; set; }
 
         public virtual HashSet<Queue> Queues { get; set; } = new HashSet<Queue>();
+
+        public string SampleWelcomeTextMessage()
+        {
+            var templateService = new TextMessageTemplateService();
+            return templateService.BuildWelcomeMessage(this, TextMessageTemplateService.SAMPLE_PLACE_IN_LINE_URL);
+        }
+
+        public string SampleReadyTextMessage()
+        {
+            var templateService = new TextMessageTemplateService();
+            return templateService.BuildReadyMessage(this);
+        }
+
+        public bool HasPhoneNumber()
+        {
+            return !string.IsNullOrEmpty(PhoneNumber);
+        }
     }
 }
