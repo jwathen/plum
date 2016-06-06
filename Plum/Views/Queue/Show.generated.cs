@@ -88,6 +88,16 @@ WriteLiteral(" class=\"btn btn-block btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
 
+WriteAttribute("style", Tuple.Create(" style=\"", 455), Tuple.Create("\"", 516)
+            
+            #line 13 "..\..\Views\Queue\Show.cshtml"
+    , Tuple.Create(Tuple.Create("", 463), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+            
+            #line default
+            #line hidden
+, 463), false)
+);
+
 WriteLiteral(">\r\n            <i");
 
 WriteLiteral(" class=\"fa fa-list\"");
@@ -114,6 +124,16 @@ WriteLiteral("></i>\r\n            Add Party\r\n        </button>\r\n        <bu
 WriteLiteral(" class=\"btn btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
+
+WriteAttribute("style", Tuple.Create(" style=\"", 908), Tuple.Create("\"", 969)
+            
+            #line 23 "..\..\Views\Queue\Show.cshtml"
+, Tuple.Create(Tuple.Create("", 916), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+            
+            #line default
+            #line hidden
+, 916), false)
+);
 
 WriteLiteral(">\r\n            <i");
 
@@ -194,14 +214,14 @@ WriteLiteral("\';\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'
 WriteLiteral("\';\r\n        window.viewData.showCustomerUrl = \'/customer\';\r\n    </script>\r\n    <s" +
 "cript");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1706), Tuple.Create("\"", 1777)
+WriteAttribute("src", Tuple.Create(" src=\"", 1830), Tuple.Create("\"", 1901)
             
             #line 47 "..\..\Views\Queue\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 1712), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
+, Tuple.Create(Tuple.Create("", 1836), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
             
             #line default
             #line hidden
-, 1712), false)
+, 1836), false)
 );
 
 WriteLiteral("></script>\r\n");

@@ -510,43 +510,45 @@ WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquer
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui" +
-".touch-punch.min.js\"");
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery." +
-"ba-throttle-debounce.min.js\"");
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 4999), Tuple.Create("\"", 5019)
-, Tuple.Create(Tuple.Create("", 5005), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
-, 5005), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 4743), Tuple.Create("\"", 4834)
+            
+            #line 101 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4749), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
+            
+            #line default
+            #line hidden
+, 4749), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5043), Tuple.Create("\"", 5123)
+WriteAttribute("src", Tuple.Create(" src=\"", 4858), Tuple.Create("\"", 4878)
+, Tuple.Create(Tuple.Create("", 4864), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
+, 4864), false)
+);
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4902), Tuple.Create("\"", 4982)
+            
+            #line 103 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4908), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
+            
+            #line default
+            #line hidden
+, 4908), false)
+);
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 5006), Tuple.Create("\"", 5071)
             
             #line 104 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 5049), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
+, Tuple.Create(Tuple.Create("", 5012), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 5049), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 5147), Tuple.Create("\"", 5212)
-            
-            #line 105 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 5153), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
-            
-            #line default
-            #line hidden
-, 5153), false)
+, 5012), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -554,7 +556,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 106 "..\..\Views\Shared\_Layout.cshtml"
+            #line 105 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             
@@ -565,7 +567,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 107 "..\..\Views\Shared\_Layout.cshtml"
+            #line 106 "..\..\Views\Shared\_Layout.cshtml"
 Write(StackExchange.Profiling.MiniProfiler.RenderIncludes());
 
             

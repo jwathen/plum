@@ -14,5 +14,13 @@
   {
     "outputFile": "Content/Scripts/Queue/ShowCustomer.es5.js",
     "inputFile": "Content/Scripts/Queue/ShowCustomer.js"
+  },
+  {
+    "outputFile": "Content/Scripts/jquery.ui.touch-punch-improved.es5.js",
+    "inputFile": "Content/Scripts/jquery.ui.touch-punch-improved.js"
+  },
+  {
+    "outputFile": "Content/Scripts/jquery.ui.touch-punch.es5.js",
+    "inputFile": "Content/Scripts/jquery.ui.touch-punch.js"
   }
 ]

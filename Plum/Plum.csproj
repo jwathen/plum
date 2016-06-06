@@ -223,6 +223,12 @@
     <Content Include="Content\Images\testimonial5.jpg" />
     <Content Include="Content\Images\testimonial6.jpg" />
     <Content Include="Content\Images\testimonial7.jpg" />
+    <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.es5.js">
+      <DependentUpon>jquery.ui.touch-punch-improved.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.es5.min.js">
+      <DependentUpon>jquery.ui.touch-punch-improved.es5.js</DependentUpon>
+    </Content>
     <Content Include="Content\Scripts\Queue\Show.es5.js">
       <DependentUpon>Show.js</DependentUpon>
     </Content>
@@ -342,6 +348,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.js" />
     <None Include="Properties\PublishProfiles\plumlist - Web Deploy.pubxml" />
     <Content Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

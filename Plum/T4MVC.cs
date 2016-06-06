@@ -94,6 +94,12 @@ namespace Links
             private const string URLPATH = "~/Content/Scripts";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string jquery_ui_touch_punch_improved_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.min.js") ? Url("jquery.ui.touch-punch-improved.min.js") : Url("jquery.ui.touch-punch-improved.js");
+            public static readonly string jquery_ui_touch_punch_improved_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.es5.min.js") ? Url("jquery.ui.touch-punch-improved.es5.min.js") : Url("jquery.ui.touch-punch-improved.es5.js");
+            public static readonly string jquery_ui_touch_punch_improved_es5_min_js = Url("jquery.ui.touch-punch-improved.es5.min.js");
+            public static readonly string jquery_ui_touch_punch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch.min.js") ? Url("jquery.ui.touch-punch.min.js") : Url("jquery.ui.touch-punch.js");
+            public static readonly string jquery_ui_touch_punch_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch.es5.min.js") ? Url("jquery.ui.touch-punch.es5.min.js") : Url("jquery.ui.touch-punch.es5.js");
+            public static readonly string jquery_ui_touch_punch_es5_min_js = Url("jquery.ui.touch-punch.es5.min.js");
             public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Queue {
@@ -264,6 +270,8 @@ namespace Links
                 }
                 public static class Assets
                 {
+                    public const string jquery_ui_touch_punch_improved_js = "~/Content/Scripts/jquery.ui.touch-punch-improved.js"; 
+                    public const string jquery_ui_touch_punch_js = "~/Content/Scripts/jquery.ui.touch-punch.js"; 
                     public const string jquery_unobtrusive_ajax_min_js = "~/Content/Scripts/jquery.unobtrusive-ajax.min.js"; 
                     public const string Site_js = "~/Content/Scripts/Site.js"; 
                 }

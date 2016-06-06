@@ -26,6 +26,7 @@ button visbility, website url
 - text message limits
 - sign in with google
 - azure deployment slots
+- cdn fallbacks
 
 ## issues
 - end sort event with jquery touch punch
