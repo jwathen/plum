@@ -27,6 +27,7 @@ button visbility, website url
 - sign in with google
 - azure deployment slots
 - cdn fallbacks
+- attributions
 
 ## issues
 - end sort event with jquery touch punch

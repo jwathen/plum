@@ -61,9 +61,9 @@ function initQueueList() {
         }
     });
 
+    $('#businessViewQueueList .list-group').sortable({ disabled: true });
     if ($('#businessViewQueueList .list-group-item').length > 1) {
         $('[data-command=rearrange]').show();
-        $('#businessViewQueueList .list-group').sortable({ disabled: true });
     } else {
         $('[data-command=rearrange]').hide();
     }

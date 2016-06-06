@@ -28,7 +28,7 @@ using T4MVC;
 public static partial class MVC
 {
     public static Plum.Controllers.AccountController Account = new Plum.Controllers.T4MVC_AccountController();
-    public static Plum.Controllers.BusinessesController Businesses = new Plum.Controllers.T4MVC_BusinessesController();
+    public static Plum.Controllers.BusinessController Businesses = new Plum.Controllers.T4MVC_BusinessesController();
     public static Plum.Controllers.CustomerController Customer = new Plum.Controllers.T4MVC_CustomerController();
     public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
     public static Plum.Controllers.QueueController Queue = new Plum.Controllers.T4MVC_QueueController();

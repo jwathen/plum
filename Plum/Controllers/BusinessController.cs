@@ -8,13 +8,13 @@ using AttributeRouting.Web.Mvc;
 
 namespace Plum.Controllers
 {
-    public partial class BusinessesController : AppControllerBase
+    public partial class BusinessController : AppControllerBase
     {
         [Authorize]
         [GET("/business/{id:int}")]
         public virtual async Task<ActionResult> Show(int id)
         {
-            throw new NotImplementedException();
+            return View();
         }
     }
 }

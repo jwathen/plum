@@ -25,13 +25,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace Plum.Controllers
 {
-    public partial class BusinessesController
+    public partial class BusinessController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public BusinessesController() { }
+        public BusinessController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected BusinessesController(Dummy d) { }
+        protected BusinessController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -68,7 +68,7 @@ namespace Plum.Controllers
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public BusinessesController Actions { get { return MVC.Businesses; } }
+        public BusinessController Actions { get { return MVC.Businesses; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
@@ -115,7 +115,7 @@ namespace Plum.Controllers
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_BusinessesController : Plum.Controllers.BusinessesController
+    public partial class T4MVC_BusinessesController : Plum.Controllers.BusinessController
     {
         public T4MVC_BusinessesController() : base(Dummy.Instance) { }
 

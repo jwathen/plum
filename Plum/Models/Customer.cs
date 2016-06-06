@@ -123,7 +123,7 @@ namespace Plum.Models
         {
             if (this.HasPhoneNumber())
             {
-                string message = $"It's {Queue.Business.Name}. Your table is ready. Reply 1, 2, or 3. 1 = I'm on my way. 2 = I need a few minutes but I'm still coming.  3 = I'd like to cancel.";
+                string message = $"It's {Queue.Business.Name}. We're ready for you.";
                 SendTextMessage(secrets, message);
                 Log(CustomerLogEntryType.ReadyTextMessageSent, $"\"{message}\"");
             }
