@@ -16,13 +16,13 @@ using Plum.Web;
 
 namespace Plum.Tests.TestHelpers
 {
-    public abstract class WebTestBase<TController> where TController : AppControllerBase, new()
+    public abstract class WebTestBase<TController> : TestBase where TController : AppControllerBase, new()
     {
         private RouteData _routeData = new RouteData();
         private MockHttpContext _httpContext = new MockHttpContext();
         protected readonly TController _controller;
 
-        public WebTestBase()
+        public WebTestBase() : base()
         {
             MvcApplication.IS_TEST = true;
 
@@ -31,45 +31,8 @@ namespace Plum.Tests.TestHelpers
             _controller.InitializePublic(requestContext);
             _controller.ControllerContext = new ControllerContext(HttpContext, RouteData, _controller);
             _controller.Url = new UrlHelper(requestContext);
+            _controller.Database = Database;
             WebApplicationTestEnvironment.Setup<TController>();
-
-            SeedDatabase();
-        }
-
-        private void SeedDatabase()
-        {
-            var testBusiness = ReadFixture<Business>("TestBusiness");
-            var otherBusiness = ReadFixture<Business>("OtherBusiness");
-
-            string[] testEmailAddresses = new string[] { "new_business@site.com", "test_business@site.com", "other_business@site.com" };
-            Database.Businesses.RemoveRange(Database.Businesses.Where(x => testEmailAddresses.Contains(x.Account.EmailAddress)));
-            Database.SaveChanges();
-
-            ResetIdentity("Businesses");
-            ResetIdentity("Queues");
-            ResetIdentity("Customers");
-            ResetIdentity("CustomerLogEntries");
-
-            Database.Businesses.Add(testBusiness);
-            Database.Businesses.Add(otherBusiness);
-            Database.SaveChanges();
-        }
-
-        private T ReadFixture<T>(string fileName)
-        {
-            using (var reader = new StreamReader(@"Fixtures\" + fileName + ".yml"))
-            {
-                var deserializer = new YamlDotNet.Serialization.Deserializer();
-                return deserializer.Deserialize<T>(reader);
-            }
-        }
-
-        private void ResetIdentity(string table)
-        {
-            string stmt = $@"declare @maxId int;
-                            select @maxId = coalesce(max(Id), 0) + 1 from {table}
-                            DBCC CHECKIDENT ('{table}', RESEED, @maxId);";
-            Database.Database.ExecuteSqlCommand(stmt);
         }
 
         protected void SignInAs(Business business)
@@ -86,38 +49,6 @@ namespace Plum.Tests.TestHelpers
         protected void SetRouteId(int id)
         {
             RouteValues.Add("id", id);
-        }
-
-        public Business TestBusiness
-        {
-            get
-            {
-                return Database.Businesses.First(x => x.Account.EmailAddress == "test_business@site.com");
-            }
-        }
-
-        public Business OtherBusiness
-        {
-            get
-            {
-                return Database.Businesses.First(x => x.Account.EmailAddress == "other_business@site.com");
-            }
-        }
-
-        public Business NewBusiness
-        {
-            get
-            {
-                return Database.Businesses.First(x => x.Account.EmailAddress == "new_business@site.com");
-            }
-        }
-
-        protected AppDataContext Database
-        {
-            get
-            {
-                return _controller.Database;
-            }
         }
 
         protected MockHttpContext HttpContext

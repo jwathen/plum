@@ -394,6 +394,7 @@
     </Compile>
     <Compile Include="Lib\Services\ProfanityFilter.cs" />
     <Compile Include="Lib\Services\AppSecrets.cs" />
+    <Compile Include="Lib\Services\TextMessageTemplateService.cs" />
     <Compile Include="Lib\Web\HttpContext2.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.Designer.cs">
@@ -430,6 +431,10 @@
     <Compile Include="Migrations\201606050012304_AddDateCreatedAndDateUpdated.cs" />
     <Compile Include="Migrations\201606050012304_AddDateCreatedAndDateUpdated.Designer.cs">
       <DependentUpon>201606050012304_AddDateCreatedAndDateUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606061916470_AddPhoneNumberAndTextMessagesToBusiness.cs" />
+    <Compile Include="Migrations\201606061916470_AddPhoneNumberAndTextMessagesToBusiness.Designer.cs">
+      <DependentUpon>201606061916470_AddPhoneNumberAndTextMessagesToBusiness.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -646,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606050012304_AddDateCreatedAndDateUpdated.resx">
       <DependentUpon>201606050012304_AddDateCreatedAndDateUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606061916470_AddPhoneNumberAndTextMessagesToBusiness.resx">
+      <DependentUpon>201606061916470_AddPhoneNumberAndTextMessagesToBusiness.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

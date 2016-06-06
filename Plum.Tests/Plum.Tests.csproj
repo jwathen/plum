@@ -146,9 +146,11 @@
     <Compile Include="TestHelpers\Mvc\TestViewEngine\TestCompositeProcompiledViewEngine.cs" />
     <Compile Include="TestHelpers\Mvc\TestViewEngine\TestPrecompiledMvcView.cs" />
     <Compile Include="TestHelpers\Mvc\WebApplicationTestEnvironment.cs" />
+    <Compile Include="TestHelpers\TestBase.cs" />
     <Compile Include="TestHelpers\WebTestBase.cs" />
     <Compile Include="Unit\Models\AccountTests.cs" />
     <Compile Include="Unit\Services\ProfanityFilterTests.cs" />
+    <Compile Include="Unit\Services\TextMessageTemplateServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plum\Plum.csproj">

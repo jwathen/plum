@@ -58,6 +58,10 @@ namespace Plum.Controllers
             {
                 return _db;
             }
+            set
+            {
+                _db = value;
+            }
         }
 
         public AppSecrets Secrets

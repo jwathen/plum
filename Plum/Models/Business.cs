@@ -9,6 +9,9 @@ namespace Plum.Models
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
+        public string PhoneNumber { get; set; }
+        public string WelcomeTextMessage { get; set; }
+        public string ReadyTextMessage { get; set; }
         public virtual DateTime DateCreated { get; set; }
         public virtual DateTime DateUpdated { get; set; }
         public virtual Account Account { get; set; }

@@ -1,4 +1,7 @@
 ﻿Name: Test Business
+PhoneNumber: 1234567890
+WelcomeTextMessage: Yo it's Test Business.
+ReadyTextMessage: Yo it's Test Business. You're up.
 Account:
   EmailAddress: test_business@site.com
   PasswordHash: SCyV24xHI2JYIMD0MOj1D35H6YaRfj573jVWVELVbx+aRsholaiExNQrvSRFOAWZ15/ZSrxZ8DgEJBiQkMJkEQ== # passw0rd
