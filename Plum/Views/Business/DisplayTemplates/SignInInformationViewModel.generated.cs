@@ -59,6 +59,21 @@ WriteLiteral(" href=\"#\"");
 
 WriteLiteral(" class=\"btn btn-default btn-block\"");
 
+WriteLiteral("\r\n    data-ajax-load=\"true\"");
+
+WriteLiteral("\r\n    data-ajax-load-target=\"#SignInInformationPanel\"");
+
+WriteLiteral("\r\n    data-ajax-load-url=\"");
+
+            
+            #line 14 "..\..\Views\Business\DisplayTemplates\SignInInformationViewModel.cshtml"
+                   Write(Url.Action(MVC.Business.EditSignInInformation(Model.Id)));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\"");
+
 WriteLiteral(">\r\n    <i");
 
 WriteLiteral(" class=\"fa fa-edit\"");

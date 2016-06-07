@@ -99,14 +99,6 @@ namespace Links
             private const string URLPATH = "~/Content/Scripts";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class Business {
-                private const string URLPATH = "~/Content/Scripts/Business";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string Show_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Show.min.js") ? Url("Show.min.js") : Url("Show.js");
-            }
-        
             public static readonly string jquery_ui_touch_punch_improved_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.min.js") ? Url("jquery.ui.touch-punch-improved.min.js") : Url("jquery.ui.touch-punch-improved.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.es5.min.js") ? Url("jquery.ui.touch-punch-improved.es5.min.js") : Url("jquery.ui.touch-punch-improved.es5.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_min_js = Url("jquery.ui.touch-punch-improved.es5.min.js");
@@ -270,13 +262,6 @@ namespace Links
             }
             public static partial class Scripts 
             {
-                public static partial class Business 
-                {
-                    public static class Assets
-                    {
-                        public const string Show_js = "~/Content/Scripts/Business/Show.js"; 
-                    }
-                }
                 public static partial class Queue 
                 {
                     public static class Assets

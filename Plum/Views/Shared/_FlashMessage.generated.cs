@@ -41,7 +41,7 @@ namespace ASP
         {
             
             #line 3 "..\..\Views\Shared\_FlashMessage.cshtml"
- if (!string.IsNullOrWhiteSpace(Model?.Text) && !string.IsNullOrWhiteSpace(Model?.MinorText))
+ if (!string.IsNullOrWhiteSpace(Model?.Text) || !string.IsNullOrWhiteSpace(Model?.MinorText))
 {
 
             

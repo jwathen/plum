@@ -87,6 +87,27 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateBusinessInformation, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ShowSignInInformation()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ShowSignInInformation, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditSignInInformation()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditSignInInformation, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateSignInInformation()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateSignInInformation, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public BusinessController Actions { get { return MVC.Business; } }
@@ -107,6 +128,9 @@ namespace Plum.Controllers
             public readonly string ShowBusinessInformation = "ShowBusinessInformation";
             public readonly string EditBusinessInformation = "EditBusinessInformation";
             public readonly string UpdateBusinessInformation = "UpdateBusinessInformation";
+            public readonly string ShowSignInInformation = "ShowSignInInformation";
+            public readonly string EditSignInInformation = "EditSignInInformation";
+            public readonly string UpdateSignInInformation = "UpdateSignInInformation";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -116,6 +140,9 @@ namespace Plum.Controllers
             public const string ShowBusinessInformation = "ShowBusinessInformation";
             public const string EditBusinessInformation = "EditBusinessInformation";
             public const string UpdateBusinessInformation = "UpdateBusinessInformation";
+            public const string ShowSignInInformation = "ShowSignInInformation";
+            public const string EditSignInInformation = "EditSignInInformation";
+            public const string UpdateSignInInformation = "UpdateSignInInformation";
         }
 
 
@@ -151,6 +178,30 @@ namespace Plum.Controllers
         {
             public readonly string model = "model";
         }
+        static readonly ActionParamsClass_ShowSignInInformation s_params_ShowSignInInformation = new ActionParamsClass_ShowSignInInformation();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ShowSignInInformation ShowSignInInformationParams { get { return s_params_ShowSignInInformation; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ShowSignInInformation
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_EditSignInInformation s_params_EditSignInInformation = new ActionParamsClass_EditSignInInformation();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditSignInInformation EditSignInInformationParams { get { return s_params_EditSignInInformation; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditSignInInformation
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_UpdateSignInInformation s_params_UpdateSignInInformation = new ActionParamsClass_UpdateSignInInformation();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UpdateSignInInformation UpdateSignInInformationParams { get { return s_params_UpdateSignInInformation; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UpdateSignInInformation
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -162,12 +213,16 @@ namespace Plum.Controllers
             public class _ViewNamesClass
             {
                 public readonly string EditBusinessInformation = "EditBusinessInformation";
+                public readonly string EditSignInInformation = "EditSignInInformation";
                 public readonly string Show = "Show";
                 public readonly string ShowBusinessInformation = "ShowBusinessInformation";
+                public readonly string ShowSignInInformation = "ShowSignInInformation";
             }
             public readonly string EditBusinessInformation = "~/Views/Business/EditBusinessInformation.cshtml";
+            public readonly string EditSignInInformation = "~/Views/Business/EditSignInInformation.cshtml";
             public readonly string Show = "~/Views/Business/Show.cshtml";
             public readonly string ShowBusinessInformation = "~/Views/Business/ShowBusinessInformation.cshtml";
+            public readonly string ShowSignInInformation = "~/Views/Business/ShowSignInInformation.cshtml";
             static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
             public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -183,6 +238,7 @@ namespace Plum.Controllers
             public partial class _EditorTemplatesClass
             {
                 public readonly string BusinessInformationViewModel = "BusinessInformationViewModel";
+                public readonly string SignInInformationViewModel = "SignInInformationViewModel";
             }
         }
     }
@@ -237,6 +293,42 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateBusinessInformation, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             UpdateBusinessInformationOverride(callInfo, model);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ShowSignInInformationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ShowSignInInformation(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ShowSignInInformation, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ShowSignInInformationOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void EditSignInInformationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditSignInInformation(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditSignInInformation, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            EditSignInInformationOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void UpdateSignInInformationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Plum.ViewModels.Business.SignInInformationViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateSignInInformation(Plum.ViewModels.Business.SignInInformationViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateSignInInformation, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            UpdateSignInInformationOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

@@ -131,6 +131,8 @@ WriteLiteral(">\r\n                    Sign In Information\r\n                </
 
 WriteLiteral(" class=\"panel-body\"");
 
+WriteLiteral(" id=\"SignInInformationPanel\"");
+
 WriteLiteral(">\r\n");
 
 WriteLiteral("                    ");

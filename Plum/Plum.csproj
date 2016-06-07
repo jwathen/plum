@@ -228,7 +228,6 @@
     <Content Include="Content\Images\touch-icon-ipad.png" />
     <Content Include="Content\Images\touch-icon-iphone-retina.png" />
     <Content Include="Content\Images\touch-icon-iphone.png" />
-    <Content Include="Content\Scripts\Business\Show.js" />
     <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.es5.js">
       <DependentUpon>jquery.ui.touch-punch-improved.js</DependentUpon>
     </Content>
@@ -499,15 +498,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TextMessagesViewModel.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Business\EditBusinessInformation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditBusinessInformation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\EditorTemplates\SignInInformationViewModel.generated.cs">
+      <DependentUpon>SignInInformationViewModel.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Business\EditorTemplates\BusinessInformationViewModel.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BusinessInformationViewModel.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Business\EditSignInInformation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditSignInInformation.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Business\Show.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Show.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ShowBusinessInformation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShowBusinessInformation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ShowSignInInformation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShowSignInInformation.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\Edit.generated.cs">
       <DependentUpon>Edit.cshtml</DependentUpon>
@@ -523,6 +547,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\NotAuthorized.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotAuthorized.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\NotFound.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotFound.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Queue\BusinessViewQueueList1.generated.cs">
       <AutoGen>True</AutoGen>
@@ -633,12 +667,18 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Create.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\NotFound.cshtml" />
+    <Content Include="Views\Home\NotFound.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Shared\Error.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Error.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\NotAuthorized.cshtml" />
+    <Content Include="Views\Home\NotAuthorized.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotAuthorized.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Queue\CustomerNotFound.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>CustomerNotFound.generated.cs</LastGenOutput>
@@ -679,8 +719,26 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>TextMessagesViewModel.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Business\EditBusinessInformation.cshtml" />
-    <Content Include="Views\Business\ShowBusinessInformation.cshtml" />
+    <Content Include="Views\Business\EditBusinessInformation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EditBusinessInformation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\ShowBusinessInformation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShowBusinessInformation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\EditorTemplates\SignInInformationViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SignInInformationViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\ShowSignInInformation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShowSignInInformation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\EditSignInInformation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EditSignInInformation.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

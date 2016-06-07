@@ -92,8 +92,72 @@ namespace Plum.Controllers
 
             model.CopyTo(business);
             await Database.SaveChangesAsync();
+            SuccessMessage("Your business information has been updated.");
 
             return RedirectToAction(MVC.Business.ShowBusinessInformation(model.Id));
+        }
+
+        [Authorize]
+        [GET("/business/{id:int}/sign_in_information")]
+        public virtual async Task<ActionResult> ShowSignInInformation(int id)
+        {
+            var business = await Business();
+            if (_result != null) return _result;
+
+            var model = new SignInInformationViewModel();
+            model.CopyFrom(business);
+
+            return View(model);
+        }
+
+        [Authorize]
+        [GET("/business/{id:int}/edit_sign_in_information")]
+        public virtual async Task<ActionResult> EditSignInInformation(int id)
+        {
+            var business = await Business();
+            if (_result != null) return _result;
+
+            var model = new SignInInformationViewModel();
+            model.CopyFrom(business);
+
+            return View(model);
+        }
+
+        [Authorize]
+        [PUT("/business/{id:int}/sign_In_information")]
+        public virtual async Task<ActionResult> UpdateSignInInformation(SignInInformationViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(MVC.Business.Views.EditSignInInformation, model);
+            }
+
+            var business = await Business();
+            if (_result != null) return _result;
+
+            bool anyChanges = model.EmailAddress.Trim() != business.Account.EmailAddress.Trim()
+                || !string.IsNullOrWhiteSpace(model.NewPassword);
+            if (anyChanges)
+            {
+                if (!business.Account.VerifyPassword(model.CurrentPassword))
+                {
+                    ModelState.AddModelError("CurrentPassword", "Current password is incorrect.");
+                    return View(MVC.Business.Views.EditSignInInformation, model);
+                }
+                else
+                {
+                    string password = model.CurrentPassword;
+                    if (!string.IsNullOrWhiteSpace(model.NewPassword))
+                    {
+                        password = model.NewPassword;
+                    }
+                    business.Account = Models.Account.Create(model.EmailAddress, password);
+                    await Database.SaveChangesAsync();
+                    SuccessMessage("Your sign in information has been updated.");
+                }
+            }
+
+            return RedirectToAction(MVC.Business.ShowSignInInformation(model.Id));
         }
     }
 }
