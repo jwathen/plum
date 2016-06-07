@@ -537,6 +537,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Create.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\RemovedFromList.generated.cs">
+      <DependentUpon>RemovedFromList.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Home\NotAuthorized.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -727,6 +732,10 @@
     <Content Include="Views\Business\EditSignInInformation.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>EditSignInInformation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\RemovedFromList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RemovedFromList.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

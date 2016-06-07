@@ -31,5 +31,12 @@ namespace Plum.Controllers
         {
             return View();
         }
+
+        [HttpGet, Route("removed_from_list")]
+        public virtual ActionResult RemovedFromList()
+        {
+            SuccessMessage("You have been removed from the list.");
+            return View();
+        }
     }
 }

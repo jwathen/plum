@@ -72,6 +72,7 @@ namespace Plum.Controllers
 
             model.CopyTo(business);
             await Database.SaveChangesAsync();
+            AppSession.BusinessName = business.Name;
             SuccessMessage("Your business information has been updated.");
 
             return RedirectToAction(MVC.Business.ShowBusinessInformation(model.Id));

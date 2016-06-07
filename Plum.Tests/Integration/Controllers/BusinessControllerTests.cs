@@ -74,6 +74,7 @@ namespace Plum.Tests.Integration.Controllers
 
             TestBusiness.Name.ShouldEqual("Brand New Name");
             TestBusiness.PhoneNumber.ShouldEqual("3333333333");
+            AppSession.BusinessName.ShouldEqual("Brand New Name");
         }
 
         public void ShowSignInInformation_GivenBusinessId_RendersView()

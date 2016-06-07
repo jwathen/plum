@@ -79,6 +79,7 @@ namespace Plum.Controllers
             public readonly string NotFound = "NotFound";
             public readonly string Error = "Error";
             public readonly string NotAuthorized = "NotAuthorized";
+            public readonly string RemovedFromList = "RemovedFromList";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -88,6 +89,7 @@ namespace Plum.Controllers
             public const string NotFound = "NotFound";
             public const string Error = "Error";
             public const string NotAuthorized = "NotAuthorized";
+            public const string RemovedFromList = "RemovedFromList";
         }
 
 
@@ -104,10 +106,12 @@ namespace Plum.Controllers
                 public readonly string Index = "Index";
                 public readonly string NotAuthorized = "NotAuthorized";
                 public readonly string NotFound = "NotFound";
+                public readonly string RemovedFromList = "RemovedFromList";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
             public readonly string NotAuthorized = "~/Views/Home/NotAuthorized.cshtml";
             public readonly string NotFound = "~/Views/Home/NotFound.cshtml";
+            public readonly string RemovedFromList = "~/Views/Home/RemovedFromList.cshtml";
         }
     }
 
@@ -157,6 +161,17 @@ namespace Plum.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotAuthorized, "https");
             NotAuthorizedOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RemovedFromListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult RemovedFromList()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemovedFromList, "https");
+            RemovedFromListOverride(callInfo);
             return callInfo;
         }
 

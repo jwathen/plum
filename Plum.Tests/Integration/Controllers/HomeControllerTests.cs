@@ -30,5 +30,11 @@ namespace Plum.Tests.Integration.Controllers
             _controller.WithCallTo(x => x.NotFound())
                 .ShouldRenderDefaultViewHtml();
         }
+
+        public void RemovedFromList_Renders()
+        {
+            _controller.WithCallTo(x => x.RemovedFromList())
+                .ShouldRenderDefaultViewHtml();
+        }
     }
 }

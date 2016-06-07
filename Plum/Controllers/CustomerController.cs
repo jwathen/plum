@@ -125,11 +125,12 @@ namespace Plum.Controllers
                 int queueId = customer.QueueId;
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
+                TempData["CustomerRemovedSelf"] = true;
                 await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
                 await UpdateHub.BroadcastQueueUpdateToBusiness(queueId);
             }
 
-            return RedirectToAction(MVC.Home.Index());
+            return RedirectToAction(MVC.Home.RemovedFromList());
         }
 
         [ValidateAntiForgeryToken]

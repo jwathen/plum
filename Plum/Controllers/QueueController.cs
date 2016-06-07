@@ -47,7 +47,14 @@ namespace Plum.Controllers
 
             if (customer == null)
             {
-                return JavaScriptRedirect(Url.Action(MVC.Queue.ShowCustomer(urlToken)));
+                if ((bool?)TempData["CustomerRemovedSelf"] == true)
+                {
+                    return JavaScriptRedirect(Url.Action(MVC.Home.RemovedFromList()));
+                }
+                else
+                {
+                    return JavaScriptRedirect(Url.Action(MVC.Queue.ShowCustomer(urlToken)));
+                }
             }
 
             return View(customer);

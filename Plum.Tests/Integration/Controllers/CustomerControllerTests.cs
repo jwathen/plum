@@ -135,7 +135,7 @@ namespace Plum.Tests.Integration.Controllers
         public void DestroyWithUrlToken_GivenInvalidToken_NoException()
         {
             _controller.WithCallTo(x => x.DestroyWithUrlToken("invalid token"))
-                .ShouldRedirectTo<HomeController>(x => x.Index());
+                .ShouldRedirectTo<HomeController>(x => x.RemovedFromList());
         }
 
         public void DestroyWithUrlToken_GivenValidToken_RemovesCustomer()
@@ -143,7 +143,7 @@ namespace Plum.Tests.Integration.Controllers
             int countBefore = TestBusiness.Queues.First().Customers.Count;
 
             _controller.WithCallTo(x => x.DestroyWithUrlToken("john-token"))
-                .ShouldRedirectTo<HomeController>(x => x.Index());
+                .ShouldRedirectTo<HomeController>(x => x.RemovedFromList());
 
             int countAfter = TestBusiness.Queues.First().Customers.Count;
             countAfter.ShouldEqual(countBefore - 1);
