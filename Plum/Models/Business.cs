@@ -6,7 +6,7 @@ using Plum.Services;
 
 namespace Plum.Models
 {
-    public class Business : IDatedEntity
+    public class Business : IDatedEntity, IIntegerIdEntity
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }

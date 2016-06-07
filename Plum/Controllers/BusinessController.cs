@@ -11,32 +11,11 @@ namespace Plum.Controllers
 {
     public partial class BusinessController : AppControllerBase
     {
-        private ActionResult _result = null;
-
         protected async Task<Models.Business> Business()
         {
-            var routeValues = ControllerContext.RouteData.Values;
-            if (routeValues["id"] != null)
-            {
-                int id = Convert.ToInt32(routeValues["id"]);
-                var business = await Database.Businesses
-                    .Include(x => x.Queues)
-                    .FirstOrDefaultAsync(x => x.Id == id);
-
-                if (business == null)
-                {
-                    _result = HttpNotFound();
-                }
-                else if (!Security.UserOwns(business))
-                {
-                    _result = NotAuthorized();
-                }
-
-                return business;
-            }
-
-            _result = HttpNotFound();
-            return null;
+            return await Entity<Models.Business>(
+                business => business.Include(x => x.Queues),
+                business => Security.UserOwns(business));
         }
 
         [Authorize]

@@ -14,17 +14,9 @@ namespace Plum.Controllers
     {
         protected async Task<Models.Queue> Queue()
         {
-            var routeValues = ControllerContext.RouteData.Values;
-            if (routeValues["id"] != null)
-            {
-                int id = Convert.ToInt32(routeValues["id"]);
-                var queue = await Database.Queues
-                    .Include(x => x.Business)
-                    .FirstOrDefaultAsync(x => x.Id == id);
-                return queue;
-            }
-
-            return null;
+            return await Entity<Models.Queue>(
+                queue => queue.Include(x => x.Business),
+                queue => Security.UserOwns(queue));
         }
 
         [HttpGet, Route("q/{urlToken:length(8)}")]
@@ -76,15 +68,7 @@ namespace Plum.Controllers
             }
 
             var queue = await Queue();
-
-            if (queue == null)
-            {
-                return HttpNotFound();
-            }
-            else if (!Security.UserOwns(queue))
-            {
-                return NotAuthorized();
-            }
+            if (_result != null) return _result;
 
             return View(queue);
         }
@@ -94,15 +78,7 @@ namespace Plum.Controllers
         public virtual async Task<ActionResult> BusinessViewQueueList(int id)
         {
             var queue = await Queue();
-
-            if (queue == null)
-            {
-                return HttpNotFound();
-            }
-            else if (!Security.UserOwns(queue))
-            {
-                return NotAuthorized();
-            }
+            if (_result != null) return _result;
 
             return View(queue);
         }

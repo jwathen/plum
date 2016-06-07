@@ -8,7 +8,7 @@ using Plum.Services;
 
 namespace Plum.Models
 {
-    public class Queue : IDatedEntity
+    public class Queue : IDatedEntity, IIntegerIdEntity
     {
         public virtual int Id { get; set; }
         public virtual int BusinessId { get; set; }

@@ -8,12 +8,15 @@ using Plum.Models;
 using Plum.Services;
 using Plum.ViewModels.Shared;
 using Plum.Web;
+using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace Plum.Controllers
 {
     [RequireHttps]
     public abstract class AppControllerBase : Controller
     {
+        protected ActionResult _result = null;
         private AppDataContext _db;
         private AppSession _appSession;
         private AppSecurity _appSecurity;
@@ -85,6 +88,30 @@ namespace Plum.Controllers
                 Content = $"<script>window.location.href = '{url}';</script>",
                 ContentType = "text/html"
             };
+        }
+
+        protected async Task<T> Entity<T>(Func<IDbSet<T>, IQueryable<T>> query, Func<T, bool> auth) where T : class, IIntegerIdEntity
+        {
+            var routeValues = ControllerContext.RouteData.Values;
+            if (routeValues["id"] != null)
+            {
+                int id = Convert.ToInt32(routeValues["id"]);
+                T entity = await query(Database.Set<T>()).FirstOrDefaultAsync(x => x.Id == id);
+
+                if (entity == null)
+                {
+                    _result = HttpNotFound();
+                }
+                else if (!auth(entity))
+                {
+                    _result = NotAuthorized();
+                }
+
+                return entity;
+            }
+
+            _result = HttpNotFound();
+            return null;
         }
 
         protected void SetFlash(FlashMessage.AlertType alertType, string text, string minorText = null)

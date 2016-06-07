@@ -14,19 +14,9 @@ namespace Plum.Controllers
     {
         protected async Task<Models.Customer> Customer()
         {
-            var routeValues = ControllerContext.RouteData.Values;
-            if (routeValues["id"] != null)
-            {
-                int id = Convert.ToInt32(routeValues["id"]);
-                var customer = await Database.Customers
-                    .Include(x => x.Queue)
-                    .Include(x => x.Queue.Business)
-                    .Include(x => x.Queue.Customers)
-                    .FirstOrDefaultAsync(x => x.Id == id);
-                return customer;
-            }
-
-            return null;
+            return await Entity<Models.Customer>(
+                customer => customer.Include(x => x.Queue).Include(x => x.Queue.Business).Include(x => x.Queue.Customers),
+                customer => Security.UserOwns(customer));
         }
 
         [Authorize]
@@ -88,15 +78,7 @@ namespace Plum.Controllers
         public virtual async Task<ActionResult> Edit(int id)
         {
             var customer = await Customer();
-
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            else if (!Security.UserOwns(customer))
-            {
-                return NotAuthorized();
-            }
+            if (_result != null) return _result;
 
             var model = new CustomerViewModel();
             model.MapFrom(customer);
@@ -115,13 +97,10 @@ namespace Plum.Controllers
             }
 
             var customer = await Customer();
-            var queue = await Database.Queues.FindAsync(model.QueueId);
+            if (_result != null) return _result;
 
-            if (customer == null || queue == null)
-            {
-                return HttpNotFound();
-            }
-            else if (!Security.UserOwns(customer) || !Security.UserOwns(queue))
+            var queue = await Database.Queues.FindAsync(model.QueueId);
+            if (!Security.UserOwns(queue))
             {
                 return NotAuthorized();
             }
@@ -177,16 +156,12 @@ namespace Plum.Controllers
         public virtual async Task<ActionResult> SendReadyMessage(int id)
         {
             var customer = await Customer();
+            if (_result != null) return _result;
 
-            if (customer != null && Security.UserOwns(customer))
-            {
-                int queueId = customer.Queue.Id;
-                customer.SendReadyTextMessage(Url, Secrets);
-                await Database.SaveChangesAsync();
-                return View(MVC.Customer.Views.Show, customer);
-            }
-
-            return RedirectToAction(MVC.Business.Show(AppSession.BusinessId.Value));
+            int queueId = customer.Queue.Id;
+            customer.SendReadyTextMessage(Url, Secrets);
+            await Database.SaveChangesAsync();
+            return View(MVC.Customer.Views.Show, customer);
         }
 
         [Authorize]
@@ -195,18 +170,14 @@ namespace Plum.Controllers
         public virtual async Task<ActionResult> MoveToEndOfList(int id)
         {
             var customer = await Customer();
+            if (_result != null) return _result;
 
-            if (customer != null && Security.UserOwns(customer))
-            {
-                int queueId = customer.Queue.Id;
-                customer.Queue.MoveCustomerToEndOfList(customer);
-                await Database.SaveChangesAsync();
-                await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
-                await UpdateHub.BroadcastQueueUpdateToBusiness(queueId);
-                return View(MVC.Customer.Views.Show, customer);
-            }
-
-            return RedirectToAction(MVC.Business.Show(AppSession.BusinessId.Value));
+            int queueId = customer.Queue.Id;
+            customer.Queue.MoveCustomerToEndOfList(customer);
+            await Database.SaveChangesAsync();
+            await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
+            await UpdateHub.BroadcastQueueUpdateToBusiness(queueId);
+            return View(MVC.Customer.Views.Show, customer);
         }
     }
 }

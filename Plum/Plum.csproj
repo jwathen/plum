@@ -389,6 +389,7 @@
     <Compile Include="Lib\Services\AppSecrets.cs" />
     <Compile Include="Lib\Services\TextMessageTemplateService.cs" />
     <Compile Include="Lib\Helpers\ValidationHelpers.cs" />
+    <Compile Include="Models\IIntegerIdEntity.cs" />
     <Compile Include="ViewModels\Business\ShowViewModel.cs" />
     <Compile Include="ViewModels\Business\SignInInformationViewModel.cs" />
     <Compile Include="ViewModels\Business\TextMessagesViewModel.cs" />

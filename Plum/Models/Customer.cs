@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace Plum.Models
 {
-    public class Customer : IDatedEntity
+    public class Customer : IDatedEntity, IIntegerIdEntity
     {
         public virtual int Id { get; set; }
         public virtual int QueueId { get; set; }

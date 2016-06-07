@@ -217,7 +217,7 @@ namespace Plum.Tests.Integration.Controllers
             short sortOrderBefore = customer.SortOrder;
 
             _controller.WithCallTo(x => x.MoveToEndOfList(customer.Id))
-                .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.Show, new { id = TestBusiness.Id });
+                .ShouldGiveHttpStatus(404);
 
             short sortOrderAfter = Database.Customers.Find(customer.Id).SortOrder;
             sortOrderAfter.ShouldEqual(sortOrderBefore);
@@ -229,7 +229,7 @@ namespace Plum.Tests.Integration.Controllers
             int customerId = -1;
 
             _controller.WithCallTo(x => x.MoveToEndOfList(customerId))
-                .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.Show, new { id = TestBusiness.Id });
+                .ShouldGiveHttpStatus(404);
         }
     }
 }
