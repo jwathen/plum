@@ -32,7 +32,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Business/Show.cshtml")]
-    public partial class _Views_Business_Show_cshtml : Plum.Web.ApplicationViewBase<Plum.Models.Business>
+    public partial class _Views_Business_Show_cshtml : Plum.Web.ApplicationViewBase<Plum.ViewModels.Business.ShowViewModel>
     {
         public _Views_Business_Show_cshtml()
         {
@@ -65,14 +65,14 @@ WriteLiteral(" class=\"pull-left\"");
 
 WriteLiteral(">Settings</h2>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 211), Tuple.Create("\"", 270)
+WriteAttribute("href", Tuple.Create(" href=\"", 229), Tuple.Create("\"", 278)
             
             #line 10 "..\..\Views\Business\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 218), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.Queues.First().Id))
+, Tuple.Create(Tuple.Create("", 236), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
             
             #line default
             #line hidden
-, 218), false)
+, 236), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg pull-right\"");
@@ -101,86 +101,20 @@ WriteLiteral(">\r\n                    Business Information (your customers will
 
 WriteLiteral(" class=\"panel-body\"");
 
-WriteLiteral(">\r\n                    <dl");
+WriteLiteral(" id=\"BusinessInformationPanel\"");
 
-WriteLiteral(" class=\"dl-horizontal\"");
+WriteLiteral(">\r\n");
 
-WriteLiteral(">\r\n                        <dt>Business Name</dt>\r\n                        <dd>");
-
-            
-            #line 24 "..\..\Views\Business\Show.cshtml"
-                       Write(Model.Name);
+WriteLiteral("                    ");
 
             
-            #line default
-            #line hidden
-WriteLiteral("</dd>\r\n                        <dt>Phone Number</dt>\r\n");
-
-            
-            #line 26 "..\..\Views\Business\Show.cshtml"
-                        
-            
-            #line default
-            #line hidden
-            
-            #line 26 "..\..\Views\Business\Show.cshtml"
-                         if (Model.HasPhoneNumber())
-                        {
+            #line 22 "..\..\Views\Business\Show.cshtml"
+               Write(Html.DisplayFor(x => x.BusinessInformation));
 
             
             #line default
             #line hidden
-WriteLiteral("                            <dd>");
-
-            
-            #line 28 "..\..\Views\Business\Show.cshtml"
-                           Write(Html.PhoneNumber(Model.PhoneNumber));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</dd>\r\n");
-
-            
-            #line 29 "..\..\Views\Business\Show.cshtml"
-                        }
-                        else
-                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            <dd>None</dd>\r\n");
-
-            
-            #line 33 "..\..\Views\Business\Show.cshtml"
-                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    </dl>\r\n\r\n                    <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 1259), Tuple.Create("\"", 1306)
-            
-            #line 36 "..\..\Views\Business\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 1266), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Business.Edit(Model.Id))
-            
-            #line default
-            #line hidden
-, 1266), false)
-);
-
-WriteLiteral(" class=\"btn btn-default btn-block\"");
-
-WriteLiteral(" data-loading-overlay=\"true\"");
-
-WriteLiteral(">\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-edit\"");
-
-WriteLiteral("></i>\r\n                        Edit Business Information\r\n                    </a" +
-">\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"col-md-6\"");
 
@@ -197,35 +131,19 @@ WriteLiteral(">\r\n                    Sign In Information\r\n                </
 
 WriteLiteral(" class=\"panel-body\"");
 
-WriteLiteral(">\r\n                    <dl");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" class=\"dl-horizontal\"");
-
-WriteLiteral(">\r\n                        <dt>Email Address</dt>\r\n                        <dd>");
+WriteLiteral("                    ");
 
             
-            #line 51 "..\..\Views\Business\Show.cshtml"
-                       Write(Model.Account.EmailAddress);
+            #line 32 "..\..\Views\Business\Show.cshtml"
+               Write(Html.DisplayFor(x => x.SignInInformation));
 
             
             #line default
             #line hidden
-WriteLiteral("</dd>\r\n                        <dt>Password</dt>\r\n                        <dd>\r\n " +
-"                           &#9679;\t&#9679;\t&#9679;\t&#9679;\t&#9679;\t&#9679;\t&#967" +
-"9;\t&#9679;\r\n                        </dd>\r\n                    </dl>\r\n          " +
-"          <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"btn btn-default btn-block\"");
-
-WriteLiteral(">\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-edit\"");
-
-WriteLiteral("></i>\r\n                        Edit Sign In Information\r\n                    </a>" +
-"\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <d" +
-"iv");
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <di" +
+"v");
 
 WriteLiteral(" class=\"row\"");
 
@@ -246,42 +164,19 @@ WriteLiteral(">\r\n                    Text Messages\r\n                </div>\r
 
 WriteLiteral(" class=\"panel-body\"");
 
-WriteLiteral(">\r\n                    <dl");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" class=\"dl-horizontal\"");
-
-WriteLiteral(">\r\n                        <dt>Welcome Text Message</dt>\r\n                       " +
-" <dd><em>");
+WriteLiteral("                    ");
 
             
-            #line 74 "..\..\Views\Business\Show.cshtml"
-                           Write(Model.SampleWelcomeTextMessage());
+            #line 44 "..\..\Views\Business\Show.cshtml"
+               Write(Html.DisplayFor(x => x.TextMessages));
 
             
             #line default
             #line hidden
-WriteLiteral("</em></dd>\r\n                        <dt>Ready Text Message</dt>\r\n                " +
-"        <dd><em>");
-
-            
-            #line 76 "..\..\Views\Business\Show.cshtml"
-                           Write(Model.SampleReadyTextMessage());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</em></dd>\r\n                    </dl>\r\n                    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"btn btn-default btn-block\"");
-
-WriteLiteral(">\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-edit\"");
-
-WriteLiteral("></i>\r\n                        Edit Text Messages\r\n                    </a>\r\n    " +
-"            </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r" +
+"\n\r\n");
 
         }
     }

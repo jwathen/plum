@@ -12,6 +12,8 @@ namespace Plum.Controllers
 {
     public partial class BusinessController : AppControllerBase
     {
+        private ActionResult _result = null;
+
         protected async Task<Models.Business> Business()
         {
             var routeValues = ControllerContext.RouteData.Values;
@@ -21,6 +23,16 @@ namespace Plum.Controllers
                 var business = await Database.Businesses
                     .Include(x => x.Queues)
                     .FirstOrDefaultAsync(x => x.Id == id);
+
+                if (business == null)
+                {
+                    _result = HttpNotFound();
+                }
+                else if (!Security.UserOwns(business))
+                {
+                    _result = NotAuthorized();
+                }
+
                 return business;
             }
 
@@ -32,65 +44,56 @@ namespace Plum.Controllers
         public virtual async Task<ActionResult> Show(int id)
         {
             var business = await Business();
+            if (_result != null) return _result;
 
-            if (business == null)
-            {
-                return HttpNotFound();
-            }
-            else if (!Security.UserOwns(business))
-            {
-                return NotAuthorized();
-            }
-
-            return View(business);
-        }
-
-        [Authorize]
-        [GET("/business/{id:int}/edit")]
-        public virtual async Task<ActionResult> Edit(int id)
-        {
-            var business = await Business();
-
-            if (business == null)
-            {
-                return HttpNotFound();
-            }
-            else if (!Security.UserOwns(business))
-            {
-                return NotAuthorized();
-            }
-
-            var model = new BusinessViewModel();
+            var model = new ShowViewModel();
             model.CopyFrom(business);
 
             return View(model);
         }
 
         [Authorize]
-        [PUT("/business/{id:int}")]
-        public virtual async Task<ActionResult> Update(BusinessViewModel model)
+        [GET("/business/{id:int}/business_information")]
+        public virtual async Task<ActionResult> ShowBusinessInformation(int id)
+        {
+            var business = await Business();
+            if (_result != null) return _result;
+
+            var model = new BusinessInformationViewModel();
+            model.CopyFrom(business);
+
+            return View(model);
+        }
+
+        [Authorize]
+        [GET("/business/{id:int}/edit_business_information")]
+        public virtual async Task<ActionResult> EditBusinessInformation(int id)
+        {
+            var business = await Business();
+            if (_result != null) return _result;
+
+            var model = new BusinessInformationViewModel();
+            model.CopyFrom(business);
+
+            return View(model);
+        }
+
+        [Authorize]
+        [PUT("/business/{id:int}/business_information")]
+        public virtual async Task<ActionResult> UpdateBusinessInformation(BusinessInformationViewModel model)
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(MVC.Business.Views.EditBusinessInformation, model);
             }
 
             var business = await Business();
-
-            if (business == null)
-            {
-                return HttpNotFound();
-            }
-            else if (!Security.UserOwns(business))
-            {
-                return NotAuthorized();
-            }
+            if (_result != null) return _result;
 
             model.CopyTo(business);
             await Database.SaveChangesAsync();
-            SuccessMessage("Business information updated.");
 
-            return RedirectToAction(MVC.Business.Show(business.Id));
+            return RedirectToAction(MVC.Business.ShowBusinessInformation(model.Id));
         }
     }
 }

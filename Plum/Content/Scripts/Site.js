@@ -1,8 +1,8 @@
 ﻿$(function () {
     initConfirmationModals('body');
     initLoadingOverlays('body');
-
-    $('[data-formatter=phone]').formatter({ pattern: '({{999}}) {{999}}-{{9999}}', persistent: false }).resetPattern();
+    initAjaxLoadLinks('body');
+    initFormatters('body');
 
     // fix for stacking modals - http://stackoverflow.com/questions/16547650/can-bootstrap-modal-dialog-overlay-another-dialog
     $(document)
@@ -30,11 +30,16 @@
 
 function setLoading() {
     if ($('.loading').length === 0) {
-        $('body').append('<div class="loading" />');
+        setLoading.timeoutHandle = setTimeout(function () {
+            $('body').append('<div class="loading" />');
+        }, 250);
     }
 }
 
-function clearLoading() {    
+function clearLoading() {
+    if (setLoading.timeoutHandle) {
+        clearTimeout(setLoading.timeoutHandle);
+    }
     $('.loading').remove();
 }
 
@@ -66,4 +71,21 @@ function initConfirmationModals(container) {
 function initLoadingOverlays(container) {
     $(container).find('form[data-loading-overlay=true]').submit(setLoading);
     $(container).find('a[data-loading-overlay=true]').click(setLoading);
+}
+
+function initAjaxLoadLinks(container) {
+    $(container).find('a[data-ajax-load=true]').click(function (e) {
+        e.preventDefault();
+        var target = $(this).attr('data-ajax-load-target');
+        var url = $(this).attr('data-ajax-load-url');
+
+        if (target && $(target).length && url) {
+            setLoading();
+            $(target).load(url, clearLoading);
+        }
+    });
+}
+
+function initFormatters(container) {
+    $(container).find('[data-formatter=phone]').formatter({ pattern: '({{999}}) {{999}}-{{9999}}', persistent: false }).resetPattern();
 }

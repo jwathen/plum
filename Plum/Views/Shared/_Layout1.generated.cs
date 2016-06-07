@@ -173,23 +173,113 @@ WriteAttribute("content", Tuple.Create(" content=\"", 760), Tuple.Create("\"", 8
 , Tuple.Create(Tuple.Create("", 819), Tuple.Create(")", 819), true)
 );
 
-WriteLiteral(" />\r\n</head>\r\n<body");
+WriteLiteral(" />\r\n    <meta");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 840), Tuple.Create("\"", 871)
+WriteLiteral(" name=\"apple-mobile-web-app-capable\"");
+
+WriteLiteral(" content=\"yes\"");
+
+WriteLiteral(">\r\n    <link");
+
+WriteLiteral(" rel=\"icon\"");
+
+WriteLiteral(" type=\"image/png\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 925), Tuple.Create("\"", 986)
             
             #line 20 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 848), Tuple.Create<System.Object, System.Int32>(controller()
+, Tuple.Create(Tuple.Create("", 932), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.favicon_png)
             
             #line default
             #line hidden
-, 848), false)
+, 932), false)
+);
+
+WriteLiteral(" />\r\n    <link");
+
+WriteLiteral(" rel=\"apple-touch-icon\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1024), Tuple.Create("\"", 1095)
             
-            #line 20 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 861), Tuple.Create<System.Object, System.Int32>(action()
+            #line 21 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 1031), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.touch_icon_iphone_png)
             
             #line default
             #line hidden
-, 862), false)
+, 1031), false)
+);
+
+WriteLiteral(">\r\n    <link");
+
+WriteLiteral(" rel=\"apple-touch-icon\"");
+
+WriteLiteral(" sizes=\"76x76\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1145), Tuple.Create("\"", 1214)
+            
+            #line 22 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 1152), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.touch_icon_ipad_png)
+            
+            #line default
+            #line hidden
+, 1152), false)
+);
+
+WriteLiteral(">\r\n    <link");
+
+WriteLiteral(" rel=\"apple-touch-icon\"");
+
+WriteLiteral(" sizes=\"120x120\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1266), Tuple.Create("\"", 1344)
+            
+            #line 23 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 1273), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.touch_icon_iphone_retina_png)
+            
+            #line default
+            #line hidden
+, 1273), false)
+);
+
+WriteLiteral(">\r\n    <link");
+
+WriteLiteral(" rel=\"apple-touch-icon\"");
+
+WriteLiteral(" sizes=\"152x152\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1396), Tuple.Create("\"", 1472)
+            
+            #line 24 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 1403), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.touch_icon_ipad_retina_png)
+            
+            #line default
+            #line hidden
+, 1403), false)
+);
+
+WriteLiteral(">\r\n    <link");
+
+WriteLiteral(" rel=\"manifest\"");
+
+WriteLiteral(" href=\"manifest.json\"");
+
+WriteLiteral(">\r\n</head>\r\n<body");
+
+WriteAttribute("class", Tuple.Create(" class=\"", 1538), Tuple.Create("\"", 1569)
+            
+            #line 27 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 1546), Tuple.Create<System.Object, System.Int32>(controller()
+            
+            #line default
+            #line hidden
+, 1546), false)
+            
+            #line 27 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create(" ", 1559), Tuple.Create<System.Object, System.Int32>(action()
+            
+            #line default
+            #line hidden
+, 1560), false)
 );
 
 WriteLiteral(">\r\n    <nav");
@@ -239,7 +329,7 @@ WriteLiteral(" class=\"navbar-brand text-info\"");
 WriteLiteral(">");
 
             
-            #line 30 "..\..\Views\Shared\_Layout.cshtml"
+            #line 37 "..\..\Views\Shared\_Layout.cshtml"
                                                       Write(Html.ApplicationName());
 
             
@@ -272,13 +362,13 @@ WriteLiteral(" href=\"#\"");
 WriteLiteral(">Contact Us</a>\r\n                    </li>\r\n                </ul>\r\n");
 
             
-            #line 44 "..\..\Views\Shared\_Layout.cshtml"
+            #line 51 "..\..\Views\Shared\_Layout.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 44 "..\..\Views\Shared\_Layout.cshtml"
+            #line 51 "..\..\Views\Shared\_Layout.cshtml"
                  if (Request.IsAuthenticated)
                 {
 
@@ -296,7 +386,7 @@ WriteLiteral(" class=\"navbar-text\"");
 WriteLiteral(">");
 
             
-            #line 48 "..\..\Views\Shared\_Layout.cshtml"
+            #line 55 "..\..\Views\Shared\_Layout.cshtml"
                                                  Write(AppSession.BusinessName);
 
             
@@ -305,14 +395,14 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n                        </li>\r\n                        <li>\r\n           " +
 "                 <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2267), Tuple.Create("\"", 2310)
+WriteAttribute("action", Tuple.Create(" action=\"", 2965), Tuple.Create("\"", 3008)
             
-            #line 51 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2276), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
+            #line 58 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 2974), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
             
             #line default
             #line hidden
-, 2276), false)
+, 2974), false)
 );
 
 WriteLiteral(">\r\n                                <button");
@@ -325,7 +415,7 @@ WriteLiteral(">Sign Out</button>\r\n                            </form>\r\n     
 "</li>\r\n                    </ul>\r\n");
 
             
-            #line 56 "..\..\Views\Shared\_Layout.cshtml"
+            #line 63 "..\..\Views\Shared\_Layout.cshtml"
                 }
                 else
                 {
@@ -335,14 +425,14 @@ WriteLiteral(">Sign Out</button>\r\n                            </form>\r\n     
             #line hidden
 WriteLiteral("                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2599), Tuple.Create("\"", 2635)
+WriteAttribute("href", Tuple.Create(" href=\"", 3297), Tuple.Create("\"", 3333)
             
-            #line 59 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2606), Tuple.Create<System.Object, System.Int32>(FormsAuthentication.LoginUrl
+            #line 66 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 3304), Tuple.Create<System.Object, System.Int32>(FormsAuthentication.LoginUrl
             
             #line default
             #line hidden
-, 2606), false)
+, 3304), false)
 );
 
 WriteLiteral(" class=\"btn btn-default navbar-btn navbar-right\"");
@@ -350,7 +440,7 @@ WriteLiteral(" class=\"btn btn-default navbar-btn navbar-right\"");
 WriteLiteral(">Sign In</a>\r\n");
 
             
-            #line 60 "..\..\Views\Shared\_Layout.cshtml"
+            #line 67 "..\..\Views\Shared\_Layout.cshtml"
                 }
 
             
@@ -361,7 +451,7 @@ WriteLiteral("            </div>\r\n        </div>\r\n    </nav>\r\n");
 WriteLiteral("    ");
 
             
-            #line 64 "..\..\Views\Shared\_Layout.cshtml"
+            #line 71 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderBody());
 
             
@@ -374,13 +464,17 @@ WriteLiteral(" class=\"container\"");
 WriteLiteral(">\r\n        <hr />\r\n        <p>\r\n            &copy; ");
 
             
-            #line 68 "..\..\Views\Shared\_Layout.cshtml"
+            #line 75 "..\..\Views\Shared\_Layout.cshtml"
               Write(DateTime.Now.Year);
 
             
             #line default
             #line hidden
-WriteLiteral(" cd312f2e, LLC\r\n        </p>\r\n    </div>\r\n    <div");
+WriteLiteral(" cd312f2e, LLC\r\n        </p>\r\n        <div");
+
+WriteLiteral(" class=\"app-icon hidden\"");
+
+WriteLiteral(">\r\n            Plum\r\n        </div>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" id=\"ConfirmModal\"");
 
@@ -449,13 +543,13 @@ WriteLiteral(">Yes</button>\r\n                    </div>\r\n                </d
 "div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 90 "..\..\Views\Shared\_Layout.cshtml"
+            #line 100 "..\..\Views\Shared\_Layout.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 90 "..\..\Views\Shared\_Layout.cshtml"
+            #line 100 "..\..\Views\Shared\_Layout.cshtml"
      using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
     {
         
@@ -463,14 +557,14 @@ WriteLiteral(">Yes</button>\r\n                    </div>\r\n                </d
             #line default
             #line hidden
             
-            #line 92 "..\..\Views\Shared\_Layout.cshtml"
+            #line 102 "..\..\Views\Shared\_Layout.cshtml"
    Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
             
-            #line 92 "..\..\Views\Shared\_Layout.cshtml"
+            #line 102 "..\..\Views\Shared\_Layout.cshtml"
                                  
     }
 
@@ -510,45 +604,45 @@ WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquer
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4743), Tuple.Create("\"", 4834)
+WriteAttribute("src", Tuple.Create(" src=\"", 5514), Tuple.Create("\"", 5605)
             
-            #line 101 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4749), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
+            #line 111 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 5520), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
             
             #line default
             #line hidden
-, 4749), false)
+, 5520), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4858), Tuple.Create("\"", 4878)
-, Tuple.Create(Tuple.Create("", 4864), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
-, 4864), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5629), Tuple.Create("\"", 5649)
+, Tuple.Create(Tuple.Create("", 5635), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
+, 5635), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4902), Tuple.Create("\"", 4982)
+WriteAttribute("src", Tuple.Create(" src=\"", 5673), Tuple.Create("\"", 5753)
             
-            #line 103 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4908), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
+            #line 113 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 5679), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
             
             #line default
             #line hidden
-, 4908), false)
+, 5679), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5006), Tuple.Create("\"", 5071)
+WriteAttribute("src", Tuple.Create(" src=\"", 5777), Tuple.Create("\"", 5842)
             
-            #line 104 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 5012), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+            #line 114 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 5783), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 5012), false)
+, 5783), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -556,7 +650,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 105 "..\..\Views\Shared\_Layout.cshtml"
+            #line 115 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             
@@ -567,7 +661,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 106 "..\..\Views\Shared\_Layout.cshtml"
+            #line 116 "..\..\Views\Shared\_Layout.cshtml"
 Write(StackExchange.Profiling.MiniProfiler.RenderIncludes());
 
             

@@ -117,3 +117,14 @@ input[type="checkbox"].input-validation-error {
 .queue.queue-show {
     @import "Queue/Show.scss";
 }
+
+.app-icon {
+    height: 150px; 
+    width: 152px; 
+    background-color: $plum;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 5em;
+    text-align: center;
+    line-height: 1em;
+}

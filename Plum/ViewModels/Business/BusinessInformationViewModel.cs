@@ -8,12 +8,17 @@ using Plum.Helpers;
 
 namespace Plum.ViewModels.Business
 {
-    [Validator(typeof(BusinessViewModelValidator))]
-    public class BusinessViewModel
+    [Validator(typeof(BusinessInformationViewModelValidator))]
+    public class BusinessInformationViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
+
+        public bool HasPhoneNumber()
+        {
+            return !string.IsNullOrWhiteSpace(PhoneNumber);
+        }
 
         public void CopyFrom(Models.Business business)
         {
@@ -36,9 +41,9 @@ namespace Plum.ViewModels.Business
         }
     }
 
-    public class BusinessViewModelValidator : AbstractValidator<BusinessViewModel>
+    public class BusinessInformationViewModelValidator : AbstractValidator<BusinessInformationViewModel>
     {
-        public BusinessViewModelValidator()
+        public BusinessInformationViewModelValidator()
         {
             RuleFor(x => x.Name)
                 .NotEmpty()

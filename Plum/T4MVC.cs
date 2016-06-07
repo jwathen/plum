@@ -79,6 +79,7 @@ namespace Links
             private const string URLPATH = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string favicon_png = Url("favicon.png");
             public static readonly string table_jpg = Url("table.jpg");
             public static readonly string testimonial1_jpg = Url("testimonial1.jpg");
             public static readonly string testimonial2_jpg = Url("testimonial2.jpg");
@@ -87,6 +88,10 @@ namespace Links
             public static readonly string testimonial5_jpg = Url("testimonial5.jpg");
             public static readonly string testimonial6_jpg = Url("testimonial6.jpg");
             public static readonly string testimonial7_jpg = Url("testimonial7.jpg");
+            public static readonly string touch_icon_ipad_retina_png = Url("touch-icon-ipad-retina.png");
+            public static readonly string touch_icon_ipad_png = Url("touch-icon-ipad.png");
+            public static readonly string touch_icon_iphone_retina_png = Url("touch-icon-iphone-retina.png");
+            public static readonly string touch_icon_iphone_png = Url("touch-icon-iphone.png");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -94,6 +99,14 @@ namespace Links
             private const string URLPATH = "~/Content/Scripts";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Business {
+                private const string URLPATH = "~/Content/Scripts/Business";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string Show_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Show.min.js") ? Url("Show.min.js") : Url("Show.js");
+            }
+        
             public static readonly string jquery_ui_touch_punch_improved_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.min.js") ? Url("jquery.ui.touch-punch-improved.min.js") : Url("jquery.ui.touch-punch-improved.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.es5.min.js") ? Url("jquery.ui.touch-punch-improved.es5.min.js") : Url("jquery.ui.touch-punch-improved.es5.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_min_js = Url("jquery.ui.touch-punch-improved.es5.min.js");
@@ -257,6 +270,13 @@ namespace Links
             }
             public static partial class Scripts 
             {
+                public static partial class Business 
+                {
+                    public static class Assets
+                    {
+                        public const string Show_js = "~/Content/Scripts/Business/Show.js"; 
+                    }
+                }
                 public static partial class Queue 
                 {
                     public static class Assets

@@ -13,12 +13,17 @@ namespace Plum.Services
         {
             if (!string.IsNullOrWhiteSpace(business.WelcomeTextMessage))
             {
-                return business.WelcomeTextMessage + " " + placeInLineUrl;
+                return business.WelcomeTextMessage.Trim() + " " + placeInLineUrl;
             }
             else
             {
-                return $"Hey it's {business.Name}! You've been added to our wait list. You can see your place in line at {placeInLineUrl}";
+                return GetDefaultWelcomeMessage(business).Trim() + " "  + placeInLineUrl;
             }
+        }
+
+        public string GetDefaultWelcomeMessage(Models.Business business)
+        {
+            return $"Hey it's {business.Name}! You've been added to our wait list. You can see your place in line at ";
         }
 
         public string BuildReadyMessage(Models.Business business)
@@ -29,8 +34,13 @@ namespace Plum.Services
             }
             else
             {
-                return $"It's {business.Name}. We're ready for you.";
+                return GetDefaultReadyMessage(business);
             }
+        }
+
+        public string GetDefaultReadyMessage(Models.Business business)
+        {
+            return $"It's {business.Name}. We're ready for you.";
         }
     }
 }

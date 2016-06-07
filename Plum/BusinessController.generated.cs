@@ -68,16 +68,23 @@ namespace Plum.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit()
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ShowBusinessInformation()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit, "https");
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ShowBusinessInformation, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Update()
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditBusinessInformation()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Update, "https");
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditBusinessInformation, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateBusinessInformation()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateBusinessInformation, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -97,16 +104,18 @@ namespace Plum.Controllers
         public class ActionNamesClass
         {
             public readonly string Show = "Show";
-            public readonly string Edit = "Edit";
-            public readonly string Update = "Update";
+            public readonly string ShowBusinessInformation = "ShowBusinessInformation";
+            public readonly string EditBusinessInformation = "EditBusinessInformation";
+            public readonly string UpdateBusinessInformation = "UpdateBusinessInformation";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Show = "Show";
-            public const string Edit = "Edit";
-            public const string Update = "Update";
+            public const string ShowBusinessInformation = "ShowBusinessInformation";
+            public const string EditBusinessInformation = "EditBusinessInformation";
+            public const string UpdateBusinessInformation = "UpdateBusinessInformation";
         }
 
 
@@ -118,19 +127,27 @@ namespace Plum.Controllers
         {
             public readonly string id = "id";
         }
-        static readonly ActionParamsClass_Edit s_params_Edit = new ActionParamsClass_Edit();
+        static readonly ActionParamsClass_ShowBusinessInformation s_params_ShowBusinessInformation = new ActionParamsClass_ShowBusinessInformation();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Edit EditParams { get { return s_params_Edit; } }
+        public ActionParamsClass_ShowBusinessInformation ShowBusinessInformationParams { get { return s_params_ShowBusinessInformation; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Edit
+        public class ActionParamsClass_ShowBusinessInformation
         {
             public readonly string id = "id";
         }
-        static readonly ActionParamsClass_Update s_params_Update = new ActionParamsClass_Update();
+        static readonly ActionParamsClass_EditBusinessInformation s_params_EditBusinessInformation = new ActionParamsClass_EditBusinessInformation();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Update UpdateParams { get { return s_params_Update; } }
+        public ActionParamsClass_EditBusinessInformation EditBusinessInformationParams { get { return s_params_EditBusinessInformation; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Update
+        public class ActionParamsClass_EditBusinessInformation
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_UpdateBusinessInformation s_params_UpdateBusinessInformation = new ActionParamsClass_UpdateBusinessInformation();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UpdateBusinessInformation UpdateBusinessInformationParams { get { return s_params_UpdateBusinessInformation; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UpdateBusinessInformation
         {
             public readonly string model = "model";
         }
@@ -144,11 +161,29 @@ namespace Plum.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Edit = "Edit";
+                public readonly string EditBusinessInformation = "EditBusinessInformation";
                 public readonly string Show = "Show";
+                public readonly string ShowBusinessInformation = "ShowBusinessInformation";
             }
-            public readonly string Edit = "~/Views/Business/Edit.cshtml";
+            public readonly string EditBusinessInformation = "~/Views/Business/EditBusinessInformation.cshtml";
             public readonly string Show = "~/Views/Business/Show.cshtml";
+            public readonly string ShowBusinessInformation = "~/Views/Business/ShowBusinessInformation.cshtml";
+            static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
+            public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _DisplayTemplatesClass
+            {
+                public readonly string BusinessInformationViewModel = "BusinessInformationViewModel";
+                public readonly string SignInInformationViewModel = "SignInInformationViewModel";
+                public readonly string TextMessagesViewModel = "TextMessagesViewModel";
+            }
+            static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
+            public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _EditorTemplatesClass
+            {
+                public readonly string BusinessInformationViewModel = "BusinessInformationViewModel";
+            }
         }
     }
 
@@ -170,26 +205,38 @@ namespace Plum.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void ShowBusinessInformationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(int id)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ShowBusinessInformation(int id)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit, "https");
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ShowBusinessInformation, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            EditOverride(callInfo, id);
+            ShowBusinessInformationOverride(callInfo, id);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
         [NonAction]
-        partial void UpdateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Plum.ViewModels.Business.BusinessViewModel model);
+        partial void EditBusinessInformationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Update(Plum.ViewModels.Business.BusinessViewModel model)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditBusinessInformation(int id)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Update, "https");
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditBusinessInformation, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            EditBusinessInformationOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void UpdateBusinessInformationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Plum.ViewModels.Business.BusinessInformationViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateBusinessInformation(Plum.ViewModels.Business.BusinessInformationViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateBusinessInformation, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            UpdateOverride(callInfo, model);
+            UpdateBusinessInformationOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

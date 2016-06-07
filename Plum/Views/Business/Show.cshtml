@@ -1,4 +1,4 @@
-﻿@model Plum.Models.Business
+﻿@model Plum.ViewModels.Business.ShowViewModel
 @{
     ViewBag.Title = "Show";
 }
@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-12">
             <h2 class="pull-left">Settings</h2>
-            <a href="@Url.Action(MVC.Queue.Show(Model.Queues.First().Id))" class="btn btn-primary btn-lg pull-right" data-loading-overlay="true">
+            <a href="@Url.Action(MVC.Queue.Show(Model.QueueId))" class="btn btn-primary btn-lg pull-right" data-loading-overlay="true">
                 Go To Wait List
             </a>
         </div>
@@ -18,25 +18,8 @@
                 <div class="panel-heading">
                     Business Information (your customers will see this)
                 </div>
-                <div class="panel-body">
-                    <dl class="dl-horizontal">
-                        <dt>Business Name</dt>
-                        <dd>@Model.Name</dd>
-                        <dt>Phone Number</dt>
-                        @if (Model.HasPhoneNumber())
-                        {
-                            <dd>@Html.PhoneNumber(Model.PhoneNumber)</dd>
-                        }
-                        else
-                        {
-                            <dd>None</dd>
-                        }
-                    </dl>
-
-                    <a href="@Url.Action(MVC.Business.Edit(Model.Id))" class="btn btn-default btn-block" data-loading-overlay="true">
-                        <i class="fa fa-edit"></i>
-                        Edit Business Information
-                    </a>
+                <div class="panel-body" id="BusinessInformationPanel">
+                    @Html.DisplayFor(x => x.BusinessInformation)
                 </div>
             </div>
         </div>
@@ -46,18 +29,7 @@
                     Sign In Information
                 </div>
                 <div class="panel-body">
-                    <dl class="dl-horizontal">
-                        <dt>Email Address</dt>
-                        <dd>@Model.Account.EmailAddress</dd>
-                        <dt>Password</dt>
-                        <dd>
-                            &#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;
-                        </dd>
-                    </dl>
-                    <a href="#" class="btn btn-default btn-block">
-                        <i class="fa fa-edit"></i>
-                        Edit Sign In Information
-                    </a>
+                    @Html.DisplayFor(x => x.SignInInformation)
                 </div>
             </div>
         </div>
@@ -69,16 +41,7 @@
                     Text Messages
                 </div>
                 <div class="panel-body">
-                    <dl class="dl-horizontal">
-                        <dt>Welcome Text Message</dt>
-                        <dd><em>@Model.SampleWelcomeTextMessage()</em></dd>
-                        <dt>Ready Text Message</dt>
-                        <dd><em>@Model.SampleReadyTextMessage()</em></dd>
-                    </dl>
-                    <a href="#" class="btn btn-default btn-block">
-                        <i class="fa fa-edit"></i>
-                        Edit Text Messages
-                    </a>
+                    @Html.DisplayFor(x => x.TextMessages)
                 </div>
             </div>
         </div>

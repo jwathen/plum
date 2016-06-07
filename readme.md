@@ -1,6 +1,7 @@
 #todo
 
 ## features
+- edit settings in place
 - js time to update "time ago" on queue views
 - respond to customer texts
 - send arbitrary texts back to customer
@@ -17,7 +18,6 @@ button visbility, website url
 - fav icon
 
 ## support
-- flash messages
 - password reset
 - contact us
 - domain name
@@ -28,9 +28,12 @@ button visbility, website url
 - azure deployment slots
 - cdn fallbacks
 - attributions
+- application manifest
 
 ## issues
-- end sort event with jquery touch punch
+- reorder list button on old ios devices
+- loading overlay stays when hitting back button
+- move to end of line returns view in place
 
 ## future
 - android wrapper

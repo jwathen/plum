@@ -215,6 +215,7 @@
       <LastGenOutput>AppSettings.cs</LastGenOutput>
     </Content>
     <Content Include="App_Data\Profanity.txt" />
+    <Content Include="Content\Images\favicon.png" />
     <Content Include="Content\Images\table.jpg" />
     <Content Include="Content\Images\testimonial1.jpg" />
     <Content Include="Content\Images\testimonial2.jpg" />
@@ -223,6 +224,11 @@
     <Content Include="Content\Images\testimonial5.jpg" />
     <Content Include="Content\Images\testimonial6.jpg" />
     <Content Include="Content\Images\testimonial7.jpg" />
+    <Content Include="Content\Images\touch-icon-ipad-retina.png" />
+    <Content Include="Content\Images\touch-icon-ipad.png" />
+    <Content Include="Content\Images\touch-icon-iphone-retina.png" />
+    <Content Include="Content\Images\touch-icon-iphone.png" />
+    <Content Include="Content\Scripts\Business\Show.js" />
     <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.es5.js">
       <DependentUpon>jquery.ui.touch-punch-improved.js</DependentUpon>
     </Content>
@@ -396,6 +402,9 @@
     <Compile Include="Lib\Services\AppSecrets.cs" />
     <Compile Include="Lib\Services\TextMessageTemplateService.cs" />
     <Compile Include="Lib\Helpers\ValidationHelpers.cs" />
+    <Compile Include="ViewModels\Business\ShowViewModel.cs" />
+    <Compile Include="ViewModels\Business\SignInInformationViewModel.cs" />
+    <Compile Include="ViewModels\Business\TextMessagesViewModel.cs" />
     <Compile Include="ViewModels\Shared\FlashMessage.cs" />
     <Compile Include="Lib\Web\HttpContext2.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.cs" />
@@ -462,7 +471,7 @@
     </Compile>
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
     <Compile Include="ViewModels\Account\SignUpViewModel.cs" />
-    <Compile Include="ViewModels\Business\BusinessViewModel.cs" />
+    <Compile Include="ViewModels\Business\BusinessInformationViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
     <Compile Include="ViewModels\Queue\ManageCustomerViewModel.cs" />
     <Compile Include="Views\Account\SignIn.generated.cs">
@@ -475,10 +484,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SignUp.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Business\Edit.generated.cs">
+    <Compile Include="Views\Business\DisplayTemplates\BusinessInformationViewModel.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
+      <DependentUpon>BusinessInformationViewModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\DisplayTemplates\SignInInformationViewModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignInInformationViewModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\DisplayTemplates\TextMessagesViewModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextMessagesViewModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\EditorTemplates\BusinessInformationViewModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessInformationViewModel.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Business\Show.generated.cs">
       <AutoGen>True</AutoGen>
@@ -635,14 +659,28 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Show.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Business\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Shared\_FlashMessage.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_FlashMessage.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Business\DisplayTemplates\BusinessInformationViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BusinessInformationViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\EditorTemplates\BusinessInformationViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BusinessInformationViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\DisplayTemplates\SignInInformationViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SignInInformationViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TextMessagesViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\EditBusinessInformation.cshtml" />
+    <Content Include="Views\Business\ShowBusinessInformation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

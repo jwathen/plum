@@ -72,7 +72,7 @@ namespace Plum.Tests.Integration.Controllers
             int businessId = TestBusiness.Id;
             SetRouteId(businessId);
 
-            var model = new BusinessViewModel();
+            var model = new BusinessInformationViewModel();
             model.CopyFrom(TestBusiness);
             model.Name = "Brand New Name";
             model.PhoneNumber = "3333333333";
@@ -87,7 +87,7 @@ namespace Plum.Tests.Integration.Controllers
             int otherBusinessId = OtherBusiness.Id;
             SetRouteId(otherBusinessId);
 
-            var model = new BusinessViewModel();
+            var model = new BusinessInformationViewModel();
             model.Id = otherBusinessId;
 
             _controller.WithCallTo(x => x.Update(model))
@@ -99,7 +99,7 @@ namespace Plum.Tests.Integration.Controllers
             SignIn();
             SetRouteId(-1);
 
-            var model = new BusinessViewModel();
+            var model = new BusinessInformationViewModel();
             model.Id = -1;
 
             _controller.WithCallTo(x => x.Update(model))
