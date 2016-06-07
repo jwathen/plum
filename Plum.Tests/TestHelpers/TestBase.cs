@@ -31,8 +31,8 @@ namespace Plum.Tests.TestHelpers
         {
             var testBusiness = ReadFixture<Business>("TestBusiness");
             var otherBusiness = ReadFixture<Business>("OtherBusiness");
-
-            string[] testEmailAddresses = new string[] { "new_business@site.com", "test_business@site.com", "other_business@site.com" };
+            
+            string[] testEmailAddresses = new string[] { "new_business@site.com", "test_business@site.com", "other_business@site.com", "brandnewemail@site.com" };
             Database.Businesses.RemoveRange(Database.Businesses.Where(x => testEmailAddresses.Contains(x.Account.EmailAddress)));
             Database.SaveChanges();
 

@@ -40,70 +40,79 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldGiveHttpStatus(404);
         }
 
-        //public void Edit_GivenBusinessId_ReturnsView()
-        //{
-        //    SignIn();
-        //    int businessId = TestBusiness.Id;
-        //    SetRouteId(businessId);
+        public void ShowBusinessInformation_GivenBusinessId_RendersView()
+        {
+            SignIn();
+            SetRouteId(TestBusiness.Id);
 
-        //    _controller.WithCallTo(x => x.Edit(businessId))
-        //        .ShouldRenderDefaultViewHtml();
-        //}
+            _controller.WithCallTo(x => x.ShowBusinessInformation(TestBusiness.Id))
+                .ShouldRenderDefaultViewHtml();
+        }
 
-        //public void Edit_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
-        //{
-        //    SignIn();
-        //    int otherBusinessId = OtherBusiness.Id;
-        //    SetRouteId(otherBusinessId);
+        public void EditBusinessInformation_GivenBusinessId_RendersView()
+        {
+            SignIn();
+            SetRouteId(TestBusiness.Id);
 
-        //    _controller.WithCallTo(x => x.Edit(otherBusinessId))
-        //        .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
-        //}
+            _controller.WithCallTo(x => x.EditBusinessInformation(TestBusiness.Id))
+                .ShouldRenderDefaultViewHtml();
+        }
 
-        //public void Edit_GivenInvalidQueueId_Return404()
-        //{
-        //    _controller.WithCallTo(x => x.Edit(-1))
-        //        .ShouldGiveHttpStatus(404);
-        //}
+        public void UpdateBusinessInfomration_GivenValidModel_ReturnsView()
+        {
+            SignIn();
+            int id = TestBusiness.Id;
+            SetRouteId(id);
 
-        //public void Update_GivenValidModel_ReturnsView()
-        //{
-        //    SignIn();
-        //    int businessId = TestBusiness.Id;
-        //    SetRouteId(businessId);
+            var model = new BusinessInformationViewModel();
+            model.CopyFrom(TestBusiness);
+            model.Name = "Brand New Name";
+            model.PhoneNumber = "3333333333";
 
-        //    var model = new BusinessInformationViewModel();
-        //    model.CopyFrom(TestBusiness);
-        //    model.Name = "Brand New Name";
-        //    model.PhoneNumber = "3333333333";
+            _controller.WithCallTo(x => x.UpdateBusinessInformation(model))
+                .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.ShowBusinessInformation, new { id = id });
 
-        //    _controller.WithCallTo(x => x.Update(model))
-        //        .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.Show, new { id = businessId });
-        //}
+            TestBusiness.Name.ShouldEqual("Brand New Name");
+            TestBusiness.PhoneNumber.ShouldEqual("3333333333");
+        }
 
-        //public void Update_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
-        //{
-        //    SignIn();
-        //    int otherBusinessId = OtherBusiness.Id;
-        //    SetRouteId(otherBusinessId);
+        public void ShowSignInInformation_GivenBusinessId_RendersView()
+        {
+            SignIn();
+            SetRouteId(TestBusiness.Id);
 
-        //    var model = new BusinessInformationViewModel();
-        //    model.Id = otherBusinessId;
+            _controller.WithCallTo(x => x.ShowSignInInformation(TestBusiness.Id))
+                .ShouldRenderDefaultViewHtml();
+        }
 
-        //    _controller.WithCallTo(x => x.Update(model))
-        //        .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
-        //}
+        public void EditSignInInformation_GivenBusinessId_RendersView()
+        {
+            SignIn();
+            SetRouteId(TestBusiness.Id);
 
-        //public void Update_GivenInvalidQueueId_Return404()
-        //{
-        //    SignIn();
-        //    SetRouteId(-1);
+            _controller.WithCallTo(x => x.EditSignInInformation(TestBusiness.Id))
+                .ShouldRenderDefaultViewHtml();
+        }
 
-        //    var model = new BusinessInformationViewModel();
-        //    model.Id = -1;
+        public void UpdateSignInInfomration_GivenValidModel_ReturnsView()
+        {
+            SignIn();
+            var business = TestBusiness;
+            int id = business.Id;
+            SetRouteId(id);
 
-        //    _controller.WithCallTo(x => x.Update(model))
-        //        .ShouldGiveHttpStatus(404);
-        //}
+            var model = new SignInInformationViewModel();
+            model.CopyFrom(TestBusiness);
+            model.EmailAddress = "brandnewemail@site.com";
+            model.NewPassword = "new password";
+            model.ConfirmNewPassword = "new password";
+            model.CurrentPassword = "passw0rd";
+
+            _controller.WithCallTo(x => x.UpdateSignInInformation(model))
+                .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.ShowSignInInformation, new { id = id });
+
+            business.Account.EmailAddress.ShouldEqual("brandnewemail@site.com");
+            business.Account.VerifyPassword("new password").ShouldBeTrue();
+        }
     }
 }
