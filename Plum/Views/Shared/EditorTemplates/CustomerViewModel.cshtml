@@ -1,26 +1,37 @@
 ﻿@model Plum.ViewModels.Customer.CustomerViewModel
 
-<div class="form-group">
-    <label for="@Html.IdFor(x => x.Name)">
-        Name
-        <span class="text-danger">*</span>
-    </label>
-    @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" })
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="@Html.IdFor(x => x.Name)">
+                Name
+                <span class="text-danger">*</span>
+            </label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(x => x.PhoneNumber, "Phone Number")
+            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-lg", type = "tel", data_formatter = "phone" })
+        </div>
+    </div>
 </div>
-<div class="form-group">
-    <label for="@Html.IdFor(x => x.NumberInParty)">
-        Number in Party
-        <span class="text-danger">*</span>
-    </label>
-    @Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control input-lg" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(x => x.PhoneNumber, "Phone Number")
-    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-lg", type = "tel", data_formatter = "phone" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(x => x.QuotedTimeInMinutes, "Quoted Wait Time")
-    @Html.DropDownListFor(x => x.QuotedTimeInMinutes, Model.GetQuotedWaitTimeOptions(), "None", new { @class = "form-control input-lg" })
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="@Html.IdFor(x => x.NumberInParty)">
+                Number in Party
+            </label>
+            @Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control input-lg" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(x => x.QuotedTimeInMinutes, "Quoted Wait Time")
+            @Html.DropDownListFor(x => x.QuotedTimeInMinutes, Model.GetQuotedWaitTimeOptions(), "None", new { @class = "form-control input-lg" })
+        </div>
+    </div>
 </div>
 <div class="form-group">
     @Html.LabelFor(x => x.Note)

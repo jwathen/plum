@@ -65,29 +65,16 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteLiteral(">\r\n            <h2");
+WriteLiteral(">\r\n            <a");
 
-WriteLiteral(" class=\"pull-left\"");
-
-WriteLiteral(">");
-
+WriteAttribute("href", Tuple.Create(" href=\"", 190), Tuple.Create("\"", 245)
             
             #line 9 "..\..\Views\Queue\Show.cshtml"
-                             Write(Model.Business.Name);
-
+, Tuple.Create(Tuple.Create("", 197), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Business.Show(Model.BusinessId))
             
             #line default
             #line hidden
-WriteLiteral("</h2>\r\n            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 251), Tuple.Create("\"", 306)
-            
-            #line 10 "..\..\Views\Queue\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 258), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Business.Show(Model.BusinessId))
-            
-            #line default
-            #line hidden
-, 258), false)
+, 197), false)
 );
 
 WriteLiteral(" class=\"btn btn-default btn-sm pull-right\"");
@@ -98,7 +85,20 @@ WriteLiteral(">\r\n                <i");
 
 WriteLiteral(" class=\"fa fa-gear\"");
 
-WriteLiteral("></i>\r\n                Settings\r\n            </a>\r\n            <div");
+WriteLiteral("></i>\r\n                Settings\r\n            </a>\r\n            <h2");
+
+WriteLiteral(" class=\"pull-left\"");
+
+WriteLiteral(">");
+
+            
+            #line 13 "..\..\Views\Queue\Show.cshtml"
+                             Write(Model.Business.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h2>            \r\n            <div");
 
 WriteLiteral(" class=\"clearfix\"");
 
@@ -144,14 +144,14 @@ WriteLiteral(" class=\"btn btn-block btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 976), Tuple.Create("\"", 1037)
+WriteAttribute("style", Tuple.Create(" style=\"", 988), Tuple.Create("\"", 1049)
             
             #line 25 "..\..\Views\Queue\Show.cshtml"
-            , Tuple.Create(Tuple.Create("", 984), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+            , Tuple.Create(Tuple.Create("", 996), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
             
             #line default
             #line hidden
-, 984), false)
+, 996), false)
 );
 
 WriteLiteral(">\r\n                    <i");
@@ -182,14 +182,14 @@ WriteLiteral(" class=\"btn btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 1509), Tuple.Create("\"", 1570)
+WriteAttribute("style", Tuple.Create(" style=\"", 1521), Tuple.Create("\"", 1582)
             
             #line 35 "..\..\Views\Queue\Show.cshtml"
- , Tuple.Create(Tuple.Create("", 1517), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+ , Tuple.Create(Tuple.Create("", 1529), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
             
             #line default
             #line hidden
-, 1517), false)
+, 1529), false)
 );
 
 WriteLiteral(">\r\n                    <i");
@@ -277,14 +277,14 @@ WriteLiteral("\';\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'
 WriteLiteral("\';\r\n        window.viewData.showCustomerUrl = \'/customer\';\r\n    </script>\r\n    <s" +
 "cript");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2556), Tuple.Create("\"", 2627)
+WriteAttribute("src", Tuple.Create(" src=\"", 2568), Tuple.Create("\"", 2639)
             
             #line 63 "..\..\Views\Queue\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 2562), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
+, Tuple.Create(Tuple.Create("", 2574), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
             
             #line default
             #line hidden
-, 2562), false)
+, 2574), false)
 );
 
 WriteLiteral("></script>\r\n");
