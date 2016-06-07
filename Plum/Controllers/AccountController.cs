@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using AttributeRouting.Web.Mvc;
 using Plum.Models;
 using Plum.ViewModels.Account;
 using System.Data.Entity;
@@ -15,14 +14,14 @@ namespace Plum.Controllers
 {
     public partial class AccountController : AppControllerBase
     {
-        [GET("account/sign_up")]
+        [HttpGet, Route("account/sign_up")]
         public virtual ActionResult SignUp()
         {
             return View();
         }
 
         [ValidateAntiForgeryToken]
-        [POST("account/sign_up")]
+        [HttpPost, Route("account/sign_up")]
         public virtual async Task<ActionResult> SignUp(SignUpViewModel model)
         {
             if (!ModelState.IsValid)
@@ -44,14 +43,14 @@ namespace Plum.Controllers
             return RedirectToAction(MVC.Queue.Show(queue.Id));
         }
 
-        [GET("account/sign_in")]
+        [HttpGet, Route("account/sign_in")]
         public virtual ActionResult SignIn()
         {
             return View();
         }
 
         [ValidateAntiForgeryToken]
-        [POST("account/sign_in")]
+        [HttpPost, Route("account/sign_in")]
         public virtual async Task<ActionResult> SignIn(SignInViewModel model)
         {
             if (!ModelState.IsValid)
@@ -91,7 +90,7 @@ namespace Plum.Controllers
             }
         }
 
-        [GET("account/sign_out")]
+        [HttpGet, Route("account/sign_out")]
         public virtual ActionResult SignOut()
         {
             AppSession.SignOut();

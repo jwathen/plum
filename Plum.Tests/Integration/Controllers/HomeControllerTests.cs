@@ -18,5 +18,17 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRenderDefaultViewHtml()
                 .ShouldMatchCss("div.jumbo");
         }
+
+        public void NotAuthorized_Renders()
+        {
+            _controller.WithCallTo(x => x.NotAuthorized())
+                .ShouldRenderDefaultViewHtml();
+        }
+
+        public void NotFound_Renders()
+        {
+            _controller.WithCallTo(x => x.NotFound())
+                .ShouldRenderDefaultViewHtml();
+        }
     }
 }

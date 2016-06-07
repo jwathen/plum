@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using AttributeRouting.Web.Mvc;
 using System.Data.Entity;
 using Plum.ViewModels.Customer;
 using Plum.Services;
@@ -31,8 +30,8 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [GET("/customer/{id:int}")]
-        [GET("/customer")]
+        [HttpGet, Route("customer/{id:int}")]
+        [Route("customer")]
         public virtual async Task<ActionResult> Show(int id)
         {
             var customer = await Customer();
@@ -52,7 +51,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [POST("/customer/create")]
+        [HttpPost, Route("customer/create")]
         public virtual async Task<ActionResult> Create(CustomerViewModel model)
         {
             if (!ModelState.IsValid)
@@ -85,7 +84,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [GET("/customer/{id:int}/edit")]
+        [HttpGet, Route("customer/{id:int}/edit")]
         public virtual async Task<ActionResult> Edit(int id)
         {
             var customer = await Customer();
@@ -104,10 +103,10 @@ namespace Plum.Controllers
 
             return View(model);
         }
-                
+               
         [Authorize]
         [ValidateAntiForgeryToken]
-        [PUT("/customer/{id:int}")]
+        [HttpPut, Route("customer/{id:int}")]
         public virtual async Task<ActionResult> Update(CustomerViewModel model)
         {
             if (!ModelState.IsValid)
@@ -136,7 +135,7 @@ namespace Plum.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        [DELETE("/customer/{urlToken:length(8)}")]
+        [HttpDelete, Route("customer/{urlToken:length(8)}")]
         public virtual async Task<ActionResult> DestroyWithUrlToken(string urlToken)
         {
             var customer = await Database.Customers
@@ -155,7 +154,7 @@ namespace Plum.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        [DELETE("/customer/{id:int}")]
+        [HttpDelete, Route("customer/{id:int}")]
         public virtual async Task<ActionResult> Destroy(int id)
         {
             var customer = await Customer();
@@ -174,7 +173,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [POST("/customer/{id:int}/send_ready_message")]
+        [HttpPost, Route("customer/{id:int}/send_ready_message")]
         public virtual async Task<ActionResult> SendReadyMessage(int id)
         {
             var customer = await Customer();
@@ -192,7 +191,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [POST("/customer/{id:int}/move_to_end_of_list")]
+        [HttpPost, Route("customer/{id:int}/move_to_end_of_list")]
         public virtual async Task<ActionResult> MoveToEndOfList(int id)
         {
             var customer = await Customer();

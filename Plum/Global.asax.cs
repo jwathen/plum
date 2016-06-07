@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.WebPages;
-using AttributeRouting.Web.Mvc;
 using Plum.Controllers;
 using RazorGenerator.Mvc;
 using StackExchange.Profiling;
@@ -33,12 +32,9 @@ namespace Plum
         protected void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapAttributeRoutes(x =>
-            {
-                x.AddRoutesFromAssemblyOf<HomeController>();
-                x.AppendTrailingSlash = false;
-                x.UseLowercaseRoutes = true;
-            });
+            routes.LowercaseUrls = true;
+            routes.AppendTrailingSlash = true;
+            routes.MapMvcAttributeRoutes();
         }
 
         protected void RegisterViewEngines(ViewEngineCollection engines)

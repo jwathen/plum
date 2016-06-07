@@ -9,6 +9,7 @@ using TestStack.FluentMVCTesting;
 using Plum.Tests.TestHelpers.Mvc;
 using Should;
 using Plum.ViewModels.Customer;
+using System.Web.Mvc;
 
 namespace Plum.Tests.Integration.Controllers
 {
@@ -31,7 +32,7 @@ namespace Plum.Tests.Integration.Controllers
             int otherBusinessCustomerId = OtherBusiness.Queues.First().Customers.First().Id;
 
             _controller.WithCallTo(x => x.Show(otherBusinessCustomerId))
-                .ShouldGiveHttpStatus(404);
+                .ShouldJavaScriptRedirectTo(Url.Action(MVC.Queue.Show(null)));
         }
 
         public void Create_GivenValidCustomer_CreatesCustomer()
@@ -48,7 +49,7 @@ namespace Plum.Tests.Integration.Controllers
             model.Note = "his name is Jack";
 
             _controller.WithCallTo(x => x.Create(model))
-                .ShouldReturnJavaScriptResult();
+                .ShouldJavaScriptRedirectTo(Url.Action(MVC.Queue.Show(queueId)));
 
             var customer = TestBusiness.Queues.First().Customers.OrderByDescending(x => x.Id).First();
             customer.Name.ShouldEqual("Jack");
@@ -156,7 +157,7 @@ namespace Plum.Tests.Integration.Controllers
             SetRouteId(customerId);
 
             _controller.WithCallTo(x => x.Destroy(customerId))
-                .ShouldReturnJavaScriptResult();
+                .ShouldJavaScriptRedirectTo(Url.Action(MVC.Queue.Show(queueId)));
 
             Database.Customers.Find(customerId).ShouldBeNull();
         }

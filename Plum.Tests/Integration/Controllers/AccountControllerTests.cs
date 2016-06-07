@@ -9,6 +9,7 @@ using Plum.ViewModels.Account;
 using TestStack.FluentMVCTesting;
 using Should;
 using Plum.Tests.TestHelpers.Mvc;
+using System.Web.Mvc;
 
 namespace Plum.Tests.Integration.Controllers
 {
@@ -30,7 +31,7 @@ namespace Plum.Tests.Integration.Controllers
             model.EmailAddress = "new_business@site.com";
             model.Password = "password";
             _controller.WithCallTo(x => x.SignUp(model))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Business.ActionNames.Show, new { id = NewBusiness.Queues.First().Id });
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Show, new { id = NewBusiness.Queues.First().Id });
 
             NewBusiness.Name.ShouldEqual("New Business");
             NewBusiness.Queues.First().Name.ShouldEqual("Default");

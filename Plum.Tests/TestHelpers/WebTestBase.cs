@@ -114,5 +114,13 @@ namespace Plum.Tests.TestHelpers
                 return _controller.TempData;
             }
         }
+
+        protected UrlHelper Url
+        {
+            get
+            {
+                return _controller.Url;
+            }
+        }
     }
 }

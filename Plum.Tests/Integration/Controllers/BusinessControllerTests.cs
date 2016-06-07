@@ -34,76 +34,76 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
         }
 
-        public void Show_GivenInvalidQueueId_Return404()
+        public void Show_GivenInvalidId_Return404()
         {
             _controller.WithCallTo(x => x.Show(-1))
                 .ShouldGiveHttpStatus(404);
         }
 
-        public void Edit_GivenBusinessId_ReturnsView()
-        {
-            SignIn();
-            int businessId = TestBusiness.Id;
-            SetRouteId(businessId);
+        //public void Edit_GivenBusinessId_ReturnsView()
+        //{
+        //    SignIn();
+        //    int businessId = TestBusiness.Id;
+        //    SetRouteId(businessId);
 
-            _controller.WithCallTo(x => x.Edit(businessId))
-                .ShouldRenderDefaultViewHtml();
-        }
+        //    _controller.WithCallTo(x => x.Edit(businessId))
+        //        .ShouldRenderDefaultViewHtml();
+        //}
 
-        public void Edit_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
-        {
-            SignIn();
-            int otherBusinessId = OtherBusiness.Id;
-            SetRouteId(otherBusinessId);
+        //public void Edit_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
+        //{
+        //    SignIn();
+        //    int otherBusinessId = OtherBusiness.Id;
+        //    SetRouteId(otherBusinessId);
 
-            _controller.WithCallTo(x => x.Edit(otherBusinessId))
-                .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
-        }
+        //    _controller.WithCallTo(x => x.Edit(otherBusinessId))
+        //        .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
+        //}
 
-        public void Edit_GivenInvalidQueueId_Return404()
-        {
-            _controller.WithCallTo(x => x.Edit(-1))
-                .ShouldGiveHttpStatus(404);
-        }
+        //public void Edit_GivenInvalidQueueId_Return404()
+        //{
+        //    _controller.WithCallTo(x => x.Edit(-1))
+        //        .ShouldGiveHttpStatus(404);
+        //}
 
-        public void Update_GivenValidModel_ReturnsView()
-        {
-            SignIn();
-            int businessId = TestBusiness.Id;
-            SetRouteId(businessId);
+        //public void Update_GivenValidModel_ReturnsView()
+        //{
+        //    SignIn();
+        //    int businessId = TestBusiness.Id;
+        //    SetRouteId(businessId);
 
-            var model = new BusinessInformationViewModel();
-            model.CopyFrom(TestBusiness);
-            model.Name = "Brand New Name";
-            model.PhoneNumber = "3333333333";
+        //    var model = new BusinessInformationViewModel();
+        //    model.CopyFrom(TestBusiness);
+        //    model.Name = "Brand New Name";
+        //    model.PhoneNumber = "3333333333";
 
-            _controller.WithCallTo(x => x.Update(model))
-                .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.Show, new { id = businessId });
-        }
+        //    _controller.WithCallTo(x => x.Update(model))
+        //        .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.Show, new { id = businessId });
+        //}
 
-        public void Update_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
-        {
-            SignIn();
-            int otherBusinessId = OtherBusiness.Id;
-            SetRouteId(otherBusinessId);
+        //public void Update_GivenQueueIdForOtherBusiness_ReturnNotAuthorized()
+        //{
+        //    SignIn();
+        //    int otherBusinessId = OtherBusiness.Id;
+        //    SetRouteId(otherBusinessId);
 
-            var model = new BusinessInformationViewModel();
-            model.Id = otherBusinessId;
+        //    var model = new BusinessInformationViewModel();
+        //    model.Id = otherBusinessId;
 
-            _controller.WithCallTo(x => x.Update(model))
-                .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
-        }
+        //    _controller.WithCallTo(x => x.Update(model))
+        //        .ShouldRedirectTo<HomeController>(x => x.NotAuthorized());
+        //}
 
-        public void Update_GivenInvalidQueueId_Return404()
-        {
-            SignIn();
-            SetRouteId(-1);
+        //public void Update_GivenInvalidQueueId_Return404()
+        //{
+        //    SignIn();
+        //    SetRouteId(-1);
 
-            var model = new BusinessInformationViewModel();
-            model.Id = -1;
+        //    var model = new BusinessInformationViewModel();
+        //    model.Id = -1;
 
-            _controller.WithCallTo(x => x.Update(model))
-                .ShouldGiveHttpStatus(404);
-        }
+        //    _controller.WithCallTo(x => x.Update(model))
+        //        .ShouldGiveHttpStatus(404);
+        //}
     }
 }

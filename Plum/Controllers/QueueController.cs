@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using AttributeRouting.Web.Mvc;
 using System.Data.Entity;
 using Plum.ViewModels.Customer;
 using Plum.Services;
@@ -28,7 +27,7 @@ namespace Plum.Controllers
             return null;
         }
 
-        [GET("/q/{urlToken:length(8)}")]
+        [HttpGet, Route("q/{urlToken:length(8)}")]
         public virtual async Task<ActionResult> ShowCustomer(string urlToken)
         {
             var customer = await Database.Customers
@@ -45,7 +44,7 @@ namespace Plum.Controllers
             return View(customer);
         }
 
-        [GET("/queue/{urlToken:length(8)}/customer_view_queue_list")]
+        [HttpGet, Route("queue/{urlToken:length(8)}/customer_view_queue_list")]
         public virtual async Task<ActionResult> CustomerViewQueueList(string urlToken)
         {
             var customer = await Database.Customers
@@ -63,7 +62,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [GET("/queue/{id:int?}")]
+        [HttpGet, Route("queue/{id:int?}")]
         public virtual async Task<ActionResult> Show(int? id)
         {
             if (!id.HasValue)
@@ -91,7 +90,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [GET("/queue/{id:int}/business_view_queue_list")]
+        [HttpGet, Route("queue/{id:int}/business_view_queue_list")]
         public virtual async Task<ActionResult> BusinessViewQueueList(int id)
         {
             var queue = await Queue();
@@ -110,7 +109,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [POST("/queue/{id:int}/sort")]
+        [HttpPost, Route("queue/{id:int}/sort")]
         public virtual async Task<ActionResult> Sort(int id, int[] customerIds)
         {
             if (customerIds != null && customerIds.Any())
