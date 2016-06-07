@@ -373,7 +373,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppSettings.tt</DependentUpon>
     </Compile>
-    <Compile Include="BusinessesController.generated.cs">
+    <Compile Include="BusinessController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
@@ -395,6 +395,8 @@
     <Compile Include="Lib\Services\ProfanityFilter.cs" />
     <Compile Include="Lib\Services\AppSecrets.cs" />
     <Compile Include="Lib\Services\TextMessageTemplateService.cs" />
+    <Compile Include="Lib\Helpers\ValidationHelpers.cs" />
+    <Compile Include="ViewModels\Shared\FlashMessage.cs" />
     <Compile Include="Lib\Web\HttpContext2.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.Designer.cs">
@@ -460,6 +462,7 @@
     </Compile>
     <Compile Include="ViewModels\Account\SignInViewModel.cs" />
     <Compile Include="ViewModels\Account\SignUpViewModel.cs" />
+    <Compile Include="ViewModels\Business\BusinessViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
     <Compile Include="ViewModels\Queue\ManageCustomerViewModel.cs" />
     <Compile Include="Views\Account\SignIn.generated.cs">
@@ -471,6 +474,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SignUp.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Business\Show.generated.cs">
       <AutoGen>True</AutoGen>
@@ -521,6 +529,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Show.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_FlashMessage.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_FlashMessage.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\EditorTemplates\CustomerViewModel.generated.cs">
       <AutoGen>True</AutoGen>
@@ -621,6 +634,14 @@
     <Content Include="Views\Business\Show.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Show.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_FlashMessage.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_FlashMessage.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

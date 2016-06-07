@@ -7,11 +7,14 @@
 <div class="container">
     <h3>@Model.Queue.Business.Name</h3>
     <div class="button-stack">
-        <button class="btn btn-block btn-default">
+        @if (Model.Queue.Business.HasPhoneNumber())
+        {
+        <a href="tel:@Model.Queue.Business.PhoneNumber)" class="btn btn-block btn-default">
             <i class="fa fa-phone"></i>
-            Call The City Brewery
-            <span class="text-muted">(602-890-3306)</span>
-        </button>
+            Call @Model.Queue.Business.Name
+            <span class="text-muted">(@Html.PhoneNumberDashes(Model.Queue.Business.PhoneNumber))</span>
+        </a>
+        }
         <form action="@Url.Action(MVC.Customer.DestroyWithUrlToken(Model.UrlToken))" method="post">
             <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to cancel your place in line?" class="btn btn-block btn-default">
                 <i class="fa fa-times"></i>

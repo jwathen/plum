@@ -2,7 +2,7 @@
     initConfirmationModals('body');
     initLoadingOverlays('body');
 
-    $('[data-formatter=phone]').formatter({ pattern: '({{999}}) {{999}}-{{9999}}', persistent: false });
+    $('[data-formatter=phone]').formatter({ pattern: '({{999}}) {{999}}-{{9999}}', persistent: false }).resetPattern();
 
     // fix for stacking modals - http://stackoverflow.com/questions/16547650/can-bootstrap-modal-dialog-overlay-another-dialog
     $(document)

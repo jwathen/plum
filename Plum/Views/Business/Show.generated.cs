@@ -65,11 +65,22 @@ WriteLiteral(" class=\"pull-left\"");
 
 WriteLiteral(">Settings</h2>\r\n            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 211), Tuple.Create("\"", 270)
+            
+            #line 10 "..\..\Views\Business\Show.cshtml"
+, Tuple.Create(Tuple.Create("", 218), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.Queues.First().Id))
+            
+            #line default
+            #line hidden
+, 218), false)
+);
 
 WriteLiteral(" class=\"btn btn-primary btn-lg pull-right\"");
 
-WriteLiteral(">Go To Wait List</a>\r\n        </div>\r\n    </div>\r\n    <div");
+WriteLiteral(" data-loading-overlay=\"true\"");
+
+WriteLiteral(">\r\n                Go To Wait List\r\n            </a>\r\n        </div>\r\n    </div>\r" +
+"\n    <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -97,7 +108,7 @@ WriteLiteral(" class=\"dl-horizontal\"");
 WriteLiteral(">\r\n                        <dt>Business Name</dt>\r\n                        <dd>");
 
             
-            #line 22 "..\..\Views\Business\Show.cshtml"
+            #line 24 "..\..\Views\Business\Show.cshtml"
                        Write(Model.Name);
 
             
@@ -106,13 +117,13 @@ WriteLiteral(">\r\n                        <dt>Business Name</dt>\r\n           
 WriteLiteral("</dd>\r\n                        <dt>Phone Number</dt>\r\n");
 
             
-            #line 24 "..\..\Views\Business\Show.cshtml"
+            #line 26 "..\..\Views\Business\Show.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 24 "..\..\Views\Business\Show.cshtml"
+            #line 26 "..\..\Views\Business\Show.cshtml"
                          if (Model.HasPhoneNumber())
                         {
 
@@ -122,7 +133,7 @@ WriteLiteral("</dd>\r\n                        <dt>Phone Number</dt>\r\n");
 WriteLiteral("                            <dd>");
 
             
-            #line 26 "..\..\Views\Business\Show.cshtml"
+            #line 28 "..\..\Views\Business\Show.cshtml"
                            Write(Html.PhoneNumber(Model.PhoneNumber));
 
             
@@ -131,7 +142,7 @@ WriteLiteral("                            <dd>");
 WriteLiteral("</dd>\r\n");
 
             
-            #line 27 "..\..\Views\Business\Show.cshtml"
+            #line 29 "..\..\Views\Business\Show.cshtml"
                         }
                         else
                         {
@@ -142,7 +153,7 @@ WriteLiteral("</dd>\r\n");
 WriteLiteral("                            <dd>None</dd>\r\n");
 
             
-            #line 31 "..\..\Views\Business\Show.cshtml"
+            #line 33 "..\..\Views\Business\Show.cshtml"
                         }
 
             
@@ -150,9 +161,19 @@ WriteLiteral("                            <dd>None</dd>\r\n");
             #line hidden
 WriteLiteral("                    </dl>\r\n\r\n                    <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 1259), Tuple.Create("\"", 1306)
+            
+            #line 36 "..\..\Views\Business\Show.cshtml"
+, Tuple.Create(Tuple.Create("", 1266), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Business.Edit(Model.Id))
+            
+            #line default
+            #line hidden
+, 1266), false)
+);
 
 WriteLiteral(" class=\"btn btn-default btn-block\"");
+
+WriteLiteral(" data-loading-overlay=\"true\"");
 
 WriteLiteral(">\r\n                        <i");
 
@@ -183,7 +204,7 @@ WriteLiteral(" class=\"dl-horizontal\"");
 WriteLiteral(">\r\n                        <dt>Email Address</dt>\r\n                        <dd>");
 
             
-            #line 49 "..\..\Views\Business\Show.cshtml"
+            #line 51 "..\..\Views\Business\Show.cshtml"
                        Write(Model.Account.EmailAddress);
 
             
@@ -233,7 +254,7 @@ WriteLiteral(">\r\n                        <dt>Welcome Text Message</dt>\r\n    
 " <dd><em>");
 
             
-            #line 72 "..\..\Views\Business\Show.cshtml"
+            #line 74 "..\..\Views\Business\Show.cshtml"
                            Write(Model.SampleWelcomeTextMessage());
 
             
@@ -243,7 +264,7 @@ WriteLiteral("</em></dd>\r\n                        <dt>Ready Text Message</dt>\
 "        <dd><em>");
 
             
-            #line 74 "..\..\Views\Business\Show.cshtml"
+            #line 76 "..\..\Views\Business\Show.cshtml"
                            Write(Model.SampleReadyTextMessage());
 
             

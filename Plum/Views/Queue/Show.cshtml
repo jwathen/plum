@@ -4,29 +4,45 @@
     ViewBag.Title = "Show";
 }
 <div class="container">
-    <h3>@Model.Business.Name</h3>
-    <p class="hidden-md hidden-lg">
-        <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#CreateCustomerModal">
-            <i class="fa fa-plus"></i>
-            Add Party
-        </button>
-        <button class="btn btn-block btn-default" data-command="rearrange" style="@(Model.Customers.Count < 2 ? "display:none;" : null)">
-            <i class="fa fa-list"></i>
-            <span>Reorder List</span>
-        </button>
-    </p>
-    <p class="hidden-sm hidden-xs">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#CreateCustomerModal">
-            <i class="fa fa-plus"></i>
-            Add Party
-        </button>
-        <button class="btn btn-default" data-command="rearrange" style="@(Model.Customers.Count < 2 ? "display:none;" : null)">
-            <i class="fa fa-list"></i>
-            <span>Reorder List</span>
-        </button>
-    </p>
-    <div id="businessViewQueueList">
-        @Html.Partial(MVC.Queue.Views.BusinessViewQueueList, Model)
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="pull-left">@Model.Business.Name</h2>
+            <a href="@Url.Action(MVC.Business.Show(Model.BusinessId))" class="btn btn-default btn-sm pull-right" data-loading-overlay="true">
+                <i class="fa fa-gear"></i>
+                Settings
+            </a>
+            <div class="clearfix"></div>
+            @Html.FlashMessage()
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="hidden-md hidden-lg">
+                <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#CreateCustomerModal">
+                    <i class="fa fa-plus"></i>
+                    Add Party
+                </button>
+                <button class="btn btn-block btn-default" data-command="rearrange" style="@(Model.Customers.Count < 2 ? "display:none;" : null)">
+                    <i class="fa fa-list"></i>
+                    <span>Reorder List</span>
+                </button>
+            </p>
+            <p class="hidden-sm hidden-xs">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#CreateCustomerModal">
+                    <i class="fa fa-plus"></i>
+                    Add Party
+                </button>
+                <button class="btn btn-default" data-command="rearrange" style="@(Model.Customers.Count < 2 ? "display:none;" : null)">
+                    <i class="fa fa-list"></i>
+                    <span>Reorder List</span>
+                </button>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="businessViewQueueList" class="col-md-12">
+            @Html.Partial(MVC.Queue.Views.BusinessViewQueueList, Model)
+        </div>
     </div>
 </div>
 <div id="ShowCustomerModal" class="modal">

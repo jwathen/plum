@@ -240,7 +240,7 @@ WriteLiteral("                ");
 
             
             #line 49 "..\..\Views\Customer\Show.cshtml"
-                 using (Ajax.BeginForm(MVC.Customer.Destroy(Model.Id), new AjaxOptions { OnBegin = "setLoading" }))
+                 using (Ajax.BeginForm(MVC.Customer.Destroy(Model.Id), new AjaxOptions { OnBegin = "setLoading", UpdateTargetId = "ShowCustomerModal" }))
                 {
 
             
@@ -360,14 +360,14 @@ WriteLiteral(">\r\n                            Move to End of List\r\n          
             #line hidden
 WriteLiteral("                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3291), Tuple.Create("\"", 3338)
+WriteAttribute("href", Tuple.Create(" href=\"", 3329), Tuple.Create("\"", 3376)
             
             #line 65 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 3298), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Edit(Model.Id))
+, Tuple.Create(Tuple.Create("", 3336), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Edit(Model.Id))
             
             #line default
             #line hidden
-, 3298), false)
+, 3336), false)
 );
 
 WriteLiteral(" id=\"red\"");
@@ -417,15 +417,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <p>\r\n                                <i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3810), Tuple.Create("\"", 3834)
-, Tuple.Create(Tuple.Create("", 3818), Tuple.Create("fa", 3818), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3848), Tuple.Create("\"", 3872)
+, Tuple.Create(Tuple.Create("", 3856), Tuple.Create("fa", 3856), true)
             
             #line 75 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3820), Tuple.Create<System.Object, System.Int32>(entry.Icon()
+, Tuple.Create(Tuple.Create(" ", 3858), Tuple.Create<System.Object, System.Int32>(entry.Icon()
             
             #line default
             #line hidden
-, 3821), false)
+, 3859), false)
 );
 
 WriteLiteral("></i>\r\n");

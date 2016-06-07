@@ -7,7 +7,9 @@
     <div class="row">
         <div class="col-md-12">
             <h2 class="pull-left">Settings</h2>
-            <a href="#" class="btn btn-primary btn-lg pull-right">Go To Wait List</a>
+            <a href="@Url.Action(MVC.Queue.Show(Model.Queues.First().Id))" class="btn btn-primary btn-lg pull-right" data-loading-overlay="true">
+                Go To Wait List
+            </a>
         </div>
     </div>
     <div class="row">
@@ -31,7 +33,7 @@
                         }
                     </dl>
 
-                    <a href="#" class="btn btn-default btn-block">
+                    <a href="@Url.Action(MVC.Business.Edit(Model.Id))" class="btn btn-default btn-block" data-loading-overlay="true">
                         <i class="fa fa-edit"></i>
                         Edit Business Information
                     </a>

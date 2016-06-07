@@ -28,7 +28,7 @@ using T4MVC;
 public static partial class MVC
 {
     public static Plum.Controllers.AccountController Account = new Plum.Controllers.T4MVC_AccountController();
-    public static Plum.Controllers.BusinessController Businesses = new Plum.Controllers.T4MVC_BusinessesController();
+    public static Plum.Controllers.BusinessController Business = new Plum.Controllers.T4MVC_BusinessController();
     public static Plum.Controllers.CustomerController Customer = new Plum.Controllers.T4MVC_CustomerController();
     public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
     public static Plum.Controllers.QueueController Queue = new Plum.Controllers.T4MVC_QueueController();
@@ -97,9 +97,6 @@ namespace Links
             public static readonly string jquery_ui_touch_punch_improved_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.min.js") ? Url("jquery.ui.touch-punch-improved.min.js") : Url("jquery.ui.touch-punch-improved.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.es5.min.js") ? Url("jquery.ui.touch-punch-improved.es5.min.js") : Url("jquery.ui.touch-punch-improved.es5.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_min_js = Url("jquery.ui.touch-punch-improved.es5.min.js");
-            public static readonly string jquery_ui_touch_punch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch.min.js") ? Url("jquery.ui.touch-punch.min.js") : Url("jquery.ui.touch-punch.js");
-            public static readonly string jquery_ui_touch_punch_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch.es5.min.js") ? Url("jquery.ui.touch-punch.es5.min.js") : Url("jquery.ui.touch-punch.es5.js");
-            public static readonly string jquery_ui_touch_punch_es5_min_js = Url("jquery.ui.touch-punch.es5.min.js");
             public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Queue {
@@ -271,7 +268,6 @@ namespace Links
                 public static class Assets
                 {
                     public const string jquery_ui_touch_punch_improved_js = "~/Content/Scripts/jquery.ui.touch-punch-improved.js"; 
-                    public const string jquery_ui_touch_punch_js = "~/Content/Scripts/jquery.ui.touch-punch.js"; 
                     public const string jquery_unobtrusive_ajax_min_js = "~/Content/Scripts/jquery.unobtrusive-ajax.min.js"; 
                     public const string Site_js = "~/Content/Scripts/Site.js"; 
                 }

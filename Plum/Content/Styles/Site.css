@@ -1,11 +1,25 @@
 ﻿@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+.alert-success {
+  background-color: #dff0d8 !important;
+  border-color: #d6e9c6 !important;
+  color: #468847 !important; }
+  .alert-success .close {
+    color: #468847 !important; }
+
+.alert-danger {
+  background-color: #f2dede !important;
+  border-color: #eed3d7 !important;
+  color: #b94a48 !important; }
+  .alert-danger .close {
+    color: #b94a48 !important; }
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

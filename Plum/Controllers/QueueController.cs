@@ -63,9 +63,19 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [GET("/queue/{id:int}")]
-        public virtual async Task<ActionResult> Show(int id)
+        [GET("/queue/{id:int?}")]
+        public virtual async Task<ActionResult> Show(int? id)
         {
+            if (!id.HasValue)
+            {
+                int businessId = AppSession.BusinessId.Value;
+                int queueId = await Database.Queues
+                    .Where(x => x.BusinessId == businessId)
+                    .Select(x => x.Id)
+                    .FirstAsync();
+                return RedirectToAction(MVC.Queue.Show(queueId));
+            }
+
             var queue = await Queue();
 
             if (queue == null)
@@ -82,7 +92,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [GET("/queue/{id:int}/business_view_queue_list")]
-        public virtual async Task<ActionResult> BusinessViewQueueList(int queueId)
+        public virtual async Task<ActionResult> BusinessViewQueueList(int id)
         {
             var queue = await Queue();
 

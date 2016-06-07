@@ -9,6 +9,7 @@ using AttributeRouting.Web.Mvc;
 using Plum.Models;
 using Plum.ViewModels.Account;
 using System.Data.Entity;
+using Plum.ViewModels.Shared;
 
 namespace Plum.Controllers
 {
@@ -94,6 +95,7 @@ namespace Plum.Controllers
         public virtual ActionResult SignOut()
         {
             AppSession.SignOut();
+            SuccessMessage("You have been signed out.");
             return RedirectToAction(MVC.Home.Index());
         }
     }

@@ -7,6 +7,7 @@ using FluentValidation;
 using FluentValidation.Attributes;
 using Humanizer;
 using Humanizer.Localisation;
+using Plum.Helpers;
 
 namespace Plum.ViewModels.Customer
 {
@@ -85,19 +86,9 @@ namespace Plum.ViewModels.Customer
                 .NotEmpty()
                 .WithMessage("Name is required.");
             RuleFor(x => x.PhoneNumber)
-                .Must(BeA10DigitPhoneNumber)
+                .Must(ValidationHelpers.BeA10DigitPhoneNumber)
                 .When(x => !string.IsNullOrWhiteSpace(x.PhoneNumber))
                 .WithMessage("Please enter a valid 10-digit phone number.");
-        }
-
-        public bool BeA10DigitPhoneNumber(string phoneNumber)
-        {
-            return phoneNumber
-                .Replace("(", string.Empty)
-                .Replace(")", string.Empty)
-                .Replace("-", string.Empty)
-                .Replace("#", string.Empty)
-                .Count(x => char.IsDigit(x)) == 10;
         }
     }
 }

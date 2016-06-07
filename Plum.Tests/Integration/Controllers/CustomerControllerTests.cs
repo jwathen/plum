@@ -168,7 +168,7 @@ namespace Plum.Tests.Integration.Controllers
             SetRouteId(customerId);
 
             _controller.WithCallTo(x => x.Destroy(customerId))
-                .ShouldRedirectTo(MVC.Businesses.Name, MVC.Queue.ActionNames.Show, new { id = TestBusiness.Id    });
+                .ShouldRedirectTo(MVC.Business.Name, MVC.Queue.ActionNames.Show, new { id = TestBusiness.Id    });
 
             Database.Customers.Find(customerId).ShouldNotBeNull();
         }
@@ -180,7 +180,7 @@ namespace Plum.Tests.Integration.Controllers
             SetRouteId(customerId);
 
             _controller.WithCallTo(x => x.Destroy(customerId))
-                .ShouldRedirectTo(MVC.Businesses.Name, MVC.Queue.ActionNames.Show, new { id = TestBusiness.Id });
+                .ShouldRedirectTo(MVC.Business.Name, MVC.Queue.ActionNames.Show, new { id = TestBusiness.Id });
         }
 
         public void SendReadyMessage_GivenValidCustomerId_SendsTheReadyTextMessage()
@@ -216,7 +216,7 @@ namespace Plum.Tests.Integration.Controllers
             short sortOrderBefore = customer.SortOrder;
 
             _controller.WithCallTo(x => x.MoveToEndOfList(customer.Id))
-                .ShouldRedirectTo(MVC.Businesses.Name, MVC.Businesses.ActionNames.Show, new { id = TestBusiness.Id });
+                .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.Show, new { id = TestBusiness.Id });
 
             short sortOrderAfter = Database.Customers.Find(customer.Id).SortOrder;
             sortOrderAfter.ShouldEqual(sortOrderBefore);
@@ -228,7 +228,7 @@ namespace Plum.Tests.Integration.Controllers
             int customerId = -1;
 
             _controller.WithCallTo(x => x.MoveToEndOfList(customerId))
-                .ShouldRedirectTo(MVC.Businesses.Name, MVC.Businesses.ActionNames.Show, new { id = TestBusiness.Id });
+                .ShouldRedirectTo(MVC.Business.Name, MVC.Business.ActionNames.Show, new { id = TestBusiness.Id });
         }
     }
 }

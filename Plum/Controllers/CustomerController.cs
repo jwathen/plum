@@ -39,7 +39,8 @@ namespace Plum.Controllers
 
             if (customer == null)
             {
-                return HttpNotFound();
+                ErrorMessage("We were unabled to find that customer.", "Maybe they've been removed from the list?");
+                return JavaScriptRedirect(Url.Action(MVC.Queue.Show(null)));
             }
             else if (!Security.UserOwns(customer))
             {
@@ -79,7 +80,7 @@ namespace Plum.Controllers
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToCustomers(queue.Id);
 
-            string url = Url.Action(MVC.Queue.Name, MVC.Queue.ActionNames.Show, new { id = queue.Id });
+            string url = Url.Action(MVC.Queue.Show(queue.Id));
             return JavaScriptRedirect(url);
         }
 
@@ -129,6 +130,7 @@ namespace Plum.Controllers
             model.MapTo(customer);
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToCustomers(customer.QueueId);
+            SuccessMessage("Customer changes saved.");
 
             return RedirectToAction(MVC.Queue.Show(customer.QueueId));
         }
@@ -167,7 +169,7 @@ namespace Plum.Controllers
                 return JavaScriptRedirect(Url.Action(MVC.Queue.Show(queueId)));
             }
 
-            return RedirectToAction(MVC.Businesses.Show(AppSession.BusinessId.Value));
+            return RedirectToAction(MVC.Business.Show(AppSession.BusinessId.Value));
         }
 
         [Authorize]
@@ -185,7 +187,7 @@ namespace Plum.Controllers
                 return View(MVC.Customer.Views.Show, customer);
             }
 
-            return RedirectToAction(MVC.Businesses.Show(AppSession.BusinessId.Value));
+            return RedirectToAction(MVC.Business.Show(AppSession.BusinessId.Value));
         }
 
         [Authorize]
@@ -205,7 +207,7 @@ namespace Plum.Controllers
                 return View(MVC.Customer.Views.Show, customer);
             }
 
-            return RedirectToAction(MVC.Businesses.Show(AppSession.BusinessId.Value));
+            return RedirectToAction(MVC.Business.Show(AppSession.BusinessId.Value));
         }
     }
 }

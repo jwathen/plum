@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using AttributeRouting.Web.Mvc;
 using System.Data.Entity;
+using Plum.ViewModels.Business;
 
 namespace Plum.Controllers
 {
@@ -42,6 +43,54 @@ namespace Plum.Controllers
             }
 
             return View(business);
+        }
+
+        [Authorize]
+        [GET("/business/{id:int}/edit")]
+        public virtual async Task<ActionResult> Edit(int id)
+        {
+            var business = await Business();
+
+            if (business == null)
+            {
+                return HttpNotFound();
+            }
+            else if (!Security.UserOwns(business))
+            {
+                return NotAuthorized();
+            }
+
+            var model = new BusinessViewModel();
+            model.CopyFrom(business);
+
+            return View(model);
+        }
+
+        [Authorize]
+        [PUT("/business/{id:int}")]
+        public virtual async Task<ActionResult> Update(BusinessViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var business = await Business();
+
+            if (business == null)
+            {
+                return HttpNotFound();
+            }
+            else if (!Security.UserOwns(business))
+            {
+                return NotAuthorized();
+            }
+
+            model.CopyTo(business);
+            await Database.SaveChangesAsync();
+            SuccessMessage("Business information updated.");
+
+            return RedirectToAction(MVC.Business.Show(business.Id));
         }
     }
 }

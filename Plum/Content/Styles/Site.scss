@@ -3,6 +3,24 @@ $brand-primary: $plum;
 $brand-info: #2196F3;
 $gray-light: #a6a6a6;
 
+.alert-success {
+    background-color: #dff0d8 !important;
+    border-color: #d6e9c6 !important;
+    color: #468847 !important;
+    .close {
+        color: #468847 !important;
+    }
+}
+
+.alert-danger {
+    background-color: #f2dede !important;
+    border-color: #eed3d7 !important;
+    color: #b94a48 !important;
+    .close {
+        color: #b94a48 !important;
+    }
+} 
+
 @import "PaperVariables.scss";
 @import "bootstrapsource/_bootstrap.scss";
 @import "Paper.scss";

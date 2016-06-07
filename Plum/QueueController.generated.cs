@@ -158,7 +158,7 @@ namespace Plum.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_BusinessViewQueueList
         {
-            public readonly string queueId = "queueId";
+            public readonly string id = "id";
         }
         static readonly ActionParamsClass_Sort s_params_Sort = new ActionParamsClass_Sort();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -223,10 +223,10 @@ namespace Plum.Controllers
         }
 
         [NonAction]
-        partial void ShowOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void ShowOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? id);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Show(int id)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Show(int? id)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Show, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
@@ -235,14 +235,14 @@ namespace Plum.Controllers
         }
 
         [NonAction]
-        partial void BusinessViewQueueListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int queueId);
+        partial void BusinessViewQueueListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> BusinessViewQueueList(int queueId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> BusinessViewQueueList(int id)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BusinessViewQueueList, "https");
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "queueId", queueId);
-            BusinessViewQueueListOverride(callInfo, queueId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            BusinessViewQueueListOverride(callInfo, id);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

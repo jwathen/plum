@@ -64,7 +64,35 @@ WriteLiteral("</h3>\r\n    <div");
 
 WriteLiteral(" class=\"button-stack\"");
 
-WriteLiteral(">\r\n        <button");
+WriteLiteral(">\r\n");
+
+            
+            #line 10 "..\..\Views\Queue\ShowCustomer.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 10 "..\..\Views\Queue\ShowCustomer.cshtml"
+         if (Model.Queue.Business.HasPhoneNumber())
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 249), Tuple.Create("\"", 294)
+, Tuple.Create(Tuple.Create("", 256), Tuple.Create("tel:", 256), true)
+            
+            #line 12 "..\..\Views\Queue\ShowCustomer.cshtml"
+, Tuple.Create(Tuple.Create("", 260), Tuple.Create<System.Object, System.Int32>(Model.Queue.Business.PhoneNumber
+            
+            #line default
+            #line hidden
+, 260), false)
+, Tuple.Create(Tuple.Create("", 293), Tuple.Create(")", 293), true)
+);
 
 WriteLiteral(" class=\"btn btn-block btn-default\"");
 
@@ -72,20 +100,47 @@ WriteLiteral(">\r\n            <i");
 
 WriteLiteral(" class=\"fa fa-phone\"");
 
-WriteLiteral("></i>\r\n            Call The City Brewery\r\n            <span");
+WriteLiteral("></i>\r\n            Call ");
 
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">(602-890-3306)</span>\r\n        </button>\r\n        <form");
-
-WriteAttribute("action", Tuple.Create(" action=\"", 395), Tuple.Create("\"", 465)
             
-            #line 15 "..\..\Views\Queue\ShowCustomer.cshtml"
-, Tuple.Create(Tuple.Create("", 404), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.DestroyWithUrlToken(Model.UrlToken))
+            #line 14 "..\..\Views\Queue\ShowCustomer.cshtml"
+            Write(Model.Queue.Business.Name);
+
             
             #line default
             #line hidden
-, 404), false)
+WriteLiteral("\r\n            <span");
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">(");
+
+            
+            #line 15 "..\..\Views\Queue\ShowCustomer.cshtml"
+                                 Write(Html.PhoneNumberDashes(Model.Queue.Business.PhoneNumber));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(")</span>\r\n        </a>\r\n");
+
+            
+            #line 17 "..\..\Views\Queue\ShowCustomer.cshtml"
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        <form");
+
+WriteAttribute("action", Tuple.Create(" action=\"", 561), Tuple.Create("\"", 631)
+            
+            #line 18 "..\..\Views\Queue\ShowCustomer.cshtml"
+, Tuple.Create(Tuple.Create("", 570), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.DestroyWithUrlToken(Model.UrlToken))
+            
+            #line default
+            #line hidden
+, 570), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -107,7 +162,7 @@ WriteLiteral("></i>\r\n                Cancel Place In Line\r\n            </but
 WriteLiteral("            ");
 
             
-            #line 20 "..\..\Views\Queue\ShowCustomer.cshtml"
+            #line 23 "..\..\Views\Queue\ShowCustomer.cshtml"
        Write(Html.HttpMethodOverride(HttpVerbs.Delete));
 
             
@@ -118,7 +173,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 21 "..\..\Views\Queue\ShowCustomer.cshtml"
+            #line 24 "..\..\Views\Queue\ShowCustomer.cshtml"
        Write(Html.AntiForgeryToken2());
 
             
@@ -133,7 +188,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 26 "..\..\Views\Queue\ShowCustomer.cshtml"
+            #line 29 "..\..\Views\Queue\ShowCustomer.cshtml"
    Write(Html.Partial(MVC.Queue.Views.CustomerViewQueueList, Model));
 
             
@@ -147,7 +202,7 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
 " \'");
 
             
-            #line 32 "..\..\Views\Queue\ShowCustomer.cshtml"
+            #line 35 "..\..\Views\Queue\ShowCustomer.cshtml"
                                Write(Model.UrlToken);
 
             
@@ -156,7 +211,7 @@ WriteLiteral("\r\n    <script>\r\n        window.viewData = {};\r\n        windo
 WriteLiteral("\';\r\n        window.viewData.udpateCustomerViewQueueListUrl = \'");
 
             
-            #line 33 "..\..\Views\Queue\ShowCustomer.cshtml"
+            #line 36 "..\..\Views\Queue\ShowCustomer.cshtml"
                                                      Write(Url.Action(MVC.Queue.CustomerViewQueueList(Model.UrlToken)));
 
             
@@ -164,14 +219,14 @@ WriteLiteral("\';\r\n        window.viewData.udpateCustomerViewQueueListUrl = \'
             #line hidden
 WriteLiteral("\';\r\n    </script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1279), Tuple.Create("\"", 1358)
+WriteAttribute("src", Tuple.Create(" src=\"", 1445), Tuple.Create("\"", 1524)
             
-            #line 35 "..\..\Views\Queue\ShowCustomer.cshtml"
-, Tuple.Create(Tuple.Create("", 1285), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.ShowCustomer_es5_min_js)
+            #line 38 "..\..\Views\Queue\ShowCustomer.cshtml"
+, Tuple.Create(Tuple.Create("", 1451), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.ShowCustomer_es5_min_js)
             
             #line default
             #line hidden
-, 1285), false)
+, 1451), false)
 );
 
 WriteLiteral("></script>\r\n");

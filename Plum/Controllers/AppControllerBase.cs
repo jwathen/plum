@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Plum.Models;
 using Plum.Services;
+using Plum.ViewModels.Shared;
 using Plum.Web;
 
 namespace Plum.Controllers
@@ -77,9 +78,33 @@ namespace Plum.Controllers
             return RedirectToAction(MVC.Home.ActionNames.NotAuthorized, MVC.Home.Name);
         }
 
-        protected JavaScriptResult JavaScriptRedirect(string url)
+        protected ContentResult JavaScriptRedirect(string url)
         {
-            return JavaScript($"window.location.href = '{url}';");
+            return new ContentResult
+            {
+                Content = $"<script>window.location.href = '{url}';</script>",
+                ContentType = "text/html"
+            };
+        }
+
+        protected void SetFlash(FlashMessage.AlertType alertType, string text, string minorText = null)
+        {
+            TempData["FlashMessage"] = new FlashMessage
+            {
+                Type = alertType,
+                Text = text,
+                MinorText = minorText
+            };
+        }
+
+        protected void SuccessMessage(string text, string minorText = null)
+        {
+            SetFlash(FlashMessage.AlertType.Success, text, minorText);
+        }
+
+        protected void ErrorMessage(string text, string minorText = null)
+        {
+            SetFlash(FlashMessage.AlertType.Danger, text, minorText);
         }
 
         protected override void Dispose(bool disposing)

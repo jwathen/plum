@@ -38,10 +38,12 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _FlashMessage = "_FlashMessage";
                 public readonly string _Layout = "_Layout";
                 public readonly string _VIewStart = "_VIewStart";
                 public readonly string Error = "Error";
             }
+            public readonly string _FlashMessage = "~/Views/Shared/_FlashMessage.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _VIewStart = "~/Views/Shared/_VIewStart.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";
