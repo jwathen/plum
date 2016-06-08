@@ -117,7 +117,7 @@ namespace Plum.Tests.Integration.Controllers
             SetRouteId(customerId);
 
             var model = new CustomerViewModel();
-            model.MapFrom(customer);
+            model.CopyFrom(customer);
 
             model.Name = "New Name";
             model.Note = "New Note";
@@ -126,7 +126,7 @@ namespace Plum.Tests.Integration.Controllers
             model.QuotedTimeInMinutes = 150;
 
             _controller.WithCallTo(x => x.Update(model))
-                .ShouldRedirectTo(MVC.Queue.Name, MVC.Customer.ActionNames.Show, new { id = customer.QueueId });
+                .ShouldRedirectTo(MVC.Customer.Name, MVC.Customer.ActionNames.Show, new { id = customerId });
 
             customer = TestBusiness.Queues.First().Customers.First();
             customer.Name.ShouldEqual("New Name");

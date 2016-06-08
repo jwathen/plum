@@ -170,13 +170,13 @@ WriteLiteral("\r\n");
             #line hidden
 WriteLiteral("                    <span");
 
-WriteLiteral(" class=\"text-danger\"");
+WriteLiteral(" class=\"text-danger text-nowrap\"");
 
 WriteLiteral(">(Quoted ");
 
             
             #line 27 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
-                                                 Write(customer.QuotedTimeWords());
+                                                             Write(customer.QuotedTimeWords());
 
             
             #line default
@@ -194,13 +194,13 @@ WriteLiteral(")</span>\r\n");
             #line hidden
 WriteLiteral("                    <span");
 
-WriteLiteral(" class=\"text-muted\"");
+WriteLiteral(" class=\"text-muted text-nowrap\"");
 
 WriteLiteral(">(Quoted ");
 
             
             #line 31 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
-                                                Write(customer.QuotedTimeWords());
+                                                            Write(customer.QuotedTimeWords());
 
             
             #line default

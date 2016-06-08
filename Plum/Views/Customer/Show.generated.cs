@@ -32,7 +32,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Customer/Show.cshtml")]
-    public partial class _Views_Customer_Show_cshtml : Plum.Web.ApplicationViewBase<Plum.Models.Customer>
+    public partial class _Views_Customer_Show_cshtml : Plum.Web.ApplicationViewBase<Plum.ViewModels.Customer.CustomerViewModel>
     {
         public _Views_Customer_Show_cshtml()
         {
@@ -43,7 +43,6 @@ namespace ASP
             #line 2 "..\..\Views\Customer\Show.cshtml"
   
     Layout = null;
-    bool customerIsLastInline = Model.Queue.OrderedCustomers().Last() == Model;
 
             
             #line default
@@ -57,8 +56,6 @@ WriteLiteral(">\r\n    <div");
 WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
 
 WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" id=\"ManageCustomerModal\"");
 
 WriteLiteral(" class=\"modal-content\"");
 
@@ -83,7 +80,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 15 "..\..\Views\Customer\Show.cshtml"
+            #line 14 "..\..\Views\Customer\Show.cshtml"
                Write(Model.Name);
 
             
@@ -92,7 +89,7 @@ WriteLiteral("                    ");
 WriteLiteral(" (");
 
             
-            #line 15 "..\..\Views\Customer\Show.cshtml"
+            #line 14 "..\..\Views\Customer\Show.cshtml"
                             Write(Model.NumberInParty);
 
             
@@ -101,375 +98,40 @@ WriteLiteral(" (");
 WriteLiteral(") - ");
 
             
-            #line 15 "..\..\Views\Customer\Show.cshtml"
-                                                    Write(Model.TimeWaited().Humanize());
+            #line 14 "..\..\Views\Customer\Show.cshtml"
+                                                    Write(Model.Customer.TimeWaited().Humanize());
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                </h4>\r\n            </div>\r\n            <div");
 
-WriteLiteral(" class=\"modal-body button-stack\"");
+WriteLiteral(" class=\"modal-body\"");
 
 WriteLiteral(">\r\n");
 
-            
-            #line 19 "..\..\Views\Customer\Show.cshtml"
-                
-            
-            #line default
-            #line hidden
-            
-            #line 19 "..\..\Views\Customer\Show.cshtml"
-                 if (!string.IsNullOrWhiteSpace(Model.Note))
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    <p>\r\n                        Note: <em>");
-
-            
-            #line 22 "..\..\Views\Customer\Show.cshtml"
-                             Write(Model.Note);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</em>\r\n                    </p>\r\n");
-
-            
-            #line 24 "..\..\Views\Customer\Show.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
 WriteLiteral("                ");
 
             
-            #line 25 "..\..\Views\Customer\Show.cshtml"
-                 if (Model.HasPhoneNumber())
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    <p>\r\n                        <em>");
-
-            
-            #line 28 "..\..\Views\Customer\Show.cshtml"
-                       Write(Html.PhoneNumber(Model.PhoneNumber));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</em>\r\n                    </p>\r\n");
-
-            
-            #line 30 "..\..\Views\Customer\Show.cshtml"
-                    using (Ajax.BeginForm(MVC.Customer.SendReadyMessage(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
-                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                        <button");
-
-WriteLiteral(" class=\"btn btn-block btn-primary\"");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-comment\"");
-
-WriteLiteral("></i>\r\n                            Send &quot;Ready&quot; Message\r\n              " +
-"          </button>\r\n");
-
-            
-            #line 36 "..\..\Views\Customer\Show.cshtml"
-                        
-            
-            #line default
-            #line hidden
-            
-            #line 36 "..\..\Views\Customer\Show.cshtml"
-                   Write(Html.AntiForgeryToken2());
-
-            
-            #line default
-            #line hidden
-            
-            #line 36 "..\..\Views\Customer\Show.cshtml"
-                                                 
-                    }
-                }
-                else
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    <p>\r\n                        <em>No phone number.</em>\r\n     " +
-"               </p>\r\n");
-
-WriteLiteral("                    <button");
-
-WriteLiteral(" class=\"btn btn-block btn-primary\"");
-
-WriteLiteral(" disabled=\"disabled\"");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(">\r\n                        <i");
-
-WriteLiteral(" class=\"fa fa-comment\"");
-
-WriteLiteral("></i>\r\n                        Send &quot;Table Ready&quot; Message\r\n            " +
-"        </button>\r\n");
-
-            
-            #line 48 "..\..\Views\Customer\Show.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <form");
-
-WriteAttribute("action", Tuple.Create(" action=\"", 2059), Tuple.Create("\"", 2111)
-            
-            #line 49 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 2068), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Destroy(Model.Id))
-            
-            #line default
-            #line hidden
-, 2068), false)
-);
-
-WriteLiteral(" method=\"post\"");
-
-WriteLiteral(" data-loading-overlay=\"true\"");
-
-WriteLiteral(">\r\n                    <button");
-
-WriteLiteral(" data-confirm=\"Are you sure?\"");
-
-WriteLiteral(" data-confirm-prompt=\"Are you sure you want to remove ");
-
-            
-            #line 50 "..\..\Views\Customer\Show.cshtml"
-                                                                                                         Write(HttpUtility.HtmlAttributeEncode(Model.Name));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" from the list?\"");
-
-WriteLiteral(" class=\"btn btn-block btn-default\"");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteLiteral(">Remove From List</button>\r\n");
-
-WriteLiteral("                    ");
-
-            
-            #line 51 "..\..\Views\Customer\Show.cshtml"
-               Write(Html.HttpMethodOverride(HttpVerbs.Delete));
+            #line 18 "..\..\Views\Customer\Show.cshtml"
+           Write(Html.FlashMessage());
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                ");
 
             
-            #line 52 "..\..\Views\Customer\Show.cshtml"
-               Write(Html.AntiForgeryToken2());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                </form>\r\n");
-
-            
-            #line 54 "..\..\Views\Customer\Show.cshtml"
-                
-            
-            #line default
-            #line hidden
-            
-            #line 54 "..\..\Views\Customer\Show.cshtml"
-                 if (!customerIsLastInline)
-                {
-                    using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
-                    {
+            #line 19 "..\..\Views\Customer\Show.cshtml"
+           Write(Html.DisplayForModel());
 
             
             #line default
             #line hidden
-WriteLiteral("                        <button");
-
-WriteLiteral(" class=\"btn btn-block btn-default\"");
-
-WriteLiteral(" data-confirm=\"Are you sure?\"");
-
-WriteLiteral(" data-confirm-prompt=\"Are you sure you want to move ");
-
-            
-            #line 58 "..\..\Views\Customer\Show.cshtml"
-                                                                                                                                             Write(HttpUtility.HtmlAttributeEncode(Model.Name));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" to the end of the list?\"");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteLiteral(">\r\n                            Move to End of List\r\n                        </but" +
-"ton>                        \r\n");
-
-            
-            #line 61 "..\..\Views\Customer\Show.cshtml"
-                        
-            
-            #line default
-            #line hidden
-            
-            #line 61 "..\..\Views\Customer\Show.cshtml"
-                   Write(Html.AntiForgeryToken2());
-
-            
-            #line default
-            #line hidden
-            
-            #line 61 "..\..\Views\Customer\Show.cshtml"
-                                                 
-                    }
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 3272), Tuple.Create("\"", 3319)
-            
-            #line 64 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 3279), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Edit(Model.Id))
-            
-            #line default
-            #line hidden
-, 3279), false)
-);
-
-WriteLiteral(" id=\"red\"");
-
-WriteLiteral(" data-loading-overlay=\"true\"");
-
-WriteLiteral(" class=\"btn btn-block btn-default\"");
-
-WriteLiteral(">Edit Party</a>\r\n");
-
-            
-            #line 65 "..\..\Views\Customer\Show.cshtml"
-                
-            
-            #line default
-            #line hidden
-            
-            #line 65 "..\..\Views\Customer\Show.cshtml"
-                 if (Model.LogEntries.Any())
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    <h5>\r\n                        History\r\n                    </" +
-"h5>\r\n");
-
-WriteLiteral("                    <div");
-
-WriteLiteral(" class=\"history\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 71 "..\..\Views\Customer\Show.cshtml"
-                        
-            
-            #line default
-            #line hidden
-            
-            #line 71 "..\..\Views\Customer\Show.cshtml"
-                         foreach (var entry in Model.LogEntries.OrderByDescending(x => x.Id))
-                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            <p>\r\n                                <i");
-
-WriteAttribute("class", Tuple.Create(" class=\"", 3791), Tuple.Create("\"", 3815)
-, Tuple.Create(Tuple.Create("", 3799), Tuple.Create("fa", 3799), true)
-            
-            #line 74 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3801), Tuple.Create<System.Object, System.Int32>(entry.Icon()
-            
-            #line default
-            #line hidden
-, 3802), false)
-);
-
-WriteLiteral("></i>\r\n");
-
-WriteLiteral("                                ");
-
-            
-            #line 75 "..\..\Views\Customer\Show.cshtml"
-                           Write(entry.Message);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                <span");
-
-WriteLiteral(" class=\"text-muted text-nowrap\"");
-
-WriteLiteral(">");
-
-            
-            #line 76 "..\..\Views\Customer\Show.cshtml"
-                                                                Write(entry.Age().Humanize());
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" ago</span>\r\n                            </p>\r\n");
-
-            
-            #line 78 "..\..\Views\Customer\Show.cshtml"
-                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    </div>\r\n");
-
-            
-            #line 80 "..\..\Views\Customer\Show.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<script>\r\n    initConfirm" +
-"ationModals(\'#ManageCustomerModal\');\r\n    initLoadingOverlays(\'#ManageCustomerMo" +
-"dal\');\r\n</script>\r\n");
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<script>initAjaxLoadLin" +
+"ks(\'#ShowCustomerModal\');</script>\r\n");
 
         }
     }

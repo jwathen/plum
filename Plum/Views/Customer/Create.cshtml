@@ -1,4 +1,7 @@
 ﻿@model Plum.ViewModels.Customer.CustomerViewModel
+@{ 
+    Layout = null;
+}
 
 @using (Ajax.BeginForm(MVC.Customer.Create(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "CreateCustomerModal" }))
 {
@@ -28,3 +31,4 @@
         </div>
     </div>
 }
+<script>clearLoading();</script>

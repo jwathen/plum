@@ -21,7 +21,6 @@ namespace Plum.Controllers
 
         [Authorize]
         [HttpGet, Route("customer/{id:int}")]
-        [Route("customer")]
         public virtual async Task<ActionResult> Show(int id)
         {
             var customer = await Customer();
@@ -36,7 +35,10 @@ namespace Plum.Controllers
                 return NotAuthorized();
             }
 
-            return View(customer);
+            var model = new CustomerViewModel();
+            model.CopyFrom(customer);
+
+            return View(model);
         }
 
         [Authorize]
@@ -56,7 +58,7 @@ namespace Plum.Controllers
             }
 
             var customer = new Plum.Models.Customer();
-            model.MapTo(customer);
+            model.CopyTo(customer);
 
             customer.Log(Models.CustomerLogEntryType.AddedToList, "Party added to wait list.");
             customer.SortOrder = queue.Customers.OrderBy(x => x.SortOrder).Select(x => x.SortOrder).LastOrDefault();
@@ -81,7 +83,7 @@ namespace Plum.Controllers
             if (_result != null) return _result;
 
             var model = new CustomerViewModel();
-            model.MapFrom(customer);
+            model.CopyFrom(customer);
 
             return View(model);
         }
@@ -105,12 +107,13 @@ namespace Plum.Controllers
                 return NotAuthorized();
             }
 
-            model.MapTo(customer);
+            model.CopyTo(customer);
             await Database.SaveChangesAsync();
+            await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId);
             await UpdateHub.BroadcastQueueUpdateToCustomers(customer.QueueId);
             SuccessMessage("Customer changes saved.");
 
-            return RedirectToAction(MVC.Queue.Show(customer.QueueId));
+            return RedirectToAction(MVC.Customer.Show(customer.Id));
         }
 
         [ValidateAntiForgeryToken]
@@ -162,7 +165,10 @@ namespace Plum.Controllers
             int queueId = customer.Queue.Id;
             await customer.SendReadyTextMessageAsync(TextMessageService, Url);
             await Database.SaveChangesAsync();
-            return View(MVC.Customer.Views.Show, customer);
+
+            var model = new CustomerViewModel();
+            model.CopyFrom(customer);
+            return View(MVC.Customer.Views.Show, model);
         }
 
         [Authorize]
@@ -178,7 +184,10 @@ namespace Plum.Controllers
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
             await UpdateHub.BroadcastQueueUpdateToBusiness(queueId);
-            return View(MVC.Customer.Views.Show, customer);
+
+            var model = new CustomerViewModel();
+            model.CopyFrom(customer);
+            return View(MVC.Customer.Views.Show, model);
         }
     }
 }

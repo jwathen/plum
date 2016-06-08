@@ -24,11 +24,11 @@ else if (Model.Customers.Count() > 1)
             {
                 if (customer.TimeWaited().TotalMinutes > customer.QuotedTimeInMinutes.Value)
                 {
-                    <span class="text-danger">(Quoted @customer.QuotedTimeWords())</span>
+                    <span class="text-danger text-nowrap">(Quoted @customer.QuotedTimeWords())</span>
                 }
                 else
                 {
-                    <span class="text-muted">(Quoted @customer.QuotedTimeWords())</span>
+                    <span class="text-muted text-nowrap">(Quoted @customer.QuotedTimeWords())</span>
                 }
             }
         </li>

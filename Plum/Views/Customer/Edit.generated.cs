@@ -39,118 +39,156 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<div");
+            
+            #line 2 "..\..\Views\Customer\Edit.cshtml"
+  
+    Layout = null;
 
-WriteLiteral(" class=\"container\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n<div");
+
+WriteLiteral(" class=\"vertical-alignment-helper\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"row\"");
+WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-6 col-md-offset-3\"");
+WriteLiteral(" class=\"modal-content\"");
 
-WriteLiteral(">\r\n            <p>\r\n                <strong>\r\n                    <a");
+WriteLiteral(">\r\n            <div");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 214), Tuple.Create("\"", 263)
-            
-            #line 8 "..\..\Views\Customer\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 221), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
-            
-            #line default
-            #line hidden
-, 221), false)
-);
+WriteLiteral(" class=\"modal-header\"");
 
-WriteLiteral(" data-loading-overlay=\"true\"");
+WriteLiteral(">\r\n                <button");
 
-WriteLiteral(">\r\n                        <i");
+WriteLiteral(" class=\"close\"");
 
-WriteLiteral(" class=\"fa fa-chevron-left\"");
+WriteLiteral(" type=\"button\"");
 
-WriteLiteral("></i>\r\n                        Back to List\r\n                    </a>\r\n          " +
-"      </strong>\r\n            </p>\r\n            <h2>Edit Party</h2>\r\n            " +
-"<form");
+WriteLiteral(" data-dismiss=\"modal\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 514), Tuple.Create("\"", 557)
-            
-            #line 15 "..\..\Views\Customer\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 523), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Update())
-            
-            #line default
-            #line hidden
-, 523), false)
-);
+WriteLiteral(">\r\n                    &times;\r\n                </button>\r\n                <h4");
 
-WriteLiteral(" method=\"post\"");
+WriteLiteral(" class=\"modal-title\"");
 
-WriteLiteral(" data-loading-overlay=\"true\"");
+WriteLiteral(">\r\n                    Edit Party\r\n                </h4>\r\n            </div>\r\n   " +
+"         <div");
+
+WriteLiteral(" class=\"modal-body\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
-
             
-            #line 16 "..\..\Views\Customer\Edit.cshtml"
-           Write(Html.ValidationSummary());
+            #line 18 "..\..\Views\Customer\Edit.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 18 "..\..\Views\Customer\Edit.cshtml"
+                 using (Ajax.BeginForm(MVC.Customer.Update(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
+                {
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 20 "..\..\Views\Customer\Edit.cshtml"
+               Write(Html.EditorForModel());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
-
             
-            #line 17 "..\..\Views\Customer\Edit.cshtml"
-           Write(Html.EditorForModel());
+            #line 20 "..\..\Views\Customer\Edit.cshtml"
+                                          
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                <input");
+WriteLiteral("                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"btn btn-default pull-left\"");
+
+WriteLiteral("\r\n                       data-loading-overlay=\"true\"");
+
+WriteLiteral("\r\n                       data-ajax-load=\"true\"");
+
+WriteLiteral("\r\n                       data-ajax-load-target=\"#ShowCustomerModal\"");
+
+WriteLiteral("\r\n                       data-ajax-load-url=\"");
+
+            
+            #line 25 "..\..\Views\Customer\Edit.cshtml"
+                                      Write(Url.Action(MVC.Customer.Show(Model.Id)));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\"");
+
+WriteLiteral(">\r\n                        Cancel\r\n                    </a>\r\n");
+
+WriteLiteral("                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteLiteral(" class=\"btn btn-block btn-primary\"");
-
 WriteLiteral(" value=\"Save Changes\"");
+
+WriteLiteral(" class=\"btn btn-primary pull-right\"");
 
 WriteLiteral(" />\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                    <div");
+
+WriteLiteral(" class=\"clearfix\"");
+
+WriteLiteral("></div>\r\n");
 
             
-            #line 19 "..\..\Views\Customer\Edit.cshtml"
-           Write(Html.HttpMethodOverride(HttpVerbs.Put));
+            #line 30 "..\..\Views\Customer\Edit.cshtml"
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 30 "..\..\Views\Customer\Edit.cshtml"
+               Write(Html.HttpMethodOverride(HttpVerbs.Put));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
-
             
-            #line 20 "..\..\Views\Customer\Edit.cshtml"
-           Write(Html.HiddenFor(x => x.QueueId));
+            #line 30 "..\..\Views\Customer\Edit.cshtml"
+                                                           
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 31 "..\..\Views\Customer\Edit.cshtml"
+               Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
-
             
-            #line 21 "..\..\Views\Customer\Edit.cshtml"
-           Write(Html.AntiForgeryToken2());
+            #line 31 "..\..\Views\Customer\Edit.cshtml"
+                                             
+                }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>");
+WriteLiteral("            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<script>initAjaxLoadLinks" +
+"(\'#ShowCustomerModal\');</script>\r\n<script>initFormatters(\'#ShowCustomerModal\');<" +
+"/script>");
 
         }
     }

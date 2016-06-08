@@ -546,6 +546,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShowSignInInformation.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\CustomerViewModel.generated.cs">
+      <DependentUpon>CustomerViewModel.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Customer\Edit.generated.cs">
       <DependentUpon>Edit.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -772,6 +777,10 @@
     <Content Include="Views\Business\EditTextMessages.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>EditTextMessages.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\CustomerViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CustomerViewModel.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

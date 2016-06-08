@@ -1,25 +1,38 @@
 ﻿@model Plum.ViewModels.Customer.CustomerViewModel
+@{
+    Layout = null;
+}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <p>
-                <strong>
-                    <a href="@Url.Action(MVC.Queue.Show(Model.QueueId))" data-loading-overlay="true">
-                        <i class="fa fa-chevron-left"></i>
-                        Back to List
+<div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    Edit Party
+                </h4>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm(MVC.Customer.Update(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
+                {
+                    @Html.EditorForModel()
+                    <a href="#" class="btn btn-default pull-left"
+                       data-loading-overlay="true"
+                       data-ajax-load="true"
+                       data-ajax-load-target="#ShowCustomerModal"
+                       data-ajax-load-url="@Url.Action(MVC.Customer.Show(Model.Id))">
+                        Cancel
                     </a>
-                </strong>
-            </p>
-            <h2>Edit Party</h2>
-            <form action="@Url.Action(MVC.Customer.Update())" method="post" data-loading-overlay="true">
-                @Html.ValidationSummary()
-                @Html.EditorForModel()
-                <input type="submit" class="btn btn-block btn-primary" value="Save Changes" />
-                @Html.HttpMethodOverride(HttpVerbs.Put)
-                @Html.HiddenFor(x => x.QueueId)
-                @Html.AntiForgeryToken2()
-            </form>
+                    <input type="submit" value="Save Changes" class="btn btn-primary pull-right" />
+                    <div class="clearfix"></div>
+                    @Html.HttpMethodOverride(HttpVerbs.Put)
+                    @Html.AntiForgeryToken2()
+                }
+            </div>
         </div>
     </div>
 </div>
+<script>initAjaxLoadLinks('#ShowCustomerModal');</script>
+<script>initFormatters('#ShowCustomerModal');</script>

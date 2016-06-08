@@ -40,7 +40,17 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Customer\Create.cshtml"
+            #line 2 "..\..\Views\Customer\Create.cshtml"
+   
+    Layout = null;
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n");
+
+            
+            #line 6 "..\..\Views\Customer\Create.cshtml"
  using (Ajax.BeginForm(MVC.Customer.Create(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "CreateCustomerModal" }))
 {
 
@@ -86,7 +96,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 18 "..\..\Views\Customer\Create.cshtml"
+            #line 21 "..\..\Views\Customer\Create.cshtml"
                    Write(Html.ValidationSummary());
 
             
@@ -97,7 +107,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 19 "..\..\Views\Customer\Create.cshtml"
+            #line 22 "..\..\Views\Customer\Create.cshtml"
                    Write(Html.EditorForModel());
 
             
@@ -120,7 +130,7 @@ WriteLiteral(" />\r\n                </div>\r\n");
 WriteLiteral("                ");
 
             
-            #line 25 "..\..\Views\Customer\Create.cshtml"
+            #line 28 "..\..\Views\Customer\Create.cshtml"
            Write(Html.HiddenFor(x => x.QueueId));
 
             
@@ -131,7 +141,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 26 "..\..\Views\Customer\Create.cshtml"
+            #line 29 "..\..\Views\Customer\Create.cshtml"
            Write(Html.AntiForgeryToken2());
 
             
@@ -140,12 +150,14 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 30 "..\..\Views\Customer\Create.cshtml"
+            #line 33 "..\..\Views\Customer\Create.cshtml"
 }
 
             
             #line default
             #line hidden
+WriteLiteral("<script>clearLoading();</script>\r\n");
+
         }
     }
 }

@@ -30,8 +30,9 @@ namespace Plum.ViewModels.Customer
         public string PhoneNumber { get; set; }
         public int? QuotedTimeInMinutes { get; set; }
         public string Note { get; set; }
+        public Models.Customer Customer { get; set; }
 
-        public void MapFrom(Models.Customer customer)
+        public void CopyFrom(Models.Customer customer)
         {
             Id = customer.Id;
             QueueId = customer.QueueId;
@@ -40,9 +41,10 @@ namespace Plum.ViewModels.Customer
             PhoneNumber = customer.PhoneNumber;
             QuotedTimeInMinutes = customer.QuotedTimeInMinutes;
             Note = customer.Note;
+            Customer = customer;
         }
 
-        public void MapTo(Models.Customer customer)
+        public void CopyTo(Models.Customer customer)
         {
             customer.QueueId = QueueId;
             customer.Name = Name;

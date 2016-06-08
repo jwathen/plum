@@ -39,7 +39,14 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<div");
+            
+            #line 3 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+Write(Html.HiddenFor(x => x.QueueId));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n<div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -53,14 +60,14 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n            <label");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 152), Tuple.Create("\"", 182)
+WriteAttribute("for", Tuple.Create(" for=\"", 185), Tuple.Create("\"", 215)
             
-            #line 6 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-, Tuple.Create(Tuple.Create("", 158), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.Name)
+            #line 7 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+, Tuple.Create(Tuple.Create("", 191), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.Name)
             
             #line default
             #line hidden
-, 158), false)
+, 191), false)
 );
 
 WriteLiteral(">\r\n                Name\r\n                <span");
@@ -72,7 +79,7 @@ WriteLiteral(">*</span>\r\n            </label>\r\n");
 WriteLiteral("            ");
 
             
-            #line 10 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 11 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
        Write(Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" }));
 
             
@@ -91,7 +98,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 15 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 16 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
        Write(Html.LabelFor(x => x.PhoneNumber, "Phone Number"));
 
             
@@ -102,7 +109,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 16 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 17 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
        Write(Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-lg", type = "tel", data_formatter = "phone" }));
 
             
@@ -122,14 +129,14 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n            <label");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 788), Tuple.Create("\"", 827)
+WriteAttribute("for", Tuple.Create(" for=\"", 821), Tuple.Create("\"", 860)
             
-            #line 23 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
-, Tuple.Create(Tuple.Create("", 794), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.NumberInParty)
+            #line 24 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+, Tuple.Create(Tuple.Create("", 827), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.NumberInParty)
             
             #line default
             #line hidden
-, 794), false)
+, 827), false)
 );
 
 WriteLiteral(">\r\n                Number in Party\r\n            </label>\r\n");
@@ -137,7 +144,7 @@ WriteLiteral(">\r\n                Number in Party\r\n            </label>\r\n")
 WriteLiteral("            ");
 
             
-            #line 26 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 27 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
        Write(Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control input-lg" }));
 
             
@@ -156,7 +163,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 31 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 32 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
        Write(Html.LabelFor(x => x.QuotedTimeInMinutes, "Quoted Wait Time"));
 
             
@@ -167,7 +174,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 32 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 33 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
        Write(Html.DropDownListFor(x => x.QuotedTimeInMinutes, Model.GetQuotedWaitTimeOptions(), "None", new { @class = "form-control input-lg" }));
 
             
@@ -182,7 +189,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("    ");
 
             
-            #line 37 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 38 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
 Write(Html.LabelFor(x => x.Note));
 
             
@@ -193,7 +200,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 38 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
+            #line 39 "..\..\Views\Shared\EditorTemplates\CustomerViewModel.cshtml"
 Write(Html.TextBoxFor(x => x.Note, new { @class = "form-control" }));
 
             

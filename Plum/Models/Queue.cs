@@ -37,7 +37,7 @@ namespace Plum.Models
         {
             this.Customers.Add(customer);
             customer.Queue = this;
-            await customer.SendReadyTextMessageAsync(textMessageService, url);
+            await customer.SendWelcomeTextMessageAsync(textMessageService, url);
         }
 
         public void MoveCustomerToEndOfList(Customer customer)

@@ -1,88 +1,24 @@
-﻿@model Plum.Models.Customer
+﻿@model Plum.ViewModels.Customer.CustomerViewModel
 @{
     Layout = null;
-    bool customerIsLastInline = Model.Queue.OrderedCustomers().Last() == Model;
 }
 
 <div class="vertical-alignment-helper">
     <div class="modal-dialog vertical-align-center">
-        <div id="ManageCustomerModal" class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal">
                     &times;
                 </button>
                 <h4 class="modal-title">
-                    @Model.Name (@Model.NumberInParty) - @Model.TimeWaited().Humanize()
+                    @Model.Name (@Model.NumberInParty) - @Model.Customer.TimeWaited().Humanize()
                 </h4>
             </div>
-            <div class="modal-body button-stack">
-                @if (!string.IsNullOrWhiteSpace(Model.Note))
-                {
-                    <p>
-                        Note: <em>@Model.Note</em>
-                    </p>
-                }
-                @if (Model.HasPhoneNumber())
-                {
-                    <p>
-                        <em>@Html.PhoneNumber(Model.PhoneNumber)</em>
-                    </p>
-                    using (Ajax.BeginForm(MVC.Customer.SendReadyMessage(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
-                    {
-                        <button class="btn btn-block btn-primary" type="submit">
-                            <i class="fa fa-comment"></i>
-                            Send &quot;Ready&quot; Message
-                        </button>
-                        @Html.AntiForgeryToken2()
-                    }
-                }
-                else
-                {
-                    <p>
-                        <em>No phone number.</em>
-                    </p>
-                    <button class="btn btn-block btn-primary" disabled="disabled" type="button">
-                        <i class="fa fa-comment"></i>
-                        Send &quot;Table Ready&quot; Message
-                    </button>
-                }
-                <form action="@Url.Action(MVC.Customer.Destroy(Model.Id))" method="post" data-loading-overlay="true">
-                    <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to remove @HttpUtility.HtmlAttributeEncode(Model.Name) from the list?" class="btn btn-block btn-default" type="submit">Remove From List</button>
-                    @Html.HttpMethodOverride(HttpVerbs.Delete)
-                    @Html.AntiForgeryToken2()
-                </form>
-                @if (!customerIsLastInline)
-                {
-                    using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
-                    {
-                        <button class="btn btn-block btn-default" data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to move @HttpUtility.HtmlAttributeEncode(Model.Name) to the end of the list?" type="submit">
-                            Move to End of List
-                        </button>                        
-                        @Html.AntiForgeryToken2()
-                    }
-                }
-                <a href="@Url.Action(MVC.Customer.Edit(Model.Id))" id="red" data-loading-overlay="true" class="btn btn-block btn-default">Edit Party</a>
-                @if (Model.LogEntries.Any())
-                {
-                    <h5>
-                        History
-                    </h5>
-                    <div class="history">
-                        @foreach (var entry in Model.LogEntries.OrderByDescending(x => x.Id))
-                        {
-                            <p>
-                                <i class="fa @entry.Icon()"></i>
-                                @entry.Message
-                                <span class="text-muted text-nowrap">@entry.Age().Humanize() ago</span>
-                            </p>
-                        }
-                    </div>
-                }
+            <div class="modal-body">
+                @Html.FlashMessage()
+                @Html.DisplayForModel()
             </div>
         </div>
     </div>
 </div>
-<script>
-    initConfirmationModals('#ManageCustomerModal');
-    initLoadingOverlays('#ManageCustomerModal');
-</script>
+<script>initAjaxLoadLinks('#ShowCustomerModal');</script>
