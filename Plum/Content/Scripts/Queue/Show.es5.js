@@ -3,16 +3,25 @@
 $(function () {
     initQueueList();
 
-    var updateHub = $.connection.updateHub;
-    updateHub.client.queueUpdated = function () {
+    var udpateBusinessViewQueueList = function udpateBusinessViewQueueList() {
+        // just return if the user is sorting the list
+        if ($('#businessViewQueueList .list-group').sortable('option', 'disabled') === false) {
+            return;
+        }
+
         $('#businessViewQueueList').load(window.viewData.udpateBusinessViewQueueListUrl, function () {
             initQueueList();
         });
     };
 
+    var updateHub = $.connection.updateHub;
+    updateHub.client.queueUpdated = udpateBusinessViewQueueList;
+
     $.connection.hub.start().done(function () {
         updateHub.server.subscribeToQueueAsBusiness(window.viewData.queueId);
     });
+
+    setTimeout(udpateBusinessViewQueueList, 60000);
 
     $('[data-command=rearrange]').click(function () {
         var $list = $('#businessViewQueueList .list-group');
