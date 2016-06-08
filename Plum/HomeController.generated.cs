@@ -80,6 +80,7 @@ namespace Plum.Controllers
             public readonly string Error = "Error";
             public readonly string NotAuthorized = "NotAuthorized";
             public readonly string RemovedFromList = "RemovedFromList";
+            public readonly string ContactUs = "ContactUs";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -90,9 +91,18 @@ namespace Plum.Controllers
             public const string Error = "Error";
             public const string NotAuthorized = "NotAuthorized";
             public const string RemovedFromList = "RemovedFromList";
+            public const string ContactUs = "ContactUs";
         }
 
 
+        static readonly ActionParamsClass_ContactUs s_params_ContactUs = new ActionParamsClass_ContactUs();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ContactUs ContactUsParams { get { return s_params_ContactUs; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ContactUs
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -103,11 +113,13 @@ namespace Plum.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string ContactUs = "ContactUs";
                 public readonly string Index = "Index";
                 public readonly string NotAuthorized = "NotAuthorized";
                 public readonly string NotFound = "NotFound";
                 public readonly string RemovedFromList = "RemovedFromList";
             }
+            public readonly string ContactUs = "~/Views/Home/ContactUs.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
             public readonly string NotAuthorized = "~/Views/Home/NotAuthorized.cshtml";
             public readonly string NotFound = "~/Views/Home/NotFound.cshtml";
@@ -172,6 +184,29 @@ namespace Plum.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemovedFromList, "https");
             RemovedFromListOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ContactUsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ContactUs()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ContactUs, "https");
+            ContactUsOverride(callInfo);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ContactUsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Plum.ViewModels.Home.ContactUsViewModel model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ContactUs(Plum.ViewModels.Home.ContactUsViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ContactUs, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            ContactUsOverride(callInfo, model);
             return callInfo;
         }
 

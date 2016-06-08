@@ -47,6 +47,13 @@ namespace T4MVC
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _VIewStart = "~/Views/Shared/_VIewStart.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";
+            static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
+            public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _DisplayTemplatesClass
+            {
+                public readonly string CustomerViewModel = "CustomerViewModel";
+            }
             static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
             public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

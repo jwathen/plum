@@ -22,6 +22,7 @@ namespace Plum.Controllers
         private AppSecurity _appSecurity;
         private AppSecrets _appSecrets;
         private TextMessageService _textMessageService;
+        private EmailService _emailService;
 
         public void InitializePublic(RequestContext requestContext)
         {
@@ -40,6 +41,7 @@ namespace Plum.Controllers
             _appSecrets = new AppSecrets(secretsFilePath);
             _appSecurity = new AppSecurity(_appSession);
             _textMessageService = new TextMessageService(_appSecrets);
+            _emailService = new EmailService(_appSecrets);
         }
 
         protected AppSession AppSession
@@ -78,11 +80,19 @@ namespace Plum.Controllers
             }
         }
 
-        public TextMessageService TextMessageService
+        public TextMessageService TextMessaging
         {
             get
             {
                 return _textMessageService;
+            }
+        }
+
+        public EmailService Email
+        {
+            get
+            {
+                return _emailService;
             }
         }
 

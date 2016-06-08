@@ -1,0 +1,34 @@
+﻿@model Plum.ViewModels.Home.ContactUsViewModel
+@{
+    ViewBag.Title = "Contact Us";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Contact Us</h2>
+            @Html.FlashMessage()
+            <form action="@Url.Action(MVC.Home.ContactUs())" method="post">
+                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label for="@Html.IdFor(x => x.EmailAddress)">
+                        Your Email Address
+                        <span class="text-danger">*</span>
+                    </label>
+                    @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control", type = "email" })
+                </div>
+                <div class="form-group">
+                    <label for="@Html.IdFor(x => x.Message)">
+                        Message
+                        <span class="text-danger">*</span>
+                    </label>
+                    @Html.TextAreaFor(x => x.Message, new { @class = "form-control", rows = 8 })
+                </div>
+                <input type="submit" value="Send Message" class="btn btn-primary" />
+                @Html.AntiForgeryToken2()
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Home.ContactUs_es5_min_js)"></script>
+}

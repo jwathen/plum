@@ -221,6 +221,13 @@
     <Content Include="Content\Images\touch-icon-ipad.png" />
     <Content Include="Content\Images\touch-icon-iphone-retina.png" />
     <Content Include="Content\Images\touch-icon-iphone.png" />
+    <Content Include="Content\Scripts\Home\ContactUs.es5.js">
+      <DependentUpon>ContactUs.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Home\ContactUs.es5.min.js">
+      <DependentUpon>ContactUs.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Home\ContactUs.js" />
     <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.es5.js">
       <DependentUpon>jquery.ui.touch-punch-improved.js</DependentUpon>
     </Content>
@@ -391,6 +398,7 @@
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Lib\Services\EmailService.cs" />
     <Compile Include="Lib\Services\PlivoException.cs" />
     <Compile Include="Lib\Services\ProfanityFilter.cs" />
     <Compile Include="Lib\Services\AppSecrets.cs" />
@@ -402,6 +410,7 @@
     <Compile Include="ViewModels\Business\ShowViewModel.cs" />
     <Compile Include="ViewModels\Business\SignInInformationViewModel.cs" />
     <Compile Include="ViewModels\Business\TextMessagesViewModel.cs" />
+    <Compile Include="ViewModels\Home\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\Shared\FlashMessage.cs" />
     <Compile Include="Lib\Web\HttpContext2.cs" />
     <Compile Include="Migrations\201605311819225_CreateBusinesses.cs" />
@@ -545,6 +554,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ShowSignInInformation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\ContactUs1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactUs.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\DisplayTemplates\CustomerViewModel.generated.cs">
       <DependentUpon>CustomerViewModel.cshtml</DependentUpon>
@@ -781,6 +795,10 @@
     <Content Include="Views\Shared\DisplayTemplates\CustomerViewModel.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>CustomerViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ContactUs.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ContactUs1.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

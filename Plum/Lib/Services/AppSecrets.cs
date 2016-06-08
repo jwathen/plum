@@ -35,6 +35,14 @@ namespace Plum.Services
                 {
                     _secrets["PlivoAuthToken"] = ConfigurationManager.AppSettings["PlivoAuthToken"];
                 }
+                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["SendGridUserName"]))
+                {
+                    _secrets["SendGridUserName"] = ConfigurationManager.AppSettings["SendGridUserName"];
+                }
+                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["SendGridPassword"]))
+                {
+                    _secrets["SendGridPassword"] = ConfigurationManager.AppSettings["SendGridPassword"];
+                }
             }
         }
 
@@ -53,6 +61,24 @@ namespace Plum.Services
             {
                 Init();
                 return (string)_secrets["PlivoAuthToken"];
+            }
+        }
+
+        public string SendGridUserName
+        {
+            get
+            {
+                Init();
+                return (string)_secrets["SendGridUserName"];
+            }
+        }
+
+        public string SendGridPassword
+        {
+            get
+            {
+                Init();
+                return (string)_secrets["SendGridPassword"];
             }
         }
     }

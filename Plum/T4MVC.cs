@@ -99,6 +99,16 @@ namespace Links
             private const string URLPATH = "~/Content/Scripts";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Home {
+                private const string URLPATH = "~/Content/Scripts/Home";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string ContactUs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ContactUs.min.js") ? Url("ContactUs.min.js") : Url("ContactUs.js");
+                public static readonly string ContactUs_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ContactUs.es5.min.js") ? Url("ContactUs.es5.min.js") : Url("ContactUs.es5.js");
+                public static readonly string ContactUs_es5_min_js = Url("ContactUs.es5.min.js");
+            }
+        
             public static readonly string jquery_ui_touch_punch_improved_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.min.js") ? Url("jquery.ui.touch-punch-improved.min.js") : Url("jquery.ui.touch-punch-improved.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.ui.touch-punch-improved.es5.min.js") ? Url("jquery.ui.touch-punch-improved.es5.min.js") : Url("jquery.ui.touch-punch-improved.es5.js");
             public static readonly string jquery_ui_touch_punch_improved_es5_min_js = Url("jquery.ui.touch-punch-improved.es5.min.js");
@@ -223,6 +233,14 @@ namespace Links
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Business {
+                private const string URLPATH = "~/Content/Styles/Business";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string Show_scss = Url("Show.scss");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Home {
                 private const string URLPATH = "~/Content/Styles/Home";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -262,6 +280,13 @@ namespace Links
             }
             public static partial class Scripts 
             {
+                public static partial class Home 
+                {
+                    public static class Assets
+                    {
+                        public const string ContactUs_js = "~/Content/Scripts/Home/ContactUs.js"; 
+                    }
+                }
                 public static partial class Queue 
                 {
                     public static class Assets
@@ -293,6 +318,12 @@ namespace Links
                         {
                         }
                     }
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class Business 
+                {
                     public static class Assets
                     {
                     }

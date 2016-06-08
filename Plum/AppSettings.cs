@@ -8,6 +8,19 @@ namespace Plum
     {
         public static class App
         {
+            public static class Email
+            {
+                public static string ComapanyEmailAddress
+                {
+                    get { return ConfigurationManager.AppSettings["App:Email:ComapanyEmailAddress"]; }
+                }
+
+                public static string IsTest
+                {
+                    get { return ConfigurationManager.AppSettings["App:Email:IsTest"]; }
+                }
+            }
+
             public static class QuotedWaitTimeOptions
             {
                 public static string End

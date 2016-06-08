@@ -86,8 +86,8 @@ WriteLiteral(">\r\n                        &times;\r\n                    </butt
 
 WriteLiteral(" class=\"modal-title\"");
 
-WriteLiteral(">\r\n                        Add Party to List\r\n                    </h4>\r\n        " +
-"        </div>\r\n                <fieldset>\r\n                    <div");
+WriteLiteral(">\r\n                        Add Party to Wait List\r\n                    </h4>\r\n   " +
+"             </div>\r\n                <fieldset>\r\n                    <div");
 
 WriteLiteral(" class=\"modal-body\"");
 

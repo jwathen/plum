@@ -22,5 +22,9 @@
   {
     "outputFile": "Content/Scripts/jquery.ui.touch-punch.es5.js",
     "inputFile": "Content/Scripts/jquery.ui.touch-punch.js"
+  },
+  {
+    "outputFile": "Content/Scripts/Home/ContactUs.es5.js",
+    "inputFile": "Content/Scripts/Home/ContactUs.js"
   }
 ]

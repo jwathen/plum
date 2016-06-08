@@ -67,7 +67,7 @@ namespace Plum.Controllers
             var profanityFilter = new ProfanityFilter(Server.MapPath("~/App_Data/Profanity.txt"));
             customer.GenerateUrlToken(Database, profanityFilter);
 
-            await queue.AddCustomerAsync(customer, TextMessageService, Url);
+            await queue.AddCustomerAsync(customer, TextMessaging, Url);
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToCustomers(queue.Id);
 
@@ -107,11 +107,17 @@ namespace Plum.Controllers
                 return NotAuthorized();
             }
 
+            string oldPhoneNumber = customer.PhoneNumber;
             model.CopyTo(customer);
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId);
             await UpdateHub.BroadcastQueueUpdateToCustomers(customer.QueueId);
-            SuccessMessage("Customer changes saved.");
+
+            if (oldPhoneNumber != customer.PhoneNumber && customer.HasPhoneNumber())
+            {
+                await customer.SendWelcomeTextMessageAsync(TextMessaging, Url);
+                await Database.SaveChangesAsync();
+            }
 
             return RedirectToAction(MVC.Customer.Show(customer.Id));
         }
@@ -163,7 +169,7 @@ namespace Plum.Controllers
             if (_result != null) return _result;
 
             int queueId = customer.Queue.Id;
-            await customer.SendReadyTextMessageAsync(TextMessageService, Url);
+            await customer.SendReadyTextMessageAsync(TextMessaging, Url);
             await Database.SaveChangesAsync();
 
             var model = new CustomerViewModel();

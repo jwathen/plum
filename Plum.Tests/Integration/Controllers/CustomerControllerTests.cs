@@ -59,7 +59,7 @@ namespace Plum.Tests.Integration.Controllers
             customer.QuotedTimeInMinutes.ShouldEqual(25);
             customer.Note.ShouldEqual("his name is Jack");
 
-            var sentTextMessage = _controller.TextMessageService.SentMessages.Single();
+            var sentTextMessage = _controller.TextMessaging.SentMessages.Single();
             sentTextMessage.Message.ShouldNotBeNull();
             sentTextMessage.Destination.ShouldEqual("19723743329");
         }
@@ -200,7 +200,7 @@ namespace Plum.Tests.Integration.Controllers
             var sentMessageLogEntry = customer.LogEntries.Where(x => x.Type == Models.CustomerLogEntryType.ReadyTextMessageSent).ToList().Last();
             sentMessageLogEntry.ShouldNotBeNull();
 
-            var sentTextMessage = _controller.TextMessageService.SentMessages.Single();
+            var sentTextMessage = _controller.TextMessaging.SentMessages.Single();
             sentTextMessage.Message.ShouldNotBeNull();
             sentTextMessage.Destination.ShouldEqual("11234567890");
         }
