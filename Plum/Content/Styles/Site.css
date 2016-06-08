@@ -6747,6 +6747,14 @@ input[type="checkbox"].input-validation-error {
 .queue.queue-show #businessViewQueueList li.list-group-item {
   cursor: pointer; }
 
+@media (min-width: 768px) {
+  .business.business-show textarea {
+    height: 12em; } }
+
+@media (min-width: 992px) {
+  .business.business-show textarea {
+    height: 4em; } }
+
 .app-icon {
   height: 150px;
   width: 152px;

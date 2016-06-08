@@ -59,28 +59,27 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteLiteral(">\r\n            <h2");
+WriteLiteral(">\r\n            <a");
 
-WriteLiteral(" class=\"pull-left\"");
-
-WriteLiteral(">Settings</h2>\r\n            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 229), Tuple.Create("\"", 278)
+WriteAttribute("href", Tuple.Create(" href=\"", 180), Tuple.Create("\"", 229)
             
-            #line 10 "..\..\Views\Business\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 236), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
+            #line 9 "..\..\Views\Business\Show.cshtml"
+, Tuple.Create(Tuple.Create("", 187), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
             
             #line default
             #line hidden
-, 236), false)
+, 187), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg pull-right\"");
 
 WriteLiteral(" data-loading-overlay=\"true\"");
 
-WriteLiteral(">\r\n                Go To Wait List\r\n            </a>\r\n        </div>\r\n    </div>\r" +
-"\n    <div");
+WriteLiteral(">\r\n                Go To Wait List\r\n            </a>\r\n            <h2");
+
+WriteLiteral(" class=\"pull-left\"");
+
+WriteLiteral(">Settings</h2>\r\n        </div>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -165,6 +164,8 @@ WriteLiteral(">\r\n                    Text Messages\r\n                </div>\r
 "v");
 
 WriteLiteral(" class=\"panel-body\"");
+
+WriteLiteral(" id=\"TextMessagesPanel\"");
 
 WriteLiteral(">\r\n");
 

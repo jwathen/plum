@@ -184,8 +184,8 @@ WriteLiteral(">\r\n                            <i");
 
 WriteLiteral(" class=\"fa fa-comment\"");
 
-WriteLiteral("></i>\r\n                            Send &quot;Table Ready&quot; Message\r\n        " +
-"                </button>\r\n");
+WriteLiteral("></i>\r\n                            Send &quot;Ready&quot; Message\r\n              " +
+"          </button>\r\n");
 
             
             #line 36 "..\..\Views\Customer\Show.cshtml"
@@ -360,14 +360,14 @@ WriteLiteral(">\r\n                            Move to End of List\r\n          
             #line hidden
 WriteLiteral("                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3329), Tuple.Create("\"", 3376)
+WriteAttribute("href", Tuple.Create(" href=\"", 3323), Tuple.Create("\"", 3370)
             
             #line 65 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 3336), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Edit(Model.Id))
+, Tuple.Create(Tuple.Create("", 3330), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Edit(Model.Id))
             
             #line default
             #line hidden
-, 3336), false)
+, 3330), false)
 );
 
 WriteLiteral(" id=\"red\"");
@@ -417,15 +417,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <p>\r\n                                <i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3848), Tuple.Create("\"", 3872)
-, Tuple.Create(Tuple.Create("", 3856), Tuple.Create("fa", 3856), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3842), Tuple.Create("\"", 3866)
+, Tuple.Create(Tuple.Create("", 3850), Tuple.Create("fa", 3850), true)
             
             #line 75 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3858), Tuple.Create<System.Object, System.Int32>(entry.Icon()
+, Tuple.Create(Tuple.Create(" ", 3852), Tuple.Create<System.Object, System.Int32>(entry.Icon()
             
             #line default
             #line hidden
-, 3859), false)
+, 3853), false)
 );
 
 WriteLiteral("></i>\r\n");

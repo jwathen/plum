@@ -347,6 +347,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.js" />
+    <Content Include="Content\Styles\Business\Show.scss" />
     <None Include="Properties\PublishProfiles\plumlist - Web Deploy.pubxml" />
     <Content Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -495,6 +496,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TextMessagesViewModel.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Business\EditTextMessages.generated.cs">
+      <DependentUpon>EditTextMessages.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Business\EditBusinessInformation.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -510,6 +516,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BusinessInformationViewModel.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Business\EditorTemplates\TextMessagesViewModel.generated.cs">
+      <DependentUpon>TextMessagesViewModel.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Business\EditSignInInformation.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -519,6 +530,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Show.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ShowTextMessages.generated.cs">
+      <DependentUpon>ShowTextMessages.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Business\ShowBusinessInformation.generated.cs">
       <AutoGen>True</AutoGen>
@@ -744,6 +760,18 @@
     <Content Include="Views\Home\RemovedFromList.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>RemovedFromList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\EditorTemplates\TextMessagesViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TextMessagesViewModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\ShowTextMessages.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShowTextMessages.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Business\EditTextMessages.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EditTextMessages.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

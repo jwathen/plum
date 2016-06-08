@@ -1,0 +1,10 @@
+﻿@model Plum.ViewModels.Business.TextMessagesViewModel
+@{ 
+    Layout = null;
+}
+
+@using (Ajax.BeginForm(MVC.Business.UpdateTextMessages(), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "TextMessagesPanel" }))
+{
+    @Html.EditorForModel()
+}
+<script>initAjaxLoadLinks('#TextMessagesPanel');</script>

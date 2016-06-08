@@ -43,10 +43,10 @@ WriteLiteral("<dl");
 
 WriteLiteral(" class=\"dl-horizontal\"");
 
-WriteLiteral(">\r\n    <dt>Welcome Text Message</dt>\r\n    <dd><em>");
+WriteLiteral(">\r\n    <dt>\r\n        Welcome Text Message\r\n    </dt>\r\n    <dd><em>");
 
             
-            #line 5 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+            #line 7 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
        Write(Model.SampleWelcomeMessage);
 
             
@@ -55,7 +55,7 @@ WriteLiteral(">\r\n    <dt>Welcome Text Message</dt>\r\n    <dd><em>");
 WriteLiteral("</em></dd>\r\n    <dt>Ready Text Message</dt>\r\n    <dd><em>");
 
             
-            #line 7 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+            #line 9 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
        Write(Model.SampleReadyMessage);
 
             
@@ -66,6 +66,21 @@ WriteLiteral("</em></dd>\r\n</dl>\r\n<a");
 WriteLiteral(" href=\"#\"");
 
 WriteLiteral(" class=\"btn btn-default btn-block\"");
+
+WriteLiteral("\r\n   data-ajax-load=\"true\"");
+
+WriteLiteral("\r\n   data-ajax-load-target=\"#TextMessagesPanel\"");
+
+WriteLiteral("\r\n   data-ajax-load-url=\"");
+
+            
+            #line 14 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+                  Write(Url.Action(MVC.Business.EditTextMessages(Model.Id)));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\"");
 
 WriteLiteral(">\r\n    <i");
 

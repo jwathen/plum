@@ -1,0 +1,11 @@
+﻿@media (min-width: $screen-sm-min) { 
+    textarea {
+        height: 12em;
+    }
+}
+
+@media (min-width: $screen-md-min) { 
+    textarea {
+        height: 4em;
+    }
+}

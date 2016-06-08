@@ -108,6 +108,27 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateSignInInformation, "https");
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ShowTextMessages()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ShowTextMessages, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditTextMessages()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditTextMessages, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateTextMessages()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateTextMessages, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public BusinessController Actions { get { return MVC.Business; } }
@@ -131,6 +152,9 @@ namespace Plum.Controllers
             public readonly string ShowSignInInformation = "ShowSignInInformation";
             public readonly string EditSignInInformation = "EditSignInInformation";
             public readonly string UpdateSignInInformation = "UpdateSignInInformation";
+            public readonly string ShowTextMessages = "ShowTextMessages";
+            public readonly string EditTextMessages = "EditTextMessages";
+            public readonly string UpdateTextMessages = "UpdateTextMessages";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -143,6 +167,9 @@ namespace Plum.Controllers
             public const string ShowSignInInformation = "ShowSignInInformation";
             public const string EditSignInInformation = "EditSignInInformation";
             public const string UpdateSignInInformation = "UpdateSignInInformation";
+            public const string ShowTextMessages = "ShowTextMessages";
+            public const string EditTextMessages = "EditTextMessages";
+            public const string UpdateTextMessages = "UpdateTextMessages";
         }
 
 
@@ -202,6 +229,30 @@ namespace Plum.Controllers
         {
             public readonly string model = "model";
         }
+        static readonly ActionParamsClass_ShowTextMessages s_params_ShowTextMessages = new ActionParamsClass_ShowTextMessages();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ShowTextMessages ShowTextMessagesParams { get { return s_params_ShowTextMessages; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ShowTextMessages
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_EditTextMessages s_params_EditTextMessages = new ActionParamsClass_EditTextMessages();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditTextMessages EditTextMessagesParams { get { return s_params_EditTextMessages; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditTextMessages
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_UpdateTextMessages s_params_UpdateTextMessages = new ActionParamsClass_UpdateTextMessages();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UpdateTextMessages UpdateTextMessagesParams { get { return s_params_UpdateTextMessages; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UpdateTextMessages
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -214,15 +265,19 @@ namespace Plum.Controllers
             {
                 public readonly string EditBusinessInformation = "EditBusinessInformation";
                 public readonly string EditSignInInformation = "EditSignInInformation";
+                public readonly string EditTextMessages = "EditTextMessages";
                 public readonly string Show = "Show";
                 public readonly string ShowBusinessInformation = "ShowBusinessInformation";
                 public readonly string ShowSignInInformation = "ShowSignInInformation";
+                public readonly string ShowTextMessages = "ShowTextMessages";
             }
             public readonly string EditBusinessInformation = "~/Views/Business/EditBusinessInformation.cshtml";
             public readonly string EditSignInInformation = "~/Views/Business/EditSignInInformation.cshtml";
+            public readonly string EditTextMessages = "~/Views/Business/EditTextMessages.cshtml";
             public readonly string Show = "~/Views/Business/Show.cshtml";
             public readonly string ShowBusinessInformation = "~/Views/Business/ShowBusinessInformation.cshtml";
             public readonly string ShowSignInInformation = "~/Views/Business/ShowSignInInformation.cshtml";
+            public readonly string ShowTextMessages = "~/Views/Business/ShowTextMessages.cshtml";
             static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
             public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -239,6 +294,7 @@ namespace Plum.Controllers
             {
                 public readonly string BusinessInformationViewModel = "BusinessInformationViewModel";
                 public readonly string SignInInformationViewModel = "SignInInformationViewModel";
+                public readonly string TextMessagesViewModel = "TextMessagesViewModel";
             }
         }
     }
@@ -329,6 +385,42 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateSignInInformation, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             UpdateSignInInformationOverride(callInfo, model);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void ShowTextMessagesOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> ShowTextMessages(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ShowTextMessages, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ShowTextMessagesOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void EditTextMessagesOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditTextMessages(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditTextMessages, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            EditTextMessagesOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void UpdateTextMessagesOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Plum.ViewModels.Business.TextMessagesViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> UpdateTextMessages(Plum.ViewModels.Business.TextMessagesViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateTextMessages, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            UpdateTextMessagesOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

@@ -118,6 +118,11 @@ input[type="checkbox"].input-validation-error {
     @import "Queue/Show.scss";
 }
 
+.business.business-show {
+    @import "Business/Show.scss";
+}
+
+
 .app-icon {
     height: 150px; 
     width: 152px; 

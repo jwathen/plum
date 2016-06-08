@@ -141,5 +141,52 @@ namespace Plum.Controllers
 
             return RedirectToAction(MVC.Business.ShowSignInInformation(model.Id));
         }
+
+        [Authorize]
+        [HttpGet, Route("business/{id:int}/text_messages")]
+        public virtual async Task<ActionResult> ShowTextMessages(int id)
+        {
+            var business = await Business();
+            if (_result != null) return _result;
+
+            var model = new TextMessagesViewModel();
+            model.CopyFrom(business);
+
+            return View(model);
+        }
+
+        [Authorize]
+        [HttpGet, Route("business/{id:int}/edit_text_messages")]
+        public virtual async Task<ActionResult> EditTextMessages(int id)
+        {
+            var business = await Business();
+            if (_result != null) return _result;
+
+            var model = new TextMessagesViewModel();
+            model.CopyFrom(business);
+
+            return View(model);
+        }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [HttpPut, Route("business/{id:int}/text_messages")]
+        public virtual async Task<ActionResult> UpdateTextMessages(TextMessagesViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(MVC.Business.Views.EditTextMessages, model);
+            }
+
+            var business = await Business();
+            if (_result != null) return _result;
+
+            model.CopyTo(business);
+            await Database.SaveChangesAsync();
+            AppSession.BusinessName = business.Name;
+            SuccessMessage("Your text message templates have been updated.");
+
+            return RedirectToAction(MVC.Business.ShowTextMessages(model.Id));
+        }
     }
 }
