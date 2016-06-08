@@ -161,7 +161,7 @@ namespace Plum.Tests.Integration.Controllers
             SetRouteId(customerId);
 
             _controller.WithCallTo(x => x.Destroy(customerId))
-                .ShouldJavaScriptRedirectTo(Url.Action(MVC.Queue.Show(queueId)));
+                .ShouldRedirectTo(MVC.Queue.Name, MVC.Queue.ActionNames.Show, new { id = queueId });
 
             Database.Customers.Find(customerId).ShouldBeNull();
         }

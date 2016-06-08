@@ -46,15 +46,14 @@
                         Send &quot;Table Ready&quot; Message
                     </button>
                 }
-                @using (Ajax.BeginForm(MVC.Customer.Destroy(Model.Id), new AjaxOptions { OnBegin = "setLoading", UpdateTargetId = "ShowCustomerModal" }))
-                {
+                <form action="@Url.Action(MVC.Customer.Destroy(Model.Id))" method="post" data-loading-overlay="true">
                     <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to remove @HttpUtility.HtmlAttributeEncode(Model.Name) from the list?" class="btn btn-block btn-default" type="submit">Remove From List</button>
                     @Html.HttpMethodOverride(HttpVerbs.Delete)
                     @Html.AntiForgeryToken2()
-                }
+                </form>
                 @if (!customerIsLastInline)
                 {
-                    using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ManageCustomerModal" }))
+                    using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
                     {
                         <button class="btn btn-block btn-default" data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to move @HttpUtility.HtmlAttributeEncode(Model.Name) to the end of the list?" type="submit">
                             Move to End of List

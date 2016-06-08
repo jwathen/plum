@@ -1,7 +1,6 @@
 #todo
 
 ## features
-- edit settings in place
 - js time to update "time ago" on queue views
 - respond to customer texts
 - send arbitrary texts back to customer
@@ -11,11 +10,8 @@
 - track which customer log entries have been read
 - alert business queue view with customer notifications
 - auto focus on dialog open
-- business settings for name/image, text message content, "cancel"
-button visbility, website url
-- switch to plivo
 - mobile icon
-- fav icon
+- edit customer in place
 
 ## support
 - password reset
@@ -33,7 +29,3 @@ button visbility, website url
 ## issues
 - reorder list button on old ios devices
 - loading overlay stays when hitting back button
-- move to end of line returns view in place
-
-## future
-- android wrapper

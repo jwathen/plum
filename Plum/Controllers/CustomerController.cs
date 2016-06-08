@@ -145,7 +145,7 @@ namespace Plum.Controllers
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
                 await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
-                return JavaScriptRedirect(Url.Action(MVC.Queue.Show(queueId)));
+                return RedirectToAction(MVC.Queue.Show(queueId));
             }
 
             return RedirectToAction(MVC.Business.Show(AppSession.BusinessId.Value));

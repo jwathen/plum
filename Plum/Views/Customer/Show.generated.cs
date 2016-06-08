@@ -236,24 +236,30 @@ WriteLiteral("></i>\r\n                        Send &quot;Table Ready&quot; Mess
             
             #line default
             #line hidden
-WriteLiteral("                ");
+WriteLiteral("                <form");
 
+WriteAttribute("action", Tuple.Create(" action=\"", 2059), Tuple.Create("\"", 2111)
             
             #line 49 "..\..\Views\Customer\Show.cshtml"
-                 using (Ajax.BeginForm(MVC.Customer.Destroy(Model.Id), new AjaxOptions { OnBegin = "setLoading", UpdateTargetId = "ShowCustomerModal" }))
-                {
-
+, Tuple.Create(Tuple.Create("", 2068), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Destroy(Model.Id))
             
             #line default
             #line hidden
-WriteLiteral("                    <button");
+, 2068), false)
+);
+
+WriteLiteral(" method=\"post\"");
+
+WriteLiteral(" data-loading-overlay=\"true\"");
+
+WriteLiteral(">\r\n                    <button");
 
 WriteLiteral(" data-confirm=\"Are you sure?\"");
 
 WriteLiteral(" data-confirm-prompt=\"Are you sure you want to remove ");
 
             
-            #line 51 "..\..\Views\Customer\Show.cshtml"
+            #line 50 "..\..\Views\Customer\Show.cshtml"
                                                                                                          Write(HttpUtility.HtmlAttributeEncode(Model.Name));
 
             
@@ -267,48 +273,39 @@ WriteLiteral(" type=\"submit\"");
 
 WriteLiteral(">Remove From List</button>\r\n");
 
+WriteLiteral("                    ");
+
             
-            #line 52 "..\..\Views\Customer\Show.cshtml"
-                    
-            
-            #line default
-            #line hidden
-            
-            #line 52 "..\..\Views\Customer\Show.cshtml"
+            #line 51 "..\..\Views\Customer\Show.cshtml"
                Write(Html.HttpMethodOverride(HttpVerbs.Delete));
 
             
             #line default
             #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                    ");
+
             
             #line 52 "..\..\Views\Customer\Show.cshtml"
-                                                              
-                    
-            
-            #line default
-            #line hidden
-            
-            #line 53 "..\..\Views\Customer\Show.cshtml"
                Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
-            
-            #line 53 "..\..\Views\Customer\Show.cshtml"
-                                             
-                }
+WriteLiteral("\r\n                </form>\r\n");
 
+            
+            #line 54 "..\..\Views\Customer\Show.cshtml"
+                
             
             #line default
             #line hidden
-WriteLiteral("                ");
-
             
-            #line 55 "..\..\Views\Customer\Show.cshtml"
+            #line 54 "..\..\Views\Customer\Show.cshtml"
                  if (!customerIsLastInline)
                 {
-                    using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ManageCustomerModal" }))
+                    using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
                     {
 
             
@@ -323,7 +320,7 @@ WriteLiteral(" data-confirm=\"Are you sure?\"");
 WriteLiteral(" data-confirm-prompt=\"Are you sure you want to move ");
 
             
-            #line 59 "..\..\Views\Customer\Show.cshtml"
+            #line 58 "..\..\Views\Customer\Show.cshtml"
                                                                                                                                              Write(HttpUtility.HtmlAttributeEncode(Model.Name));
 
             
@@ -337,20 +334,20 @@ WriteLiteral(">\r\n                            Move to End of List\r\n          
 "ton>                        \r\n");
 
             
-            #line 62 "..\..\Views\Customer\Show.cshtml"
+            #line 61 "..\..\Views\Customer\Show.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 62 "..\..\Views\Customer\Show.cshtml"
+            #line 61 "..\..\Views\Customer\Show.cshtml"
                    Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
             
-            #line 62 "..\..\Views\Customer\Show.cshtml"
+            #line 61 "..\..\Views\Customer\Show.cshtml"
                                                  
                     }
                 }
@@ -360,14 +357,14 @@ WriteLiteral(">\r\n                            Move to End of List\r\n          
             #line hidden
 WriteLiteral("                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3323), Tuple.Create("\"", 3370)
+WriteAttribute("href", Tuple.Create(" href=\"", 3272), Tuple.Create("\"", 3319)
             
-            #line 65 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 3330), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Edit(Model.Id))
+            #line 64 "..\..\Views\Customer\Show.cshtml"
+, Tuple.Create(Tuple.Create("", 3279), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Edit(Model.Id))
             
             #line default
             #line hidden
-, 3330), false)
+, 3279), false)
 );
 
 WriteLiteral(" id=\"red\"");
@@ -379,13 +376,13 @@ WriteLiteral(" class=\"btn btn-block btn-default\"");
 WriteLiteral(">Edit Party</a>\r\n");
 
             
-            #line 66 "..\..\Views\Customer\Show.cshtml"
+            #line 65 "..\..\Views\Customer\Show.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 66 "..\..\Views\Customer\Show.cshtml"
+            #line 65 "..\..\Views\Customer\Show.cshtml"
                  if (Model.LogEntries.Any())
                 {
 
@@ -402,13 +399,13 @@ WriteLiteral(" class=\"history\"");
 WriteLiteral(">\r\n");
 
             
-            #line 72 "..\..\Views\Customer\Show.cshtml"
+            #line 71 "..\..\Views\Customer\Show.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 72 "..\..\Views\Customer\Show.cshtml"
+            #line 71 "..\..\Views\Customer\Show.cshtml"
                          foreach (var entry in Model.LogEntries.OrderByDescending(x => x.Id))
                         {
 
@@ -417,15 +414,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <p>\r\n                                <i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3842), Tuple.Create("\"", 3866)
-, Tuple.Create(Tuple.Create("", 3850), Tuple.Create("fa", 3850), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3791), Tuple.Create("\"", 3815)
+, Tuple.Create(Tuple.Create("", 3799), Tuple.Create("fa", 3799), true)
             
-            #line 75 "..\..\Views\Customer\Show.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3852), Tuple.Create<System.Object, System.Int32>(entry.Icon()
+            #line 74 "..\..\Views\Customer\Show.cshtml"
+, Tuple.Create(Tuple.Create(" ", 3801), Tuple.Create<System.Object, System.Int32>(entry.Icon()
             
             #line default
             #line hidden
-, 3853), false)
+, 3802), false)
 );
 
 WriteLiteral("></i>\r\n");
@@ -433,7 +430,7 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 76 "..\..\Views\Customer\Show.cshtml"
+            #line 75 "..\..\Views\Customer\Show.cshtml"
                            Write(entry.Message);
 
             
@@ -446,7 +443,7 @@ WriteLiteral(" class=\"text-muted text-nowrap\"");
 WriteLiteral(">");
 
             
-            #line 77 "..\..\Views\Customer\Show.cshtml"
+            #line 76 "..\..\Views\Customer\Show.cshtml"
                                                                 Write(entry.Age().Humanize());
 
             
@@ -455,7 +452,7 @@ WriteLiteral(">");
 WriteLiteral(" ago</span>\r\n                            </p>\r\n");
 
             
-            #line 79 "..\..\Views\Customer\Show.cshtml"
+            #line 78 "..\..\Views\Customer\Show.cshtml"
                         }
 
             
@@ -464,7 +461,7 @@ WriteLiteral(" ago</span>\r\n                            </p>\r\n");
 WriteLiteral("                    </div>\r\n");
 
             
-            #line 81 "..\..\Views\Customer\Show.cshtml"
+            #line 80 "..\..\Views\Customer\Show.cshtml"
                 }
 
             
