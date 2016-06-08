@@ -7,7 +7,6 @@ using Microsoft.AspNet.SignalR;
 using Plum.Models;
 using System.Data.Entity;
 using Plum.Web;
-using Plum.Lib.Web;
 
 namespace Plum.Controllers
 {

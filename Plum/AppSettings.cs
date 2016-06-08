@@ -25,6 +25,19 @@ namespace Plum
                     get { return ConfigurationManager.AppSettings["App:QuotedWaitTimeOptions:Start"]; }
                 }
             }
+
+            public static class TextMessaging
+            {
+                public static string IsTest
+                {
+                    get { return ConfigurationManager.AppSettings["App:TextMessaging:IsTest"]; }
+                }
+
+                public static string PlivoPhoneNumber
+                {
+                    get { return ConfigurationManager.AppSettings["App:TextMessaging:PlivoPhoneNumber"]; }
+                }
+            }
         }
 
         public static string ApplicationName
@@ -66,11 +79,6 @@ namespace Plum
         public static string ReleaseProfile
         {
             get { return ConfigurationManager.AppSettings["ReleaseProfile"]; }
-        }
-
-        public static string TwilioPhoneNumber
-        {
-            get { return ConfigurationManager.AppSettings["TwilioPhoneNumber"]; }
         }
 
         public static string UnobtrusiveJavaScriptEnabled

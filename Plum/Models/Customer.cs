@@ -7,6 +7,7 @@ using Plum.Services;
 using Humanizer;
 using Humanizer.Localisation;
 using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace Plum.Models
 {
@@ -108,33 +109,27 @@ namespace Plum.Models
             UrlToken = token.ToString();
         }
 
-        public void SendWelcomeTextMessage(UrlHelper urlHelper, AppSecrets secrets)
+        public async Task SendWelcomeTextMessageAsync(TextMessageService textMessageService, UrlHelper urlHelper)
         {
             if (this.HasPhoneNumber())
             {
                 var textMessageTemplates = new TextMessageTemplateService();
                 string placeInLineUrl = urlHelper.ActionAbsolute(MVC.Queue.ShowCustomer(this.UrlToken));
                 string message = textMessageTemplates.BuildWelcomeMessage(Queue.Business, placeInLineUrl);
-                SendTextMessage(secrets, message);
+                await textMessageService.SendAsync(PhoneNumber, message);
                 Log(CustomerLogEntryType.WelcomeTextMessageSent, $"\"{message}\"");
             }
         }
 
-        public void SendReadyTextMessage(UrlHelper urlHelper, AppSecrets secrets)
+        public async Task SendReadyTextMessageAsync(TextMessageService textMessageService, UrlHelper urlHelpers)
         {
             if (this.HasPhoneNumber())
             {
                 var textMessageTemplates = new TextMessageTemplateService();
                 string message = textMessageTemplates.BuildReadyMessage(Queue.Business);
-                SendTextMessage(secrets, message);
+                await textMessageService.SendAsync(PhoneNumber, message);
                 Log(CustomerLogEntryType.ReadyTextMessageSent, $"\"{message}\"");
             }
-        }
-
-        private void SendTextMessage(AppSecrets secrets, string message)
-        {
-            var twilio = new Twilio.TwilioRestClient(secrets.TwilioAccountSid, secrets.TwilioAuthToken);
-            twilio.SendMessage(AppSettings.TwilioPhoneNumber, PhoneNumber, message);
         }
     }
 }

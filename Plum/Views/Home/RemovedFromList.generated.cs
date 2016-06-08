@@ -51,18 +51,7 @@ WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n");
-
-WriteLiteral("    ");
-
-            
-            #line 6 "..\..\Views\Home\RemovedFromList.cshtml"
-Write(Html.FlashMessage());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n</div>");
+WriteLiteral(">\r\n    <h3>You have been removed from the list.</h3>\r\n</div>");
 
         }
     }

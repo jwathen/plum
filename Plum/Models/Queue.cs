@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Plum.Services;
@@ -32,11 +33,11 @@ namespace Plum.Models
                 .Count();
         }
 
-        public void AddCustomer(Customer customer, UrlHelper url, AppSecrets secrets)
+        public async Task AddCustomerAsync(Customer customer, TextMessageService textMessageService, UrlHelper url)
         {
             this.Customers.Add(customer);
             customer.Queue = this;
-            customer.SendWelcomeTextMessage(url, secrets);
+            await customer.SendReadyTextMessageAsync(textMessageService, url);
         }
 
         public void MoveCustomerToEndOfList(Customer customer)

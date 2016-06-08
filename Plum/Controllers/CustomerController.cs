@@ -65,7 +65,7 @@ namespace Plum.Controllers
             var profanityFilter = new ProfanityFilter(Server.MapPath("~/App_Data/Profanity.txt"));
             customer.GenerateUrlToken(Database, profanityFilter);
 
-            queue.AddCustomer(customer, Url, Secrets);
+            await queue.AddCustomerAsync(customer, TextMessageService, Url);
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToCustomers(queue.Id);
 
@@ -160,7 +160,7 @@ namespace Plum.Controllers
             if (_result != null) return _result;
 
             int queueId = customer.Queue.Id;
-            customer.SendReadyTextMessage(Url, Secrets);
+            await customer.SendReadyTextMessageAsync(TextMessageService, Url);
             await Database.SaveChangesAsync();
             return View(MVC.Customer.Views.Show, customer);
         }

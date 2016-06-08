@@ -27,32 +27,32 @@ namespace Plum.Services
                 _secrets = JsonConvert.DeserializeObject<Dictionary<string, object>>(dataFile);
 
                 // Override with app settings if they exist.
-                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["TwilioAccountSid"]))
+                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["PlivoAuthId"]))
                 {
-                    _secrets["TwilioAccountSid"] = ConfigurationManager.AppSettings["TwilioAccountSid"];
+                    _secrets["PlivoAuthId"] = ConfigurationManager.AppSettings["PlivoAuthId"];
                 }
-                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["TwilioAuthToken"]))
+                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["PlivoAuthToken"]))
                 {
-                    _secrets["TwilioAuthToken"] = ConfigurationManager.AppSettings["TwilioAuthToken"];
+                    _secrets["PlivoAuthToken"] = ConfigurationManager.AppSettings["PlivoAuthToken"];
                 }
             }
         }
 
-        public string TwilioAccountSid
+        public string PlivoAuthId
         {
             get
             {
                 Init();
-                return (string)_secrets["TwilioAccountSid"];
+                return (string)_secrets["PlivoAuthId"];
             }
         }
 
-        public string TwilioAuthToken
+        public string PlivoAuthToken
         {
             get
             {
                 Init();
-                return (string)_secrets["TwilioAuthToken"];
+                return (string)_secrets["PlivoAuthToken"];
             }
         }
     }

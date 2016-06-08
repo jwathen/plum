@@ -58,6 +58,10 @@ namespace Plum.Tests.Integration.Controllers
             customer.UrlToken.ShouldNotBeNull();
             customer.QuotedTimeInMinutes.ShouldEqual(25);
             customer.Note.ShouldEqual("his name is Jack");
+
+            var sentTextMessage = _controller.TextMessageService.SentMessages.Single();
+            sentTextMessage.Message.ShouldNotBeNull();
+            sentTextMessage.Destination.ShouldEqual("19723743329");
         }
 
         public void Create_GivenQueueIdForOtherBusiness_ReturnsNotAuthorized()
@@ -195,6 +199,10 @@ namespace Plum.Tests.Integration.Controllers
 
             var sentMessageLogEntry = customer.LogEntries.Where(x => x.Type == Models.CustomerLogEntryType.ReadyTextMessageSent).ToList().Last();
             sentMessageLogEntry.ShouldNotBeNull();
+
+            var sentTextMessage = _controller.TextMessageService.SentMessages.Single();
+            sentTextMessage.Message.ShouldNotBeNull();
+            sentTextMessage.Destination.ShouldEqual("11234567890");
         }
 
         public void MoveToEndOfList_GivenValidCustomer_MovesTheCustomer()

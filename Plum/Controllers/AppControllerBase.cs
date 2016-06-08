@@ -21,6 +21,7 @@ namespace Plum.Controllers
         private AppSession _appSession;
         private AppSecurity _appSecurity;
         private AppSecrets _appSecrets;
+        private TextMessageService _textMessageService;
 
         public void InitializePublic(RequestContext requestContext)
         {
@@ -38,6 +39,7 @@ namespace Plum.Controllers
             string secretsFilePath = Server.MapPath("~/App_Data/Secrets.json");
             _appSecrets = new AppSecrets(secretsFilePath);
             _appSecurity = new AppSecurity(_appSession);
+            _textMessageService = new TextMessageService(_appSecrets);
         }
 
         protected AppSession AppSession
@@ -73,6 +75,14 @@ namespace Plum.Controllers
             get
             {
                 return _appSecrets;
+            }
+        }
+
+        public TextMessageService TextMessageService
+        {
+            get
+            {
+                return _textMessageService;
             }
         }
 
