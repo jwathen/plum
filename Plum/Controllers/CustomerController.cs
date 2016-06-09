@@ -162,7 +162,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [HttpPost, Route("customer/{id:int}/send_ready_message")]
+        [HttpPost, Route("customer/{id:int}/send-ready-message")]
         public virtual async Task<ActionResult> SendReadyMessage(int id)
         {
             var customer = await Customer();
@@ -179,7 +179,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [HttpPost, Route("customer/{id:int}/move_to_end_of_list")]
+        [HttpPost, Route("customer/{id:int}/move-to-end-of-list")]
         public virtual async Task<ActionResult> MoveToEndOfList(int id)
         {
             var customer = await Customer();

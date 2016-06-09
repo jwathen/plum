@@ -46,7 +46,7 @@
             $.post(window.viewData.sortQueueUrl, data, function () {
                 $('[data-command=rearrange] span').text('Reorder List');
                 $('#RearrangeListInstructions').hide();
-                clearLoading();s
+                clearLoading();
             });
         }
     });

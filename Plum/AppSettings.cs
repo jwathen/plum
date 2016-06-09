@@ -8,6 +8,11 @@ namespace Plum
     {
         public static class App
         {
+            public static string Company
+            {
+                get { return ConfigurationManager.AppSettings["App:Company"]; }
+            }
+
             public static class Email
             {
                 public static string ComapanyEmailAddress
@@ -19,6 +24,11 @@ namespace Plum
                 {
                     get { return ConfigurationManager.AppSettings["App:Email:IsTest"]; }
                 }
+            }
+
+            public static string Name
+            {
+                get { return ConfigurationManager.AppSettings["App:Name"]; }
             }
 
             public static class QuotedWaitTimeOptions
@@ -51,11 +61,6 @@ namespace Plum
                     get { return ConfigurationManager.AppSettings["App:TextMessaging:PlivoPhoneNumber"]; }
                 }
             }
-        }
-
-        public static string ApplicationName
-        {
-            get { return ConfigurationManager.AppSettings["ApplicationName"]; }
         }
 
         public static string ClientValidationEnabled

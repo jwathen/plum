@@ -176,7 +176,7 @@ WriteLiteral(@">
 
             
             #line 47 "..\..\Views\Home\Index.cshtml"
-                                                                                                 Write(AppSettings.ApplicationName);
+                                                                                                 Write(AppSettings.App.Name);
 
             
             #line default
@@ -192,14 +192,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2029), Tuple.Create("\"", 2094)
+WriteAttribute("src", Tuple.Create(" src=\"", 2022), Tuple.Create("\"", 2087)
             
             #line 53 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 2035), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
+, Tuple.Create(Tuple.Create("", 2028), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
             
             #line default
             #line hidden
-, 2035), false)
+, 2028), false)
 );
 
 WriteLiteral(" alt=\"Woman wearing a poncho in the park.\"");
@@ -223,7 +223,7 @@ WriteLiteral(@">
 
             
             #line 61 "..\..\Views\Home\Index.cshtml"
-                                                                              Write(AppSettings.ApplicationName);
+                                                                              Write(AppSettings.App.Name);
 
             
             #line default

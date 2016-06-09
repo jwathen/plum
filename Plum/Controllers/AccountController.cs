@@ -14,14 +14,14 @@ namespace Plum.Controllers
 {
     public partial class AccountController : AppControllerBase
     {
-        [HttpGet, Route("account/sign_up")]
+        [HttpGet, Route("account/sign-up")]
         public virtual ActionResult SignUp()
         {
             return View();
         }
 
         [ValidateAntiForgeryToken]
-        [HttpPost, Route("account/sign_up")]
+        [HttpPost, Route("account/sign-up")]
         public virtual async Task<ActionResult> SignUp(SignUpViewModel model)
         {
             if (!ModelState.IsValid)
@@ -43,14 +43,14 @@ namespace Plum.Controllers
             return RedirectToAction(MVC.Queue.Show(queue.Id));
         }
 
-        [HttpGet, Route("account/sign_in")]
+        [HttpGet, Route("account/sign-in")]
         public virtual ActionResult SignIn()
         {
             return View();
         }
 
         [ValidateAntiForgeryToken]
-        [HttpPost, Route("account/sign_in")]
+        [HttpPost, Route("account/sign-in")]
         public virtual async Task<ActionResult> SignIn(SignInViewModel model)
         {
             if (!ModelState.IsValid)
@@ -90,7 +90,7 @@ namespace Plum.Controllers
             }
         }
 
-        [HttpGet, Route("account/sign_out")]
+        [HttpGet, Route("account/sign-out")]
         public virtual ActionResult SignOut()
         {
             AppSession.SignOut();

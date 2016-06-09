@@ -32,7 +32,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [HttpGet, Route("business/{id:int}/business_information")]
+        [HttpGet, Route("business/{id:int}/business-information")]
         public virtual async Task<ActionResult> ShowBusinessInformation(int id)
         {
             var business = await Business();
@@ -45,7 +45,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [HttpGet, Route("business/{id:int}/edit_business_information")]
+        [HttpGet, Route("business/{id:int}/edit-business-information")]
         public virtual async Task<ActionResult> EditBusinessInformation(int id)
         {
             var business = await Business();
@@ -59,7 +59,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [HttpPut, Route("business/{id:int}/business_information")]
+        [HttpPut, Route("business/{id:int}/business-information")]
         public virtual async Task<ActionResult> UpdateBusinessInformation(BusinessInformationViewModel model)
         {
             if (!ModelState.IsValid)
@@ -79,7 +79,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [HttpGet, Route("business/{id:int}/sign_in_information")]
+        [HttpGet, Route("business/{id:int}/sign-in-information")]
         public virtual async Task<ActionResult> ShowSignInInformation(int id)
         {
             var business = await Business();
@@ -92,7 +92,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [HttpGet, Route("business/{id:int}/edit_sign_in_information")]
+        [HttpGet, Route("business/{id:int}/edit-sign-in-information")]
         public virtual async Task<ActionResult> EditSignInInformation(int id)
         {
             var business = await Business();
@@ -106,7 +106,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [HttpPut, Route("business/{id:int}/sign_In_information")]
+        [HttpPut, Route("business/{id:int}/sign-In-information")]
         public virtual async Task<ActionResult> UpdateSignInInformation(SignInInformationViewModel model)
         {
             if (!ModelState.IsValid)
@@ -143,7 +143,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [HttpGet, Route("business/{id:int}/text_messages")]
+        [HttpGet, Route("business/{id:int}/text-messages")]
         public virtual async Task<ActionResult> ShowTextMessages(int id)
         {
             var business = await Business();
@@ -156,7 +156,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [HttpGet, Route("business/{id:int}/edit_text_messages")]
+        [HttpGet, Route("business/{id:int}/edit-text-messages")]
         public virtual async Task<ActionResult> EditTextMessages(int id)
         {
             var business = await Business();
@@ -170,7 +170,7 @@ namespace Plum.Controllers
 
         [Authorize]
         [ValidateAntiForgeryToken]
-        [HttpPut, Route("business/{id:int}/text_messages")]
+        [HttpPut, Route("business/{id:int}/text-messages")]
         public virtual async Task<ActionResult> UpdateTextMessages(TextMessagesViewModel model)
         {
             if (!ModelState.IsValid)

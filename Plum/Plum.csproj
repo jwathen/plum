@@ -555,10 +555,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShowSignInInformation.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Customer\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\ContactUs1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactUs.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\PrivacyPolicy.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrivacyPolicy.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\TermsOfUse.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TermsOfUse.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\DisplayTemplates\CustomerViewModel.generated.cs">
       <DependentUpon>CustomerViewModel.cshtml</DependentUpon>
@@ -574,11 +589,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Customer\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\RemovedFromList.generated.cs">
       <DependentUpon>RemovedFromList.cshtml</DependentUpon>
@@ -799,6 +809,14 @@
     <Content Include="Views\Home\ContactUs.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ContactUs1.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\PrivacyPolicy.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PrivacyPolicy.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\TermsOfUse.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TermsOfUse.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

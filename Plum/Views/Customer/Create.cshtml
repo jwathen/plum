@@ -1,5 +1,5 @@
 ﻿@model Plum.ViewModels.Customer.CustomerViewModel
-@{ 
+@{
     Layout = null;
 }
 
@@ -31,4 +31,8 @@
         </div>
     </div>
 }
-<script>clearLoading();</script>
+<script>
+    if (typeof clearLoading == 'function') {
+        clearLoading();
+    }
+</script>

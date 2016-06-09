@@ -75,17 +75,23 @@
                 }
                 else
                 {
-                    <a href="@FormsAuthentication.LoginUrl" class="btn btn-default navbar-btn navbar-right">Sign In</a>
+                    <a href="@Url.Action(MVC.Account.SignIn())" class="btn btn-default navbar-btn navbar-right">Sign In</a>
                 }
             </div>
         </div>
     </nav>
     @RenderBody()
     <div class="container">
-        <hr />
-        <p>
-            &copy; @DateTime.Now.Year cd312f2e, LLC
-        </p>
+        <div class="row">
+            <div class="col-md-12">
+                <hr />
+                <ul class="list-inline">
+                    <li>&copy; @DateTime.Now.Year @AppSettings.App.Company</li>
+                    <li>@Html.ActionLink("Privacy Policy", MVC.Home.PrivacyPolicy())</li>
+                    <li>@Html.ActionLink("Terms of Use", MVC.Home.TermsOfUse())</li>
+                </ul>
+            </div>
+        </div>
         <div class="app-icon hidden">
             Plum
         </div>
@@ -118,7 +124,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/jquery.formatter.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="@Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)"></script>
     <script src="~/signalr/hubs"></script>

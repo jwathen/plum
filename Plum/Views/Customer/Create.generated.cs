@@ -41,7 +41,7 @@ namespace ASP
         {
             
             #line 2 "..\..\Views\Customer\Create.cshtml"
-   
+  
     Layout = null;
 
             
@@ -156,7 +156,8 @@ WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("<script>clearLoading();</script>\r\n");
+WriteLiteral("<script>\r\n    if (typeof clearLoading == \'function\') {\r\n        clearLoading();\r\n" +
+"    }\r\n</script>\r\n");
 
         }
     }

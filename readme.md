@@ -10,11 +10,10 @@
 
 ## support
 - password reset
-- domain name
+- setup cloudflare ssl
 - privacy policy and term of use
 - google analytics
 - text message limits
-- sign in with google
 - azure deployment slots
 - cdn fallbacks
 - attributions

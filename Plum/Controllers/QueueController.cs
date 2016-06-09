@@ -36,7 +36,7 @@ namespace Plum.Controllers
             return View(customer);
         }
 
-        [HttpGet, Route("queue/{urlToken:length(8)}/customer_view_queue_list")]
+        [HttpGet, Route("queue/{urlToken:length(8)}/customer-view-queue-list")]
         public virtual async Task<ActionResult> CustomerViewQueueList(string urlToken)
         {
             var customer = await Database.Customers
@@ -81,7 +81,7 @@ namespace Plum.Controllers
         }
 
         [Authorize]
-        [HttpGet, Route("queue/{id:int}/business_view_queue_list")]
+        [HttpGet, Route("queue/{id:int}/business-view-queue-list")]
         public virtual async Task<ActionResult> BusinessViewQueueList(int id)
         {
             var queue = await Queue();

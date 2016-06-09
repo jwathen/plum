@@ -15,17 +15,23 @@ namespace Plum.Controllers
         [HttpGet, Route("")]
         public virtual ActionResult Index() => View();
 
-        [HttpGet, Route("page_not_found")]
+        [HttpGet, Route("page-not-found")]
         public virtual ActionResult NotFound() => View();
 
         [HttpGet, Route("error")]
         public virtual ActionResult Error() => View();
 
-        [HttpGet, Route("not_authorized")]
+        [HttpGet, Route("not-authorized")]
         public virtual ActionResult NotAuthorized() => View();
 
-        [HttpGet, Route("removed_from_list")]
+        [HttpGet, Route("removed-from-list")]
         public virtual ActionResult RemovedFromList() => View();
+
+        [HttpGet, Route("privacy-policy")]
+        public virtual ActionResult PrivacyPolicy() => View();
+
+        [HttpGet, Route("terms-of-use")]
+        public virtual ActionResult TermsOfUse() => View();
 
         [HttpGet, Route("contact")]
         public virtual async Task<ActionResult> ContactUs()

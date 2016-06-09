@@ -80,6 +80,8 @@ namespace Plum.Controllers
             public readonly string Error = "Error";
             public readonly string NotAuthorized = "NotAuthorized";
             public readonly string RemovedFromList = "RemovedFromList";
+            public readonly string PrivacyPolicy = "PrivacyPolicy";
+            public readonly string TermsOfUse = "TermsOfUse";
             public readonly string ContactUs = "ContactUs";
         }
 
@@ -91,6 +93,8 @@ namespace Plum.Controllers
             public const string Error = "Error";
             public const string NotAuthorized = "NotAuthorized";
             public const string RemovedFromList = "RemovedFromList";
+            public const string PrivacyPolicy = "PrivacyPolicy";
+            public const string TermsOfUse = "TermsOfUse";
             public const string ContactUs = "ContactUs";
         }
 
@@ -117,13 +121,17 @@ namespace Plum.Controllers
                 public readonly string Index = "Index";
                 public readonly string NotAuthorized = "NotAuthorized";
                 public readonly string NotFound = "NotFound";
+                public readonly string PrivacyPolicy = "PrivacyPolicy";
                 public readonly string RemovedFromList = "RemovedFromList";
+                public readonly string TermsOfUse = "TermsOfUse";
             }
             public readonly string ContactUs = "~/Views/Home/ContactUs.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
             public readonly string NotAuthorized = "~/Views/Home/NotAuthorized.cshtml";
             public readonly string NotFound = "~/Views/Home/NotFound.cshtml";
+            public readonly string PrivacyPolicy = "~/Views/Home/PrivacyPolicy.cshtml";
             public readonly string RemovedFromList = "~/Views/Home/RemovedFromList.cshtml";
+            public readonly string TermsOfUse = "~/Views/Home/TermsOfUse.cshtml";
         }
     }
 
@@ -184,6 +192,28 @@ namespace Plum.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemovedFromList, "https");
             RemovedFromListOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void PrivacyPolicyOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult PrivacyPolicy()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.PrivacyPolicy, "https");
+            PrivacyPolicyOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void TermsOfUseOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult TermsOfUse()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.TermsOfUse, "https");
+            TermsOfUseOverride(callInfo);
             return callInfo;
         }
 

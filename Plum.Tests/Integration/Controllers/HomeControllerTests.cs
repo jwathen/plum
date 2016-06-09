@@ -33,6 +33,18 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRenderDefaultViewHtml();
         }
 
+        public void PrivacyPolicy_Renders()
+        {
+            _controller.WithCallTo(x => x.PrivacyPolicy())
+                .ShouldRenderDefaultViewHtml();
+        }
+
+        public void TermsOfuUse_Renders()
+        {
+            _controller.WithCallTo(x => x.TermsOfUse())
+                .ShouldRenderDefaultViewHtml();
+        }
+
         public void RemovedFromList_Renders()
         {
             _controller.WithCallTo(x => x.RemovedFromList())

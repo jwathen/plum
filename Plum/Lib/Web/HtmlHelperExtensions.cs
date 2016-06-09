@@ -20,7 +20,7 @@ namespace Plum.Web
         {
             TagBuilder span = new TagBuilder("span");
             span.AddCssClass("brand-font");
-            span.SetInnerText(AppSettings.ApplicationName);
+            span.SetInnerText(AppSettings.App.Name);
             return new HtmlString(span.ToString());
         }
 
