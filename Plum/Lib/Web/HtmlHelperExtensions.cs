@@ -26,27 +26,7 @@ namespace Plum.Web
 
         public static string FileVersionUrl(this HtmlHelper html, string rootRelativePath)
         {
-            if (HttpRuntime.Cache[rootRelativePath] == null)
-            {
-                string filePath = HostingEnvironment.MapPath("~" + rootRelativePath);
-                if (File.Exists(filePath))
-                {
-                    BigInteger fileHash = 0;
-                    using (var md5 = MD5.Create())
-                    {
-                        using (var fileStream = File.OpenRead(filePath))
-                        {
-                            fileHash = new BigInteger(md5.ComputeHash(fileStream));
-                        }
-                    }
-
-                    int index = rootRelativePath.LastIndexOf('/');
-                    string result = rootRelativePath.Insert(index, "/v-" + fileHash);
-                    HttpRuntime.Cache.Insert(rootRelativePath, result, new CacheDependency(filePath));
-                }
-            }
-
-            return HttpRuntime.Cache[rootRelativePath] as string;
+            return UrlUtility.FileVersionUrl(rootRelativePath);
         }
 
         public static HtmlString AntiForgeryToken2(this HtmlHelper html)

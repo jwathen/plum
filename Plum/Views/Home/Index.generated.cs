@@ -119,15 +119,9 @@ WriteLiteral(">\r\n                    Learn How It Works\r\n                </a
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n    ");
 
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"col-md-12\"");
-
-WriteLiteral(">\r\n            todo\r\n        </div>\r\n    </div>\r\n    <div");
+WriteLiteral("\r\n    <div");
 
 WriteLiteral(" class=\"hr\"");
 
@@ -145,14 +139,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1119), Tuple.Create("\"", 1184)
+WriteAttribute("src", Tuple.Create(" src=\"", 3316), Tuple.Create("\"", 3381)
             
-            #line 39 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1125), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
+            #line 75 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 3322), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
             
             #line default
             #line hidden
-, 1125), false)
+, 3322), false)
 );
 
 WriteLiteral(" alt=\"Two young people holding hands.\"");
@@ -175,7 +169,7 @@ WriteLiteral(@">
                         being told to hold a bulky coaster cut our hand effectiveness by 50%. Thanks, ");
 
             
-            #line 47 "..\..\Views\Home\Index.cshtml"
+            #line 83 "..\..\Views\Home\Index.cshtml"
                                                                                                  Write(AppSettings.App.Name);
 
             
@@ -192,14 +186,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2022), Tuple.Create("\"", 2087)
+WriteAttribute("src", Tuple.Create(" src=\"", 4219), Tuple.Create("\"", 4284)
             
-            #line 53 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 2028), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
+            #line 89 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 4225), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
             
             #line default
             #line hidden
-, 2028), false)
+, 4225), false)
 );
 
 WriteLiteral(" alt=\"Woman wearing a poncho in the park.\"");
@@ -222,7 +216,7 @@ WriteLiteral(@">
                         experience true modern convenience and efficiency. Thanks, ");
 
             
-            #line 61 "..\..\Views\Home\Index.cshtml"
+            #line 97 "..\..\Views\Home\Index.cshtml"
                                                                               Write(AppSettings.App.Name);
 
             

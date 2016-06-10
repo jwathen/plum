@@ -16,13 +16,8 @@
     <title>@ViewBag.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="application-version" content="@AppSettings.Version (@AppSettings.ReleaseProfile)" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="icon" type="image/png" href="@Html.FileVersionUrl(Links.Content.Images.favicon_png)" />
-    <link rel="apple-touch-icon" href="@Html.FileVersionUrl(Links.Content.Images.touch_icon_iphone_png)">
-    <link rel="apple-touch-icon" sizes="76x76" href="@Html.FileVersionUrl(Links.Content.Images.touch_icon_ipad_png)">
-    <link rel="apple-touch-icon" sizes="120x120" href="@Html.FileVersionUrl(Links.Content.Images.touch_icon_iphone_retina_png)">
-    <link rel="apple-touch-icon" sizes="152x152" href="@Html.FileVersionUrl(Links.Content.Images.touch_icon_ipad_retina_png)">
-    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body class="@controller() @action()">
     <nav class="navbar navbar-default">
@@ -93,7 +88,9 @@
             </div>
         </div>
         <div class="app-icon hidden">
-            Plum
+            <span>
+                Plum
+            </span>
         </div>
     </div>
     <div id="ConfirmModal" class="modal">

@@ -80,6 +80,22 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             public static readonly string favicon_png = Url("favicon.png");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Icons {
+                private const string URLPATH = "~/Content/Images/Icons";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _120x120_png = Url("120x120.png");
+                public static readonly string _128x128_png = Url("128x128.png");
+                public static readonly string _152x152_png = Url("152x152.png");
+                public static readonly string _256x256_png = Url("256x256.png");
+                public static readonly string _384x384_png = Url("384x384.png");
+                public static readonly string _512x512_png = Url("512x512.png");
+                public static readonly string _64x64_png = Url("64x64.png");
+                public static readonly string _76x76_png = Url("76x76.png");
+                public static readonly string original_png = Url("original.png");
+            }
+        
             public static readonly string table_jpg = Url("table.jpg");
             public static readonly string testimonial1_jpg = Url("testimonial1.jpg");
             public static readonly string testimonial2_jpg = Url("testimonial2.jpg");
@@ -88,10 +104,6 @@ namespace Links
             public static readonly string testimonial5_jpg = Url("testimonial5.jpg");
             public static readonly string testimonial6_jpg = Url("testimonial6.jpg");
             public static readonly string testimonial7_jpg = Url("testimonial7.jpg");
-            public static readonly string touch_icon_ipad_retina_png = Url("touch-icon-ipad-retina.png");
-            public static readonly string touch_icon_ipad_png = Url("touch-icon-ipad.png");
-            public static readonly string touch_icon_iphone_retina_png = Url("touch-icon-iphone-retina.png");
-            public static readonly string touch_icon_iphone_png = Url("touch-icon-iphone.png");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -274,6 +286,12 @@ namespace Links
         {
             public static partial class Images 
             {
+                public static partial class Icons 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
                 public static class Assets
                 {
                 }

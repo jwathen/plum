@@ -209,6 +209,15 @@
     </Content>
     <Content Include="App_Data\Profanity.txt" />
     <Content Include="Content\Images\favicon.png" />
+    <Content Include="Content\Images\Icons\120x120.png" />
+    <Content Include="Content\Images\Icons\128x128.png" />
+    <Content Include="Content\Images\Icons\152x152.png" />
+    <Content Include="Content\Images\Icons\256x256.png" />
+    <Content Include="Content\Images\Icons\384x384.png" />
+    <Content Include="Content\Images\Icons\512x512.png" />
+    <Content Include="Content\Images\Icons\64x64.png" />
+    <Content Include="Content\Images\Icons\76x76.png" />
+    <Content Include="Content\Images\Icons\original.png" />
     <Content Include="Content\Images\table.jpg" />
     <Content Include="Content\Images\testimonial1.jpg" />
     <Content Include="Content\Images\testimonial2.jpg" />
@@ -217,10 +226,6 @@
     <Content Include="Content\Images\testimonial5.jpg" />
     <Content Include="Content\Images\testimonial6.jpg" />
     <Content Include="Content\Images\testimonial7.jpg" />
-    <Content Include="Content\Images\touch-icon-ipad-retina.png" />
-    <Content Include="Content\Images\touch-icon-ipad.png" />
-    <Content Include="Content\Images\touch-icon-iphone-retina.png" />
-    <Content Include="Content\Images\touch-icon-iphone.png" />
     <Content Include="Content\Scripts\Home\ContactUs.es5.js">
       <DependentUpon>ContactUs.js</DependentUpon>
     </Content>
@@ -264,6 +269,7 @@
     <Content Include="Content\Styles\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\PaperVariables.scss" />
     <Content Include="Content\Styles\Paper.scss" />
@@ -406,6 +412,8 @@
     <Compile Include="Lib\Services\TextMessageService.cs" />
     <Compile Include="Lib\Services\TextMessageTemplateService.cs" />
     <Compile Include="Lib\Helpers\ValidationHelpers.cs" />
+    <Compile Include="Lib\Web\Manifest.cs" />
+    <Compile Include="Lib\Web\UrlUtility.cs" />
     <Compile Include="Migrations\201606100032583_SoftDeleteCustomers.cs" />
     <Compile Include="Migrations\201606100032583_SoftDeleteCustomers.Designer.cs">
       <DependentUpon>201606100032583_SoftDeleteCustomers.cs</DependentUpon>

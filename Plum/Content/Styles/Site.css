@@ -6756,12 +6756,17 @@ input[type="checkbox"].input-validation-error {
     height: 4em; } }
 
 .app-icon {
-  height: 150px;
-  width: 152px;
+  height: 512px;
+  width: 512px;
   background-color: #5d4865;
   color: white;
   font-family: 'Great Vibes', cursive;
-  font-size: 5em;
+  font-size: 16em;
   text-align: center;
-  line-height: 1em; }
+  line-height: 1em;
+  padding-top: 70px;
+  margin-bottom: 50px; }
+  .app-icon span {
+    margin-left: -21px;
+    margin-right: 27px; }
 

@@ -6,7 +6,9 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using Plum.ViewModels.Home;
+using Plum.Web;
 
 namespace Plum.Controllers
 {
@@ -32,6 +34,23 @@ namespace Plum.Controllers
 
         [HttpGet, Route("terms-of-use")]
         public virtual ActionResult TermsOfUse() => View();
+
+        [HttpGet, Route("manifest")]
+        public virtual ActionResult Manifest()
+        {
+            var manifest = new Manifest();
+            manifest.name = AppSettings.App.Name;
+            manifest.short_name = AppSettings.App.Name;
+            manifest.background_color = "#5d4865";
+            manifest.theme_color = "white";
+            manifest.display = "standalone";            
+            manifest.start_url = Url.Action(MVC.Account.SignIn());
+            manifest.scope = "/";
+            manifest.AddIcons();
+
+            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
+            return Content(json, "application/manifest+json");
+        }
 
         [HttpGet, Route("contact")]
         public virtual async Task<ActionResult> ContactUs()

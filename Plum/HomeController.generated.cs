@@ -82,6 +82,7 @@ namespace Plum.Controllers
             public readonly string RemovedFromList = "RemovedFromList";
             public readonly string PrivacyPolicy = "PrivacyPolicy";
             public readonly string TermsOfUse = "TermsOfUse";
+            public readonly string Manifest = "Manifest";
             public readonly string ContactUs = "ContactUs";
         }
 
@@ -95,6 +96,7 @@ namespace Plum.Controllers
             public const string RemovedFromList = "RemovedFromList";
             public const string PrivacyPolicy = "PrivacyPolicy";
             public const string TermsOfUse = "TermsOfUse";
+            public const string Manifest = "Manifest";
             public const string ContactUs = "ContactUs";
         }
 
@@ -214,6 +216,17 @@ namespace Plum.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.TermsOfUse, "https");
             TermsOfUseOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ManifestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Manifest()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Manifest, "https");
+            ManifestOverride(callInfo);
             return callInfo;
         }
 
