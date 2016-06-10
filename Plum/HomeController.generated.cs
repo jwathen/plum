@@ -76,6 +76,7 @@ namespace Plum.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string About = "About";
             public readonly string NotFound = "NotFound";
             public readonly string Error = "Error";
             public readonly string NotAuthorized = "NotAuthorized";
@@ -90,6 +91,7 @@ namespace Plum.Controllers
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string About = "About";
             public const string NotFound = "NotFound";
             public const string Error = "Error";
             public const string NotAuthorized = "NotAuthorized";
@@ -119,6 +121,7 @@ namespace Plum.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string About = "About";
                 public readonly string ContactUs = "ContactUs";
                 public readonly string Index = "Index";
                 public readonly string NotAuthorized = "NotAuthorized";
@@ -127,6 +130,7 @@ namespace Plum.Controllers
                 public readonly string RemovedFromList = "RemovedFromList";
                 public readonly string TermsOfUse = "TermsOfUse";
             }
+            public readonly string About = "~/Views/Home/About.cshtml";
             public readonly string ContactUs = "~/Views/Home/ContactUs.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
             public readonly string NotAuthorized = "~/Views/Home/NotAuthorized.cshtml";
@@ -150,6 +154,17 @@ namespace Plum.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index, "https");
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AboutOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult About()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.About, "https");
+            AboutOverride(callInfo);
             return callInfo;
         }
 

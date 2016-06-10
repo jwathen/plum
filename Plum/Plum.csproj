@@ -585,6 +585,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactUs.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\About.generated.cs">
+      <DependentUpon>About.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Home\PrivacyPolicy.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -837,6 +842,10 @@
     <Content Include="Views\Home\TermsOfUse.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>TermsOfUse.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\About.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>About.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

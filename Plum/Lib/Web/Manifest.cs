@@ -21,13 +21,17 @@ namespace Plum.Web
 
         public void AddIcons()
         {
-            foreach(string path in Directory.EnumerateFiles(HostingEnvironment.MapPath("~/Content/Images/Icons/")))
+            string iconsPath = HostingEnvironment.MapPath("~/Content/Images/Icons/");
+            if (!string.IsNullOrEmpty(iconsPath))
             {
-                if (Regex.IsMatch(path, @"\d+x\d+\.png"))
+                foreach (string path in Directory.EnumerateFiles(iconsPath))
                 {
-                    string source = "/Content/Images/Icons/" + Path.GetFileName(path);
-                    string sizes = Path.GetFileNameWithoutExtension(path);
-                    icons.Add(new ManifestImage(sizes, source));
+                    if (Regex.IsMatch(path, @"\d+x\d+\.png"))
+                    {
+                        string source = "/Content/Images/Icons/" + Path.GetFileName(path);
+                        string sizes = Path.GetFileNameWithoutExtension(path);
+                        icons.Add(new ManifestImage(sizes, source));
+                    }
                 }
             }
         }

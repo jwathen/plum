@@ -17,6 +17,9 @@ namespace Plum.Controllers
         [HttpGet, Route("")]
         public virtual ActionResult Index() => View();
 
+        [HttpGet, Route("about")]
+        public virtual ActionResult About() => View();
+
         [HttpGet, Route("page-not-found")]
         public virtual ActionResult NotFound() => View();
 

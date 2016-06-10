@@ -21,6 +21,12 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldMatchCss("div.jumbo");
         }
 
+        public void About_Renders()
+        {
+            _controller.WithCallTo(x => x.About())
+                .ShouldRenderDefaultViewHtml();
+        }
+
         public void NotAuthorized_Renders()
         {
             _controller.WithCallTo(x => x.NotAuthorized())
@@ -49,6 +55,12 @@ namespace Plum.Tests.Integration.Controllers
         {
             _controller.WithCallTo(x => x.RemovedFromList())
                 .ShouldRenderDefaultViewHtml();
+        }
+
+        public void Manifest_REnders()
+        {
+            _controller.WithCallTo(x => x.Manifest())
+                .ShouldReturnContent(contentType: "application/manifest+json");
         }
 
         public void ContactUs_Renders()
