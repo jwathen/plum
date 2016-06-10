@@ -8,10 +8,11 @@ using Humanizer;
 using Humanizer.Localisation;
 using System.Data.Entity;
 using System.Threading.Tasks;
+using Plum.Models.Annotations;
 
 namespace Plum.Models
 {
-    public class Customer : IDatedEntity, IIntegerIdEntity
+    public class Customer : IDatedEntity, IIntegerIdEntity, ISoftDeleteEntity
     {
         public virtual int Id { get; set; }
         public virtual int QueueId { get; set; }
@@ -22,11 +23,15 @@ namespace Plum.Models
         public virtual DateTime DateCreated { get; set; }
         public virtual DateTime DateUpdated { get; set; }
         public virtual short SortOrder { get; set; }
-        public int? QuotedTimeInMinutes { get; set; }
-        public string Note { get; set; }
+        public virtual int? QuotedTimeInMinutes { get; set; }
+        public virtual string Note { get; set; }
+        public virtual DateTime? DateDeleted { get; set; }
 
         public virtual Queue Queue { get; set; }
         public virtual HashSet<CustomerLogEntry> LogEntries { get; set; } = new HashSet<CustomerLogEntry>();
+
+        public string TableName { get { return "Customers"; } }
+        public string PrimaryKeyName { get { return "Id"; } }
 
         public string ObfuscateName(Customer currentCustomer)
         {

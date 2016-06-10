@@ -8,6 +8,7 @@ using Plum.Tests.TestHelpers;
 using TestStack.FluentMVCTesting;
 using Plum.Tests.TestHelpers.Mvc;
 using Should;
+using Plum.Models.Annotations;
 using Plum.ViewModels.Customer;
 using System.Web.Mvc;
 

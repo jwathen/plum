@@ -406,7 +406,12 @@
     <Compile Include="Lib\Services\TextMessageService.cs" />
     <Compile Include="Lib\Services\TextMessageTemplateService.cs" />
     <Compile Include="Lib\Helpers\ValidationHelpers.cs" />
-    <Compile Include="Models\IIntegerIdEntity.cs" />
+    <Compile Include="Migrations\201606100032583_SoftDeleteCustomers.cs" />
+    <Compile Include="Migrations\201606100032583_SoftDeleteCustomers.Designer.cs">
+      <DependentUpon>201606100032583_SoftDeleteCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Annotations\IIntegerIdEntity.cs" />
+    <Compile Include="Models\Annotations\ISoftDeleteEntity.cs" />
     <Compile Include="ViewModels\Business\ShowViewModel.cs" />
     <Compile Include="ViewModels\Business\SignInInformationViewModel.cs" />
     <Compile Include="ViewModels\Business\TextMessagesViewModel.cs" />
@@ -460,7 +465,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerLogEntry.cs" />
     <Compile Include="Models\CustomerLogEntryType.cs" />
-    <Compile Include="Models\IDatedEntity.cs" />
+    <Compile Include="Models\Annotations\IDatedEntity.cs" />
     <Compile Include="Models\Queue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueController.generated.cs">
@@ -858,6 +863,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606061916470_AddPhoneNumberAndTextMessagesToBusiness.resx">
       <DependentUpon>201606061916470_AddPhoneNumberAndTextMessagesToBusiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606100032583_SoftDeleteCustomers.resx">
+      <DependentUpon>201606100032583_SoftDeleteCustomers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

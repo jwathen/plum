@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using Plum.Models.Annotations;
 
 namespace Plum.Models
 {
@@ -25,6 +28,8 @@ namespace Plum.Models
             modelBuilder.Entity<Business>().Property(x => x.Name).HasMaxLength(256).IsRequired();
             modelBuilder.Entity<Queue>().Property(x => x.Name).HasMaxLength(256);
 
+            modelBuilder.Entity<Customer>().Map(x => x.Requires("DateDeleted").HasValue(null));
+            modelBuilder.Entity<Customer>().Ignore(x => x.DateDeleted);
             modelBuilder.Entity<Customer>().Property(x => x.Name).HasMaxLength(256).IsRequired();
             modelBuilder.Entity<Customer>().Property(x => x.PhoneNumber).HasMaxLength(10);
             modelBuilder.Entity<Customer>().Property(x => x.UrlToken).HasMaxLength(12).IsRequired();
@@ -33,12 +38,14 @@ namespace Plum.Models
         public override Task<int> SaveChangesAsync()
         {
             SetDateFields();
+            SoftDeleteEntities();
             return base.SaveChangesAsync();
         }
 
         public override int SaveChanges()
         {
             SetDateFields();
+            SoftDeleteEntities();
             return base.SaveChanges();
         }
 
@@ -60,6 +67,26 @@ namespace Plum.Models
                 }
             }
             ChangeTracker.DetectChanges();
+        }
+
+        protected void SoftDeleteEntities()
+        {
+            foreach (var entry in ChangeTracker.Entries().Where(p => p.State == EntityState.Deleted))
+            {
+                if (entry.Entity is ISoftDeleteEntity)
+                {
+                    SoftDelete(entry);
+                }
+            }
+        }
+
+        protected void SoftDelete(DbEntityEntry entry)
+        {
+            var entity = (ISoftDeleteEntity)entry.Entity;
+            string sql = $"UPDATE {entity.TableName} SET DateDeleted = GETUTCDATE() WHERE {entity.PrimaryKeyName} = @id";
+
+            Database.ExecuteSqlCommand(sql, new SqlParameter("@id", entry.OriginalValues[entity.PrimaryKeyName]));  
+            entry.State = EntityState.Detached;
         }
 
         public DbSet<Business> Businesses { get; set; }
