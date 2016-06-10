@@ -629,7 +629,7 @@ WriteLiteral("    ");
 
             
             #line 121 "..\..\Views\Shared\_Layout.cshtml"
-Write(Html.CdnScript("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_1_14_0_min_js, "$.fn.validate"));
+Write(Html.CdnScript("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_1_14_0_min_js, "$.validator"));
 
             
             #line default
@@ -640,7 +640,7 @@ WriteLiteral("    ");
 
             
             #line 122 "..\..\Views\Shared\_Layout.cshtml"
-Write(Html.CdnScript("https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_unobtrusive_5_2_3_min_js, "$.validate.unobtrusive"));
+Write(Html.CdnScript("https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_unobtrusive_5_2_3_min_js, "$.validator.unobtrusive"));
 
             
             #line default
@@ -680,45 +680,45 @@ Write(Html.CdnScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jque
             #line hidden
 WriteLiteral("\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6390), Tuple.Create("\"", 6481)
+WriteAttribute("src", Tuple.Create(" src=\"", 6389), Tuple.Create("\"", 6480)
             
             #line 126 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6396), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6395), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
             
             #line default
             #line hidden
-, 6396), false)
+, 6395), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6505), Tuple.Create("\"", 6525)
-, Tuple.Create(Tuple.Create("", 6511), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
-, 6511), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6504), Tuple.Create("\"", 6524)
+, Tuple.Create(Tuple.Create("", 6510), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
+, 6510), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6549), Tuple.Create("\"", 6629)
+WriteAttribute("src", Tuple.Create(" src=\"", 6548), Tuple.Create("\"", 6628)
             
             #line 128 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6555), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
+, Tuple.Create(Tuple.Create("", 6554), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
             
             #line default
             #line hidden
-, 6555), false)
+, 6554), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6653), Tuple.Create("\"", 6718)
+WriteAttribute("src", Tuple.Create(" src=\"", 6652), Tuple.Create("\"", 6717)
             
             #line 129 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6659), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6658), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 6659), false)
+, 6658), false)
 );
 
 WriteLiteral("></script>\r\n");
