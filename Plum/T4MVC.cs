@@ -112,6 +112,20 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class CdnFallbacks {
+                private const string URLPATH = "~/Content/Scripts/CdnFallbacks";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string bootstrap_3_3_6_min_js = Url("bootstrap-3.3.6.min.js");
+                public static readonly string jquery_2_2_4_min_js = Url("jquery-2.2.4.min.js");
+                public static readonly string jquery_formatter_0_1_5_min_js = Url("jquery.formatter-0.1.5.min.js");
+                public static readonly string jquery_signalr_2_2_0_min_js = Url("jquery.signalr-2.2.0.min.js");
+                public static readonly string jquery_ui_1_11_4_min_js = Url("jquery.ui-1.11.4.min.js");
+                public static readonly string jquery_validate_1_14_0_min_js = Url("jquery.validate-1.14.0.min.js");
+                public static readonly string jquery_validate_unobtrusive_5_2_3_min_js = Url("jquery.validate.unobtrusive-5.2.3.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Home {
                 private const string URLPATH = "~/Content/Scripts/Home";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -298,6 +312,19 @@ namespace Links
             }
             public static partial class Scripts 
             {
+                public static partial class CdnFallbacks 
+                {
+                    public static class Assets
+                    {
+                        public const string bootstrap_3_3_6_min_js = "~/Content/Scripts/CdnFallbacks/bootstrap-3.3.6.min.js"; 
+                        public const string jquery_2_2_4_min_js = "~/Content/Scripts/CdnFallbacks/jquery-2.2.4.min.js"; 
+                        public const string jquery_formatter_0_1_5_min_js = "~/Content/Scripts/CdnFallbacks/jquery.formatter-0.1.5.min.js"; 
+                        public const string jquery_signalr_2_2_0_min_js = "~/Content/Scripts/CdnFallbacks/jquery.signalr-2.2.0.min.js"; 
+                        public const string jquery_ui_1_11_4_min_js = "~/Content/Scripts/CdnFallbacks/jquery.ui-1.11.4.min.js"; 
+                        public const string jquery_validate_1_14_0_min_js = "~/Content/Scripts/CdnFallbacks/jquery.validate-1.14.0.min.js"; 
+                        public const string jquery_validate_unobtrusive_5_2_3_min_js = "~/Content/Scripts/CdnFallbacks/jquery.validate.unobtrusive-5.2.3.min.js"; 
+                    }
+                }
                 public static partial class Home 
                 {
                     public static class Assets

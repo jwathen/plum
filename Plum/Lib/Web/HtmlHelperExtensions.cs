@@ -28,7 +28,7 @@ namespace Plum.Web
         {
             return UrlUtility.FileVersionUrl(rootRelativePath);
         }
-
+         
         public static HtmlString AntiForgeryToken2(this HtmlHelper html)
         {
             if (HttpContext.Current == null)
@@ -99,6 +99,14 @@ namespace Plum.Web
             {
                 return new HtmlString(phoneNumber);
             }
+        }
+
+        public static HtmlString CdnScript(this HtmlHelper html, string cdnUrl, string fallbackUrl, string test)
+        {
+            StringBuilder markup = new StringBuilder();
+            markup.AppendLine($"<script src=\"{html.AttributeEncode(cdnUrl)}\"></script>");
+            markup.AppendLine($"<script>{test} || document.write('<script src=\"{UrlUtility.FileVersionUrl(fallbackUrl)}\">\\x3C/script>')</script>");
+            return new HtmlString(markup.ToString());
         }
     }
 }

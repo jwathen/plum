@@ -116,13 +116,13 @@
     {
         @Html.AntiForgeryToken2()
     }
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/jquery.formatter.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    @Html.CdnScript("https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", Links.Content.Scripts.CdnFallbacks.jquery_2_2_4_min_js, "window.jQuery")
+    @Html.CdnScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", Links.Content.Scripts.CdnFallbacks.bootstrap_3_3_6_min_js, "$.fn.modal")
+    @Html.CdnScript("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_1_14_0_min_js, "$.fn.validate")
+    @Html.CdnScript("https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_unobtrusive_5_2_3_min_js, "$.validate.unobtrusive")
+    @Html.CdnScript("https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/jquery.formatter.min.js", Links.Content.Scripts.CdnFallbacks.jquery_formatter_0_1_5_min_js, "$.fn.formatter")
+    @Html.CdnScript("https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js", Links.Content.Scripts.CdnFallbacks.jquery_signalr_2_2_0_min_js, "$.signalR")
+    @Html.CdnScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", Links.Content.Scripts.CdnFallbacks.jquery_ui_1_11_4_min_js, "$.ui")
     <script src="@Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)"></script>
     <script src="~/signalr/hubs"></script>
     <script src="@Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)"></script>

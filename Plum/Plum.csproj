@@ -226,6 +226,13 @@
     <Content Include="Content\Images\testimonial5.jpg" />
     <Content Include="Content\Images\testimonial6.jpg" />
     <Content Include="Content\Images\testimonial7.jpg" />
+    <Content Include="Content\Scripts\CdnFallbacks\bootstrap-3.3.6.min.js" />
+    <Content Include="Content\Scripts\CdnFallbacks\jquery-2.2.4.min.js" />
+    <Content Include="Content\Scripts\CdnFallbacks\jquery.formatter-0.1.5.min.js" />
+    <Content Include="Content\Scripts\CdnFallbacks\jquery.signalr-2.2.0.min.js" />
+    <Content Include="Content\Scripts\CdnFallbacks\jquery.ui-1.11.4.min.js" />
+    <Content Include="Content\Scripts\CdnFallbacks\jquery.validate-1.14.0.min.js" />
+    <Content Include="Content\Scripts\CdnFallbacks\jquery.validate.unobtrusive-5.2.3.min.js" />
     <Content Include="Content\Scripts\Home\ContactUs.es5.js">
       <DependentUpon>ContactUs.js</DependentUpon>
     </Content>

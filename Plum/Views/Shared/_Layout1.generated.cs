@@ -603,78 +603,122 @@ WriteLiteral(">Yes</button>\r\n                    </div>\r\n                </d
             
             #line default
             #line hidden
-WriteLiteral("    <script");
+WriteLiteral("    ");
 
-WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"");
+            
+            #line 119 "..\..\Views\Shared\_Layout.cshtml"
+Write(Html.CdnScript("https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", Links.Content.Scripts.CdnFallbacks.jquery_2_2_4_min_js, "window.jQuery"));
 
-WriteLiteral("></script>\r\n    <script");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
-WriteLiteral(" src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"");
+WriteLiteral("    ");
 
-WriteLiteral("></script>\r\n    <script");
+            
+            #line 120 "..\..\Views\Shared\_Layout.cshtml"
+Write(Html.CdnScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", Links.Content.Scripts.CdnFallbacks.bootstrap_3_3_6_min_js, "$.fn.modal"));
 
-WriteLiteral(" src=\"https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min." +
-"js\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
-WriteLiteral("></script>\r\n    <script");
+WriteLiteral("    ");
 
-WriteLiteral(" src=\"https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.j" +
-"s\"");
+            
+            #line 121 "..\..\Views\Shared\_Layout.cshtml"
+Write(Html.CdnScript("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_1_14_0_min_js, "$.fn.validate"));
 
-WriteLiteral("></script>\r\n    <script");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
-WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/jquery.formatter." +
-"min.js\"");
+WriteLiteral("    ");
 
-WriteLiteral("></script>\r\n    <script");
+            
+            #line 122 "..\..\Views\Shared\_Layout.cshtml"
+Write(Html.CdnScript("https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js", Links.Content.Scripts.CdnFallbacks.jquery_validate_unobtrusive_5_2_3_min_js, "$.validate.unobtrusive"));
 
-WriteLiteral(" src=\"https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
-WriteLiteral("></script>\r\n    <script");
+WriteLiteral("    ");
 
-WriteLiteral(" src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js\"");
+            
+            #line 123 "..\..\Views\Shared\_Layout.cshtml"
+Write(Html.CdnScript("https://cdnjs.cloudflare.com/ajax/libs/formatter.js/0.1.5/jquery.formatter.min.js", Links.Content.Scripts.CdnFallbacks.jquery_formatter_0_1_5_min_js, "$.fn.formatter"));
 
-WriteLiteral("></script>\r\n    <script");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5864), Tuple.Create("\"", 5955)
+WriteLiteral("    ");
+
+            
+            #line 124 "..\..\Views\Shared\_Layout.cshtml"
+Write(Html.CdnScript("https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js", Links.Content.Scripts.CdnFallbacks.jquery_signalr_2_2_0_min_js, "$.signalR"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 125 "..\..\Views\Shared\_Layout.cshtml"
+Write(Html.CdnScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js", Links.Content.Scripts.CdnFallbacks.jquery_ui_1_11_4_min_js, "$.ui"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 6390), Tuple.Create("\"", 6481)
             
             #line 126 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 5870), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6396), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
             
             #line default
             #line hidden
-, 5870), false)
+, 6396), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5979), Tuple.Create("\"", 5999)
-, Tuple.Create(Tuple.Create("", 5985), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
-, 5985), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6505), Tuple.Create("\"", 6525)
+, Tuple.Create(Tuple.Create("", 6511), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
+, 6511), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6023), Tuple.Create("\"", 6103)
+WriteAttribute("src", Tuple.Create(" src=\"", 6549), Tuple.Create("\"", 6629)
             
             #line 128 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6029), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
+, Tuple.Create(Tuple.Create("", 6555), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
             
             #line default
             #line hidden
-, 6029), false)
+, 6555), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6127), Tuple.Create("\"", 6192)
+WriteAttribute("src", Tuple.Create(" src=\"", 6653), Tuple.Create("\"", 6718)
             
             #line 129 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6133), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6659), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 6133), false)
+, 6659), false)
 );
 
 WriteLiteral("></script>\r\n");
