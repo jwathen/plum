@@ -16,6 +16,9 @@ namespace Plum.Models
         public string ReadyTextMessage { get; set; }
         public virtual DateTime DateCreated { get; set; }
         public virtual DateTime DateUpdated { get; set; }
+        public virtual DateTime BillingDate { get; set; }
+        public virtual int TextMessagesSent { get; set; }
+        public virtual int TextMessageLimit { get; set; }
         public virtual Account Account { get; set; }
 
         public virtual HashSet<Queue> Queues { get; set; } = new HashSet<Queue>();
@@ -35,6 +38,30 @@ namespace Plum.Models
         public bool HasPhoneNumber()
         {
             return !string.IsNullOrEmpty(PhoneNumber);
+        }
+
+        public bool IsNearsTextMessageLimit()
+        {
+            if (TextMessageLimit <= 0 || TextMessagesSent <= 0)
+            {
+                return false;
+            }
+
+            if (TextMessageLimit - TextMessagesSent < 100)
+            {
+                return true;
+            }
+            if (TextMessageLimit / TextMessagesSent <= 0.9)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool HasReachedTextMessageLimit()
+        {
+            return TextMessagesSent >= TextMessageLimit;
         }
     }
 }

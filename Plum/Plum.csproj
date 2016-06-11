@@ -425,6 +425,10 @@
     <Compile Include="Migrations\201606100032583_SoftDeleteCustomers.Designer.cs">
       <DependentUpon>201606100032583_SoftDeleteCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606110002448_AddTextMessageLimitsToBusinesses.cs" />
+    <Compile Include="Migrations\201606110002448_AddTextMessageLimitsToBusinesses.Designer.cs">
+      <DependentUpon>201606110002448_AddTextMessageLimitsToBusinesses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Annotations\IIntegerIdEntity.cs" />
     <Compile Include="Models\Annotations\ISoftDeleteEntity.cs" />
     <Compile Include="ViewModels\Business\ShowViewModel.cs" />
@@ -890,6 +894,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606100032583_SoftDeleteCustomers.resx">
       <DependentUpon>201606100032583_SoftDeleteCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606110002448_AddTextMessageLimitsToBusinesses.resx">
+      <DependentUpon>201606110002448_AddTextMessageLimitsToBusinesses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

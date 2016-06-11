@@ -1,4 +1,6 @@
 ﻿Name: Other Business
+TextMessagesSent: 0
+TextMessageLimit: 1000
 Account:
   EmailAddress: other_business@site.com
   PasswordHash: SCyV24xHI2JYIMD0MOj1D35H6YaRfj573jVWVELVbx+aRsholaiExNQrvSRFOAWZ15/ZSrxZ8DgEJBiQkMJkEQ== # passw0rd

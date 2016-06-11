@@ -116,23 +116,25 @@ namespace Plum.Models
 
         public async Task SendWelcomeTextMessageAsync(TextMessageService textMessageService, UrlHelper urlHelper)
         {
-            if (this.HasPhoneNumber())
+            if (this.HasPhoneNumber() && !this.Queue.Business.HasReachedTextMessageLimit())
             {
                 var textMessageTemplates = new TextMessageTemplateService();
                 string placeInLineUrl = urlHelper.ActionAbsolute(MVC.Queue.ShowCustomer(this.UrlToken));
                 string message = textMessageTemplates.BuildWelcomeMessage(Queue.Business, placeInLineUrl);
                 await textMessageService.SendAsync(PhoneNumber, message);
+                Queue.Business.TextMessagesSent++;
                 Log(CustomerLogEntryType.WelcomeTextMessageSent, $"\"{message}\"");
             }
         }
 
         public async Task SendReadyTextMessageAsync(TextMessageService textMessageService, UrlHelper urlHelpers)
         {
-            if (this.HasPhoneNumber())
+            if (this.HasPhoneNumber() && !this.Queue.Business.HasReachedTextMessageLimit())
             {
                 var textMessageTemplates = new TextMessageTemplateService();
                 string message = textMessageTemplates.BuildReadyMessage(Queue.Business);
                 await textMessageService.SendAsync(PhoneNumber, message);
+                Queue.Business.TextMessagesSent++;
                 Log(CustomerLogEntryType.ReadyTextMessageSent, $"\"{message}\"");
             }
         }

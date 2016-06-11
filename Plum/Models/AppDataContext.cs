@@ -26,6 +26,7 @@ namespace Plum.Models
             modelBuilder.ComplexType<Account>().Property(x => x.PasswordSalt).IsRequired();
 
             modelBuilder.Entity<Business>().Property(x => x.Name).HasMaxLength(256).IsRequired();
+            modelBuilder.Entity<Business>().Property(x => x.BillingDate).HasColumnType("Date");
             modelBuilder.Entity<Queue>().Property(x => x.Name).HasMaxLength(256);
 
             modelBuilder.Entity<Customer>().Map(x => x.Requires("DateDeleted").HasValue(null));

@@ -57,7 +57,7 @@ namespace Plum.Tests.Integration.Controllers
                 .ShouldRenderDefaultViewHtml();
         }
 
-        public void Manifest_REnders()
+        public void Manifest_Renders()
         {
             _controller.WithCallTo(x => x.Manifest())
                 .ShouldReturnContent(contentType: "application/manifest+json");

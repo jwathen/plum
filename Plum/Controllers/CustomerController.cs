@@ -70,6 +70,7 @@ namespace Plum.Controllers
             await queue.AddCustomerAsync(customer, TextMessaging, Url);
             await Database.SaveChangesAsync();
             await UpdateHub.BroadcastQueueUpdateToCustomers(queue.Id);
+            await UpdateHub.BroadcastQueueUpdateToBusiness(queue.Id);
 
             string url = Url.Action(MVC.Queue.Show(queue.Id));
             return JavaScriptRedirect(url);
@@ -154,6 +155,7 @@ namespace Plum.Controllers
                 Database.Customers.Remove(customer);
                 await Database.SaveChangesAsync();
                 await UpdateHub.BroadcastQueueUpdateToCustomers(queueId);
+                await UpdateHub.BroadcastQueueUpdateToBusiness(queueId);
                 return RedirectToAction(MVC.Queue.Show(queueId));
             }
 

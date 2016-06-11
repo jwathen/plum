@@ -1,5 +1,6 @@
 ﻿@model Plum.ViewModels.Business.TextMessagesViewModel
 
+<p class="@(Model.Business.IsNearsTextMessageLimit() ? "text-danger" : null)">You have sent <strong>@Model.Business.TextMessagesSent.ToString("N0")</strong> out of <strong>@Model.Business.TextMessageLimit.ToString("N0")</strong> text messages this month.</p>
 <dl class="dl-horizontal">
     <dt>
         Welcome Text Message

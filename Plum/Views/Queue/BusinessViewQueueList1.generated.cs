@@ -47,10 +47,49 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n");
+WriteLiteral("\r\n");
 
             
-            #line 6 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 5 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+ if (Model.Business.IsNearsTextMessageLimit())
+{
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <p");
+
+WriteLiteral(" class=\"text-danger\"");
+
+WriteLiteral(">You have sent ");
+
+            
+            #line 7 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+                                    Write(Model.Business.TextMessagesSent);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" out of ");
+
+            
+            #line 7 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+                                                                            Write(Model.Business.TextMessageLimit);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" text messages this month.</p>\r\n");
+
+            
+            #line 8 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+}
+
+            
+            #line default
+            #line hidden
+            
+            #line 9 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
  if (Model.Customers.Count() == 0)
 {
 
@@ -60,7 +99,7 @@ WriteLiteral("\r\n\r\n");
 WriteLiteral("    <p>\r\n        There are no customers waiting.\r\n    </p>\r\n");
 
             
-            #line 11 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 14 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
 }
 else if (Model.Customers.Count() > 1)
 {
@@ -80,7 +119,7 @@ WriteLiteral(">\r\n        Drag and drop to reorder the list.  Click &quot;Save 
 "when you\'re done.\r\n    </p>\r\n");
 
             
-            #line 17 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 20 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
 }
 
             
@@ -93,13 +132,13 @@ WriteLiteral(" class=\"list-group text-center\"");
 WriteLiteral(">\r\n");
 
             
-            #line 19 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 22 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 22 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
      foreach (var customer in Model.OrderedCustomers())
     {
 
@@ -113,7 +152,7 @@ WriteLiteral(" class=\"list-group-item\"");
 WriteLiteral(" data-show-customer-id=\"");
 
             
-            #line 21 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 24 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                                                       Write(customer.Id);
 
             
@@ -126,7 +165,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 22 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
        Write(customer.Name);
 
             
@@ -135,7 +174,7 @@ WriteLiteral("            ");
 WriteLiteral(" (");
 
             
-            #line 22 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                        Write(customer.NumberInParty);
 
             
@@ -144,7 +183,7 @@ WriteLiteral(" (");
 WriteLiteral(") - Waited ");
 
             
-            #line 22 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                                                          Write(customer.TimeWaitedWords());
 
             
@@ -153,13 +192,13 @@ WriteLiteral(") - Waited ");
 WriteLiteral("\r\n");
 
             
-            #line 23 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 26 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 23 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 26 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
              if (customer.QuotedTimeInMinutes.HasValue)
             {
                 if (customer.TimeWaited().TotalMinutes > customer.QuotedTimeInMinutes.Value)
@@ -175,7 +214,7 @@ WriteLiteral(" class=\"text-danger text-nowrap\"");
 WriteLiteral(">(Quoted ");
 
             
-            #line 27 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 30 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                                                              Write(customer.QuotedTimeWords());
 
             
@@ -184,7 +223,7 @@ WriteLiteral(">(Quoted ");
 WriteLiteral(")</span>\r\n");
 
             
-            #line 28 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 31 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                 }
                 else
                 {
@@ -199,7 +238,7 @@ WriteLiteral(" class=\"text-muted text-nowrap\"");
 WriteLiteral(">(Quoted ");
 
             
-            #line 31 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 34 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                                                             Write(customer.QuotedTimeWords());
 
             
@@ -208,7 +247,7 @@ WriteLiteral(">(Quoted ");
 WriteLiteral(")</span>\r\n");
 
             
-            #line 32 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 35 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                 }
             }
 
@@ -218,7 +257,7 @@ WriteLiteral(")</span>\r\n");
 WriteLiteral("        </li>\r\n");
 
             
-            #line 35 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 38 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
     }
 
             

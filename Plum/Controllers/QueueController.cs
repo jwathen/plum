@@ -118,6 +118,7 @@ namespace Plum.Controllers
 
                     await Database.SaveChangesAsync();
                     await UpdateHub.BroadcastQueueUpdateToCustomers(id);
+                    await UpdateHub.BroadcastQueueUpdateToBusiness(id);
                 }
             }
 

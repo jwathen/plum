@@ -13,6 +13,7 @@ namespace Plum.ViewModels.Business
     {
         TextMessageTemplateService _textMessageTemplates = new TextMessageTemplateService();
 
+        public Models.Business Business { get; set; }
         public int Id { get; set; }
         public string WelcomeTextMessage { get; set; }
         public string ReadyTextMessage { get; set; }
@@ -22,6 +23,7 @@ namespace Plum.ViewModels.Business
         public void CopyFrom(Models.Business business)
         {
             Id = business.Id;
+            Business = business;
             WelcomeTextMessage = business.WelcomeTextMessage;
             ReadyTextMessage = business.ReadyTextMessage;
 

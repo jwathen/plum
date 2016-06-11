@@ -204,6 +204,23 @@ namespace Plum.Tests.Integration.Controllers
             var sentTextMessage = _controller.TextMessaging.SentMessages.Single();
             sentTextMessage.Message.ShouldNotBeNull();
             sentTextMessage.Destination.ShouldEqual("11234567890");
+
+            TestBusiness.TextMessagesSent.ShouldEqual(1);
+        }
+
+        public void SendReadyMessage_GivenOverLimit_DoesNotSendText()
+        {
+            SignIn();
+            TestBusiness.TextMessageLimit = 1000;
+            TestBusiness.TextMessagesSent = 1000;
+            var customer = TestBusiness.Queues.First().Customers.First();
+            SetRouteId(customer.Id);
+
+            _controller.WithCallTo(x => x.SendReadyMessage(customer.Id))
+                .ShouldRenderViewHtml(MVC.Customer.Views.Show);
+
+            customer.LogEntries.Where(x => x.Type == Models.CustomerLogEntryType.ReadyTextMessageSent).ShouldBeEmpty();
+            _controller.TextMessaging.SentMessages.ShouldBeEmpty();
         }
 
         public void MoveToEndOfList_GivenValidCustomer_MovesTheCustomer()

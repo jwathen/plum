@@ -39,14 +39,44 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<dl");
+WriteLiteral("<p");
+
+WriteAttribute("class", Tuple.Create(" class=\"", 59), Tuple.Create("\"", 133)
+            
+            #line 3 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+, Tuple.Create(Tuple.Create("", 67), Tuple.Create<System.Object, System.Int32>(Model.Business.IsNearsTextMessageLimit() ? "text-danger" : null
+            
+            #line default
+            #line hidden
+, 67), false)
+);
+
+WriteLiteral(">You have sent <strong>");
+
+            
+            #line 3 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+                                                                                               Write(Model.Business.TextMessagesSent.ToString("N0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</strong> out of <strong>");
+
+            
+            #line 3 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+                                                                                                                                                                       Write(Model.Business.TextMessageLimit.ToString("N0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</strong> text messages this month.</p>\r\n<dl");
 
 WriteLiteral(" class=\"dl-horizontal\"");
 
 WriteLiteral(">\r\n    <dt>\r\n        Welcome Text Message\r\n    </dt>\r\n    <dd><em>");
 
             
-            #line 7 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+            #line 8 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
        Write(Model.SampleWelcomeMessage);
 
             
@@ -55,7 +85,7 @@ WriteLiteral(">\r\n    <dt>\r\n        Welcome Text Message\r\n    </dt>\r\n    
 WriteLiteral("</em></dd>\r\n    <dt>Ready Text Message</dt>\r\n    <dd><em>");
 
             
-            #line 9 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+            #line 10 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
        Write(Model.SampleReadyMessage);
 
             
@@ -74,7 +104,7 @@ WriteLiteral("\r\n   data-ajax-load-target=\"#TextMessagesPanel\"");
 WriteLiteral("\r\n   data-ajax-load-url=\"");
 
             
-            #line 14 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
+            #line 15 "..\..\Views\Business\DisplayTemplates\TextMessagesViewModel.cshtml"
                   Write(Url.Action(MVC.Business.EditTextMessages(Model.Id)));
 
             

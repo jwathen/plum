@@ -173,13 +173,14 @@ namespace Plum.Controllers
         [HttpPut, Route("business/{id:int}/text-messages")]
         public virtual async Task<ActionResult> UpdateTextMessages(TextMessagesViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(MVC.Business.Views.EditTextMessages, model);
-            }
-
             var business = await Business();
             if (_result != null) return _result;
+
+            if (!ModelState.IsValid)
+            {
+                model.Business = business;
+                return View(MVC.Business.Views.EditTextMessages, model);
+            }
 
             model.CopyTo(business);
             await Database.SaveChangesAsync();
