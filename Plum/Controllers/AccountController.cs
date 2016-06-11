@@ -17,6 +17,10 @@ namespace Plum.Controllers
         [HttpGet, Route("account/sign-up")]
         public virtual ActionResult SignUp()
         {
+            if (Request.IsAuthenticated)
+            {
+                return RedirectToAction(MVC.Queue.Show());
+            }
             return View();
         }
 

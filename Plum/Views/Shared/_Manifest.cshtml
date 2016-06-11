@@ -1,0 +1,23 @@
+﻿@model Plum.Web.Manifest
+@helper iconLink(string rel, int size)
+{
+var icon = Model.icons.FirstOrDefault(x => x.size == size);
+if (icon != null)
+{
+        <link rel="@rel" sizes="@icon.sizes" href="@icon.src">
+}
+}
+<meta name="applciation-name" content="@Model.name">
+<meta name="apple-mobile-web-app-title" content="@Model.name">
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+@iconLink("apple-touch-icon", 57)
+@iconLink("apple-touch-icon", 60)
+@iconLink("apple-touch-icon", 72)
+@iconLink("apple-touch-icon", 76)
+@iconLink("apple-touch-icon", 114)
+@iconLink("apple-touch-icon", 120)
+@iconLink("apple-touch-icon", 152)
+@iconLink("icon", 128)
+@iconLink("icon", 192)

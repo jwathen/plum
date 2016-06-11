@@ -1,6 +1,7 @@
 #todo
 
 ## features
+- sign up / sign in landing page
 - beta invites
 - respond to customer texts
 - send arbitrary texts back to customer
@@ -11,11 +12,7 @@
 ## support
 - password reset
 - google analytics
-- text message limits
 - azure deployment slots
-- cdn fallbacks
-- attributions
-- application manifest
 - admin page
 
 ## issues

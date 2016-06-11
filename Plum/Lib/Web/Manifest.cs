@@ -5,11 +5,26 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Hosting;
+using System.Web.Mvc;
 
 namespace Plum.Web
 {
     public class Manifest
     {
+        public static Manifest Build(UrlHelper url)
+        {
+            var manifest = new Manifest();
+            manifest.name = AppSettings.App.Name;
+            manifest.short_name = AppSettings.App.Name;
+            manifest.background_color = "#5d4865";
+            manifest.theme_color = "white";
+            manifest.display = "standalone";
+            manifest.start_url = "/account/sign-up";
+            manifest.scope = "/";
+            manifest.AddIcons();
+            return manifest;
+        }
+
         public string name { get; set; }
         public string short_name { get; set; }
         public string background_color { get; set; }
@@ -41,10 +56,16 @@ namespace Plum.Web
     {
         public ManifestImage(string size, string source)
         {
-            sizes = size;
-            src = UrlUtility.FileVersionUrl(source);
+            try
+            {
+                this.size = int.Parse(size.Split('x')[0]);
+                sizes = size;
+                src = UrlUtility.FileVersionUrl(source);
+            }
+            catch { }
         }
 
+        public int size { get; set; }
         public string src { get; set; }
         public string sizes { get; set; }
     }

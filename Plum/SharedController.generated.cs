@@ -40,11 +40,13 @@ namespace T4MVC
             {
                 public readonly string _FlashMessage = "_FlashMessage";
                 public readonly string _Layout = "_Layout";
+                public readonly string _Manifest = "_Manifest";
                 public readonly string _VIewStart = "_VIewStart";
                 public readonly string Error = "Error";
             }
             public readonly string _FlashMessage = "~/Views/Shared/_FlashMessage.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
+            public readonly string _Manifest = "~/Views/Shared/_Manifest.cshtml";
             public readonly string _VIewStart = "~/Views/Shared/_VIewStart.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";
             static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();

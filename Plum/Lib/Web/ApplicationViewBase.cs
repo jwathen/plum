@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Plum.Controllers;
 
 namespace Plum.Web
 {
@@ -38,6 +39,14 @@ namespace Plum.Web
             get
             {
                 return _appSession;
+            }
+        }
+
+        protected Manifest AppManifest
+        {
+            get
+            {
+                return ((AppControllerBase)ViewContext.Controller).AppManifest;
             }
         }
     }

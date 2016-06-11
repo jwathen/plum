@@ -85,13 +85,22 @@ namespace Links
                 private const string URLPATH = "~/Content/Images/Icons";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _114x114_png = Url("114x114.png");
                 public static readonly string _120x120_png = Url("120x120.png");
                 public static readonly string _128x128_png = Url("128x128.png");
+                public static readonly string _150x150_png = Url("150x150.png");
                 public static readonly string _152x152_png = Url("152x152.png");
+                public static readonly string _192x192_png = Url("192x192.png");
                 public static readonly string _256x256_png = Url("256x256.png");
+                public static readonly string _310x310_png = Url("310x310.png");
+                public static readonly string _32x32_png = Url("32x32.png");
                 public static readonly string _384x384_png = Url("384x384.png");
                 public static readonly string _512x512_png = Url("512x512.png");
+                public static readonly string _57x57_png = Url("57x57.png");
+                public static readonly string _60x60_png = Url("60x60.png");
                 public static readonly string _64x64_png = Url("64x64.png");
+                public static readonly string _70x70_png = Url("70x70.png");
+                public static readonly string _72x72_png = Url("72x72.png");
                 public static readonly string _76x76_png = Url("76x76.png");
                 public static readonly string original_png = Url("original.png");
             }

@@ -11,6 +11,7 @@ using Plum.Web;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using Plum.Models.Annotations;
+using System.Runtime.Caching;
 
 namespace Plum.Controllers
 {
@@ -94,6 +95,20 @@ namespace Plum.Controllers
             get
             {
                 return _emailService;
+            }
+        }
+
+        public Manifest AppManifest
+        {
+            get
+            {
+                var manifest = (Manifest)MemoryCache.Default["manifest"];
+                if (manifest == null)
+                {
+                    manifest = Manifest.Build(Url);
+                    MemoryCache.Default.Add("manifest", manifest, DateTime.Now.AddMinutes(5));
+                }
+                return manifest;
             }
         }
 

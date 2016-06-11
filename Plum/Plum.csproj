@@ -209,13 +209,22 @@
     </Content>
     <Content Include="App_Data\Profanity.txt" />
     <Content Include="Content\Images\favicon.png" />
+    <Content Include="Content\Images\Icons\114x114.png" />
     <Content Include="Content\Images\Icons\120x120.png" />
     <Content Include="Content\Images\Icons\128x128.png" />
+    <Content Include="Content\Images\Icons\150x150.png" />
     <Content Include="Content\Images\Icons\152x152.png" />
+    <Content Include="Content\Images\Icons\192x192.png" />
     <Content Include="Content\Images\Icons\256x256.png" />
+    <Content Include="Content\Images\Icons\310x310.png" />
+    <Content Include="Content\Images\Icons\32x32.png" />
     <Content Include="Content\Images\Icons\384x384.png" />
     <Content Include="Content\Images\Icons\512x512.png" />
+    <Content Include="Content\Images\Icons\57x57.png" />
+    <Content Include="Content\Images\Icons\60x60.png" />
     <Content Include="Content\Images\Icons\64x64.png" />
+    <Content Include="Content\Images\Icons\70x70.png" />
+    <Content Include="Content\Images\Icons\72x72.png" />
     <Content Include="Content\Images\Icons\76x76.png" />
     <Content Include="Content\Images\Icons\original.png" />
     <Content Include="Content\Images\table.jpg" />
@@ -684,6 +693,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_Layout.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\_Manifest.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Manifest.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\_VIewStart.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -850,6 +864,10 @@
     <Content Include="Views\Home\About.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>About.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Manifest.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Manifest.generated.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -41,17 +41,7 @@ namespace Plum.Controllers
         [HttpGet, Route("manifest")]
         public virtual ActionResult Manifest()
         {
-            var manifest = new Manifest();
-            manifest.name = AppSettings.App.Name;
-            manifest.short_name = AppSettings.App.Name;
-            manifest.background_color = "#5d4865";
-            manifest.theme_color = "white";
-            manifest.display = "standalone";            
-            manifest.start_url = Url.Action(MVC.Account.SignIn());
-            manifest.scope = "/";
-            manifest.AddIcons();
-
-            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(AppManifest, Formatting.Indented);
             return Content(json, "application/manifest+json");
         }
 
