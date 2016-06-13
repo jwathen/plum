@@ -410,6 +410,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AppControllerBase.cs" />
     <Compile Include="Controllers\QueueController.cs" />
+    <Compile Include="Controllers\SmsController.cs" />
     <Compile Include="Controllers\UpdateHub.cs" />
     <Compile Include="CustomerController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -437,6 +438,18 @@
     <Compile Include="Migrations\201606110002448_AddTextMessageLimitsToBusinesses.cs" />
     <Compile Include="Migrations\201606110002448_AddTextMessageLimitsToBusinesses.Designer.cs">
       <DependentUpon>201606110002448_AddTextMessageLimitsToBusinesses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606132222516_AddDateReadToCustomerLogEntries.cs" />
+    <Compile Include="Migrations\201606132222516_AddDateReadToCustomerLogEntries.Designer.cs">
+      <DependentUpon>201606132222516_AddDateReadToCustomerLogEntries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606132227210_AddIndexToCustomerPhoneNumber.cs" />
+    <Compile Include="Migrations\201606132227210_AddIndexToCustomerPhoneNumber.Designer.cs">
+      <DependentUpon>201606132227210_AddIndexToCustomerPhoneNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606132305112_AddLogEntries.cs" />
+    <Compile Include="Migrations\201606132305112_AddLogEntries.Designer.cs">
+      <DependentUpon>201606132305112_AddLogEntries.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Annotations\IIntegerIdEntity.cs" />
     <Compile Include="Models\Annotations\ISoftDeleteEntity.cs" />
@@ -513,6 +526,7 @@
     <Compile Include="ViewModels\Business\BusinessInformationViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
     <Compile Include="ViewModels\Queue\ManageCustomerViewModel.cs" />
+    <Compile Include="ViewModels\Sms\SmsMessage.cs" />
     <Compile Include="Views\Account\SignIn.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -916,8 +930,19 @@
     <EmbeddedResource Include="Migrations\201606110002448_AddTextMessageLimitsToBusinesses.resx">
       <DependentUpon>201606110002448_AddTextMessageLimitsToBusinesses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606132222516_AddDateReadToCustomerLogEntries.resx">
+      <DependentUpon>201606132222516_AddDateReadToCustomerLogEntries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606132227210_AddIndexToCustomerPhoneNumber.resx">
+      <DependentUpon>201606132227210_AddIndexToCustomerPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606132305112_AddLogEntries.resx">
+      <DependentUpon>201606132305112_AddLogEntries.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Sms\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

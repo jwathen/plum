@@ -8,12 +8,13 @@ namespace Plum.Models
 {
     public class CustomerLogEntry : IDatedEntity
     {
-        public int Id { get; set; }
-        public int CustomerId { get; set; }
-        public DateTime DateCreated { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int CustomerId { get; set; }
+        public virtual DateTime DateCreated { get; set; }
         public virtual DateTime DateUpdated { get; set; }
-        public string Message { get; set; }
-        public CustomerLogEntryType Type { get; set; }
+        public virtual DateTime? DateRead { get; set; }
+        public virtual string Message { get; set; }
+        public virtual CustomerLogEntryType Type { get; set; }
 
         public TimeSpan Age()
         {

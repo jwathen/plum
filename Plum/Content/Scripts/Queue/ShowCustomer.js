@@ -10,5 +10,5 @@
         updateHub.server.subscribeToQueueAsCustomer(window.viewData.urlToken);
     });
 
-    setTimeout(udpateCustomerViewQueueList, 60000);
+    setInterval(udpateCustomerViewQueueList, 60000);
 });

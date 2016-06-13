@@ -21,7 +21,7 @@ $(function () {
         updateHub.server.subscribeToQueueAsBusiness(window.viewData.queueId);
     });
 
-    setTimeout(udpateBusinessViewQueueList, 60000);
+    setInterval(udpateBusinessViewQueueList, 60000);
 
     $('[data-command=rearrange]').click(function () {
         var $list = $('#businessViewQueueList .list-group');

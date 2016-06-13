@@ -13,6 +13,7 @@ namespace Plum.Models
         NameChanged = 4,
         NumberInPartyChanged = 5,
         PhoneNumberChanged = 6,
-        WelcomeTextMessageSent = 7
+        WelcomeTextMessageSent = 7,
+        MessageReceivedFromCustomer = 8
     }
 }
