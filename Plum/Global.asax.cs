@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.WebPages;
 using Plum.Controllers;
+using Plum.Services;
 using RazorGenerator.Mvc;
 using StackExchange.Profiling;
 using StackExchange.Profiling.EntityFramework6;
@@ -35,6 +36,9 @@ namespace Plum
             routes.LowercaseUrls = true;
             routes.AppendTrailingSlash = true;
             routes.MapMvcAttributeRoutes();
+
+            var secrets = new AppSecrets(Server.MapPath("~/App_Data/Secrets.json"));
+            routes.MapRoute("IncomingSms", secrets.PlivoIncomingSmsRoute, MVC.Plivo.IncomingSms());
         }
 
         protected void RegisterViewEngines(ViewEngineCollection engines)

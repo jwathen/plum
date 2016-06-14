@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Elmah">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
@@ -109,6 +113,14 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.5\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Web.4.2.1\lib\net35\NLog.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NWebsec, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
@@ -377,6 +389,12 @@
     </None>
     <Content Include="Content\Scripts\jquery.ui.touch-punch-improved.js" />
     <Content Include="Content\Styles\Business\Show.scss" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\plumlist - Web Deploy.pubxml" />
     <Content Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -396,6 +414,9 @@
     <Compile Include="AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdminController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppSettings.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -405,12 +426,13 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BusinessController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AppControllerBase.cs" />
     <Compile Include="Controllers\QueueController.cs" />
-    <Compile Include="Controllers\SmsController.cs" />
+    <Compile Include="Controllers\PlivoController.cs" />
     <Compile Include="Controllers\UpdateHub.cs" />
     <Compile Include="CustomerController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -447,12 +469,19 @@
     <Compile Include="Migrations\201606132227210_AddIndexToCustomerPhoneNumber.Designer.cs">
       <DependentUpon>201606132227210_AddIndexToCustomerPhoneNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606132305112_AddLogEntries.cs" />
-    <Compile Include="Migrations\201606132305112_AddLogEntries.Designer.cs">
-      <DependentUpon>201606132305112_AddLogEntries.cs</DependentUpon>
+    <Compile Include="Migrations\201606132352092_CreateLogTable.cs" />
+    <Compile Include="Migrations\201606132352092_CreateLogTable.Designer.cs">
+      <DependentUpon>201606132352092_CreateLogTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Annotations\IIntegerIdEntity.cs" />
     <Compile Include="Models\Annotations\ISoftDeleteEntity.cs" />
+    <Compile Include="Models\LogEntry.cs" />
+    <Compile Include="PlivoController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Business\ShowViewModel.cs" />
     <Compile Include="ViewModels\Business\SignInInformationViewModel.cs" />
     <Compile Include="ViewModels\Business\TextMessagesViewModel.cs" />
@@ -883,6 +912,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Manifest.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Admin\ViewLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -936,11 +966,12 @@
     <EmbeddedResource Include="Migrations\201606132227210_AddIndexToCustomerPhoneNumber.resx">
       <DependentUpon>201606132227210_AddIndexToCustomerPhoneNumber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606132305112_AddLogEntries.resx">
-      <DependentUpon>201606132305112_AddLogEntries.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606132352092_CreateLogTable.resx">
+      <DependentUpon>201606132352092_CreateLogTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\NLogConfig\" />
     <Folder Include="Views\Sms\" />
   </ItemGroup>
   <PropertyGroup>

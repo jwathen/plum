@@ -135,7 +135,7 @@ namespace Plum.Models
                 string message = textMessageTemplates.BuildReadyMessage(Queue.Business);
                 await textMessageService.SendAsync(PhoneNumber, message);
                 Queue.Business.TextMessagesSent++;
-                Log(CustomerLogEntryType.ReadyTextMessageSent, $"\"{message}\"");
+                Log(CustomerLogEntryType.ReadyTextMessageSent, $"{Queue.Business.Name} - \"{message}\"");
             }
         }
     }

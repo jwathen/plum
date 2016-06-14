@@ -27,31 +27,33 @@ namespace Plum.Services
                 _secrets = JsonConvert.DeserializeObject<Dictionary<string, object>>(dataFile);
 
                 // Override with app settings if they exist.
-                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["PlivoAuthId"]))
-                {
-                    _secrets["PlivoAuthId"] = ConfigurationManager.AppSettings["PlivoAuthId"];
-                }
-                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["PlivoAuthToken"]))
-                {
-                    _secrets["PlivoAuthToken"] = ConfigurationManager.AppSettings["PlivoAuthToken"];
-                }
-                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["SendGridUserName"]))
-                {
-                    _secrets["SendGridUserName"] = ConfigurationManager.AppSettings["SendGridUserName"];
-                }
-                if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["SendGridPassword"]))
-                {
-                    _secrets["SendGridPassword"] = ConfigurationManager.AppSettings["SendGridPassword"];
-                }
+                AppSettingsOverride("PlivoAuthId");
+                AppSettingsOverride("PlivoAuthToken");
+                AppSettingsOverride("PlivoIncomingSmsRoute");
+                AppSettingsOverride("SendGridUserName");
+                AppSettingsOverride("SendGridPassword");
             }
+        }
+
+        private void AppSettingsOverride(string key)
+        {
+            if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings[key]))
+            {
+                _secrets[key] = ConfigurationManager.AppSettings[key];
+            }
+        }
+
+        private T GetSecret<T>(string key)
+        {
+            Init();
+            return (T)_secrets[key];
         }
 
         public string PlivoAuthId
         {
             get
             {
-                Init();
-                return (string)_secrets["PlivoAuthId"];
+                return GetSecret<string>("PlivoAuthId");
             }
         }
 
@@ -59,8 +61,15 @@ namespace Plum.Services
         {
             get
             {
-                Init();
-                return (string)_secrets["PlivoAuthToken"];
+                return GetSecret<string>("PlivoAuthToken");
+            }
+        }
+
+        public string PlivoIncomingSmsRoute
+        {
+            get
+            {
+                return GetSecret<string>("PlivoIncomingSmsRoute");
             }
         }
 
@@ -68,8 +77,7 @@ namespace Plum.Services
         {
             get
             {
-                Init();
-                return (string)_secrets["SendGridUserName"];
+                return GetSecret<string>("SendGridUserName");
             }
         }
 
@@ -77,8 +85,7 @@ namespace Plum.Services
         {
             get
             {
-                Init();
-                return (string)_secrets["SendGridPassword"];
+                return GetSecret<string>("SendGridPassword");
             }
         }
     }

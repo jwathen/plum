@@ -12,6 +12,7 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using Plum.Models.Annotations;
 using System.Runtime.Caching;
+using System.Data.Common;
 
 namespace Plum.Controllers
 {
@@ -25,6 +26,7 @@ namespace Plum.Controllers
         private AppSecrets _appSecrets;
         private TextMessageService _textMessageService;
         private EmailService _emailService;
+        private NLog.Logger _log;
 
         public void InitializePublic(RequestContext requestContext)
         {
@@ -36,6 +38,7 @@ namespace Plum.Controllers
         {
             base.Initialize(requestContext);
 
+            _log = NLog.LogManager.GetLogger(GetType().FullName);
             _db = new AppDataContext();
             _appSession = new AppSession(requestContext.HttpContext);
 
@@ -95,6 +98,22 @@ namespace Plum.Controllers
             get
             {
                 return _emailService;
+            }
+        }
+
+        public NLog.Logger Log
+        {
+            get
+            {
+                return _log;
+            }
+        }
+
+        public DbConnection Connection
+        {
+            get
+            {
+                return Database.Database.Connection;
             }
         }
 

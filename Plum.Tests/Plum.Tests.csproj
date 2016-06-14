@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Integration\Controllers\AccountControllerTests.cs" />
+    <Compile Include="Integration\Controllers\PlivoControllerTests.cs" />
     <Compile Include="Integration\Controllers\BusinessControllerTests.cs" />
     <Compile Include="Integration\Controllers\CustomerControllerTests.cs" />
     <Compile Include="Integration\Controllers\HomeControllerTests.cs" />

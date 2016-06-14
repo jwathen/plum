@@ -7,13 +7,13 @@ namespace Plum.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddLogEntries : IMigrationMetadata
+    public sealed partial class CreateLogTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddLogEntries));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateLogTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606132305112_AddLogEntries"; }
+            get { return "201606132352092_CreateLogTable"; }
         }
         
         string IMigrationMetadata.Source

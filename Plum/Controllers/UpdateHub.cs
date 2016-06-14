@@ -61,6 +61,13 @@ namespace Plum.Controllers
             await updateHub.Clients.Group(groupName).queueUpdated();
         }
 
+        public static async Task BroadcastCustomerUpdateToBusiness(int customerId)
+        {
+            var updateHub = GlobalHost.ConnectionManager.GetHubContext<UpdateHub>();
+            string groupName = $"Customer-{customerId}-Business";
+            await updateHub.Clients.Group(groupName).customerUpdated();
+        }
+
         protected override void Dispose(bool disposing)
         {
             _db?.Dispose();

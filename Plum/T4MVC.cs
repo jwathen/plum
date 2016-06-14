@@ -28,11 +28,14 @@ using T4MVC;
 public static partial class MVC
 {
     public static Plum.Controllers.AccountController Account = new Plum.Controllers.T4MVC_AccountController();
+    public static Plum.Controllers.AdminController Admin = new Plum.Controllers.T4MVC_AdminController();
     public static Plum.Controllers.BusinessController Business = new Plum.Controllers.T4MVC_BusinessController();
     public static Plum.Controllers.CustomerController Customer = new Plum.Controllers.T4MVC_CustomerController();
     public static Plum.Controllers.HomeController Home = new Plum.Controllers.T4MVC_HomeController();
+    public static Plum.Controllers.PlivoController Plivo = new Plum.Controllers.T4MVC_PlivoController();
     public static Plum.Controllers.QueueController Queue = new Plum.Controllers.T4MVC_QueueController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
+    public static T4MVC.SmsController Sms = new T4MVC.SmsController();
 }
 
 namespace T4MVC

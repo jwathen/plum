@@ -60,8 +60,7 @@ namespace Plum.Models
         }
 
         public bool HasReachedTextMessageLimit()
-        {
-            return false;
+        {            
             return TextMessagesSent >= TextMessageLimit;
         }
     }

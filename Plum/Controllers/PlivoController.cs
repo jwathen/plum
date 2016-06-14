@@ -11,11 +11,12 @@ using Newtonsoft.Json;
 
 namespace Plum.Controllers
 {
-    public class SmsController : AppControllerBase
+    public partial class PlivoController : AppControllerBase
     {
-        [HttpPost, Route("sms")]
-        public async Task<ActionResult> Index(SmsMessage message)
+        [HttpPost]
+        public virtual async Task<ActionResult> IncomingSms(SmsMessage message)
         {
+            Log.Info(JsonConvert.SerializeObject(message));
             if (message.From.Length > 10)
             {
                 message.From = message.From.Substring(1);
@@ -26,7 +27,7 @@ namespace Plum.Controllers
                 .FirstOrDefaultAsync();
             if (customer != null)
             {
-                customer.Log(Models.CustomerLogEntryType.MessageReceivedFromCustomer, message.Text);
+                customer.Log(Models.CustomerLogEntryType.MessageReceivedFromCustomer, $"{customer.Name} - \"{message.Text}\"");
                 await Database.SaveChangesAsync();
                 await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId);
             }

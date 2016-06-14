@@ -35,6 +35,8 @@ namespace Plum.Models
                     return "fa-comment";
                 case CustomerLogEntryType.WelcomeTextMessageSent:
                     return "fa-comment";
+                case CustomerLogEntryType.MessageReceivedFromCustomer:
+                    return "fa-comment";
                 default:
                     return "fa-clock-o";
             }
