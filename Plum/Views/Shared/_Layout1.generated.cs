@@ -139,7 +139,16 @@ WriteLiteral(" />\r\n    <title>");
 
             
             #line 16 "..\..\Views\Shared\_Layout.cshtml"
-      Write(ViewBag.Title);
+      Write(AppSettings.App.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(": ");
+
+            
+            #line 16 "..\..\Views\Shared\_Layout.cshtml"
+                             Write(ViewBag.Title);
 
             
             #line default
@@ -154,23 +163,23 @@ WriteLiteral(" />\r\n    <meta");
 
 WriteLiteral(" name=\"application-version\"");
 
-WriteAttribute("content", Tuple.Create(" content=\"", 760), Tuple.Create("\"", 820)
+WriteAttribute("content", Tuple.Create(" content=\"", 783), Tuple.Create("\"", 843)
             
             #line 18 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 770), Tuple.Create<System.Object, System.Int32>(AppSettings.Version
+, Tuple.Create(Tuple.Create("", 793), Tuple.Create<System.Object, System.Int32>(AppSettings.Version
             
             #line default
             #line hidden
-, 770), false)
-, Tuple.Create(Tuple.Create(" ", 790), Tuple.Create("(", 791), true)
+, 793), false)
+, Tuple.Create(Tuple.Create(" ", 813), Tuple.Create("(", 814), true)
             
             #line 18 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 792), Tuple.Create<System.Object, System.Int32>(AppSettings.ReleaseProfile
+, Tuple.Create(Tuple.Create("", 815), Tuple.Create<System.Object, System.Int32>(AppSettings.ReleaseProfile
             
             #line default
             #line hidden
-, 792), false)
-, Tuple.Create(Tuple.Create("", 819), Tuple.Create(")", 819), true)
+, 815), false)
+, Tuple.Create(Tuple.Create("", 842), Tuple.Create(")", 842), true)
 );
 
 WriteLiteral(" />\r\n");
@@ -186,21 +195,21 @@ Write(Html.Partial(MVC.Shared.Views._Manifest, AppManifest));
             #line hidden
 WriteLiteral("\r\n</head>\r\n<body");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 900), Tuple.Create("\"", 931)
+WriteAttribute("class", Tuple.Create(" class=\"", 923), Tuple.Create("\"", 954)
             
             #line 21 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 908), Tuple.Create<System.Object, System.Int32>(controller()
+, Tuple.Create(Tuple.Create("", 931), Tuple.Create<System.Object, System.Int32>(controller()
             
             #line default
             #line hidden
-, 908), false)
+, 931), false)
             
             #line 21 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 921), Tuple.Create<System.Object, System.Int32>(action()
+, Tuple.Create(Tuple.Create(" ", 944), Tuple.Create<System.Object, System.Int32>(action()
             
             #line default
             #line hidden
-, 922), false)
+, 945), false)
 );
 
 WriteLiteral(">\r\n    <nav");
@@ -284,28 +293,28 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                        <li>\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1787), Tuple.Create("\"", 1823)
+WriteAttribute("href", Tuple.Create(" href=\"", 1810), Tuple.Create("\"", 1846)
             
             #line 38 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 1794), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show())
+, Tuple.Create(Tuple.Create("", 1817), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show())
             
             #line default
             #line hidden
-, 1794), false)
+, 1817), false)
 );
 
 WriteLiteral(">Wait List</a>\r\n                        </li>\r\n");
 
 WriteLiteral("                        <li>\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1931), Tuple.Create("\"", 1997)
+WriteAttribute("href", Tuple.Create(" href=\"", 1954), Tuple.Create("\"", 2020)
             
             #line 41 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 1938), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Business.Show(AppSession.BusinessId.Value))
+, Tuple.Create(Tuple.Create("", 1961), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Business.Show(AppSession.BusinessId.Value))
             
             #line default
             #line hidden
-, 1938), false)
+, 1961), false)
 );
 
 WriteLiteral(">Settings</a>\r\n                        </li>\r\n");
@@ -320,14 +329,14 @@ WriteLiteral(">Settings</a>\r\n                        </li>\r\n");
             #line hidden
 WriteLiteral("                            <li>\r\n                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2196), Tuple.Create("\"", 2235)
+WriteAttribute("href", Tuple.Create(" href=\"", 2219), Tuple.Create("\"", 2258)
             
             #line 46 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2203), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.ViewLog())
+, Tuple.Create(Tuple.Create("", 2226), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.ViewLog())
             
             #line default
             #line hidden
-, 2203), false)
+, 2226), false)
 );
 
 WriteLiteral(">Admin</a>\r\n                            </li>\r\n");
@@ -363,14 +372,14 @@ WriteLiteral(">About</a>\r\n                        </li>\r\n");
             #line hidden
 WriteLiteral("                    <li>\r\n                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2688), Tuple.Create("\"", 2728)
+WriteAttribute("href", Tuple.Create(" href=\"", 2711), Tuple.Create("\"", 2751)
             
             #line 60 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2695), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Home.ContactUs())
+, Tuple.Create(Tuple.Create("", 2718), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Home.ContactUs())
             
             #line default
             #line hidden
-, 2695), false)
+, 2718), false)
 );
 
 WriteLiteral(">Contact Us</a>\r\n                    </li>\r\n                </ul>\r\n");
@@ -395,14 +404,14 @@ WriteLiteral(" class=\"nav navbar-nav navbar-right\"");
 
 WriteLiteral(">\r\n                        <li>\r\n                            <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2987), Tuple.Create("\"", 3030)
+WriteAttribute("action", Tuple.Create(" action=\"", 3010), Tuple.Create("\"", 3053)
             
             #line 67 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 2996), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
+, Tuple.Create(Tuple.Create("", 3019), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignOut())
             
             #line default
             #line hidden
-, 2996), false)
+, 3019), false)
 );
 
 WriteLiteral(">\r\n                                <button");
@@ -425,14 +434,14 @@ WriteLiteral(">Sign Out</button>\r\n                            </form>\r\n     
             #line hidden
 WriteLiteral("                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3319), Tuple.Create("\"", 3359)
+WriteAttribute("href", Tuple.Create(" href=\"", 3342), Tuple.Create("\"", 3382)
             
             #line 75 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 3326), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignIn())
+, Tuple.Create(Tuple.Create("", 3349), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignIn())
             
             #line default
             #line hidden
-, 3326), false)
+, 3349), false)
 );
 
 WriteLiteral(" class=\"btn btn-default navbar-btn navbar-right\"");
@@ -688,45 +697,45 @@ Write(Html.CdnScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jque
             #line hidden
 WriteLiteral("\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6462), Tuple.Create("\"", 6553)
+WriteAttribute("src", Tuple.Create(" src=\"", 6485), Tuple.Create("\"", 6576)
             
             #line 128 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6468), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6491), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
             
             #line default
             #line hidden
-, 6468), false)
+, 6491), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6577), Tuple.Create("\"", 6597)
-, Tuple.Create(Tuple.Create("", 6583), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
-, 6583), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6600), Tuple.Create("\"", 6620)
+, Tuple.Create(Tuple.Create("", 6606), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
+, 6606), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6621), Tuple.Create("\"", 6701)
+WriteAttribute("src", Tuple.Create(" src=\"", 6644), Tuple.Create("\"", 6724)
             
             #line 130 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6627), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
+, Tuple.Create(Tuple.Create("", 6650), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
             
             #line default
             #line hidden
-, 6627), false)
+, 6650), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6725), Tuple.Create("\"", 6790)
+WriteAttribute("src", Tuple.Create(" src=\"", 6748), Tuple.Create("\"", 6813)
             
             #line 131 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6731), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6754), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 6731), false)
+, 6754), false)
 );
 
 WriteLiteral("></script>\r\n");

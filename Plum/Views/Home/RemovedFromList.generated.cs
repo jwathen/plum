@@ -42,7 +42,7 @@ namespace ASP
             
             #line 1 "..\..\Views\Home\RemovedFromList.cshtml"
   
-    ViewBag.Title = "Not Authorized";
+    ViewBag.Title = "Removed";
 
             
             #line default

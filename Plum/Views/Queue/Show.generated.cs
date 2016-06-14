@@ -48,7 +48,7 @@ namespace ASP
             
             #line 3 "..\..\Views\Queue\Show.cshtml"
   
-    ViewBag.Title = "Show";
+    ViewBag.Title = "Wait List";
 
             
             #line default
@@ -118,14 +118,14 @@ WriteLiteral(" class=\"btn btn-block btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 701), Tuple.Create("\"", 762)
+WriteAttribute("style", Tuple.Create(" style=\"", 706), Tuple.Create("\"", 767)
             
             #line 20 "..\..\Views\Queue\Show.cshtml"
-                , Tuple.Create(Tuple.Create("", 709), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+                , Tuple.Create(Tuple.Create("", 714), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
             
             #line default
             #line hidden
-, 709), false)
+, 714), false)
 );
 
 WriteLiteral(">\r\n                    <i");
@@ -156,14 +156,14 @@ WriteLiteral(" class=\"btn btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 1229), Tuple.Create("\"", 1290)
+WriteAttribute("style", Tuple.Create(" style=\"", 1234), Tuple.Create("\"", 1295)
             
             #line 30 "..\..\Views\Queue\Show.cshtml"
- , Tuple.Create(Tuple.Create("", 1237), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+ , Tuple.Create(Tuple.Create("", 1242), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
             
             #line default
             #line hidden
-, 1237), false)
+, 1242), false)
 );
 
 WriteLiteral(">\r\n                    <i");
@@ -251,14 +251,14 @@ WriteLiteral("\';\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'
 WriteLiteral("\';\r\n        window.viewData.showCustomerUrl = \'/customer\';\r\n    </script>\r\n    <s" +
 "cript");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2276), Tuple.Create("\"", 2347)
+WriteAttribute("src", Tuple.Create(" src=\"", 2281), Tuple.Create("\"", 2352)
             
             #line 58 "..\..\Views\Queue\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 2282), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
+, Tuple.Create(Tuple.Create("", 2287), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
             
             #line default
             #line hidden
-, 2282), false)
+, 2287), false)
 );
 
 WriteLiteral("></script>\r\n");

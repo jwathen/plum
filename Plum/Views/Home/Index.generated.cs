@@ -42,7 +42,7 @@ namespace ASP
             
             #line 1 "..\..\Views\Home\Index.cshtml"
   
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
 
             
             #line default
@@ -97,14 +97,14 @@ WriteLiteral(">\r\n                Seat diners faster with this FREE service by 
 "of the technology they\'re already using.\r\n            </p>\r\n            <p>\r\n   " +
 "             <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 551), Tuple.Create("\"", 591)
+WriteAttribute("href", Tuple.Create(" href=\"", 550), Tuple.Create("\"", 590)
             
             #line 18 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 558), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
+, Tuple.Create(Tuple.Create("", 557), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
             
             #line default
             #line hidden
-, 558), false)
+, 557), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg\"");
@@ -139,14 +139,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3316), Tuple.Create("\"", 3381)
+WriteAttribute("src", Tuple.Create(" src=\"", 3315), Tuple.Create("\"", 3380)
             
             #line 75 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 3322), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
+, Tuple.Create(Tuple.Create("", 3321), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
             
             #line default
             #line hidden
-, 3322), false)
+, 3321), false)
 );
 
 WriteLiteral(" alt=\"Two young people holding hands.\"");
@@ -186,14 +186,14 @@ WriteLiteral(" class=\"col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4219), Tuple.Create("\"", 4284)
+WriteAttribute("src", Tuple.Create(" src=\"", 4218), Tuple.Create("\"", 4283)
             
             #line 89 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 4225), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
+, Tuple.Create(Tuple.Create("", 4224), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
             
             #line default
             #line hidden
-, 4225), false)
+, 4224), false)
 );
 
 WriteLiteral(" alt=\"Woman wearing a poncho in the park.\"");

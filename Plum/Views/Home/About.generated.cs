@@ -42,7 +42,7 @@ namespace ASP
             
             #line 1 "..\..\Views\Home\About.cshtml"
   
-    ViewBag.Title = "Not Authorized";
+    ViewBag.Title = "About Us";
 
             
             #line default

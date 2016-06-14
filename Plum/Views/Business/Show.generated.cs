@@ -42,7 +42,7 @@ namespace ASP
             
             #line 2 "..\..\Views\Business\Show.cshtml"
   
-    ViewBag.Title = "Show";
+    ViewBag.Title = "Settings";
 
             
             #line default
@@ -61,14 +61,14 @@ WriteLiteral(" class=\"col-md-12\"");
 
 WriteLiteral(">\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 180), Tuple.Create("\"", 229)
+WriteAttribute("href", Tuple.Create(" href=\"", 184), Tuple.Create("\"", 233)
             
             #line 9 "..\..\Views\Business\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 187), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
+, Tuple.Create(Tuple.Create("", 191), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Queue.Show(Model.QueueId))
             
             #line default
             #line hidden
-, 187), false)
+, 191), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg pull-right\"");
