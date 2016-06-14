@@ -18,5 +18,6 @@ namespace Plum.Models
         OnMyWayMessageReceivedFromCustomer = 9,
         NeedAFewMinutesMessageReceivedFromCustomer = 10,
         CancelMessageReceivedFromCustomer = 11,
+        CustomTextMessageSent = 12
     }
 }

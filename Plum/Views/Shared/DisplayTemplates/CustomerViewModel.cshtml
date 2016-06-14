@@ -25,16 +25,27 @@
                     </button>
                     @Html.AntiForgeryToken2()
                 }
+                using (Ajax.BeginForm(MVC.Customer.SendWelcomeMessage(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
+                {
+                    <button class="btn btn-block btn-default" type="submit">
+                        <i class="fa fa-comment-o"></i>
+                        Resend &quot;Welcome&quot; Message
+                    </button>
+                    @Html.AntiForgeryToken2()
+                }
+                <a href="#" class="btn btn-default btn-block"
+                   data-ajax-load="true"
+                   data-ajax-load-target="#ShowCustomerModal"
+                   data-ajax-load-url="@Url.Action(MVC.Customer.SendCustomMessage())">
+                    <i class="fa fa-comment-o"></i>
+                    Send Text message...
+                </a>
             }
             else
             {
                 <p>
                     <em>No phone number.</em>
                 </p>
-                <button class="btn btn-block btn-primary" disabled="disabled" type="button">
-                    <i class="fa fa-comment"></i>
-                    Send &quot;Ready&quot; Message
-                </button>
             }
             <form action="@Url.Action(MVC.Customer.Destroy(Model.Id))" method="post" data-loading-overlay="true">
                 <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to remove @HttpUtility.HtmlAttributeEncode(Model.Name) from the list?" class="btn btn-block btn-default" type="submit">Remove From List</button>

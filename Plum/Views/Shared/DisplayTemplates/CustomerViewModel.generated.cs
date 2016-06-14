@@ -152,6 +152,75 @@ WriteLiteral("></i>\r\n                        Send &quot;Ready&quot; Message\r\
             #line 26 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                                              
                 }
+                using (Ajax.BeginForm(MVC.Customer.SendWelcomeMessage(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <button");
+
+WriteLiteral(" class=\"btn btn-block btn-default\"");
+
+WriteLiteral(" type=\"submit\"");
+
+WriteLiteral(">\r\n                        <i");
+
+WriteLiteral(" class=\"fa fa-comment-o\"");
+
+WriteLiteral("></i>\r\n                        Resend &quot;Welcome&quot; Message\r\n              " +
+"      </button>\r\n");
+
+            
+            #line 34 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 34 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+               Write(Html.AntiForgeryToken2());
+
+            
+            #line default
+            #line hidden
+            
+            #line 34 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+                                             
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"btn btn-default btn-block\"");
+
+WriteLiteral("\r\n                   data-ajax-load=\"true\"");
+
+WriteLiteral("\r\n                   data-ajax-load-target=\"#ShowCustomerModal\"");
+
+WriteLiteral("\r\n                   data-ajax-load-url=\"");
+
+            
+            #line 39 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+                                  Write(Url.Action(MVC.Customer.SendCustomMessage()));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\"");
+
+WriteLiteral(">\r\n                    <i");
+
+WriteLiteral(" class=\"fa fa-comment-o\"");
+
+WriteLiteral("></i>\r\n                    Send Text message...\r\n                </a>\r\n");
+
+            
+            #line 43 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
             }
             else
             {
@@ -162,23 +231,8 @@ WriteLiteral("></i>\r\n                        Send &quot;Ready&quot; Message\r\
 WriteLiteral("                <p>\r\n                    <em>No phone number.</em>\r\n             " +
 "   </p>\r\n");
 
-WriteLiteral("                <button");
-
-WriteLiteral(" class=\"btn btn-block btn-primary\"");
-
-WriteLiteral(" disabled=\"disabled\"");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(">\r\n                    <i");
-
-WriteLiteral(" class=\"fa fa-comment\"");
-
-WriteLiteral("></i>\r\n                    Send &quot;Ready&quot; Message\r\n                </butt" +
-"on>\r\n");
-
             
-            #line 38 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 49 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
             }
 
             
@@ -186,14 +240,14 @@ WriteLiteral("></i>\r\n                    Send &quot;Ready&quot; Message\r\n   
             #line hidden
 WriteLiteral("            <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 1500), Tuple.Create("\"", 1552)
+WriteAttribute("action", Tuple.Create(" action=\"", 2154), Tuple.Create("\"", 2206)
             
-            #line 39 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
-, Tuple.Create(Tuple.Create("", 1509), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Destroy(Model.Id))
+            #line 50 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+, Tuple.Create(Tuple.Create("", 2163), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Customer.Destroy(Model.Id))
             
             #line default
             #line hidden
-, 1509), false)
+, 2163), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -207,7 +261,7 @@ WriteLiteral(" data-confirm=\"Are you sure?\"");
 WriteLiteral(" data-confirm-prompt=\"Are you sure you want to remove ");
 
             
-            #line 40 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 51 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                                                                                                      Write(HttpUtility.HtmlAttributeEncode(Model.Name));
 
             
@@ -224,7 +278,7 @@ WriteLiteral(">Remove From List</button>\r\n");
 WriteLiteral("                ");
 
             
-            #line 41 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 52 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
            Write(Html.HttpMethodOverride(HttpVerbs.Delete));
 
             
@@ -235,7 +289,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 42 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 53 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
            Write(Html.AntiForgeryToken2());
 
             
@@ -244,13 +298,13 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </form>\r\n");
 
             
-            #line 44 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 55 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 44 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 55 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
              if (!customerIsLastInline)
             {
                 using (Ajax.BeginForm(MVC.Customer.MoveToEndOfList(Model.Id), new AjaxOptions { OnBegin = "setLoading", OnComplete = "clearLoading", UpdateTargetId = "ShowCustomerModal" }))
@@ -268,7 +322,7 @@ WriteLiteral(" data-confirm=\"Are you sure?\"");
 WriteLiteral(" data-confirm-prompt=\"Are you sure you want to move ");
 
             
-            #line 48 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 59 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                                                                                                                                          Write(HttpUtility.HtmlAttributeEncode(Model.Name));
 
             
@@ -281,20 +335,20 @@ WriteLiteral(" type=\"submit\"");
 WriteLiteral(">\r\n                        Move to End of List\r\n                    </button>\r\n");
 
             
-            #line 51 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 62 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 51 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 62 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                Write(Html.AntiForgeryToken2());
 
             
             #line default
             #line hidden
             
-            #line 51 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 62 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                                              
                 }
             }
@@ -315,7 +369,7 @@ WriteLiteral("\r\n               data-ajax-load-target=\"#ShowCustomerModal\"");
 WriteLiteral("\r\n               data-ajax-load-url=\"");
 
             
-            #line 57 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 68 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                               Write(Url.Action(MVC.Customer.Edit(Model.Id)));
 
             
@@ -326,13 +380,13 @@ WriteLiteral("\"");
 WriteLiteral(">\r\n                Edit Party\r\n            </a>\r\n");
 
             
-            #line 60 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 71 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 60 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 71 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
              if (Model.Customer.LogEntries.Any())
             {
 
@@ -348,13 +402,13 @@ WriteLiteral(" class=\"history\"");
 WriteLiteral(">\r\n");
 
             
-            #line 66 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 77 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 66 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 77 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                      foreach (var entry in Model.Customer.LogEntries.OrderByDescending(x => x.Id))
                     {
 
@@ -363,15 +417,15 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                        <p>\r\n                            <i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3257), Tuple.Create("\"", 3281)
-, Tuple.Create(Tuple.Create("", 3265), Tuple.Create("fa", 3265), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3911), Tuple.Create("\"", 3935)
+, Tuple.Create(Tuple.Create("", 3919), Tuple.Create("fa", 3919), true)
             
-            #line 69 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3267), Tuple.Create<System.Object, System.Int32>(entry.Icon()
+            #line 80 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+, Tuple.Create(Tuple.Create(" ", 3921), Tuple.Create<System.Object, System.Int32>(entry.Icon()
             
             #line default
             #line hidden
-, 3268), false)
+, 3922), false)
 );
 
 WriteLiteral("></i>\r\n");
@@ -379,7 +433,7 @@ WriteLiteral("></i>\r\n");
 WriteLiteral("                            ");
 
             
-            #line 70 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 81 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                        Write(entry.Message);
 
             
@@ -392,7 +446,7 @@ WriteLiteral(" class=\"text-muted text-nowrap\"");
 WriteLiteral(">");
 
             
-            #line 71 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 82 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                                                             Write(entry.Age().Humanize());
 
             
@@ -401,7 +455,7 @@ WriteLiteral(">");
 WriteLiteral(" ago</span>\r\n                        </p>\r\n");
 
             
-            #line 73 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 84 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
                     }
 
             
@@ -410,7 +464,7 @@ WriteLiteral(" ago</span>\r\n                        </p>\r\n");
 WriteLiteral("                </div>\r\n");
 
             
-            #line 75 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
+            #line 86 "..\..\Views\Shared\DisplayTemplates\CustomerViewModel.cshtml"
             }
 
             

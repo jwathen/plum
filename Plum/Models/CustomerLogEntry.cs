@@ -32,11 +32,14 @@ namespace Plum.Models
             switch (Type)
             {
                 case CustomerLogEntryType.ReadyTextMessageSent:
-                    return "fa-comment";
                 case CustomerLogEntryType.WelcomeTextMessageSent:
-                    return "fa-comment";
                 case CustomerLogEntryType.MessageReceivedFromCustomer:
+                case CustomerLogEntryType.CustomTextMessageSent:
                     return "fa-comment";
+                case CustomerLogEntryType.CancelMessageReceivedFromCustomer:
+                    return "fa-ban";
+                case CustomerLogEntryType.OnMyWayMessageReceivedFromCustomer:
+                    return "fa-check";
                 default:
                     return "fa-clock-o";
             }

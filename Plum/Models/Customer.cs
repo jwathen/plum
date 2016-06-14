@@ -162,5 +162,16 @@ namespace Plum.Models
                 Log(CustomerLogEntryType.ReadyTextMessageSent, $"{Queue.Business.Name} - \"{message}\"");
             }
         }
+
+        public async Task SendCustomTextMessageAsync(TextMessageService textMessageService, string message)
+        {
+            if (this.HasPhoneNumber() && !this.Queue.Business.HasReachedTextMessageLimit())
+            {
+                var textMessageTemplates = new TextMessageTemplateService();
+                await textMessageService.SendAsync(PhoneNumber, message);
+                Queue.Business.TextMessagesSent++;
+                Log(CustomerLogEntryType.CustomTextMessageSent, $"{Queue.Business.Name} - \"{message}\"");
+            }
+        }
     }
 }

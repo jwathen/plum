@@ -15,7 +15,16 @@ $(function () {
     };
 
     var updateHub = $.connection.updateHub;
-    updateHub.client.queueUpdated = udpateBusinessViewQueueList;
+    updateHub.client.queueUpdated = function (customerId) {
+        udpateBusinessViewQueueList();
+
+        // if customer modal is opened to customer and user is on "show customer" view then update the view
+        if ($('#ShowCustomerModal').data('customerId') == customerId) {
+            if ($('#ShowCustomerModal').find('h5').length) {
+                $('#ShowCustomerModal').load(window.viewData.showCustomerUrl + '/' + customerId);
+            }
+        }
+    };
 
     $.connection.hub.start().done(function () {
         updateHub.server.subscribeToQueueAsBusiness(window.viewData.queueId);
@@ -63,6 +72,7 @@ function initQueueList() {
         var customerId = $(this).attr('data-show-customer-id');
         if (!isNaN(customerId)) {
             setLoading();
+            $('#ShowCustomerModal').data('customerId', customerId);
             $('#ShowCustomerModal').load(window.viewData.showCustomerUrl + '/' + customerId, function () {
                 clearLoading();
                 $('#ShowCustomerModal').modal('show');

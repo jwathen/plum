@@ -45,7 +45,7 @@ namespace Plum.Controllers
                     customer.Log(Models.CustomerLogEntryType.MessageReceivedFromCustomer, $"{customer.Name} - \"{message.Text}\"");
                 }
                 await Database.SaveChangesAsync();
-                await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId);
+                await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId, customer.Id);
             }
 
             return new HttpStatusCodeResult(200);

@@ -121,17 +121,9 @@ namespace Plum.Controllers
                 return NotAuthorized();
             }
 
-            string oldPhoneNumber = customer.PhoneNumber;
             model.CopyTo(customer);
             await Database.SaveChangesAsync();
-            await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId);
-            await UpdateHub.BroadcastQueueUpdateToCustomers(customer.QueueId);
-
-            if (oldPhoneNumber != customer.PhoneNumber && customer.HasPhoneNumber())
-            {
-                await customer.SendWelcomeTextMessageAsync(TextMessaging, Url);
-                await Database.SaveChangesAsync();
-            }
+            await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId, customer.Id);
 
             return RedirectToAction(MVC.Customer.Show(customer.Id));
         }
@@ -183,9 +175,53 @@ namespace Plum.Controllers
             var customer = await Customer();
             if (_result != null) return _result;
 
-            int queueId = customer.Queue.Id;
             await customer.SendReadyTextMessageAsync(TextMessaging, Url);
             await Database.SaveChangesAsync();
+
+            var model = new CustomerViewModel();
+            model.CopyFrom(customer);
+            return View(MVC.Customer.Views.Show, model);
+        }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [HttpPost, Route("customer/{id:int}/send-welcome-message")]
+        public virtual async Task<ActionResult> SendWelcomeMessage(int id)
+        {
+            var customer = await Customer();
+            if (_result != null) return _result;
+
+            await customer.SendWelcomeTextMessageAsync(TextMessaging, Url);
+            await Database.SaveChangesAsync();
+
+            var model = new CustomerViewModel();
+            model.CopyFrom(customer);
+            return View(MVC.Customer.Views.Show, model);
+        }
+
+        [Authorize]
+        [HttpGet, Route("customer/{id:int}/send-custom-message")]
+        public virtual async Task<ActionResult> SendCustomMessage(int id)
+        {
+            var customer = await Customer();
+            if (_result != null) return _result;            
+
+            return View();
+        }
+
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [HttpPost, Route("customer/{id:int}/send-custom-message")]
+        public virtual async Task<ActionResult> SendCustomMessage(int id, string message)
+        {
+            var customer = await Customer();
+            if (_result != null) return _result;
+
+            if (!string.IsNullOrWhiteSpace(message))
+            {
+                await customer.SendCustomTextMessageAsync(TextMessaging, message);
+                await Database.SaveChangesAsync();
+            }
 
             var model = new CustomerViewModel();
             model.CopyFrom(customer);

@@ -110,6 +110,20 @@ namespace Plum.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendWelcomeMessage()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendWelcomeMessage, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendCustomMessage()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendCustomMessage, "https");
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> MoveToEndOfList()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MoveToEndOfList, "https");
@@ -138,6 +152,8 @@ namespace Plum.Controllers
             public readonly string DestroyWithUrlToken = "DestroyWithUrlToken";
             public readonly string Destroy = "Destroy";
             public readonly string SendReadyMessage = "SendReadyMessage";
+            public readonly string SendWelcomeMessage = "SendWelcomeMessage";
+            public readonly string SendCustomMessage = "SendCustomMessage";
             public readonly string MoveToEndOfList = "MoveToEndOfList";
         }
 
@@ -151,6 +167,8 @@ namespace Plum.Controllers
             public const string DestroyWithUrlToken = "DestroyWithUrlToken";
             public const string Destroy = "Destroy";
             public const string SendReadyMessage = "SendReadyMessage";
+            public const string SendWelcomeMessage = "SendWelcomeMessage";
+            public const string SendCustomMessage = "SendCustomMessage";
             public const string MoveToEndOfList = "MoveToEndOfList";
         }
 
@@ -211,6 +229,23 @@ namespace Plum.Controllers
         {
             public readonly string id = "id";
         }
+        static readonly ActionParamsClass_SendWelcomeMessage s_params_SendWelcomeMessage = new ActionParamsClass_SendWelcomeMessage();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SendWelcomeMessage SendWelcomeMessageParams { get { return s_params_SendWelcomeMessage; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SendWelcomeMessage
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_SendCustomMessage s_params_SendCustomMessage = new ActionParamsClass_SendCustomMessage();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SendCustomMessage SendCustomMessageParams { get { return s_params_SendCustomMessage; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SendCustomMessage
+        {
+            public readonly string id = "id";
+            public readonly string message = "message";
+        }
         static readonly ActionParamsClass_MoveToEndOfList s_params_MoveToEndOfList = new ActionParamsClass_MoveToEndOfList();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_MoveToEndOfList MoveToEndOfListParams { get { return s_params_MoveToEndOfList; } }
@@ -231,10 +266,12 @@ namespace Plum.Controllers
             {
                 public readonly string Create = "Create";
                 public readonly string Edit = "Edit";
+                public readonly string SendCustomMessage = "SendCustomMessage";
                 public readonly string Show = "Show";
             }
             public readonly string Create = "~/Views/Customer/Create.cshtml";
             public readonly string Edit = "~/Views/Customer/Edit.cshtml";
+            public readonly string SendCustomMessage = "~/Views/Customer/SendCustomMessage.cshtml";
             public readonly string Show = "~/Views/Customer/Show.cshtml";
         }
     }
@@ -325,6 +362,43 @@ namespace Plum.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendReadyMessage, "https");
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             SendReadyMessageOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SendWelcomeMessageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendWelcomeMessage(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendWelcomeMessage, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            SendWelcomeMessageOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SendCustomMessageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendCustomMessage(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendCustomMessage, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            SendCustomMessageOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SendCustomMessageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, string message);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendCustomMessage(int id, string message)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendCustomMessage, "https");
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "message", message);
+            SendCustomMessageOverride(callInfo, id, message);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

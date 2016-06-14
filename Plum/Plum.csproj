@@ -636,6 +636,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Create.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Customer\SendCustomMessage.generated.cs">
+      <DependentUpon>SendCustomMessage.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Home\ContactUs1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -913,6 +918,10 @@
       <LastGenOutput>_Manifest.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Admin\ViewLog.cshtml" />
+    <Content Include="Views\Customer\SendCustomMessage.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SendCustomMessage.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
