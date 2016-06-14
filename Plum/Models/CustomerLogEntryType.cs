@@ -14,6 +14,9 @@ namespace Plum.Models
         NumberInPartyChanged = 5,
         PhoneNumberChanged = 6,
         WelcomeTextMessageSent = 7,
-        MessageReceivedFromCustomer = 8
+        MessageReceivedFromCustomer = 8,
+        OnMyWayMessageReceivedFromCustomer = 9,
+        NeedAFewMinutesMessageReceivedFromCustomer = 10,
+        CancelMessageReceivedFromCustomer = 11,
     }
 }

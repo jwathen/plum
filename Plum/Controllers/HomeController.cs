@@ -15,7 +15,17 @@ namespace Plum.Controllers
     public partial class HomeController : AppControllerBase
     {
         [HttpGet, Route("")]
-        public virtual ActionResult Index() => View();
+        public virtual ActionResult Index()
+        {
+            if (Request.IsAuthenticated)
+            {
+                return RedirectToAction(MVC.Queue.Show());
+            }
+            else
+            {
+                return View();
+            }
+        }
 
         [HttpGet, Route("about")]
         public virtual ActionResult About() => View();

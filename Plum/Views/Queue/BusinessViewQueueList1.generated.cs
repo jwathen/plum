@@ -162,10 +162,46 @@ WriteLiteral("\"");
 
 WriteLiteral(">\r\n");
 
+            
+            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            
+            
+            #line default
+            #line hidden
+            
+            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+             if (customer.NumberOfUnreadLogEntries() > 0)
+            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <span");
+
+WriteLiteral(" class=\"badge\"");
+
+WriteLiteral(">");
+
+            
+            #line 27 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+                               Write(customer.NumberOfUnreadLogEntries());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 28 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            }
+
+            
+            #line default
+            #line hidden
 WriteLiteral("            ");
 
             
-            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 29 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
        Write(customer.Name);
 
             
@@ -174,7 +210,7 @@ WriteLiteral("            ");
 WriteLiteral(" (");
 
             
-            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 29 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                        Write(customer.NumberInParty);
 
             
@@ -183,7 +219,7 @@ WriteLiteral(" (");
 WriteLiteral(") - Waited ");
 
             
-            #line 25 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 29 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                                                          Write(customer.TimeWaitedWords());
 
             
@@ -192,13 +228,13 @@ WriteLiteral(") - Waited ");
 WriteLiteral("\r\n");
 
             
-            #line 26 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 30 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 26 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 30 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
              if (customer.QuotedTimeInMinutes.HasValue)
             {
                 if (customer.TimeWaited().TotalMinutes > customer.QuotedTimeInMinutes.Value)
@@ -214,7 +250,7 @@ WriteLiteral(" class=\"text-danger text-nowrap\"");
 WriteLiteral(">(Quoted ");
 
             
-            #line 30 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 34 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                                                              Write(customer.QuotedTimeWords());
 
             
@@ -223,7 +259,7 @@ WriteLiteral(">(Quoted ");
 WriteLiteral(")</span>\r\n");
 
             
-            #line 31 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 35 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                 }
                 else
                 {
@@ -238,7 +274,7 @@ WriteLiteral(" class=\"text-muted text-nowrap\"");
 WriteLiteral(">(Quoted ");
 
             
-            #line 34 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 38 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                                                             Write(customer.QuotedTimeWords());
 
             
@@ -247,7 +283,7 @@ WriteLiteral(">(Quoted ");
 WriteLiteral(")</span>\r\n");
 
             
-            #line 35 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 39 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
                 }
             }
 
@@ -257,7 +293,7 @@ WriteLiteral(")</span>\r\n");
 WriteLiteral("        </li>\r\n");
 
             
-            #line 38 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
+            #line 42 "..\..\Views\Queue\BusinessViewQueueList.cshtml"
     }
 
             

@@ -22,6 +22,10 @@ else if (Model.Customers.Count() > 1)
     @foreach (var customer in Model.OrderedCustomers())
     {
         <li class="list-group-item" data-show-customer-id="@customer.Id">
+            @if (customer.NumberOfUnreadLogEntries() > 0)
+            {
+                <span class="badge">@customer.NumberOfUnreadLogEntries()</span>
+            }
             @customer.Name (@customer.NumberInParty) - Waited @customer.TimeWaitedWords()
             @if (customer.QuotedTimeInMinutes.HasValue)
             {

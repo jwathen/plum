@@ -38,6 +38,19 @@ namespace Plum.Controllers
             var model = new CustomerViewModel();
             model.CopyFrom(customer);
 
+            var unreadLogEntries = await Database.CustomerLogEntries
+                .Where(x => x.CustomerId == customer.Id && x.DateRead == null)
+                .ToListAsync();
+            if (unreadLogEntries.Any())
+            {
+                foreach(var entry in unreadLogEntries)
+                {
+                    entry.DateRead = DateTime.UtcNow;
+                }
+                await Database.SaveChangesAsync();
+                await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId);
+            }
+
             return View(model);
         }
 

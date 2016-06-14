@@ -40,7 +40,7 @@ namespace Plum.Services
 
         public string GetDefaultReadyMessage(Models.Business business)
         {
-            return $"It's {business.Name}. We're ready for you.";
+            return $"It's {business.Name}. We're ready for you. Respond 1, 2, or 3. 1 = I'm on my way. 2 = I need a few minutes but I'm still coming. 3 = I'd like to cancel.";
         }
     }
 }

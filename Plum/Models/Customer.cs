@@ -86,13 +86,37 @@ namespace Plum.Models
             return !string.IsNullOrWhiteSpace(PhoneNumber);
         }
 
+        public int NumberOfUnreadLogEntries()
+        {
+            return LogEntries.Count(x => x.DateRead == null);
+        }
+
         public void Log(CustomerLogEntryType type, string message)
         {
-            LogEntries.Add(new CustomerLogEntry
+            var entry = new CustomerLogEntry
             {
                 Message = message,
                 Type = type
-            });
+            };
+            if (ShouldMarkLogEntryAsRead(type))
+            {
+                entry.DateRead = DateTime.UtcNow;
+            }
+            LogEntries.Add(entry);
+        }
+
+        private bool ShouldMarkLogEntryAsRead(CustomerLogEntryType type)
+        {
+            switch (type)
+            {
+                case CustomerLogEntryType.MessageReceivedFromCustomer:
+                case CustomerLogEntryType.OnMyWayMessageReceivedFromCustomer:
+                case CustomerLogEntryType.NeedAFewMinutesMessageReceivedFromCustomer:                    
+                case CustomerLogEntryType.CancelMessageReceivedFromCustomer:
+                    return false;
+                default:
+                    return true;
+            }
         }
 
         public void GenerateUrlToken(AppDataContext db, ProfanityFilter profanityFilter)

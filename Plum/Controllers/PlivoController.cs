@@ -27,7 +27,23 @@ namespace Plum.Controllers
                 .FirstOrDefaultAsync();
             if (customer != null)
             {
-                customer.Log(Models.CustomerLogEntryType.MessageReceivedFromCustomer, $"{customer.Name} - \"{message.Text}\"");
+                message.Text = (message.Text ?? string.Empty).Trim();
+                if (message.Text == "1")
+                {
+                    customer.Log(Models.CustomerLogEntryType.OnMyWayMessageReceivedFromCustomer, "Party is on their way.");
+                }
+                else if (message.Text == "2")
+                {
+                    customer.Log(Models.CustomerLogEntryType.NeedAFewMinutesMessageReceivedFromCustomer, "Party needs a few minutes.");
+                }
+                else if (message.Text == "3")
+                {
+                    customer.Log(Models.CustomerLogEntryType.CancelMessageReceivedFromCustomer, "Party would like to cancel.");
+                }
+                else
+                {
+                    customer.Log(Models.CustomerLogEntryType.MessageReceivedFromCustomer, $"{customer.Name} - \"{message.Text}\"");
+                }
                 await Database.SaveChangesAsync();
                 await UpdateHub.BroadcastQueueUpdateToBusiness(customer.QueueId);
             }
