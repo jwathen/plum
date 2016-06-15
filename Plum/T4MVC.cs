@@ -124,6 +124,16 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Account {
+                private const string URLPATH = "~/Content/Scripts/Account";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string SignIn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SignIn.min.js") ? Url("SignIn.min.js") : Url("SignIn.js");
+                public static readonly string SignIn_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/SignIn.es5.min.js") ? Url("SignIn.es5.min.js") : Url("SignIn.es5.js");
+                public static readonly string SignIn_es5_min_js = Url("SignIn.es5.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class CdnFallbacks {
                 private const string URLPATH = "~/Content/Scripts/CdnFallbacks";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
@@ -324,6 +334,13 @@ namespace Links
             }
             public static partial class Scripts 
             {
+                public static partial class Account 
+                {
+                    public static class Assets
+                    {
+                        public const string SignIn_js = "~/Content/Scripts/Account/SignIn.js"; 
+                    }
+                }
                 public static partial class CdnFallbacks 
                 {
                     public static class Assets

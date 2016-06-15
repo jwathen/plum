@@ -26,5 +26,9 @@
   {
     "outputFile": "Content/Scripts/Home/ContactUs.es5.js",
     "inputFile": "Content/Scripts/Home/ContactUs.js"
+  },
+  {
+    "outputFile": "Content/Scripts/Account/SignIn.es5.js",
+    "inputFile": "Content/Scripts/Account/SignIn.js"
   }
 ]

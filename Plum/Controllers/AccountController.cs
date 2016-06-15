@@ -36,6 +36,7 @@ namespace Plum.Controllers
             var business = new Business();
             business.Name = model.BusinessName;
             business.Account = Account.Create(model.EmailAddress, model.Password);
+            business.TextMessageLimit = 1000;
             var queue = new Queue { Name = "Default" };
             business.Queues.Add(queue);
             Database.Businesses.Add(business);
@@ -66,13 +67,6 @@ namespace Plum.Controllers
                 .FirstOrDefaultAsync(x => x.Account.EmailAddress == model.EmailAddress);
             bool success = business != null && business.Account.VerifyPassword(model.Password);
 
-#if !DEBUG
-            if (success && business.Id != 1)
-            {
-                success = false;
-            }
-#endif
-
             if (success)
             {
                 AppSession.SignIn(business, model.RememberMe);
@@ -99,7 +93,7 @@ namespace Plum.Controllers
         {
             AppSession.SignOut();
             SuccessMessage("You have been signed out.");
-            return RedirectToAction(MVC.Home.Index());
+            return RedirectToAction(MVC.Account.SignIn());
         }
     }
 }

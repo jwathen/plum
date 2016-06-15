@@ -70,16 +70,17 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n            <form");
+WriteLiteral("\r\n            <p>Send us a message and we\'ll get back to you shortly.</p>\r\n      " +
+"      <form");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 254), Tuple.Create("\"", 296)
+WriteAttribute("action", Tuple.Create(" action=\"", 327), Tuple.Create("\"", 369)
             
-            #line 10 "..\..\Views\Home\ContactUs.cshtml"
-, Tuple.Create(Tuple.Create("", 263), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Home.ContactUs())
+            #line 11 "..\..\Views\Home\ContactUs.cshtml"
+, Tuple.Create(Tuple.Create("", 336), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Home.ContactUs())
             
             #line default
             #line hidden
-, 263), false)
+, 336), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -89,7 +90,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 11 "..\..\Views\Home\ContactUs.cshtml"
+            #line 12 "..\..\Views\Home\ContactUs.cshtml"
            Write(Html.ValidationSummary());
 
             
@@ -101,14 +102,14 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                    <label");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 425), Tuple.Create("\"", 463)
+WriteAttribute("for", Tuple.Create(" for=\"", 498), Tuple.Create("\"", 536)
             
-            #line 13 "..\..\Views\Home\ContactUs.cshtml"
-, Tuple.Create(Tuple.Create("", 431), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.EmailAddress)
+            #line 14 "..\..\Views\Home\ContactUs.cshtml"
+, Tuple.Create(Tuple.Create("", 504), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.EmailAddress)
             
             #line default
             #line hidden
-, 431), false)
+, 504), false)
 );
 
 WriteLiteral(">\r\n                        Your Email Address\r\n                        <span");
@@ -120,7 +121,7 @@ WriteLiteral(">*</span>\r\n                    </label>\r\n");
 WriteLiteral("                    ");
 
             
-            #line 17 "..\..\Views\Home\ContactUs.cshtml"
+            #line 18 "..\..\Views\Home\ContactUs.cshtml"
                Write(Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control", type = "email" }));
 
             
@@ -132,14 +133,14 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                    <label");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 801), Tuple.Create("\"", 834)
+WriteAttribute("for", Tuple.Create(" for=\"", 874), Tuple.Create("\"", 907)
             
-            #line 20 "..\..\Views\Home\ContactUs.cshtml"
-, Tuple.Create(Tuple.Create("", 807), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.Message)
+            #line 21 "..\..\Views\Home\ContactUs.cshtml"
+, Tuple.Create(Tuple.Create("", 880), Tuple.Create<System.Object, System.Int32>(Html.IdFor(x => x.Message)
             
             #line default
             #line hidden
-, 807), false)
+, 880), false)
 );
 
 WriteLiteral(">\r\n                        Message\r\n                        <span");
@@ -151,7 +152,7 @@ WriteLiteral(">*</span>\r\n                    </label>\r\n");
 WriteLiteral("                    ");
 
             
-            #line 24 "..\..\Views\Home\ContactUs.cshtml"
+            #line 25 "..\..\Views\Home\ContactUs.cshtml"
                Write(Html.TextAreaFor(x => x.Message, new { @class = "form-control", rows = 8 }));
 
             
@@ -170,7 +171,7 @@ WriteLiteral(" />\r\n");
 WriteLiteral("                ");
 
             
-            #line 27 "..\..\Views\Home\ContactUs.cshtml"
+            #line 28 "..\..\Views\Home\ContactUs.cshtml"
            Write(Html.AntiForgeryToken2());
 
             
@@ -182,14 +183,14 @@ DefineSection("scripts", () => {
 
 WriteLiteral("\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1300), Tuple.Create("\"", 1375)
+WriteAttribute("src", Tuple.Create(" src=\"", 1373), Tuple.Create("\"", 1448)
             
-            #line 33 "..\..\Views\Home\ContactUs.cshtml"
-, Tuple.Create(Tuple.Create("", 1306), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Home.ContactUs_es5_min_js)
+            #line 34 "..\..\Views\Home\ContactUs.cshtml"
+, Tuple.Create(Tuple.Create("", 1379), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Home.ContactUs_es5_min_js)
             
             #line default
             #line hidden
-, 1306), false)
+, 1379), false)
 );
 
 WriteLiteral("></script>\r\n");

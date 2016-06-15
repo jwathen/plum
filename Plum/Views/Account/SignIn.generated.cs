@@ -59,16 +59,29 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"col-md-6 col-md-offset-3\"");
 
-WriteLiteral(">\r\n            <h2>Sign In</h2>\r\n            <form");
+WriteLiteral(">\r\n            <h2>Sign In</h2>\r\n");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 230), Tuple.Create("\"", 272)
+WriteLiteral("            ");
+
             
             #line 9 "..\..\Views\Account\SignIn.cshtml"
-, Tuple.Create(Tuple.Create("", 239), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignIn())
+       Write(Html.FlashMessage());
+
             
             #line default
             #line hidden
-, 239), false)
+WriteLiteral("\r\n            <form");
+
+WriteLiteral(" id=\"signInForm\"");
+
+WriteAttribute("action", Tuple.Create(" action=\"", 280), Tuple.Create("\"", 322)
+            
+            #line 10 "..\..\Views\Account\SignIn.cshtml"
+, Tuple.Create(Tuple.Create("", 289), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignIn())
+            
+            #line default
+            #line hidden
+, 289), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -78,7 +91,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 10 "..\..\Views\Account\SignIn.cshtml"
+            #line 11 "..\..\Views\Account\SignIn.cshtml"
            Write(Html.ValidationSummary());
 
             
@@ -93,7 +106,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 12 "..\..\Views\Account\SignIn.cshtml"
+            #line 13 "..\..\Views\Account\SignIn.cshtml"
                Write(Html.LabelFor(x => x.EmailAddress, "Email Address"));
 
             
@@ -104,7 +117,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 13 "..\..\Views\Account\SignIn.cshtml"
+            #line 14 "..\..\Views\Account\SignIn.cshtml"
                Write(Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control", type = "email" }));
 
             
@@ -119,7 +132,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 16 "..\..\Views\Account\SignIn.cshtml"
+            #line 17 "..\..\Views\Account\SignIn.cshtml"
                Write(Html.LabelFor(x => x.Password));
 
             
@@ -130,7 +143,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 17 "..\..\Views\Account\SignIn.cshtml"
+            #line 18 "..\..\Views\Account\SignIn.cshtml"
                Write(Html.PasswordFor(x => x.Password, new { @class = "form-control" }));
 
             
@@ -145,7 +158,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 20 "..\..\Views\Account\SignIn.cshtml"
+            #line 21 "..\..\Views\Account\SignIn.cshtml"
                Write(Html.CheckBoxFor(x => x.RememberMe));
 
             
@@ -156,7 +169,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 21 "..\..\Views\Account\SignIn.cshtml"
+            #line 22 "..\..\Views\Account\SignIn.cshtml"
                Write(Html.LabelFor(x => x.RememberMe, "Remember Me"));
 
             
@@ -175,7 +188,7 @@ WriteLiteral(" />\r\n");
 WriteLiteral("                ");
 
             
-            #line 24 "..\..\Views\Account\SignIn.cshtml"
+            #line 25 "..\..\Views\Account\SignIn.cshtml"
            Write(Html.AntiForgeryToken2());
 
             
@@ -185,13 +198,31 @@ WriteLiteral("\r\n            </form>\r\n            <p>\r\n                <br 
 "on\'t have an account? ");
 
             
-            #line 28 "..\..\Views\Account\SignIn.cshtml"
+            #line 29 "..\..\Views\Account\SignIn.cshtml"
                                   Write(Html.ActionLink("Sign Up", MVC.Account.SignUp()));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>");
+WriteLiteral("\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+
+DefineSection("scripts", () => {
+
+WriteLiteral("\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 1393), Tuple.Create("\"", 1468)
+            
+            #line 35 "..\..\Views\Account\SignIn.cshtml"
+, Tuple.Create(Tuple.Create("", 1399), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Account.SignIn_es5_min_js)
+            
+            #line default
+            #line hidden
+, 1399), false)
+);
+
+WriteLiteral("></script>\r\n");
+
+});
 
         }
     }

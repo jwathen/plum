@@ -59,16 +59,27 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"col-md-6 col-md-offset-3\"");
 
-WriteLiteral(">\r\n            <h2>Sign Up</h2>\r\n            <form");
+WriteLiteral(">\r\n            <h2>Sign Up</h2>\r\n");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 232), Tuple.Create("\"", 274)
+WriteLiteral("            ");
+
             
             #line 10 "..\..\Views\Account\SignUp.cshtml"
-, Tuple.Create(Tuple.Create("", 241), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
+       Write(Html.FlashMessage());
+
             
             #line default
             #line hidden
-, 241), false)
+WriteLiteral("\r\n            <form");
+
+WriteAttribute("action", Tuple.Create(" action=\"", 266), Tuple.Create("\"", 308)
+            
+            #line 11 "..\..\Views\Account\SignUp.cshtml"
+, Tuple.Create(Tuple.Create("", 275), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
+            
+            #line default
+            #line hidden
+, 275), false)
 );
 
 WriteLiteral(" method=\"post\"");
@@ -78,7 +89,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 11 "..\..\Views\Account\SignUp.cshtml"
+            #line 12 "..\..\Views\Account\SignUp.cshtml"
            Write(Html.ValidationSummary());
 
             
@@ -93,7 +104,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 13 "..\..\Views\Account\SignUp.cshtml"
+            #line 14 "..\..\Views\Account\SignUp.cshtml"
                Write(Html.LabelFor(x => x.BusinessName, "Business Name (your customers will see this)"));
 
             
@@ -104,7 +115,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 14 "..\..\Views\Account\SignUp.cshtml"
+            #line 15 "..\..\Views\Account\SignUp.cshtml"
                Write(Html.TextBoxFor(x => x.BusinessName, new { @class = "form-control" }));
 
             
@@ -119,7 +130,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 17 "..\..\Views\Account\SignUp.cshtml"
+            #line 18 "..\..\Views\Account\SignUp.cshtml"
                Write(Html.LabelFor(x => x.EmailAddress, "Email Address (in case you forget your password)"));
 
             
@@ -130,7 +141,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 18 "..\..\Views\Account\SignUp.cshtml"
+            #line 19 "..\..\Views\Account\SignUp.cshtml"
                Write(Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control", type = "email" }));
 
             
@@ -145,7 +156,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 21 "..\..\Views\Account\SignUp.cshtml"
+            #line 22 "..\..\Views\Account\SignUp.cshtml"
                Write(Html.LabelFor(x => x.Password));
 
             
@@ -156,7 +167,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 22 "..\..\Views\Account\SignUp.cshtml"
+            #line 23 "..\..\Views\Account\SignUp.cshtml"
                Write(Html.PasswordFor(x => x.Password, new { @class = "form-control" }));
 
             
@@ -175,7 +186,7 @@ WriteLiteral(" />\r\n");
 WriteLiteral("                ");
 
             
-            #line 25 "..\..\Views\Account\SignUp.cshtml"
+            #line 26 "..\..\Views\Account\SignUp.cshtml"
            Write(Html.AntiForgeryToken2());
 
             
@@ -185,7 +196,7 @@ WriteLiteral("\r\n            </form>\r\n            <p>\r\n                <br 
 "lready have an account? ");
 
             
-            #line 29 "..\..\Views\Account\SignUp.cshtml"
+            #line 30 "..\..\Views\Account\SignUp.cshtml"
                                     Write(Html.ActionLink("Sign In", MVC.Account.SignIn()));
 
             

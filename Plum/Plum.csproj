@@ -247,6 +247,13 @@
     <Content Include="Content\Images\testimonial5.jpg" />
     <Content Include="Content\Images\testimonial6.jpg" />
     <Content Include="Content\Images\testimonial7.jpg" />
+    <Content Include="Content\Scripts\Account\SignIn.es5.js">
+      <DependentUpon>SignIn.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Account\SignIn.es5.min.js">
+      <DependentUpon>SignIn.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Account\SignIn.js" />
     <Content Include="Content\Scripts\CdnFallbacks\bootstrap-3.3.6.min.js" />
     <Content Include="Content\Scripts\CdnFallbacks\jquery-2.2.4.min.js" />
     <Content Include="Content\Scripts\CdnFallbacks\jquery.formatter-0.1.5.min.js" />

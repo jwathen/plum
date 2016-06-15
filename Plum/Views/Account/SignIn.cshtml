@@ -6,7 +6,8 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h2>Sign In</h2>
-            <form action="@Url.Action(MVC.Account.SignIn())" method="post">
+            @Html.FlashMessage()
+            <form id="signInForm" action="@Url.Action(MVC.Account.SignIn())" method="post">
                 @Html.ValidationSummary()
                 <div class="form-group">
                     @Html.LabelFor(x => x.EmailAddress, "Email Address")
@@ -30,3 +31,6 @@
         </div>
     </div>
 </div>
+@section scripts {
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Account.SignIn_es5_min_js)"></script>
+}
