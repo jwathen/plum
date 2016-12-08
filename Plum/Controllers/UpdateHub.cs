@@ -15,10 +15,21 @@ namespace Plum.Controllers
         private AppDataContext _db;
         private AppSecurity _security;
 
+        private AppSecurity Security
+        {
+            get
+            {
+                if (_security == null)
+                {
+                    _security = new AppSecurity(new AppSession(Context.Request.GetHttpContext()));
+                }
+                return _security;
+            }
+        }
+
         public UpdateHub()
         {
             _db = new AppDataContext();
-            _security = new AppSecurity(new AppSession(HttpContext2.Current));
         }
 
         public async Task SubscribeToQueueAsCustomer(string urlToken)
@@ -47,7 +58,7 @@ namespace Plum.Controllers
                 .Include(x => x.Business)
                 .FirstOrDefaultAsync(x => x.Id == queueId);
 
-            if (queue != null && _security.UserOwns(queue))
+            if (queue != null && Security.UserOwns(queue))
             {
                 string groupName = $"Queue-{queueId}-Business";
                 await Groups.Add(Context.ConnectionId, groupName);
