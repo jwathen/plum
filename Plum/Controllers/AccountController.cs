@@ -71,6 +71,7 @@ namespace Plum.Controllers
             {
                 AppSession.SignIn(business, model.RememberMe);
                 int queueId = business.Queues.First().Id;
+                Log.Info($"Business {business.Id} signed in.");
 
                 if (!string.IsNullOrWhiteSpace(Request.QueryString["ReturnUrl"]))
                 {
@@ -83,6 +84,7 @@ namespace Plum.Controllers
             }
             else
             {
+                Log.Warn($"Sign in failed for {model.EmailAddress}");
                 ModelState.AddModelError(string.Empty, "Email address or password is incorrect.");
                 return View(model);
             }

@@ -36,6 +36,8 @@ namespace Plum.Controllers
 
         protected override void Initialize(RequestContext requestContext)
         {
+            var routeData = RouteTable.Routes.GetRouteData(requestContext.HttpContext);
+
             base.Initialize(requestContext);
 
             _log = NLog.LogManager.GetLogger(GetType().FullName);

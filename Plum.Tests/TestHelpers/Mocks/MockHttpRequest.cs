@@ -224,5 +224,21 @@ namespace Plum.Tests.TestHelpers.Mocks
         {
             _httpMethod = httpMethod;
         }
+
+        public override string AppRelativeCurrentExecutionFilePath
+        {
+            get
+            {
+                return "~/";
+            }
+        }
+
+        public override string PathInfo
+        {
+            get
+            {
+                return string.Empty;
+            }
+        }
     }
 }

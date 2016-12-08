@@ -1,7 +1,7 @@
 ﻿@model Plum.Models.Customer
 
 @{
-    ViewBag.Title = "CustomerView";
+    ViewBag.Title = Model.Queue.Business.Name;
 }
 
 <div class="container">
@@ -12,7 +12,7 @@
         <a href="tel:@Model.Queue.Business.PhoneNumber)" class="btn btn-block btn-default">
             <i class="fa fa-phone"></i>
             Call @Model.Queue.Business.Name
-            <span class="text-muted">(@Html.PhoneNumberDashes(Model.Queue.Business.PhoneNumber))</span>
+            <span class="text-muted hidden-xs">(@Html.PhoneNumberDashes(Model.Queue.Business.PhoneNumber))</span>
         </a>
         }
         <form action="@Url.Action(MVC.Customer.DestroyWithUrlToken(Model.UrlToken))" method="post">

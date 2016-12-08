@@ -26,7 +26,7 @@ namespace Plum.Tests.Unit.Services
         {
             string message = _templateService.BuildReadyMessage(OtherBusiness);
 
-            string expected = "It's Other Business. We're ready for you.";
+            string expected = "It's Other Business. We're ready for you. Respond 1, 2, or 3. 1 = I'm on my way. 2 = I need a few minutes but I'm still coming. 3 = I'd like to cancel.";
 
             message.ShouldEqual(expected);
         }

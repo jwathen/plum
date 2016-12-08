@@ -74,7 +74,7 @@ namespace Plum.Tests.Integration.Controllers
         public void SignOut_RedirectsToHome()
         {
             _controller.WithCallTo(x => x.SignOut())
-                .ShouldRedirectTo<HomeController>(x => x.Index());
+                .ShouldRedirectTo<AccountController>(x => x.SignIn());
         }
     }
 }
