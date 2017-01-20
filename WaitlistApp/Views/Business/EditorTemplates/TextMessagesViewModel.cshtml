@@ -1,0 +1,47 @@
+﻿@model WaitlistApp.ViewModels.Business.TextMessagesViewModel
+
+@Html.ValidationSummary()
+<fieldset>
+    <legend>Welcome Text Message</legend>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <i class="fa fa-info-circle">
+                We'll send this message as soon as you add a customer to the list. The message will end with a link for the customer to see their place in line.
+            </i>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="@Html.IdFor(x => x.WelcomeTextMessage)">
+            Message
+            <span class="text-danger">*</span>
+        </label>
+        @Html.TextAreaFor(x => x.WelcomeTextMessage, new { @class = "form-control", rows = "4" })
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Ready Text Message</legend>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <i class="fa fa-info-circle">
+                We'll send this message when you tap the <em>Send Ready Message</em> button for a customer.
+            </i>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="@Html.IdFor(x => x.ReadyTextMessage)">
+            Message
+            <span class="text-danger">*</span>
+        </label>
+        @Html.TextAreaFor(x => x.ReadyTextMessage, new { @class = "form-control", rows = "4" })
+    </div>
+</fieldset>
+<a href="#" class="btn btn-default pull-left"
+   data-ajax-load="true"
+   data-ajax-load-target="#TextMessagesPanel"
+   data-ajax-load-url="@Url.Action(MVC.Business.ShowTextMessages(Model.Id))">
+    Cancel
+</a>
+<input type="submit" value="Save Changes" class="btn btn-primary pull-right" />
+<div class="clearfix"></div>
+@Html.HttpMethodOverride(HttpVerbs.Put)
+@Html.AntiForgeryToken2()

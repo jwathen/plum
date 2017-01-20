@@ -1,0 +1,25 @@
+﻿@model WaitlistApp.ViewModels.Business.BusinessInformationViewModel
+
+@Html.ValidationSummary()
+<div class="form-group">
+    <label for="@Html.IdFor(x => x.Name)">
+        Business Name
+        <span class="text-danger">*</span>
+    </label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.PhoneNumber, "Phone Number")
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", type = "tel", data_formatter = "phone" })
+</div>
+<a href="#" class="btn btn-default pull-left"
+   data-loading-overlay="true"
+   data-ajax-load="true"
+   data-ajax-load-target="#BusinessInformationPanel"
+   data-ajax-load-url="@Url.Action(MVC.Business.ShowBusinessInformation(Model.Id))">
+    Cancel
+</a>
+<input type="submit" value="Save Changes" class="btn btn-primary pull-right" />
+<div class="clearfix"></div>
+@Html.HttpMethodOverride(HttpVerbs.Put)
+@Html.AntiForgeryToken2()

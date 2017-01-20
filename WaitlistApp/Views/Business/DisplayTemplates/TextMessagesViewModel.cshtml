@@ -1,0 +1,18 @@
+﻿@model WaitlistApp.ViewModels.Business.TextMessagesViewModel
+
+<p class="@(Model.Business.IsNearsTextMessageLimit() ? "text-danger" : null)">You have sent <strong>@Model.Business.TextMessagesSent.ToString("N0")</strong> out of <strong>@Model.Business.TextMessageLimit.ToString("N0")</strong> text messages this month.</p>
+<dl class="dl-horizontal">
+    <dt>
+        Welcome Text Message
+    </dt>
+    <dd><em>@Model.SampleWelcomeMessage</em></dd>
+    <dt>Ready Text Message</dt>
+    <dd><em>@Model.SampleReadyMessage</em></dd>
+</dl>
+<a href="#" class="btn btn-default btn-block"
+   data-ajax-load="true"
+   data-ajax-load-target="#TextMessagesPanel"
+   data-ajax-load-url="@Url.Action(MVC.Business.EditTextMessages(Model.Id))">
+    <i class="fa fa-edit"></i>
+    Edit Text Messages
+</a>

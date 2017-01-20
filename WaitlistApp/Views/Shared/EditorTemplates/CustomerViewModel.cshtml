@@ -1,0 +1,46 @@
+﻿@model WaitlistApp.ViewModels.Customer.CustomerViewModel
+
+@Html.HiddenFor(x => x.QueueId)
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            <i class="fa fa-warning"></i>
+            inform customer that msg and data rates may apply
+        </p>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="@Html.IdFor(x => x.Name)">
+                Name
+                <span class="text-danger">*</span>
+            </label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(x => x.PhoneNumber, "Phone Number")
+            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-lg", type = "tel", data_formatter = "phone" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="@Html.IdFor(x => x.NumberInParty)">
+                Number in Party
+            </label>
+            @Html.DropDownListFor(x => x.NumberInParty, new SelectList(Enumerable.Range(1, 40)), new { @class = "form-control input-lg" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(x => x.QuotedTimeInMinutes, "Quoted Wait Time")
+            @Html.DropDownListFor(x => x.QuotedTimeInMinutes, Model.GetQuotedWaitTimeOptions(), "None", new { @class = "form-control input-lg" })
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.Note)
+    @Html.TextBoxFor(x => x.Note, new { @class = "form-control" })
+</div>

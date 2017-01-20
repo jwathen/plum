@@ -1,0 +1,39 @@
+﻿@model WaitlistApp.Models.Customer
+
+@{
+    ViewBag.Title = Model.Queue.Business.Name;
+}
+
+<div class="container">
+    <h3>@Model.Queue.Business.Name</h3>
+    <div class="button-stack">
+        @if (Model.Queue.Business.HasPhoneNumber())
+        {
+        <a href="tel:@Model.Queue.Business.PhoneNumber)" class="btn btn-block btn-default">
+            <i class="fa fa-phone"></i>
+            Call @Model.Queue.Business.Name
+            <span class="text-muted hidden-xs">(@Html.PhoneNumberDashes(Model.Queue.Business.PhoneNumber))</span>
+        </a>
+        }
+        <form action="@Url.Action(MVC.Customer.DestroyWithUrlToken(Model.UrlToken))" method="post">
+            <button data-confirm="Are you sure?" data-confirm-prompt="Are you sure you want to cancel your place in line?" class="btn btn-block btn-default">
+                <i class="fa fa-times"></i>
+                Cancel Place In Line
+            </button>
+            @Html.HttpMethodOverride(HttpVerbs.Delete)
+            @Html.AntiForgeryToken2()
+        </form>
+    </div>
+    <br />
+    <div id="customerViewQueueList">
+        @Html.Partial(MVC.Queue.Views.CustomerViewQueueList, Model)
+    </div>
+</div>
+@section scripts {
+    <script>
+        window.viewData = {};
+        window.viewData.urlToken = '@Model.UrlToken';
+        window.viewData.udpateCustomerViewQueueListUrl = '@Url.Action(MVC.Queue.CustomerViewQueueList(Model.UrlToken))';
+    </script>
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Queue.ShowCustomer_es5_min_js)"></script>
+}

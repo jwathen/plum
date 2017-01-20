@@ -1,0 +1,50 @@
+﻿@model WaitlistApp.ViewModels.Business.ShowViewModel
+@{
+    ViewBag.Title = "Settings";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="@Url.Action(MVC.Queue.Show(Model.QueueId))" class="btn btn-primary btn-lg pull-right" data-loading-overlay="true">
+                Go To Wait List
+            </a>
+            <h2 class="pull-left">Settings</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Business Information (your customers will see this)
+                </div>
+                <div class="panel-body" id="BusinessInformationPanel">
+                    @Html.DisplayFor(x => x.BusinessInformation)
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Sign In Information
+                </div>
+                <div class="panel-body" id="SignInInformationPanel">
+                    @Html.DisplayFor(x => x.SignInInformation)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Text Messages
+                </div>
+                <div class="panel-body" id="TextMessagesPanel">
+                    @Html.DisplayFor(x => x.TextMessages)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

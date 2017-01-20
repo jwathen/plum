@@ -1,0 +1,17 @@
+﻿@model WaitlistApp.ViewModels.Business.SignInInformationViewModel
+
+<dl class="dl-horizontal">
+    <dt>Email Address</dt>
+    <dd>@Model.EmailAddress</dd>
+    <dt>Password</dt>
+    <dd>
+        &#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;	&#9679;
+    </dd>
+</dl>
+<a href="#" class="btn btn-default btn-block"
+    data-ajax-load="true"
+    data-ajax-load-target="#SignInInformationPanel"
+    data-ajax-load-url="@Url.Action(MVC.Business.EditSignInInformation(Model.Id))">
+    <i class="fa fa-edit"></i>
+    Edit Sign In Information
+</a>
