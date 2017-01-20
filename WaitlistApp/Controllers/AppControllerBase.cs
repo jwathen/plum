@@ -54,7 +54,7 @@ namespace WaitlistApp.Controllers
 
             _brand = _brand ?? new Brand();
             _brand.BrandColor = _brand.BrandColor ?? "#f25c05";
-            _brand.SecondaryColor = _brand.SecondaryColor ?? "#f25c05";
+            _brand.SecondaryColor = _brand.SecondaryColor ?? _brand.BrandColor;
             _brand.FontUrl = _brand.FontUrl ?? "Raleway:100,200,300,400";
             _brand.FontName = _brand.FontName ?? "'Raleway', san serif";
             _brand.Name = _brand.Name ?? "queue simple";

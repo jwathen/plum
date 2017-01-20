@@ -10,7 +10,7 @@ namespace WaitlistApp.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = false;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(WaitlistApp.Models.AppDataContext context)

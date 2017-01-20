@@ -16,7 +16,7 @@ namespace WaitlistApp.Models
         public virtual string BrandColor { get; set; }
         public virtual string SecondaryColor { get; set; }
         public virtual string JumboColor { get; set; }
-        public virtual byte[] JumboImage { get; set; }
+        public virtual string JumboImageUrl { get; set; }
         public virtual string FontUrl { get; set; }
         public virtual string FontName { get; set; }
         public virtual string DomainNames { get; set; }

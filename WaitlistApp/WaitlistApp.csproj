@@ -518,6 +518,10 @@
     <Compile Include="Migrations\201701200451469_AddSecondaryColorToBrand.Designer.cs">
       <DependentUpon>201701200451469_AddSecondaryColorToBrand.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701202018086_ChangedBrandJumboImageFromByteToUrl.cs" />
+    <Compile Include="Migrations\201701202018086_ChangedBrandJumboImageFromByteToUrl.Designer.cs">
+      <DependentUpon>201701202018086_ChangedBrandJumboImageFromByteToUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Annotations\IIntegerIdEntity.cs" />
     <Compile Include="Models\Annotations\ISoftDeleteEntity.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -1028,6 +1032,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701200451469_AddSecondaryColorToBrand.resx">
       <DependentUpon>201701200451469_AddSecondaryColorToBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701202018086_ChangedBrandJumboImageFromByteToUrl.resx">
+      <DependentUpon>201701202018086_ChangedBrandJumboImageFromByteToUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

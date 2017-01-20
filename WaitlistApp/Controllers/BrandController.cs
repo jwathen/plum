@@ -30,6 +30,10 @@ namespace WaitlistApp.Controllers
             css = css.Replace(secondaryColor, Brand.SecondaryColor);
             css = css.Replace("#505050", Brand.JumboColor);
             css = css.Replace("'Raleway', sans-serif", Brand.FontName);
+            if (Brand.JumboImageUrl != null)
+            {
+                css = css.Replace("/Content/Images/line.jpg", "https://i.imgur.com/f4PnYcv.jpg");
+            }
             return Content(css, "text/css");
         }
 
