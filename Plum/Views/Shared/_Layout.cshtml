@@ -10,11 +10,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet">
+    <link href="@Brand.FontUrl" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="@Html.FileVersionUrl(Links.Content.Styles.Site_min_css)" rel="stylesheet" />
-    <title>@AppSettings.App.Name: @ViewBag.Title</title>
+    <link href="@Url.Action(MVC.Brand.Stylesheet())" rel="stylesheet" />
+    <title>@Brand.Name: @ViewBag.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="application-version" content="@AppSettings.Version (@AppSettings.ReleaseProfile)" />
     @Html.Partial(MVC.Shared.Views._Manifest, AppManifest)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plum.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,12 +12,12 @@ namespace Plum.Web
 {
     public class Manifest
     {
-        public static Manifest Build(UrlHelper url)
+        public static Manifest Build(UrlHelper url, Brand brand)
         {
             var manifest = new Manifest();
-            manifest.name = AppSettings.App.Name;
-            manifest.short_name = AppSettings.App.Name;
-            manifest.background_color = "#5d4865";
+            manifest.name = brand.Name;
+            manifest.short_name = brand.Name;
+            manifest.background_color = brand.BrandColor;
             manifest.theme_color = "white";
             manifest.display = "standalone";
             manifest.start_url = "/account/sign-up";

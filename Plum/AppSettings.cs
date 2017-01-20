@@ -26,11 +26,6 @@ namespace Plum
                 }
             }
 
-            public static string Name
-            {
-                get { return ConfigurationManager.AppSettings["App:Name"]; }
-            }
-
             public static class QuotedWaitTimeOptions
             {
                 public static string End

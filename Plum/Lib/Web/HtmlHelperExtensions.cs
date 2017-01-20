@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plum.Controllers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,9 +19,11 @@ namespace Plum.Web
     {
         public static HtmlString ApplicationName(this HtmlHelper html)
         {
+            var brand = ((AppControllerBase)html.ViewContext.Controller).Brand;
+
             TagBuilder span = new TagBuilder("span");
             span.AddCssClass("brand-font");
-            span.SetInnerText(AppSettings.App.Name);
+            span.SetInnerText(brand.Name);
             return new HtmlString(span.ToString());
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Plum.Controllers;
+using Plum.Models;
 
 namespace Plum.Web
 {
@@ -47,6 +48,14 @@ namespace Plum.Web
             get
             {
                 return ((AppControllerBase)ViewContext.Controller).AppManifest;
+            }
+        }
+
+        protected Brand Brand
+        {
+            get
+            {
+                return ((AppControllerBase)ViewContext.Controller).Brand;
             }
         }
     }

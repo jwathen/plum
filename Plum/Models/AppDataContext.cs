@@ -94,5 +94,6 @@ namespace Plum.Models
         public DbSet<Queue> Queues { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerLogEntry> CustomerLogEntries { get; set; }
+        public DbSet<Brand> Brands { get; set; }
     }
 }

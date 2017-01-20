@@ -24,6 +24,7 @@ namespace Plum.Controllers
         private AppSession _appSession;
         private AppSecurity _appSecurity;
         private AppSecrets _appSecrets;
+        private Brand _brand;
         private TextMessageService _textMessageService;
         private EmailService _emailService;
         private NLog.Logger _log;
@@ -49,6 +50,22 @@ namespace Plum.Controllers
             _appSecurity = new AppSecurity(_appSession);
             _textMessageService = new TextMessageService(_appSecrets);
             _emailService = new EmailService(_appSecrets);
+            _brand = _db.Brands.FirstOrDefault(x => x.IsActive);
+
+            _brand = _brand ?? new Brand();
+            _brand.BrandColor = _brand.BrandColor ?? "#F25C05";
+            _brand.FontUrl = _brand.FontUrl ?? "https://fonts.googleapis.com/css?family=Raleway:100,200,300,400";
+            _brand.FontName = _brand.FontName ?? "'Raleway', san serif";
+            _brand.Name = _brand.Name ?? "queue simple";
+            _brand.JumboColor = _brand.JumboColor ?? "gray";
+        }
+
+        public Brand Brand
+        {
+            get
+            {
+                return _brand;
+            }
         }
 
         protected AppSession AppSession
@@ -123,13 +140,7 @@ namespace Plum.Controllers
         {
             get
             {
-                var manifest = (Manifest)MemoryCache.Default["manifest"];
-                if (manifest == null)
-                {
-                    manifest = Manifest.Build(Url);
-                    MemoryCache.Default.Add("manifest", manifest, DateTime.Now.AddMinutes(5));
-                }
-                return manifest;
+                return Manifest.Build(Url, _brand);
             }
         }
 
