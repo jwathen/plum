@@ -1,4 +1,5 @@
-﻿$brand-primary: #F25C05;
+﻿$brand-primary: #f25c05;
+$brand-secondary: #f25c06;
 $brand-jumbo: #505050;  
 $brand-info: #2196F3;
 $gray-light: #a6a6a6;
@@ -25,6 +26,10 @@ $gray-light: #a6a6a6;
 @import "bootstrapsource/_bootstrap.scss";
 @import "Paper.scss";
 @import "LoadingOverlay.scss";
+
+.brand-secondary {
+    color: $brand-secondary;
+}
 
 .brand-font {
     font-family: 'Raleway', sans-serif;

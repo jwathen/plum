@@ -14,6 +14,7 @@ namespace Plum.Models
         public virtual bool IsActive { get; set; }
         public virtual string Name { get; set; }
         public virtual string BrandColor { get; set; }
+        public virtual string SecondaryColor { get; set; }
         public virtual string JumboColor { get; set; }
         public virtual byte[] JumboImage { get; set; }
         public virtual string FontUrl { get; set; }

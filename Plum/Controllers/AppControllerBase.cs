@@ -53,8 +53,9 @@ namespace Plum.Controllers
             _brand = _db.Brands.FirstOrDefault(x => x.IsActive);
 
             _brand = _brand ?? new Brand();
-            _brand.BrandColor = _brand.BrandColor ?? "#F25C05";
-            _brand.FontUrl = _brand.FontUrl ?? "https://fonts.googleapis.com/css?family=Raleway:100,200,300,400";
+            _brand.BrandColor = _brand.BrandColor ?? "#f25c05";
+            _brand.SecondaryColor = _brand.SecondaryColor ?? "#f25c05";
+            _brand.FontUrl = _brand.FontUrl ?? "Raleway:100,200,300,400";
             _brand.FontName = _brand.FontName ?? "'Raleway', san serif";
             _brand.Name = _brand.Name ?? "queue simple";
             _brand.JumboColor = _brand.JumboColor ?? "gray";

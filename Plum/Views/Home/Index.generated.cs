@@ -132,7 +132,7 @@ WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n            <h3");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">\r\n                <i");
 
@@ -140,15 +140,14 @@ WriteLiteral(" class=\"fa fa-calendar\"");
 
 WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">Plan Your Staffing</h4>\r\n            <p");
 
 WriteLiteral(" class=\"text-justify\"");
 
 WriteLiteral(@">
-                Get accurate wait times based on historical averages to learn when your true busy periods are. Save money by making sure you're not over-staffed. Get average wait times by day of the week
-                and trended graphs to help you manage your staff, shorten waits, and increase profits.
+                Maecenas dapibus sed felis quis dapibus. Donec urna nunc, posuere ac purus vitae, pharetra interdum enim. Nullam nisl neque, dictum eget nunc eget, scelerisque sagittis augue. Nam id efficitur lacus, vel gravida arcu. Mauris congue nisi nec turpis commodo semper. In rutrum diam ut mollis mollis. Nam lectus enim, ornare et urna quis, egestas malesuada augue.
             </p>
         </div>
         <div");
@@ -157,7 +156,7 @@ WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n            <h3");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">\r\n                <i");
 
@@ -165,15 +164,14 @@ WriteLiteral(" class=\"fa fa-user\"");
 
 WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">Keep your Host Greeting</h4>\r\n            <p");
 
 WriteLiteral(" class=\"text-justify\"");
 
 WriteLiteral(@">
-                You want your host to greet guests upon arrival, and that's hard to do if they're tracking down guests! Table's Ready lets the host stay at their station and not worry about chasing
-                customers or collecting abandoned (expensive!) pagers. Make your customers feel welcome with Table's Ready
+                Cras tempor tellus a magna dictum, non consectetur est tincidunt. Nullam lobortis risus at placerat ultricies. Fusce nec euismod nibh. Vestibulum cursus turpis non nisi congue semper. Fusce gravida tempor ex nec venenatis. Integer eleifend eros in turpis fringilla semper. Suspendisse tempor mauris accumsan sapien ornare eleifend.
             </p>
         </div>
         <div");
@@ -182,7 +180,7 @@ WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n            <h3");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">\r\n                <i");
 
@@ -190,14 +188,14 @@ WriteLiteral(" class=\"fa fa-cutlery\"");
 
 WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">Stop Losing Walk Aways</h4>\r\n            <p");
 
 WriteLiteral(" class=\"text-justify\"");
 
 WriteLiteral(@">
-                Texting customers frees them from waiting on top of the host stand. Crowds by the front door are big deterrents to potential guests, and there is nothing worse than losing a customer. Table's Ready keeps your doorways clear and your tables full.
+                Mauris maximus lorem vel tellus tristique aliquet. Aliquam ut bibendum lacus. Vestibulum sit amet purus tincidunt dui sodales fringilla eget quis nunc. Phasellus venenatis interdum tellus ac commodo. Fusce ultrices non lectus et pellentesque.
             </p>
         </div>
         <div");
@@ -206,7 +204,7 @@ WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n            <h3");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">\r\n                <i");
 
@@ -214,14 +212,14 @@ WriteLiteral(" class=\"fa fa-mobile\"");
 
 WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
 
-WriteLiteral(" class=\"text-center\"");
+WriteLiteral(" class=\"text-center brand-secondary\"");
 
 WriteLiteral(">Engage Your Patrons</h4>\r\n            <p");
 
 WriteLiteral(" class=\"text-justify\"");
 
 WriteLiteral(@">
-                A text can pass on more than ""Your table is ready"" - it's customizable and lets you highlight specials, promote events, or even link to social media pages like Facebook and Twitter. Old pagers were an annoyance, Table's Ready is part of the experience.
+                Nam suscipit iaculis pretium. Fusce blandit vulputate ipsum nec laoreet. Nulla egestas lorem at ante luctus, id mollis tortor finibus. Nulla sollicitudin, nisi vel vestibulum venenatis, dui turpis porta velit, in blandit diam arcu sit amet lectus. Donec dignissim sem vel volutpat posuere. Mauris ut mollis felis. Ut ut posuere ante. Maecenas eget ultricies velit. Sed a quam ut massa accumsan venenatis. Curabitur semper leo in eros ultrices auctor.
             </p>
         </div>
     </div>
