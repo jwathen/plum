@@ -1,5 +1,5 @@
-﻿$plum: #5d4865;
-$brand-primary: $plum;
+﻿$brand-primary: #F25C05;
+$brand-jumbo: darken(gray, 15%);  
 $brand-info: #2196F3;
 $gray-light: #a6a6a6;
 
@@ -27,7 +27,12 @@ $gray-light: #a6a6a6;
 @import "LoadingOverlay.scss";
 
 .brand-font {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar-brand {
+    color: $brand-primary !important;
+    font-weight: 400;
 }
 
 .list-group-item-active {
@@ -126,10 +131,11 @@ input[type="checkbox"].input-validation-error {
 .app-icon {
     height: 512px; 
     width: 512px; 
-    background-color: $plum;
+    background-color: $brand-primary;
     color: white;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Raleway';
     font-size: 16em;
+    font-weight: 100;
     text-align: center;
     line-height: 1em;
     padding-top: 70px;

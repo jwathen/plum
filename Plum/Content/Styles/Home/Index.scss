@@ -3,14 +3,15 @@
     text-align: center;
     margin-top: -23px;
     padding: 4em 0 4em 0;
-    background-image: url('/Content/Images/table.jpg');
-    background-color: darken($brand-primary, 15%);
+    background-image: url('/Content/Images/line.jpg');
+    background-color: $brand-jumbo;
     background-position: center top;
     background-blend-mode: multiply;
 
     h1 {
         &.big {
             font-size: 8em;
+            font-weight: 200;
         }
         color: #fff;
     }
@@ -24,5 +25,9 @@
         a {
           color: #eee;
         }
+    }
+
+    .lead-separator {
+        margin: 0 0.4em 0 0.4em;
     }
 }

@@ -93,24 +93,27 @@ WriteLiteral("\r\n            </h1>\r\n            <p");
 
 WriteLiteral(" class=\"lead\"");
 
-WriteLiteral(">\r\n                Seat diners faster with this FREE service by taking advantage " +
-"of the technology they\'re already using.\r\n            </p>\r\n            <p>\r\n   " +
-"             <a");
+WriteLiteral(">\r\n                Keep your customers up to date with this FREE service by takin" +
+"g advantage of the technology they\'re already using.\r\n            </p>\r\n        " +
+"    <p>\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 550), Tuple.Create("\"", 590)
+WriteAttribute("href", Tuple.Create(" href=\"", 562), Tuple.Create("\"", 602)
             
             #line 18 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 557), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
+, Tuple.Create(Tuple.Create("", 569), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
             
             #line default
             #line hidden
-, 557), false)
+, 569), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg\"");
 
-WriteLiteral(">\r\n                    Sign Up\r\n                </a>\r\n                or\r\n       " +
-"         <a");
+WriteLiteral(">\r\n                    Sign Up\r\n                </a>\r\n                <span");
+
+WriteLiteral(" class=\"lead-separator\"");
+
+WriteLiteral(">or</span>\r\n                <a");
 
 WriteLiteral(" href=\"#\"");
 
@@ -119,111 +122,112 @@ WriteLiteral(">\r\n                    Learn How It Works\r\n                </a
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n    ");
-
-WriteLiteral("\r\n    <div");
-
-WriteLiteral(" class=\"hr\"");
-
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-6\"");
+WriteLiteral(" class=\"col-md-3\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n            <h3");
 
-WriteLiteral(" class=\"col-md-4\"");
+WriteLiteral(" class=\"text-center\"");
 
-WriteLiteral(">\r\n                    <img");
+WriteLiteral(">\r\n                <i");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3315), Tuple.Create("\"", 3380)
-            
-            #line 75 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 3321), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)
-            
-            #line default
-            #line hidden
-, 3321), false)
-);
+WriteLiteral(" class=\"fa fa-calendar\"");
 
-WriteLiteral(" alt=\"Two young people holding hands.\"");
+WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
 
-WriteLiteral(" class=\"img-responsive img-circle\"");
+WriteLiteral(" class=\"text-center\"");
 
-WriteLiteral(" />\r\n                </div>\r\n                <div");
+WriteLiteral(">Plan Your Staffing</h4>\r\n            <p");
 
-WriteLiteral(" class=\"col-md-8\"");
-
-WriteLiteral(">\r\n                    <strong");
-
-WriteLiteral(" class=\"tagline\"");
+WriteLiteral(" class=\"text-justify\"");
 
 WriteLiteral(@">
-                        John in Phoenix is pretty sure these two would say,
-                    </strong>
-                    <p>
-                        We've been holding hands since we were 13 years old. It's made life difficult sometimes. Bathing . Dressing. All of these are struggles. Having only one free hand each,
-                        being told to hold a bulky coaster cut our hand effectiveness by 50%. Thanks, ");
+                Get accurate wait times based on historical averages to learn when your true busy periods are. Save money by making sure you're not over-staffed. Get average wait times by day of the week
+                and trended graphs to help you manage your staff, shorten waits, and increase profits.
+            </p>
+        </div>
+        <div");
 
-            
-            #line 83 "..\..\Views\Home\Index.cshtml"
-                                                                                                 Write(AppSettings.App.Name);
+WriteLiteral(" class=\"col-md-3\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral(" for enabling our decisions!\r\n                    </p>\r\n                </div>\r\n " +
-"           </div>\r\n            <div");
+WriteLiteral(">\r\n            <h3");
 
-WriteLiteral(" class=\"col-md-6\"");
+WriteLiteral(" class=\"text-center\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                <i");
 
-WriteLiteral(" class=\"col-md-4\"");
+WriteLiteral(" class=\"fa fa-user\"");
 
-WriteLiteral(">\r\n                    <img");
+WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4218), Tuple.Create("\"", 4283)
-            
-            #line 89 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 4224), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)
-            
-            #line default
-            #line hidden
-, 4224), false)
-);
+WriteLiteral(" class=\"text-center\"");
 
-WriteLiteral(" alt=\"Woman wearing a poncho in the park.\"");
+WriteLiteral(">Keep your Host Greeting</h4>\r\n            <p");
 
-WriteLiteral(" class=\"img-responsive img-circle\"");
-
-WriteLiteral(" />\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"col-md-8\"");
-
-WriteLiteral(">\r\n                    <strong");
-
-WriteLiteral(" class=\"tagline\"");
+WriteLiteral(" class=\"text-justify\"");
 
 WriteLiteral(@">
-                        Christian in Los Angeles feels like this lady would say,
-                    </strong>
-                    <p>
-                        When I'm not out taking poignant walks with my Friendship Poncho, I like patiently waiting for tables at trendy new restaurants. My thirst for a forgotten era is gone when I
-                        experience true modern convenience and efficiency. Thanks, ");
+                You want your host to greet guests upon arrival, and that's hard to do if they're tracking down guests! Table's Ready lets the host stay at their station and not worry about chasing
+                customers or collecting abandoned (expensive!) pagers. Make your customers feel welcome with Table's Ready
+            </p>
+        </div>
+        <div");
 
-            
-            #line 97 "..\..\Views\Home\Index.cshtml"
-                                                                              Write(AppSettings.App.Name);
+WriteLiteral(" class=\"col-md-3\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("!\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        " +
-"</div>\r\n    </div>\r\n</div>\r\n\r\n");
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">\r\n                <i");
+
+WriteLiteral(" class=\"fa fa-cutlery\"");
+
+WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">Stop Losing Walk Aways</h4>\r\n            <p");
+
+WriteLiteral(" class=\"text-justify\"");
+
+WriteLiteral(@">
+                Texting customers frees them from waiting on top of the host stand. Crowds by the front door are big deterrents to potential guests, and there is nothing worse than losing a customer. Table's Ready keeps your doorways clear and your tables full.
+            </p>
+        </div>
+        <div");
+
+WriteLiteral(" class=\"col-md-3\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">\r\n                <i");
+
+WriteLiteral(" class=\"fa fa-mobile\"");
+
+WriteLiteral("></i>\r\n            </h3>\r\n            <h4");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">Engage Your Patrons</h4>\r\n            <p");
+
+WriteLiteral(" class=\"text-justify\"");
+
+WriteLiteral(@">
+                A text can pass on more than ""Your table is ready"" - it's customizable and lets you highlight specials, promote events, or even link to social media pages like Facebook and Twitter. Old pagers were an annoyance, Table's Ready is part of the experience.
+            </p>
+        </div>
+    </div>
+</div>
+
+");
 
         }
     }

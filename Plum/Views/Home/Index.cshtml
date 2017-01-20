@@ -12,13 +12,13 @@
                 @Html.ApplicationName()
             </h1>
             <p class="lead">
-                Seat diners faster with this FREE service by taking advantage of the technology they're already using.
+                Keep your customers up to date with this FREE service by taking advantage of the technology they're already using.
             </p>
             <p>
                 <a href="@Url.Action(MVC.Account.SignUp())" class="btn btn-primary btn-lg">
                     Sign Up
                 </a>
-                or
+                <span class="lead-separator">or</span>
                 <a href="#">
                     Learn How It Works
                 </a>
@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="container">
-    @*<div class="row">
+    <div class="row">
         <div class="col-md-3">
             <h3 class="text-center">
                 <i class="fa fa-calendar"></i>
@@ -65,39 +65,6 @@
             <p class="text-justify">
                 A text can pass on more than "Your table is ready" - it's customizable and lets you highlight specials, promote events, or even link to social media pages like Facebook and Twitter. Old pagers were an annoyance, Table's Ready is part of the experience.
             </p>
-        </div>
-    </div>
-    <hr />*@
-    <div class="hr">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="col-md-4">
-                    <img src="@Html.FileVersionUrl(Links.Content.Images.testimonial1_jpg)" alt="Two young people holding hands." class="img-responsive img-circle" />
-                </div>
-                <div class="col-md-8">
-                    <strong class="tagline">
-                        John in Phoenix is pretty sure these two would say,
-                    </strong>
-                    <p>
-                        We've been holding hands since we were 13 years old. It's made life difficult sometimes. Bathing . Dressing. All of these are struggles. Having only one free hand each,
-                        being told to hold a bulky coaster cut our hand effectiveness by 50%. Thanks, @AppSettings.App.Name for enabling our decisions!
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="col-md-4">
-                    <img src="@Html.FileVersionUrl(Links.Content.Images.testimonial2_jpg)" alt="Woman wearing a poncho in the park." class="img-responsive img-circle" />
-                </div>
-                <div class="col-md-8">
-                    <strong class="tagline">
-                        Christian in Los Angeles feels like this lady would say,
-                    </strong>
-                    <p>
-                        When I'm not out taking poignant walks with my Friendship Poncho, I like patiently waiting for tables at trendy new restaurants. My thirst for a forgotten era is gone when I
-                        experience true modern convenience and efficiency. Thanks, @AppSettings.App.Name!
-                    </p>
-                </div>
-            </div>
         </div>
     </div>
 </div>

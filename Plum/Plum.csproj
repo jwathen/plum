@@ -220,6 +220,7 @@
       <LastGenOutput>AppSettings.cs</LastGenOutput>
     </Content>
     <Content Include="App_Data\Profanity.txt" />
+    <Content Include="Content\Images\chairs.jpg" />
     <Content Include="Content\Images\favicon.png" />
     <Content Include="Content\Images\Icons\114x114.png" />
     <Content Include="Content\Images\Icons\120x120.png" />
@@ -239,6 +240,7 @@
     <Content Include="Content\Images\Icons\72x72.png" />
     <Content Include="Content\Images\Icons\76x76.png" />
     <Content Include="Content\Images\Icons\original.png" />
+    <Content Include="Content\Images\line.jpg" />
     <Content Include="Content\Images\table.jpg" />
     <Content Include="Content\Images\testimonial1.jpg" />
     <Content Include="Content\Images\testimonial2.jpg" />
@@ -402,11 +404,11 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\PublishProfiles\plumlist - Web Deploy.pubxml" />
     <Content Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\waitlist-app - Web Deploy.pubxml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Views\Customer\Show.cshtml">

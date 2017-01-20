@@ -109,8 +109,8 @@ WriteLiteral(">\r\n                    <i");
 
 WriteLiteral(" class=\"fa fa-plus\"");
 
-WriteLiteral("></i>\r\n                    Add Party\r\n                </button>\r\n                " +
-"<a");
+WriteLiteral("></i>\r\n                    Add To Wait List\r\n                </button>\r\n         " +
+"       <a");
 
 WriteLiteral(" href=\"#\"");
 
@@ -118,14 +118,14 @@ WriteLiteral(" class=\"btn btn-block btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 706), Tuple.Create("\"", 767)
+WriteAttribute("style", Tuple.Create(" style=\"", 713), Tuple.Create("\"", 774)
             
             #line 20 "..\..\Views\Queue\Show.cshtml"
-                , Tuple.Create(Tuple.Create("", 714), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+                , Tuple.Create(Tuple.Create("", 721), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
             
             #line default
             #line hidden
-, 714), false)
+, 721), false)
 );
 
 WriteLiteral(">\r\n                    <i");
@@ -149,21 +149,21 @@ WriteLiteral(">\r\n                    <i");
 
 WriteLiteral(" class=\"fa fa-plus\"");
 
-WriteLiteral("></i>\r\n                    Add Party\r\n                </button>\r\n                " +
-"<button");
+WriteLiteral("></i>\r\n                    Add To Wait List\r\n                </button>\r\n         " +
+"       <button");
 
 WriteLiteral(" class=\"btn btn-default\"");
 
 WriteLiteral(" data-command=\"rearrange\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 1234), Tuple.Create("\"", 1295)
+WriteAttribute("style", Tuple.Create(" style=\"", 1248), Tuple.Create("\"", 1309)
             
             #line 30 "..\..\Views\Queue\Show.cshtml"
- , Tuple.Create(Tuple.Create("", 1242), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
+ , Tuple.Create(Tuple.Create("", 1256), Tuple.Create<System.Object, System.Int32>(Model.Customers.Count < 2 ? "display:none;" : null
             
             #line default
             #line hidden
-, 1242), false)
+, 1256), false)
 );
 
 WriteLiteral(">\r\n                    <i");
@@ -251,14 +251,14 @@ WriteLiteral("\';\r\n        window.viewData.udpateBusinessViewQueueListUrl = \'
 WriteLiteral("\';\r\n        window.viewData.showCustomerUrl = \'/customer\';\r\n    </script>\r\n    <s" +
 "cript");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2281), Tuple.Create("\"", 2352)
+WriteAttribute("src", Tuple.Create(" src=\"", 2295), Tuple.Create("\"", 2366)
             
             #line 58 "..\..\Views\Queue\Show.cshtml"
-, Tuple.Create(Tuple.Create("", 2287), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
+, Tuple.Create(Tuple.Create("", 2301), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Queue.Show_es5_min_js)
             
             #line default
             #line hidden
-, 2287), false)
+, 2301), false)
 );
 
 WriteLiteral("></script>\r\n");
