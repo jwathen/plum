@@ -100,6 +100,8 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
             public static readonly string chairs_jpg = Url("chairs.jpg");
+            public static readonly string droid_sans_css_png = Url("droid-sans-css.png");
+            public static readonly string droid_sans_url_png = Url("droid-sans-url.png");
             public static readonly string favicon_png = Url("favicon.png");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Icons {
@@ -150,6 +152,19 @@ namespace Links
                 public static readonly string SignIn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/SignIn.min.js") ? Url("SignIn.min.js") : Url("SignIn.js");
                 public static readonly string SignIn_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/SignIn.es5.min.js") ? Url("SignIn.es5.min.js") : Url("SignIn.es5.js");
                 public static readonly string SignIn_es5_min_js = Url("SignIn.es5.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Brand {
+                public const string UrlPath = "~/Content/Scripts/Brand";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string BrandViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/BrandViewModel.min.js") ? Url("BrandViewModel.min.js") : Url("BrandViewModel.js");
+                public static readonly string BrandViewModel_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/BrandViewModel.es5.min.js") ? Url("BrandViewModel.es5.min.js") : Url("BrandViewModel.es5.js");
+                public static readonly string BrandViewModel_es5_min_js = Url("BrandViewModel.es5.min.js");
+                public static readonly string List_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/List.min.js") ? Url("List.min.js") : Url("List.js");
+                public static readonly string List_es5_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/List.es5.min.js") ? Url("List.es5.min.js") : Url("List.es5.js");
+                public static readonly string List_es5_min_js = Url("List.es5.min.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -371,6 +386,14 @@ namespace Links
                     public static class Assets
                     {
                         public const string SignIn_js = "~/Content/Scripts/Account/SignIn.js"; 
+                    }
+                }
+                public static partial class Brand 
+                {
+                    public static class Assets
+                    {
+                        public const string BrandViewModel_js = "~/Content/Scripts/Brand/BrandViewModel.js"; 
+                        public const string List_js = "~/Content/Scripts/Brand/List.js"; 
                     }
                 }
                 public static partial class CdnFallbacks 

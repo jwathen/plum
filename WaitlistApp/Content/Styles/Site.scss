@@ -1,6 +1,6 @@
 ﻿$brand-primary: #f25c05;
 $brand-secondary: #f25c06;
-$brand-jumbo: #505050;  
+$brand-jumbo: #505050;
 $brand-info: #2196F3;
 $gray-light: #a6a6a6;
 
@@ -8,6 +8,7 @@ $gray-light: #a6a6a6;
     background-color: #dff0d8 !important;
     border-color: #d6e9c6 !important;
     color: #468847 !important;
+
     .close {
         color: #468847 !important;
     }
@@ -17,10 +18,11 @@ $gray-light: #a6a6a6;
     background-color: #f2dede !important;
     border-color: #eed3d7 !important;
     color: #b94a48 !important;
+
     .close {
         color: #b94a48 !important;
     }
-} 
+}
 
 @import "PaperVariables.scss";
 @import "bootstrapsource/_bootstrap.scss";
@@ -83,30 +85,32 @@ input[type="checkbox"].input-validation-error {
 }
 
 .button-stack {
-  .btn {
-    margin-bottom: 1em;
-  }
+    .btn {
+        margin-bottom: 1em;
+    }
 }
 
 .vertical-alignment-helper {
-    display:table;
+    display: table;
     height: 100%;
     width: 100%;
-    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+    pointer-events: none; /* This makes sure that we can still click outside of the modal to close it */
     .modal-dialog {
         padding: 10px;
     }
 }
+
 .vertical-align-center {
     /* To center vertically */
     display: table-cell;
     vertical-align: middle;
-    pointer-events:none;
+    pointer-events: none;
 }
+
 .modal-content {
     /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-    width:inherit;
-    height:inherit;
+    width: inherit;
+    height: inherit;
     /* To center horizontally */
     margin: 0 auto;
     pointer-events: all;
@@ -132,10 +136,15 @@ input[type="checkbox"].input-validation-error {
     @import "Business/Show.scss";
 }
 
+.color-box {
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+}
 
 .app-icon {
-    height: 512px; 
-    width: 512px; 
+    height: 512px;
+    width: 512px;
     background-color: $brand-primary;
     color: white;
     font-family: 'Raleway';
@@ -145,6 +154,7 @@ input[type="checkbox"].input-validation-error {
     line-height: 1em;
     padding-top: 70px;
     margin-bottom: 50px;
+
     span {
         margin-left: -21px;
         margin-right: 27px;

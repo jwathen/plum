@@ -225,6 +225,8 @@
     </Content>
     <Content Include="App_Data\Profanity.txt" />
     <Content Include="Content\Images\chairs.jpg" />
+    <Content Include="Content\Images\droid-sans-css.png" />
+    <Content Include="Content\Images\droid-sans-url.png" />
     <Content Include="Content\Images\favicon.png" />
     <Content Include="Content\Images\Icons\114x114.png" />
     <Content Include="Content\Images\Icons\120x120.png" />
@@ -260,6 +262,20 @@
       <DependentUpon>SignIn.es5.js</DependentUpon>
     </Content>
     <Content Include="Content\Scripts\Account\SignIn.js" />
+    <Content Include="Content\Scripts\Brand\BrandViewModel.es5.js">
+      <DependentUpon>BrandViewModel.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Brand\BrandViewModel.es5.min.js">
+      <DependentUpon>BrandViewModel.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Brand\BrandViewModel.js" />
+    <Content Include="Content\Scripts\Brand\List.es5.js">
+      <DependentUpon>List.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Brand\List.es5.min.js">
+      <DependentUpon>List.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\Brand\List.js" />
     <Content Include="Content\Scripts\CdnFallbacks\bootstrap-3.3.6.min.js" />
     <Content Include="Content\Scripts\CdnFallbacks\jquery-2.2.4.min.js" />
     <Content Include="Content\Scripts\CdnFallbacks\jquery.formatter-0.1.5.min.js" />
@@ -405,12 +421,6 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="NSass.Wrapper\NSass.Wrapper.x64.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NSass.Wrapper\NSass.Wrapper.x86.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -543,6 +553,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Brand\BrandViewModel.cs" />
     <Compile Include="ViewModels\Business\ShowViewModel.cs" />
     <Compile Include="ViewModels\Business\SignInInformationViewModel.cs" />
     <Compile Include="ViewModels\Business\TextMessagesViewModel.cs" />
@@ -971,6 +982,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SendCustomMessage.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Brand\List.cshtml" />
+    <Content Include="Views\Brand\EditorTemplates\BrandViewModel.cshtml" />
+    <Content Include="Views\Brand\Create.cshtml" />
+    <Content Include="Views\Brand\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1039,7 +1054,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\NLogConfig\" />
-    <Folder Include="Views\Brand\" />
     <Folder Include="Views\Sms\" />
   </ItemGroup>
   <PropertyGroup>

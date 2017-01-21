@@ -84,8 +84,8 @@
                 <hr />
                 <ul class="list-inline">
                     <li>&copy; @DateTime.Now.Year @AppSettings.App.Company</li>
-                    <li>@Html.ActionLink("Privacy Policy", MVC.Home.PrivacyPolicy())</li>
-                    <li>@Html.ActionLink("Terms of Use", MVC.Home.TermsOfUse())</li>
+                    <li><a href="@Url.Action(MVC.Home.PrivacyPolicy())" class="text-muted">Privacy Policy</a></li>
+                    <li><a href="@Url.Action(MVC.Home.TermsOfUse())" class="text-muted">Terms of Use</a></li>
                 </ul>
             </div>
         </div>

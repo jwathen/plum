@@ -30,5 +30,21 @@
   {
     "outputFile": "Content/Scripts/Account/SignIn.es5.js",
     "inputFile": "Content/Scripts/Account/SignIn.js"
+  },
+  {
+    "outputFile": "Content/Scripts/Brand/BrandViewModel.es5.js",
+    "inputFile": "T4MVC.tt"
+  },
+  {
+    "outputFile": "Content/Scripts/Brand/BrandViewModel.es5.js",
+    "inputFile": "T4MVC.tt"
+  },
+  {
+    "outputFile": "Content/Scripts/Brand/BrandViewModel.es5.js",
+    "inputFile": "Content/Scripts/Brand/BrandViewModel.js"
+  },
+  {
+    "outputFile": "Content/Scripts/Brand/List.es5.js",
+    "inputFile": "Content/Scripts/Brand/List.js"
   }
 ]

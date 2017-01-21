@@ -1,0 +1,21 @@
+﻿@model WaitlistApp.ViewModels.Brand.BrandViewModel
+
+@section scripts {
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Brand.BrandViewModel_es5_min_js)"></script>
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <a href="@Url.Action(MVC.Brand.List())">Back to List</a>
+            </p>
+            <h2>Edit @Model.Name</h2>
+            <form action="" method="post">
+                @Html.ValidationSummary()
+                @Html.EditorForModel()
+                @Html.AntiForgeryToken2()
+                @Html.HiddenFor(x => x.Id)
+            </form>
+        </div>
+    </div>
+</div>

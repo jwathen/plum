@@ -1,0 +1,110 @@
+﻿@model IEnumerable<WaitlistApp.Models.Brand>
+@{
+    ViewBag.Title = "Brands";
+}
+
+@section scripts {
+    <script src="@Html.FileVersionUrl(Links.Content.Scripts.Brand.List_es5_min_js)"></script>
+}
+
+@foreach (string fontUrl in Model.Select(x => x.FontUrl).Distinct())
+{
+    <link href="https://fonts.googleapis.com/css?family=@fontUrl" rel="stylesheet">
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <a href="@Url.Action(MVC.Brand.Create())">
+                    <i class="fa fa-plus"></i>
+                    Add a Brand
+                </a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Brand Color</th>
+                        <th>Secondary Color</th>
+                        <th>Font</th>
+                        <th>Jumbo Color</th>
+                        <th>Jumbo Image URL</th>
+                        <th>Domain</th>
+                        <th>Active</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                @foreach (var brand in Model)
+                {
+                    <tr>                        
+                        <td>
+                            <span style="font-family: @brand.FontName; font-size: 2em;">@brand.Name</span>
+                        </td>
+                        <td>
+                            <div class="color-box" style="background-color: @brand.BrandColor;"></div>
+                            @brand.BrandColor
+                        </td>
+                        <td>
+                            <div class="color-box" style="background-color: @brand.SecondaryColor;"></div>
+                            @brand.SecondaryColor
+                        </td>
+                        <td>
+                            @brand.FontName
+                        </td>
+                        <td>
+                            <div class="color-box" style="background-color: @brand.JumboColor;"></div>
+                            @brand.JumboColor
+                        </td>
+                        <td>
+                            @if (brand.JumboImageUrl != null)
+                            {
+                                <a href="@brand.JumboImageUrl" target="_blank">
+                                    <img class="img-thumbnail" src="@brand.JumboImageUrl" style="max-width: 150px; max-height: 150px;" />
+                                </a>
+                                <br />
+                                <a href="@brand.JumboImageUrl" target="_blank">
+                                    @brand.JumboImageUrl
+                                </a>
+                            }
+                        </td>
+                        <td>
+                            @brand.DomainNames
+                        </td>
+                        <td>
+                            @if (brand.IsActive)
+                            {
+                                <span>Yes</span>
+                                <form action="@Url.Action(MVC.Brand.Dectivate())" method="post" style="display:inline;">
+                                    (<a class="activate-link" href="#">Deactivate</a>)
+                                    @Html.AntiForgeryToken2()
+                                </form>
+                            }
+                            else
+                            {
+                                <span>No</span>
+                                <form action="@Url.Action(MVC.Brand.Activate())" method="post" style="display:inline;">
+                                    (<a class="activate-link" href="#">Activate</a>)
+                                    @Html.Hidden("Id", brand.Id)
+                                    @Html.AntiForgeryToken2()
+                                </form>
+                            }
+                        </td>
+                        <td>
+                            <a href="@Url.Action(MVC.Brand.Edit(brand.Id))" class="text-center">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <form action="@Url.Action(MVC.Brand.Destroy(brand.Id))" method="post">
+                                <a class="delete-link" href="#">Delete</a>
+                                @Html.AntiForgeryToken2()
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

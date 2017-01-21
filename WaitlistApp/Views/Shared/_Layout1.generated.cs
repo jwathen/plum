@@ -509,25 +509,36 @@ WriteLiteral(" ");
             
             #line default
             #line hidden
-WriteLiteral("</li>\r\n                    <li>");
+WriteLiteral("</li>\r\n                    <li><a");
 
+WriteAttribute("href", Tuple.Create(" href=\"", 3768), Tuple.Create("\"", 3812)
             
             #line 87 "..\..\Views\Shared\_Layout.cshtml"
-                   Write(Html.ActionLink("Privacy Policy", MVC.Home.PrivacyPolicy()));
-
+, Tuple.Create(Tuple.Create("", 3775), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Home.PrivacyPolicy())
             
             #line default
             #line hidden
-WriteLiteral("</li>\r\n                    <li>");
+, 3775), false)
+);
 
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">Privacy Policy</a></li>\r\n                    <li><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 3884), Tuple.Create("\"", 3925)
             
             #line 88 "..\..\Views\Shared\_Layout.cshtml"
-                   Write(Html.ActionLink("Terms of Use", MVC.Home.TermsOfUse()));
-
+, Tuple.Create(Tuple.Create("", 3891), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Home.TermsOfUse())
             
             #line default
             #line hidden
-WriteLiteral("</li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n        <div");
+, 3891), false)
+);
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">Terms of Use</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>" +
+"\r\n        <div");
 
 WriteLiteral(" class=\"app-icon hidden\"");
 
@@ -706,45 +717,45 @@ Write(Html.CdnScript("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jque
             #line hidden
 WriteLiteral("\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6454), Tuple.Create("\"", 6545)
+WriteAttribute("src", Tuple.Create(" src=\"", 6504), Tuple.Create("\"", 6595)
             
             #line 128 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6460), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6510), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_ui_touch_punch_improved_es5_min_js)
             
             #line default
             #line hidden
-, 6460), false)
+, 6510), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6569), Tuple.Create("\"", 6589)
-, Tuple.Create(Tuple.Create("", 6575), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
-, 6575), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6619), Tuple.Create("\"", 6639)
+, Tuple.Create(Tuple.Create("", 6625), Tuple.Create<System.Object, System.Int32>(Href("~/signalr/hubs")
+, 6625), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6613), Tuple.Create("\"", 6693)
+WriteAttribute("src", Tuple.Create(" src=\"", 6663), Tuple.Create("\"", 6743)
             
             #line 130 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6619), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
+, Tuple.Create(Tuple.Create("", 6669), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.jquery_unobtrusive_ajax_min_js)
             
             #line default
             #line hidden
-, 6619), false)
+, 6669), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6717), Tuple.Create("\"", 6782)
+WriteAttribute("src", Tuple.Create(" src=\"", 6767), Tuple.Create("\"", 6832)
             
             #line 131 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 6723), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
+, Tuple.Create(Tuple.Create("", 6773), Tuple.Create<System.Object, System.Int32>(Html.FileVersionUrl(Links.Content.Scripts.Site_es5_min_js)
             
             #line default
             #line hidden
-, 6723), false)
+, 6773), false)
 );
 
 WriteLiteral("></script>\r\n");

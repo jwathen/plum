@@ -6765,6 +6765,11 @@ input[type="checkbox"].input-validation-error {
   .business.business-show textarea {
     height: 4em; } }
 
+.color-box {
+  height: 1em;
+  width: 1em;
+  display: inline-block; }
+
 .app-icon {
   height: 512px;
   width: 512px;

@@ -1,0 +1,149 @@
+﻿@model WaitlistApp.ViewModels.Brand.BrandViewModel
+@{
+    Layout = null;
+}
+<div class="col-md-6">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.Name)">
+                    Company Name
+                    <span class="text-danger">*</span>
+                </label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.BrandColor)">
+                    Brand Color
+                    <span class="text-danger">*</span>
+                    <div data-colorbox-for="@Html.IdFor(x => x.BrandColor)" class="color-box"></div>
+                </label>
+                @Html.TextBoxFor(x => x.BrandColor, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.SecondaryColor)">
+                    Secondary Color
+                    <div data-colorbox-for="@Html.IdFor(x => x.SecondaryColor)" class="color-box"></div>
+                </label>
+                @Html.TextBoxFor(x => x.SecondaryColor, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.JumboImageUrl)">
+                    Jumbo Image URL (imgur only)
+                </label>
+                @Html.TextBoxFor(x => x.JumboImageUrl, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.JumboColor)">
+                    Jumbo Color
+                    <div data-colorbox-for="@Html.IdFor(x => x.JumboColor)" class="color-box"></div>
+                </label>
+                @Html.TextBoxFor(x => x.JumboColor, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.FontUrl)">
+                    Google Fonts URL
+                </label>
+                @Html.TextBoxFor(x => x.FontUrl, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.FontName)">
+                    CSS Font Style
+                </label>
+                @Html.TextBoxFor(x => x.FontName, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="@Html.IdFor(x => x.DomainNames)">
+                    Domain Name(s)
+                </label>
+                @Html.TextBoxFor(x => x.DomainNames, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div data-help-for="@Html.IdFor(x => x.Name)" style="display:none;">
+        <p>
+            <strong>Company Name</strong> should be something that's easy to remember. It should probably have something to do with the word &quot;list&quot;.
+            It doesn't necessarily have to do with wait lists in particular, it should just let the customer know that it has something to do with lists. Often
+            internet companies will just kind of throw a word (whether it's real or not) in their name to make it unique so that they can get a domain name
+            for it.  Think things like Gorilla List, Square List, Plum List, Nosh List.  These are all taken but hopefully they give you some ideas.  Because of
+            the domain name restriction, this will probably be the hardest part.
+        </p>
+    </div>
+    <div data-help-for="@Html.IdFor(x => x.BrandColor)" style="display:none;">
+        <p>
+            <strong>Brand Color</strong> is the main accent color for the site. We're going with white/gray and then this one main color.  The company name and
+            important buttons will show up in this color.  Because we're going with such a muted style, the brand color should probably be pretty vibrant. It should
+            be a hex html color like #ff0054. You can find a lot of good colors and palettes at
+            <a href="https://color.adobe.com/explore/most-used/?time=all" target="_blank">https://color.adobe.com/</a>.
+        </p>
+    </div>
+    <div data-help-for="@Html.IdFor(x => x.SecondaryColor)" style="display:none;">
+        <p>
+            <strong>Secondary Color</strong> is optional but it would be nice to find one that works well so that we have a little bit more variety in the pallette.
+            If we don't go with a secondary color then that means we'll use the brand color for everything. It should be a hex html color like #ff0054. You can find a
+            lot of good colors and palettes at <a href="https://color.adobe.com/explore/most-used/?time=all" target="_blank">https://color.adobe.com/</a>.
+        </p>
+    </div>
+    <div data-help-for="@Html.IdFor(x => x.JumboImageUrl)" style="display:none;">
+        <p>
+            <strong>Jumbo Image URL</strong> is the URL to the image that's in the background on the home page.  That whole big part at the top is called a &quot;Jumbo&quot;
+            and it's the hook for the site.  This image isn't super important but if would be great if it had something to do with the company name.  Try to find an image from
+            <a href="https://unsplash.com/" target="_blank">https://unsplash.com/</a>. They have high quality and completely royalty free images that we can use.  Since the image
+            will have a semi-transparent overlay on it, it should probably be a grayscale image. Also, keep in mind that the jumbo area needs a very wide but very tall image.
+            Most of the images at unsplash are not this way be default so you'll probably have to download the image
+            and then use some tool like <a href="http://www.getpaint.net/download.html" target="_blank">Paint .NET</a> to crop the image to a good size.  Paint .NET can also convert
+            the image to grayscale for you.  Maybe we could experiment with adding some blur to the image too?  Once you have an image you like, upload it to imgur and then put the
+            imgur URL here.  The URL should end up looking something like http://i.imgur.com/f4PnYcv.jpg.
+        </p>
+    </div>
+    <div data-help-for="@Html.IdFor(x => x.JumboColor)" style="display:none;">
+        <p>
+            <strong>Jumbo Color</strong> is the color of the semi-transparent overlay that will go over the jumbo image. For the most part I think gray looks fine for but we probably
+            want to try some other colors as well. It should be a hex html color like #ff0054. You can find a lot of good colors and palettes at
+            <a href="https://color.adobe.com/explore/most-used/?time=all" target="_blank">https://color.adobe.com/</a>.
+        </p>
+    </div>
+    <div data-help-for="@Html.IdFor(x => x.FontUrl)" style="display:none;">
+        <p>
+            <strong>Goolge Fonts URL</strong> should point to the custom font that we use for our company name. Find a font you like at
+            <a href="https://fonts.google.com/" target="https://fonts.google.com/">https://fonts.google.com/</a>. There are A LOT of options. One you find one, you only need to put the
+            part that comes after https://fonts.googleapis.com/css?family= in the URL. In example image below, you would only put the highlighted part since that's
+            the only part that comes after ?family=. Both <em>Goolge Fonts URL</em> and <em>CSS Font Style</em> need to be set correctly for the custom font to show up.
+            <blockquote>Droid+Sans</blockquote>
+            <img class="thumbnail" style="max-width: 550px;" src="@Links.Content.Images.droid_sans_url_png" />
+        </p>
+    </div>
+    <div data-help-for="@Html.IdFor(x => x.FontName)" style="display:none;">
+        <p>
+            <strong>CSS Font Style</strong> is just the part after &quot;font-family: &quot; once you've picked a font.  In the example below you would put this. Notice that you don't include
+            the final ;. Both <em>Goolge Fonts URL</em> and <em>CSS Font Style</em> need to be set correctly for the custom font to show up.
+            <blockquote>'Droid Sans', sans-serif</blockquote>
+            <img class="thumbnail" style="max-width: 550px;" src="@Links.Content.Images.droid_sans_css_png" />
+        </p>
+    </div>
+    <div data-help-for="@Html.IdFor(x => x.DomainNames)" style="display:none;">
+        <p>
+            <strong>Domain Name(s)</strong> should be a list of available and cheap (under $20) domain names.  Use <a href="https://www.namecheap.com/" target="_blank">https://www.namecheap.com/</a>
+            to find available names. It will be pretty difficult.  Try things like adding hyphens (gorilla-list.com instead of gorillalist.com). Once you name(s) that are available, just list them here.
+        </p>
+    </div>
+</div>
