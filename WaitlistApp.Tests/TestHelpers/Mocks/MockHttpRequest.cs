@@ -17,7 +17,7 @@ namespace WaitlistApp.Tests.TestHelpers.Mocks
 
         private HttpCookieCollection _cookies = new HttpCookieCollection();
         private Uri _url;
-        private Uri _urlReferrer;
+        private Uri _urlReferrer = null;
         private string _userAgent = IE11_USER_AGENT;
         private HttpBrowserCapabilities _browser = _ie11BrowserCapabilities;
         private NameValueCollection _headers = new NameValueCollection();
@@ -25,7 +25,7 @@ namespace WaitlistApp.Tests.TestHelpers.Mocks
         private NameValueCollection _form = new NameValueCollection();
         private NameValueCollection _queryString = new NameValueCollection();
         private string _httpMethod = "GET";
-        private string _userHostAddress;
+        private string _userHostAddress = null;
         private bool _isAuthenticated;
 
         public override Uri Url

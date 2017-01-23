@@ -37,7 +37,7 @@ namespace WaitlistApp.Controllers
         public virtual ActionResult Error() => View();
 
         [HttpGet, Route("not-authorized")]
-        public virtual ActionResult NotAuthorized() => View();
+        public virtual new ActionResult NotAuthorized() => View();
 
         [HttpGet, Route("removed-from-list")]
         public virtual ActionResult RemovedFromList() => View();
