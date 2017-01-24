@@ -8,6 +8,11 @@ namespace WaitlistApp
     {
         public static class App
         {
+            public static string BrandName
+            {
+                get { return ConfigurationManager.AppSettings["App:BrandName"]; }
+            }
+
             public static string Company
             {
                 get { return ConfigurationManager.AppSettings["App:Company"]; }

@@ -36,5 +36,10 @@ namespace WaitlistApp.Web
 
             return HttpRuntime.Cache[rootRelativePath] as string;
         }
+
+        public static string FixCloudflareHost(string url)
+        {
+            return url.Replace("waitlist-app.azurewebsites.net", "osolist.com");
+        }
     }
 }

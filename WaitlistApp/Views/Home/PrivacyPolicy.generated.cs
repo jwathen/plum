@@ -225,11 +225,10 @@ WriteLiteral(">\r\n            <h2>Privacy Policy</h2>\r\n            <p>\r\n   
 "rong> correspondence.</li>\r\n                </ul>\r\n            </p>\r\n           " +
 " <p>\r\n                <strong>Contacting Us</strong><br />\r\n                If t" +
 "here are any questions regarding this privacy policy you may contact us using th" +
-"e information below.\r\n                <address>\r\n                    WaitlistApp" +
-".com<br />\r\n                    1723 W Northview Ave<br />\r\n                    " +
-"Phoenix, AZ 85021<br />\r\n                    info@WaitlistApp.com\r\n             " +
-"   </address>\r\n            </p>\r\n            <p>\r\n                <em>Last Edite" +
-"d on June 8, 2016</em>\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>");
+"e information below.\r\n                <address>\r\n                    https://oso" +
+"list.com/<br />\r\n                    info@osolist.com\r\n                </address" +
+">\r\n            </p>\r\n            <p>\r\n                <em>Last Edited on January" +
+" 24, 2017</em>\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>");
 
         }
     }

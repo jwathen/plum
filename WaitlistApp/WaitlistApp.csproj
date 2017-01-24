@@ -224,6 +224,10 @@
       <LastGenOutput>AppSettings.cs</LastGenOutput>
     </Content>
     <Content Include="App_Data\Profanity.txt" />
+    <Content Include="Content\Images\bears_original.jpg" />
+    <Content Include="Content\Images\bear_icon_white.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\Images\chairs.jpg" />
     <Content Include="Content\Images\droid-sans-css.png" />
     <Content Include="Content\Images\droid-sans-url.png" />
@@ -248,6 +252,9 @@
     <Content Include="Content\Images\Icons\original.png" />
     <Content Include="Content\Images\line.jpg" />
     <Content Include="Content\Images\table.jpg" />
+    <Content Include="Content\Images\bear_icon_brand.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\Images\testimonial1.jpg" />
     <Content Include="Content\Images\testimonial2.jpg" />
     <Content Include="Content\Images\testimonial3.jpg" />

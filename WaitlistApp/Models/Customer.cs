@@ -9,6 +9,7 @@ using Humanizer.Localisation;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using WaitlistApp.Models.Annotations;
+using WaitlistApp.Web;
 
 namespace WaitlistApp.Models
 {
@@ -144,6 +145,7 @@ namespace WaitlistApp.Models
             {
                 var textMessageTemplates = new TextMessageTemplateService();
                 string placeInLineUrl = urlHelper.ActionAbsolute(MVC.Queue.ShowCustomer(this.UrlToken));
+                placeInLineUrl = UrlUtility.FixCloudflareHost(placeInLineUrl);
                 string message = textMessageTemplates.BuildWelcomeMessage(Queue.Business, placeInLineUrl);
                 await textMessageService.SendAsync(PhoneNumber, message);
                 Queue.Business.TextMessagesSent++;

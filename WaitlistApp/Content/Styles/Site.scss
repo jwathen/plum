@@ -1,6 +1,6 @@
-﻿$brand-primary: #f25c05;
-$brand-secondary: #f25c06;
-$brand-jumbo: #505050;
+﻿$brand-primary: #417378;
+$brand-secondary: #a4cfbe;
+$brand-jumbo: #777777;
 $brand-info: #2196F3;
 $gray-light: #a6a6a6;
 
@@ -35,6 +35,10 @@ $gray-light: #a6a6a6;
 
 .brand-font {
     font-family: 'Raleway', sans-serif;
+}
+
+.brand-icon {
+    max-height: 1.3em;
 }
 
 .navbar-brand {

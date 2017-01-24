@@ -99,6 +99,9 @@ namespace Links
             public const string UrlPath = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string bear_icon_brand_svg = Url("bear_icon_brand.svg");
+            public static readonly string bear_icon_white_svg = Url("bear_icon_white.svg");
+            public static readonly string bears_original_jpg = Url("bears_original.jpg");
             public static readonly string chairs_jpg = Url("chairs.jpg");
             public static readonly string droid_sans_css_png = Url("droid-sans-css.png");
             public static readonly string droid_sans_url_png = Url("droid-sans-url.png");
@@ -125,6 +128,7 @@ namespace Links
                 public static readonly string _70x70_png = Url("70x70.png");
                 public static readonly string _72x72_png = Url("72x72.png");
                 public static readonly string _76x76_png = Url("76x76.png");
+                public static readonly string bear_brand_svg = Url("bear_brand.svg");
                 public static readonly string original_png = Url("original.png");
             }
         

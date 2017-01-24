@@ -50,15 +50,11 @@ namespace WaitlistApp.Controllers
             _appSecurity = new AppSecurity(_appSession);
             _textMessageService = new TextMessageService(_appSecrets);
             _emailService = new EmailService(_appSecrets);
-            _brand = _db.Brands.FirstOrDefault(x => x.IsActive);
 
-            _brand = _brand ?? new Brand();
-            _brand.BrandColor = _brand.BrandColor ?? "#f25c05";
-            _brand.SecondaryColor = _brand.SecondaryColor ?? _brand.BrandColor;
-            _brand.FontUrl = _brand.FontUrl ?? "Raleway:100,200,300,400";
-            _brand.FontName = _brand.FontName ?? "'Raleway', san serif";
-            _brand.Name = _brand.Name ?? "queue simple";
-            _brand.JumboColor = _brand.JumboColor ?? "gray";
+            _brand = new Brand();
+            _brand.FontUrl = "Poppins";
+            _brand.FontName = "'Poppins', sans-serif";
+            _brand.Name = AppSettings.App.BrandName ?? "oso list";
         }
 
         public Brand Brand

@@ -308,11 +308,11 @@ WriteLiteral(@"'s web site shall be governed by the laws of the State of Arizona
             <p>
                 General Terms and Conditions applicable to Use of a Web Site.
             </p>
-        </div>
-    </div>
-</div>
+            <p>Vector Graphics by <a");
 
-");
+WriteLiteral(" href=\"https://www.vecteezy.com/\"");
+
+WriteLiteral(">www.Vecteezy.com</a></p>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
 
         }
     }

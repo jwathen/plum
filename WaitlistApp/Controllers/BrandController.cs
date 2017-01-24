@@ -12,6 +12,12 @@ namespace WaitlistApp.Controllers
 {
     public partial class BrandController : AppControllerBase
     {
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+            filterContext.Result = new HttpNotFoundResult();
+        }
+
         protected async Task<Models.Brand> GetBrand()
         {
             return await Entity<Models.Brand>(

@@ -17,7 +17,7 @@ namespace WaitlistApp.Web
             var manifest = new Manifest();
             manifest.name = brand.Name;
             manifest.short_name = brand.Name;
-            manifest.background_color = brand.BrandColor;
+            manifest.background_color = "#417378";
             manifest.theme_color = "white";
             manifest.display = "standalone";
             manifest.start_url = "/account/sign-up";

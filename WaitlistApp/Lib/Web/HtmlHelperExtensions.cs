@@ -27,6 +27,26 @@ namespace WaitlistApp.Web
             return new HtmlString(span.ToString());
         }
 
+        public static HtmlString ApplicationNameWithIcon(this HtmlHelper html, bool brandColor = true)
+        {
+            var brand = ((AppControllerBase)html.ViewContext.Controller).Brand;
+
+            TagBuilder span = new TagBuilder("span");
+            span.AddCssClass("brand-font");
+            TagBuilder img = new TagBuilder("img");
+            img.AddCssClass("brand-icon");
+            if (brandColor)
+            {
+                img.MergeAttribute("src", html.FileVersionUrl(Links.Content.Images.bear_icon_brand_svg));
+            }
+            else
+            {
+                img.MergeAttribute("src", html.FileVersionUrl(Links.Content.Images.bear_icon_white_svg));
+            }
+            span.InnerHtml = img.ToString() + " " + brand.Name;
+            return new HtmlString(span.ToString());
+        }
+
         public static string FileVersionUrl(this HtmlHelper html, string rootRelativePath)
         {
             return UrlUtility.FileVersionUrl(rootRelativePath);

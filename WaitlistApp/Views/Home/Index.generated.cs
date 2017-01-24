@@ -69,7 +69,7 @@ WriteLiteral("                ");
 
             
             #line 9 "..\..\Views\Home\Index.cshtml"
-           Write(Html.ApplicationName());
+           Write(Html.ApplicationNameWithIcon(brandColor: false));
 
             
             #line default
@@ -84,7 +84,7 @@ WriteLiteral("                ");
 
             
             #line 12 "..\..\Views\Home\Index.cshtml"
-           Write(Html.ApplicationName());
+           Write(Html.ApplicationNameWithIcon(brandColor: false));
 
             
             #line default
@@ -97,14 +97,14 @@ WriteLiteral(">\r\n                Keep your customers up to date with this FREE
 "g advantage of the technology they\'re already using.\r\n            </p>\r\n        " +
 "    <p>\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 562), Tuple.Create("\"", 602)
+WriteAttribute("href", Tuple.Create(" href=\"", 612), Tuple.Create("\"", 652)
             
             #line 18 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 569), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
+, Tuple.Create(Tuple.Create("", 619), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Account.SignUp())
             
             #line default
             #line hidden
-, 569), false)
+, 619), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg\"");
