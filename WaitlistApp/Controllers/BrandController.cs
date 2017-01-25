@@ -171,7 +171,7 @@ namespace WaitlistApp.Controllers
             css = css.Replace("'Raleway', sans-serif", Brand.FontName);
             if (Brand.JumboImageUrl != null)
             {
-                css = css.Replace("/Content/Images/line.jpg", "https://i.imgur.com/f4PnYcv.jpg");
+                css = css.Replace("/Content/Images/line.jpg", Brand.JumboImageUrl);
             }
             return Content(css, "text/css");
         }

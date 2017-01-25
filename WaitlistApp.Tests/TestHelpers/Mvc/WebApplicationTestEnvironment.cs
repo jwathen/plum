@@ -15,10 +15,10 @@ namespace WaitlistApp.Tests.TestHelpers.Mvc
 {
     public static class WebApplicationTestEnvironment
     {
-        private static string _virtualDirectory;
-        private static Assembly _applicationAssembly;
-        private static Type _applicationType;
-        private static string _phyiscalDirectory;
+        private static string _virtualDirectory = null;
+        private static Assembly _applicationAssembly = null;
+        private static Type _applicationType = null;
+        private static string _phyiscalDirectory = null;
 
         public static void Setup<TController>()
         {
