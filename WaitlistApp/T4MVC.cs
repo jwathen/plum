@@ -43,6 +43,7 @@ namespace T4MVC
 {
 }
 
+#pragma warning disable 0436
 namespace T4MVC
 {
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -52,6 +53,7 @@ namespace T4MVC
         public static Dummy Instance = new Dummy();
     }
 }
+#pragma warning restore 0436
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
@@ -78,15 +80,17 @@ namespace Links
         public const string UrlPath = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-        public static readonly string jquery_3_1_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.1.intellisense.min.js") ? Url("jquery-3.1.1.intellisense.min.js") : Url("jquery-3.1.1.intellisense.js");
-        public static readonly string jquery_3_1_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.1.min.js") ? Url("jquery-3.1.1.min.js") : Url("jquery-3.1.1.js");
-        public static readonly string jquery_3_1_1_min_js = Url("jquery-3.1.1.min.js");
-        public static readonly string jquery_3_1_1_min_map = Url("jquery-3.1.1.min.map");
-        public static readonly string jquery_3_1_1_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.1.1.slim.min.js") ? Url("jquery-3.1.1.slim.min.js") : Url("jquery-3.1.1.slim.js");
-        public static readonly string jquery_3_1_1_slim_min_js = Url("jquery-3.1.1.slim.min.js");
-        public static readonly string jquery_3_1_1_slim_min_map = Url("jquery-3.1.1.slim.min.map");
-        public static readonly string jquery_signalR_2_2_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.signalR-2.2.1.min.js") ? Url("jquery.signalR-2.2.1.min.js") : Url("jquery.signalR-2.2.1.js");
-        public static readonly string jquery_signalR_2_2_1_min_js = Url("jquery.signalR-2.2.1.min.js");
+        public static readonly string jquery_3_4_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.4.1.intellisense.min.js") ? Url("jquery-3.4.1.intellisense.min.js") : Url("jquery-3.4.1.intellisense.js");
+        public static readonly string jquery_3_4_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.4.1.min.js") ? Url("jquery-3.4.1.min.js") : Url("jquery-3.4.1.js");
+        public static readonly string jquery_3_4_1_min_js = Url("jquery-3.4.1.min.js");
+        public static readonly string jquery_3_4_1_min_map = Url("jquery-3.4.1.min.map");
+        public static readonly string jquery_3_4_1_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.4.1.slim.min.js") ? Url("jquery-3.4.1.slim.min.js") : Url("jquery-3.4.1.slim.js");
+        public static readonly string jquery_3_4_1_slim_min_js = Url("jquery-3.4.1.slim.min.js");
+        public static readonly string jquery_3_4_1_slim_min_map = Url("jquery-3.4.1.slim.min.map");
+        public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.signalR-2.4.1.min.js") ? Url("jquery.signalR-2.4.1.min.js") : Url("jquery.signalR-2.4.1.js");
+        public static readonly string jquery_signalR_2_4_1_min_js = Url("jquery.signalR-2.4.1.min.js");
+        public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.unobtrusive-ajax.min.js") ? Url("jquery.unobtrusive-ajax.min.js") : Url("jquery.unobtrusive-ajax.js");
+        public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -128,7 +132,6 @@ namespace Links
                 public static readonly string _70x70_png = Url("70x70.png");
                 public static readonly string _72x72_png = Url("72x72.png");
                 public static readonly string _76x76_png = Url("76x76.png");
-                public static readonly string bear_brand_svg = Url("bear_brand.svg");
                 public static readonly string original_png = Url("original.png");
             }
         
@@ -360,13 +363,15 @@ namespace Links
         {
             public static class Assets
             {
-                public const string jquery_3_1_1_intellisense_js = "~/Scripts/jquery-3.1.1.intellisense.js"; 
-                public const string jquery_3_1_1_js = "~/Scripts/jquery-3.1.1.js"; 
-                public const string jquery_3_1_1_min_js = "~/Scripts/jquery-3.1.1.min.js"; 
-                public const string jquery_3_1_1_slim_js = "~/Scripts/jquery-3.1.1.slim.js"; 
-                public const string jquery_3_1_1_slim_min_js = "~/Scripts/jquery-3.1.1.slim.min.js"; 
-                public const string jquery_signalR_2_2_1_js = "~/Scripts/jquery.signalR-2.2.1.js"; 
-                public const string jquery_signalR_2_2_1_min_js = "~/Scripts/jquery.signalR-2.2.1.min.js"; 
+                public static readonly string jquery_3_4_1_intellisense_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.4.1.intellisense.js"); 
+                public static readonly string jquery_3_4_1_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.4.1.js"); 
+                public static readonly string jquery_3_4_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.4.1.min.js"); 
+                public static readonly string jquery_3_4_1_slim_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.4.1.slim.js"); 
+                public static readonly string jquery_3_4_1_slim_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.4.1.slim.min.js"); 
+                public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.signalR-2.4.1.js"); 
+                public static readonly string jquery_signalR_2_4_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.signalR-2.4.1.min.js"); 
+                public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.unobtrusive-ajax.js"); 
+                public static readonly string jquery_unobtrusive_ajax_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.unobtrusive-ajax.min.js"); 
             }
         }
         public static partial class Content 
@@ -389,50 +394,50 @@ namespace Links
                 {
                     public static class Assets
                     {
-                        public const string SignIn_js = "~/Content/Scripts/Account/SignIn.js"; 
+                        public static readonly string SignIn_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/Account/SignIn.js"); 
                     }
                 }
                 public static partial class Brand 
                 {
                     public static class Assets
                     {
-                        public const string BrandViewModel_js = "~/Content/Scripts/Brand/BrandViewModel.js"; 
-                        public const string List_js = "~/Content/Scripts/Brand/List.js"; 
+                        public static readonly string BrandViewModel_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/Brand/BrandViewModel.js"); 
+                        public static readonly string List_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/Brand/List.js"); 
                     }
                 }
                 public static partial class CdnFallbacks 
                 {
                     public static class Assets
                     {
-                        public const string bootstrap_3_3_6_min_js = "~/Content/Scripts/CdnFallbacks/bootstrap-3.3.6.min.js"; 
-                        public const string jquery_2_2_4_min_js = "~/Content/Scripts/CdnFallbacks/jquery-2.2.4.min.js"; 
-                        public const string jquery_formatter_0_1_5_min_js = "~/Content/Scripts/CdnFallbacks/jquery.formatter-0.1.5.min.js"; 
-                        public const string jquery_signalr_2_2_0_min_js = "~/Content/Scripts/CdnFallbacks/jquery.signalr-2.2.0.min.js"; 
-                        public const string jquery_ui_1_11_4_min_js = "~/Content/Scripts/CdnFallbacks/jquery.ui-1.11.4.min.js"; 
-                        public const string jquery_validate_1_14_0_min_js = "~/Content/Scripts/CdnFallbacks/jquery.validate-1.14.0.min.js"; 
-                        public const string jquery_validate_unobtrusive_5_2_3_min_js = "~/Content/Scripts/CdnFallbacks/jquery.validate.unobtrusive-5.2.3.min.js"; 
+                        public static readonly string bootstrap_3_3_6_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/CdnFallbacks/bootstrap-3.3.6.min.js"); 
+                        public static readonly string jquery_2_2_4_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/CdnFallbacks/jquery-2.2.4.min.js"); 
+                        public static readonly string jquery_formatter_0_1_5_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/CdnFallbacks/jquery.formatter-0.1.5.min.js"); 
+                        public static readonly string jquery_signalr_2_2_0_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/CdnFallbacks/jquery.signalr-2.2.0.min.js"); 
+                        public static readonly string jquery_ui_1_11_4_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/CdnFallbacks/jquery.ui-1.11.4.min.js"); 
+                        public static readonly string jquery_validate_1_14_0_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/CdnFallbacks/jquery.validate-1.14.0.min.js"); 
+                        public static readonly string jquery_validate_unobtrusive_5_2_3_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/CdnFallbacks/jquery.validate.unobtrusive-5.2.3.min.js"); 
                     }
                 }
                 public static partial class Home 
                 {
                     public static class Assets
                     {
-                        public const string ContactUs_js = "~/Content/Scripts/Home/ContactUs.js"; 
+                        public static readonly string ContactUs_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/Home/ContactUs.js"); 
                     }
                 }
                 public static partial class Queue 
                 {
                     public static class Assets
                     {
-                        public const string Show_js = "~/Content/Scripts/Queue/Show.js"; 
-                        public const string ShowCustomer_js = "~/Content/Scripts/Queue/ShowCustomer.js"; 
+                        public static readonly string Show_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/Queue/Show.js"); 
+                        public static readonly string ShowCustomer_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/Queue/ShowCustomer.js"); 
                     }
                 }
                 public static class Assets
                 {
-                    public const string jquery_ui_touch_punch_improved_js = "~/Content/Scripts/jquery.ui.touch-punch-improved.js"; 
-                    public const string jquery_unobtrusive_ajax_min_js = "~/Content/Scripts/jquery.unobtrusive-ajax.min.js"; 
-                    public const string Site_js = "~/Content/Scripts/Site.js"; 
+                    public static readonly string jquery_ui_touch_punch_improved_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/jquery.ui.touch-punch-improved.js"); 
+                    public static readonly string jquery_unobtrusive_ajax_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/jquery.unobtrusive-ajax.min.js"); 
+                    public static readonly string Site_js = T4MVCHelpers.ProcessAssetPath("~/Content/Scripts/Site.js"); 
                 }
             }
             public static partial class Styles 
@@ -497,8 +502,14 @@ internal static class T4MVCHelpers {
         return path;
     }
 
+    private static string ProcessAssetPathDefault(string virtualPath) {
+        // The path that comes in starts with ~/ and should retain this prefix
+        return virtualPath;
+    }
+
     // Calling ProcessVirtualPath through delegate to allow it to be replaced for unit testing
     public static Func<string, string> ProcessVirtualPath = ProcessVirtualPathDefault;
+    public static Func<string, string> ProcessAssetPath = ProcessAssetPathDefault;
 
     // Calling T4Extension.TimestampString through delegate to allow it to be replaced for unit testing and other purposes
     public static Func<string, string> TimestampString = System.Web.Mvc.T4Extensions.TimestampString;

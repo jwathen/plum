@@ -60,21 +60,11 @@ namespace WaitlistApp
             VirtualPathFactoryManager.RegisterVirtualPathFactory(precompiledViewEngine);
         }
 
-        protected void InitializeMiniProfiler()
-        {
-            if (ENABLE_MINI_PROFILER)
-            {                
-                
-                this.BeginRequest += (sender, e) => MiniProfiler.Start();
-                this.EndRequest += (sender, e) => MiniProfiler.Stop();
-            }
-        }
-
         protected void Application_BeginRequest()
         {
             if (ENABLE_MINI_PROFILER)
             {
-                MiniProfiler.Start();
+                MiniProfiler.StartNew();
             }
         }
 
@@ -82,7 +72,7 @@ namespace WaitlistApp
         {
             if (ENABLE_MINI_PROFILER)
             {                
-                MiniProfiler.Stop();
+                MiniProfiler.Current?.Stop();
             }
         }
     }
